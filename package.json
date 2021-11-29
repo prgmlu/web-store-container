@@ -16,13 +16,17 @@
     "@babel/preset-react": "7.14.5",
     "babel-loader": "8.2.2",
     "concurrently": "6.3.0",
-    "css-loader": "6.3.0",
+    "css-loader": "^6.5.1",
     "html-webpack-plugin": "5.3.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss-loader": "^6.2.1",
+    "sass": "^1.43.5",
+    "sass-loader": "^12.3.0",
     "serve": "12.0.1",
     "webpack": "5.61.0",
     "webpack-cli": "4.8.0"
   },
   "dependencies": {
-    "redux-devtools-extension": "^2.13.9"
+    "threejs-scene": "git+ssh://git@gitlab.com/ObsessVR/npm-modules/threejs-scene.git"
   }
 }

@@ -1,8 +1,7 @@
 import {createStore, applyMiddleware, compose, combineReducers} from 'obsess_libs/redux';
 import thunk from 'obsess_libs/redux-thunk';
 import { composeWithDevTools } from 'obsess_libs/redux-devtools-extension';
-
-import appReducer from './reducers/appReducer';
+import appReducer from "./appReducer"
 
 const combinedReducers = combineReducers({
     app: appReducer
