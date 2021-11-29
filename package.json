@@ -27,6 +27,5 @@
     "webpack-cli": "4.8.0"
   },
   "dependencies": {
-    "threejs-scene": "git+ssh://git@gitlab.com/ObsessVR/npm-modules/threejs-scene.git"
   }
 }
