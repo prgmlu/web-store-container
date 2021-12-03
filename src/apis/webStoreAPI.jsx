@@ -12,3 +12,9 @@ export const getAllScenes = () => (dispatch) => {
         dispatch(setScenes(res.data));
     }).catch(err => console.error(err));
 }
+
+export const getSceneObjects = (sceneId) => {
+    return axiosApi.get(`/v2/scene/objects?id=${sceneId}`)
+    .then(res => res.data)
+    .catch(err => console.error(err));
+}

@@ -7,29 +7,12 @@ import RoomsSwitch from './components/roomsSwitch';
 import {
     BrowserRouter as Router,
 } from "obsess_libs/react-router-dom";
+// Keep it here, it is required for react-materialize to work
 
 class App extends Component{
     constructor(props) {
-      super(props)
-      this.state = {
-        dialogVisible:false
-      }
-      this.handleClick = this.handleClick.bind(this);
-      this.HanldeSwitchVisible = this.HanldeSwitchVisible.bind(this);
-        getStoreData()
-    }
-
-    handleClick(ev){
-      console.log(ev);
-      this.setState({
-        dialogVisible:true
-      })
-    }
-
-    HanldeSwitchVisible(visible){
-      this.setState({
-        dialogVisible:visible
-      })
+        super(props)
+        getStoreData();
     }
 
     render(){

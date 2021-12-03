@@ -2,9 +2,6 @@ const { ModuleFederationPlugin } = require("webpack").container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-
-const path = require("path");
-console.log("=>", path.resolve(__dirname, 'src/index.js'))
 module.exports = {
   entry: './src/index.js',
   mode: "development",
@@ -55,6 +52,7 @@ module.exports = {
       name: "web-store-container",
       remotes: {
         "obsess_libs": "obsess_libs@http://localhost:2999/remoteEntry.js",
+        "obsess_modules": "obsess_modules@http://localhost:3001/remoteEntry.js",
       },
     }),
     new HtmlWebpackPlugin({
@@ -62,6 +60,10 @@ module.exports = {
     }),
     new MiniCssExtractPlugin()
   ],
+  devServer: {
+    port: 3000,
+    historyApiFallback: true,
+  },
   externals: {
     'config': JSON.stringify(require('./configs/config.development.json'))
   }
