@@ -1,10 +1,7 @@
 import React, {useEffect} from 'obsess_libs/react';
-import {
-    Routes,
-    Route,
-} from "obsess_libs/react-router";
+import {Routes, Route,} from "obsess_libs/react-router";
 import { getAllScenes } from '../../apis/webStoreAPI';
-import Room from '../room';
+import Room from '../Room';
 import { connect, useDispatch } from 'obsess_libs/react-redux';
 
 const RoomsSwitch = ({ scenes }) => {

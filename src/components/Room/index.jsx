@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'obsess_libs/react';
 import { connect } from 'obsess_libs/react-redux';
-
-import "./room.scss";
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
-import Button from 'obsess_modules/Button';
 import Scene, {Hotspot} from 'obsess_libs/threejs-scene';
 import { useNavigate } from 'obsess_libs/react-router';
+import Layout from "../Layout";
+import "./room.scss";
+
 
 const Room = ({sceneId, sceneData, scenes}) => {
     const [roomObjects, setRoomObjects] = useState([]);
@@ -43,7 +43,7 @@ const Room = ({sceneId, sceneData, scenes}) => {
     }
 
     return (
-        <div>
+        <Layout>
             <Scene
                 sceneId={sceneId}
                 bgConf={bgConfig}
@@ -61,11 +61,7 @@ const Room = ({sceneId, sceneData, scenes}) => {
                 />)}
             </Scene>
 
-            <div className={'topUILayer'}>
-                <Button onClick={() => console.log("=> clicked")}/>
-            </div>
-
-        </div>
+        </Layout>
     );
 }
 
