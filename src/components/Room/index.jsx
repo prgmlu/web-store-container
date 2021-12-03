@@ -60,7 +60,6 @@ const Room = ({sceneId, sceneData, scenes}) => {
                     userData={{ props: item?.props || {}, type: item.type }}
                 />)}
             </Scene>
-
         </Layout>
     );
 }
