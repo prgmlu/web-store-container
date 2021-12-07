@@ -4,12 +4,13 @@ const initialState = {
 	scenes: [],
 };
 
-export default (action, state = initialState) => {
-	console.trace('=> appReducer', action);
-	switch (action.type) {
+export default function (state = initialState, action) {
+	const { type, payload } = action;
+
+	switch (type) {
 		case SET_SCENES: {
 			const newScenes = {};
-			action.payload.forEach((item) => {
+			payload.forEach((item) => {
 				newScenes[item.id] = item;
 			});
 			return {
@@ -17,8 +18,7 @@ export default (action, state = initialState) => {
 				scenes: newScenes,
 			};
 		}
-		default: {
+		default:
 			return state;
-		}
 	}
-};
+}

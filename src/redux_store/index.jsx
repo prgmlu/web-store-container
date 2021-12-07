@@ -1,6 +1,8 @@
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
+/**  Reducers **/
 import appReducer from './appReducer';
 
 console.log('=> apreducer', appReducer);
