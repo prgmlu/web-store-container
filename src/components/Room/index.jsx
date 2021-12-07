@@ -15,8 +15,9 @@ const Room = ({ sceneData, scenes }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
+		console.log('=> Room:useEffect');
 		getSceneObjects(sceneData.id).then((res) => setRoomObjects(res));
-	}, [sceneData.id]);
+	}, [sceneData]);
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
 	const bgConfig = {

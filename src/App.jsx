@@ -7,8 +7,6 @@ import makeReduxStore from './redux_store';
 
 const reduxStore = makeReduxStore();
 
-// Keep it here, it is required for react-materialize to work
-
 class App extends Component {
 	constructor(props) {
 		super(props);

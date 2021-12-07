@@ -2,22 +2,21 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const { loadConfig } = require('./configs');
+const { loadConfig } = require('../configs');
 
 module.exports = {
 	entry: './src/index.jsx',
 	mode: 'development',
 	devtool: 'source-map',
 	output: {
-		path: path.join(__dirname, './dist'),
+		path: path.join(__dirname, '../dist'),
 		publicPath: 'http://localhost:3000/',
 		clean: true,
 	},
 	resolve: {
-		extensions: ['.jsx', '.js', '.json', '.css', '.scss', '.jpg', 'jpeg', 'png'],
+		extensions: ['.jsx', '.js', '.json', '.css', '.scss'],
 	},
 	optimization: {
-		minimize: true,
 		runtimeChunk: 'single',
 		splitChunks: {
 			chunks: 'all',
@@ -46,10 +45,6 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(jpg|png|gif|jpeg)$/,
-				loader: 'url-loader',
-			},
-			{
 				test: /\.jsx?$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
@@ -68,7 +63,6 @@ module.exports = {
 			name: 'web-store-container',
 			remotes: {
 				threejs_scene: 'threejs_scene@http://localhost:4000/remoteEntry.js',
-				obsess_modules: 'obsess_modules@http://localhost:3001/remoteEntry.js',
 			},
 			shared: {
 				react: {

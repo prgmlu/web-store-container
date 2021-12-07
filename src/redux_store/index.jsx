@@ -2,8 +2,8 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import appReducer from './appReducer';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
+console.log('=> apreducer', appReducer);
 const combinedReducers = combineReducers({
 	app: appReducer,
 });

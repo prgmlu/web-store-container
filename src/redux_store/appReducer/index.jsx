@@ -5,6 +5,7 @@ const initialState = {
 };
 
 export default (action, state = initialState) => {
+	console.trace('=> appReducer', action);
 	switch (action.type) {
 		case SET_SCENES: {
 			const newScenes = {};

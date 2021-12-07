@@ -8,6 +8,7 @@ import Room from '../Room';
 
 const RoomsSwitch = ({ scenes }) => {
 	const dispatch = useDispatch();
+
 	useEffect(() => {
 		dispatch(getAllScenes());
 	}, []);
