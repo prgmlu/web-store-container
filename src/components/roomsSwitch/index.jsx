@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
-import { connect, useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getAllScenes } from '../../apis/webStoreAPI';
 import Room from '../Room';
 
-const RoomsSwitch = ({ scenes }) => {
+const RoomsSwitch = ({}) => {
+	const scenes = useSelector((state) => state.app.scenes);
 	const dispatch = useDispatch();
+
 
 	useEffect(() => {
 		dispatch(getAllScenes());
@@ -29,14 +30,10 @@ const RoomsSwitch = ({ scenes }) => {
 	);
 };
 
-const mapStateToProps = ({ app }) => ({
-	scenes: app.scenes,
-});
 
-const mapDispatchToProps = {};
 
-RoomsSwitch.propTypes = {
-	scenes: PropTypes.array.isRequired,
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoomsSwitch);
+
+// RoomsSwitch.propTypes = {};
+
+export default RoomsSwitch;
