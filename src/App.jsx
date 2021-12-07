@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { getStoreData } from './apis/webStoreAPI';
-import { makeReduxStore } from './redux_store';
 import RoomsSwitch from './components/roomsSwitch';
+import makeReduxStore from './redux_store';
 
 const reduxStore = makeReduxStore();
 

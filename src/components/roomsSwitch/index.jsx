@@ -2,16 +2,15 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import { connect, useDispatch } from 'react-redux';
 
+import PropTypes from 'prop-types';
 import { getAllScenes } from '../../apis/webStoreAPI';
 import Room from '../Room';
 
-const RoomsSwitch = function ({ scenes }) {
+const RoomsSwitch = ({ scenes }) => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getAllScenes());
 	}, []);
-
-	const getSomeRandomData = () => ({});
 
 	return (
 		<Routes basename='/'>
@@ -21,7 +20,7 @@ const RoomsSwitch = function ({ scenes }) {
 					<Route
 						key={scene.id}
 						path={scene.name === 'entrance' ? '/' : scene.name}
-						element={<Room sceneData={scene} sceneId={scene.id} />}
+						element={<Room sceneData={scene} />}
 					/>
 				);
 			})}
@@ -34,5 +33,9 @@ const mapStateToProps = ({ app }) => ({
 });
 
 const mapDispatchToProps = {};
+
+RoomsSwitch.propTypes = {
+	scenes: PropTypes.array.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RoomsSwitch);

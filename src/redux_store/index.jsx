@@ -16,8 +16,6 @@ const composedEnhancers =
 		? composeWithDevTools(...enhancers)
 		: compose(...enhancers);
 
-function makeReduxStore() {
+export default function makeReduxStore() {
 	return createStore(combinedReducers, undefined, composedEnhancers);
 }
-
-module.exports = { makeReduxStore };

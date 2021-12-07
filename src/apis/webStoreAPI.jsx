@@ -1,3 +1,5 @@
+// Disabling import config as it eslint is unable to tell that it is coming from webpack externals.
+// eslint-disable-next-line import/no-unresolved
 import config from 'config';
 import axiosApi from './axiosApi';
 import { setScenes } from '../redux_store/appReducer/actions';

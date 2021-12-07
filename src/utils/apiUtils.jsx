@@ -27,21 +27,21 @@ export function formURL(urlObject) {
 	if (urlObject) {
 		const { origin, path } = urlObject;
 		switch (origin) {
-			// case UrlOriginEnum.CDN:
-			//     url = OriginUrlPrefixDict[UrlOriginEnum.CDN] + getCurrentBucket() + '/' + path;
-			//     break;
-			case UrlOriginEnum.S3:
-			case UrlOriginEnum.CDN:
-				url = `${
-					OriginUrlPrefixDict[UrlOriginEnum.CDN]
-				}${getCurrentBucket()}/${path}`.replace(/'/g, '%27');
-				break;
-			case UrlOriginEnum.External:
-				url = path;
-				break;
-			default:
-				url = path;
-				break;
+		// case UrlOriginEnum.CDN:
+		//     url = OriginUrlPrefixDict[UrlOriginEnum.CDN] + getCurrentBucket() + '/' + path;
+		//     break;
+		case UrlOriginEnum.S3:
+		case UrlOriginEnum.CDN:
+			url = `${
+				OriginUrlPrefixDict[UrlOriginEnum.CDN]
+			}${getCurrentBucket()}/${path}`.replace(/'/g, '%27');
+			break;
+		case UrlOriginEnum.External:
+			url = path;
+			break;
+		default:
+			url = path;
+			break;
 		}
 	}
 	return url;

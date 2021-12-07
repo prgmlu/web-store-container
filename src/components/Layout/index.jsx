@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './layout.scss';
 import { Button, Modal } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
-const Layout = function({ children }) {
+const Layout = ({ children }) => {
 	useEffect(() => {
 		// initialize materialize
 	});
@@ -33,6 +34,9 @@ const Layout = function({ children }) {
 			</div>
 		</>
 	);
-}
+};
 
+Layout.propTypes = {
+	children: PropTypes.any.isRequired,
+};
 export default Layout;

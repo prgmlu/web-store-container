@@ -1,9 +1,11 @@
 import React from 'react';
 import './topNavBar.scss';
+import Button from 'react-bootstrap/Button';
 
-const TopNavBar = function ({}) {
-	return (
-		<div className='topNavBar'>{/* <Button onClick={() => console.log("=> clicked")}/> */}</div>
-	);
-};
+const TopNavBar = () => (
+	<div className='topNavBar'>
+		<Button />
+	</div>
+);
+
 export default TopNavBar;
