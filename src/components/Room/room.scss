@@ -1,15 +1,12 @@
 .sceneBody {
-  display: flex;
-  background: aqua;
+	display: flex;
+	background: aqua;
 }
 
 .canvas-wrapper {
-  position: absolute;
-  overflow: hidden;
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  min-height: 100vh;
+	position: absolute;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	min-height: 100vh;
 }
-
-

@@ -1,37 +1,38 @@
-import React, {useEffect} from 'obsess_libs/react';
-import {Routes, Route,} from "obsess_libs/react-router";
+import React, { useEffect } from 'react';
+import { Route, Routes } from 'react-router';
+import { connect, useDispatch } from 'react-redux';
+
 import { getAllScenes } from '../../apis/webStoreAPI';
 import Room from '../Room';
-import { connect, useDispatch } from 'obsess_libs/react-redux';
 
-const RoomsSwitch = ({ scenes }) => {
+const RoomsSwitch = function ({ scenes }) {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(getAllScenes());
+	}, []);
 
-    const dispatch = useDispatch();
+	const getSomeRandomData = () => ({});
 
-    useEffect(() => {
-        dispatch(getAllScenes());
-    }, [])
-
-    return (
-        <Routes basename={'/'}>
-            {Object.keys(scenes).map(sceneId => {
-                    const scene = scenes[sceneId]
-                    return (<Route
-                        key={scene?.id}
-                        path={scene?.name === "entrance" ? "/" : scene.name}
-                        element={<Room sceneData={scene} sceneId={scene.id}/>}
-                    />)
-                }
-            )}
-        </Routes>
-    )
+	return (
+		<Routes basename='/'>
+			{Object.keys(scenes).map((sceneId) => {
+				const scene = scenes[sceneId];
+				return (
+					<Route
+						key={scene.id}
+						path={scene.name === 'entrance' ? '/' : scene.name}
+						element={<Room sceneData={scene} sceneId={scene.id} />}
+					/>
+				);
+			})}
+		</Routes>
+	);
 };
 
-const mapStateToProps = ({app}) => ({
-    scenes: app.scenes
+const mapStateToProps = ({ app }) => ({
+	scenes: app.scenes,
 });
 
-const mapDispatchToProps = {
-}
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(RoomsSwitch);

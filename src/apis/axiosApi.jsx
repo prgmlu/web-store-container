@@ -1,23 +1,18 @@
-import axios from 'obsess_libs/axios';
+import axios from 'axios';
 import config from 'config';
 
 const instance = axios.create({
-    baseURL: config.API_URL,
-    crossDomain: true,
-    headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-    },
+	baseURL: config.API_URL,
+	crossDomain: true,
+	headers: {
+		Accept: 'application/json',
+		'Content-Type': 'application/json',
+	},
 });
 
+const handleSuccess = (response) => response;
 
-const handleSuccess = (response) => {
-    return response;
-};
-
-const handleError = (error, xx) => {
-    return Promise.reject(error);
-};
+const handleError = ({ error }) => Promise.reject(error);
 
 instance.interceptors.response.use(handleSuccess, handleError);
 
