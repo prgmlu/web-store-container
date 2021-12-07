@@ -5,7 +5,7 @@ const path = require('path');
 const { loadConfig } = require('./configs');
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.jsx',
 	mode: 'development',
 	devtool: 'source-map',
 	output: {

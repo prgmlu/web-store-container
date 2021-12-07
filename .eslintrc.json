@@ -9,16 +9,20 @@
 		"ecmaFeatures": {
 			"jsx": true
 		},
-		"ecmaVersion": 13,
+		"ecmaVersion": 12,
 		"sourceType": "module"
 	},
 	"plugins": ["react"],
 	"rules": {
-		"indent": ["error", "tab"],
+		// Disabled indentation here. Indentation is controlled through prettier
+		"indent": "off",
 		"no-tabs": "off",
-		"react/function-component-definition": [1, {
-			"namedComponents": "arrow-function"
-		}],
+		"react/function-component-definition": [
+			1,
+			{
+				"namedComponents": "arrow-function"
+			}
+		],
 		"react/forbid-prop-types": "off",
 		"no-underscore-dangle": "off"
 	}

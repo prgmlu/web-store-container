@@ -13,11 +13,11 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			{children}
-			<div className='topUILayer'>
+			<div className="topUILayer">
 				{/* <TopNavBar/> */}
 				<Button onClick={() => setModalOpen(!modalOpen)}>Press</Button>
 
-				<Modal show={modalOpen} backdrop='static'>
+				<Modal show={modalOpen} backdrop="static">
 					<Modal.Header closeButton>
 						<Modal.Title>Modal title</Modal.Title>
 					</Modal.Header>
@@ -27,8 +27,8 @@ const Layout = ({ children }) => {
 					</Modal.Body>
 
 					<Modal.Footer>
-						<Button variant='secondary'>Close</Button>
-						<Button variant='primary'>Save changes</Button>
+						<Button variant="secondary">Close</Button>
+						<Button variant="primary">Save changes</Button>
 					</Modal.Footer>
 				</Modal>
 			</div>

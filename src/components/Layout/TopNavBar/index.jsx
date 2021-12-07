@@ -3,7 +3,7 @@ import './topNavBar.scss';
 import Button from 'react-bootstrap/Button';
 
 const TopNavBar = () => (
-	<div className='topNavBar'>
+	<div className="topNavBar">
 		<Button />
 	</div>
 );

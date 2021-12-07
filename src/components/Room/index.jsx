@@ -56,7 +56,7 @@ const Room = ({ sceneData, scenes }) => {
 				{roomObjects.map((item) => (
 					<Hotspot
 						key={item._id.$oid}
-						type='hotspot'
+						type="hotspot"
 						collider_transform={item.collider_transform}
 						transform={item.transform}
 						iconConfig={{ dotColor: 'black' }}

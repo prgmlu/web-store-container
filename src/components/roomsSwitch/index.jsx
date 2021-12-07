@@ -13,7 +13,7 @@ const RoomsSwitch = ({ scenes }) => {
 	}, []);
 
 	return (
-		<Routes basename='/'>
+		<Routes basename="/">
 			{Object.keys(scenes).map((sceneId) => {
 				const scene = scenes[sceneId];
 				return (
