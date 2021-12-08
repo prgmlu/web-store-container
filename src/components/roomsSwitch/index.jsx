@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import { getAllScenes } from '../../apis/webStoreAPI';
+import { getAllScenes, getStoreData } from '../../apis/webStoreAPI';
 import Room from '../Room';
 
-const RoomsSwitch = ({}) => {
-	const scenes = useSelector((state) => state.app.scenes);
+const RoomsSwitch = () => {
+	const scenes = useSelector((state) => state.scenes);
+	const storeData = useSelector((state) => state.storeData);
 	const dispatch = useDispatch();
 
+	if (!storeData || Object.keys(storeData).length === 0) dispatch(getStoreData());
 
 	useEffect(() => {
 		dispatch(getAllScenes());
@@ -29,11 +30,5 @@ const RoomsSwitch = ({}) => {
 		</Routes>
 	);
 };
-
-
-
-
-
-// RoomsSwitch.propTypes = {};
 
 export default RoomsSwitch;

@@ -3,7 +3,9 @@
 	"version": "1.0.0",
 	"description": "A WP5 MF Base Container",
 	"main": "index.jsx",
-	"browserslist": ["> 0.25%, not dead"],
+	"browserslist": [
+		"> 0.25%, not dead"
+	],
 	"scripts": {
 		"start": "webpack-dev-server --config ./webpack/webpack.config.js",
 		"build": "webpack --config webpack/webpack.config.js",
@@ -56,7 +58,8 @@
 		"react-router-dom": "^6.0.2",
 		"redux": "^4.1.2",
 		"redux-devtools-extension": "^2.13.9",
-		"redux-thunk": "^2.4.1"
+		"redux-thunk": "^2.4.1",
+		"universal-cookie": "^4.0.4"
 	},
 	"repository": {
 		"type": "git",

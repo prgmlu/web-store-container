@@ -1,10 +1,8 @@
 import { SET_SCENES } from './types';
 
-const initialState = {
-	scenes: [],
-};
+const initialState = {};
 
-export default function (state = initialState, action) {
+export default function scenesReducer(state = initialState, action = {}) {
 	const { type, payload } = action;
 
 	switch (type) {
@@ -15,7 +13,7 @@ export default function (state = initialState, action) {
 			});
 			return {
 				...state,
-				scenes: newScenes,
+				...newScenes,
 			};
 		}
 		default:

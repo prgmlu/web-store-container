@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
@@ -10,12 +10,12 @@ import { getSceneObjects } from '../../apis/webStoreAPI';
 import Layout from '../Layout';
 import './room.scss';
 
-const Room = ({ sceneData, scenes }) => {
+const Room = ({ sceneData }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
+	const scenes = useSelector((state) => state.scenes);
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		console.log('=> Room:useEffect');
 		getSceneObjects(sceneData.id).then((res) => setRoomObjects(res));
 	}, [sceneData]);
 
@@ -30,7 +30,8 @@ const Room = ({ sceneData, scenes }) => {
 	};
 	const onHotspotMarkerClicked = (data) => {
 		// eslint-disable-next-line no-console
-		console.log('=> onHotspotMarkerClicked', data);
+		const event = new MessageEvent('openProductModal', { data });
+		window.dispatchEvent(event);
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
@@ -77,12 +78,7 @@ const Room = ({ sceneData, scenes }) => {
 	);
 };
 
-const mapStateToProps = ({ app }) => ({
-	scenes: app.scenes,
-});
-
 Room.propTypes = {
 	sceneData: PropTypes.object.isRequired,
-	scenes: PropTypes.array.isRequired,
 };
-export default connect(mapStateToProps, {})(Room);
+export default Room;

@@ -2,12 +2,13 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-/**  Reducers **/
-import appReducer from './appReducer';
+/**  Reducers * */
+import scenesReducer from './scenesReducer';
+import storeDataReducer from './storeDataReducer/actions';
 
-console.log('=> apreducer', appReducer);
 const combinedReducers = combineReducers({
-	app: appReducer,
+	scenes: scenesReducer,
+	storeData: storeDataReducer,
 });
 
 const middlewares = [thunk];
