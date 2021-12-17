@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
@@ -9,15 +9,20 @@ import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import Layout from '../Layout';
 import './room.scss';
+import { setModalProps } from '../../redux_store/modalsReducer/actions';
+import { modalKeys } from '../../apis/sampleComponentMap';
 
 const Room = ({ sceneData }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		getSceneObjects(sceneData.id).then((res) => setRoomObjects(res));
-	}, [sceneData]);
+		getSceneObjects(sceneData.id).then((res) => {
+			setRoomObjects(res);
+		});
+	}, [sceneData.id]);
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
 	const bgConfig = {
@@ -26,12 +31,12 @@ const Room = ({ sceneData }) => {
 	};
 
 	const onNavMarkerClicked = (data) => {
+		setRoomObjects([]);
 		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
 	};
 	const onHotspotMarkerClicked = (data) => {
-		// eslint-disable-next-line no-console
-		const event = new MessageEvent('openProductModal', { data });
-		window.dispatchEvent(event);
+		console.log('=> hotspotClicked', data.hotspot_type);
+		dispatch(setModalProps(modalKeys[data.hotspot_type], { ...data, visible: true }));
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
@@ -45,6 +50,8 @@ const Room = ({ sceneData }) => {
 		}
 	};
 
+	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
+	// Layout is rendered twice causing all the other elements to re-render.
 	return (
 		<Layout>
 			<Scene

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { loadConfig } = require('../configs');
+const deps = require('../package.json').dependencies;
 
 module.exports = {
 	entry: './src/index.jsx',
@@ -35,10 +36,6 @@ module.exports = {
 					test: /[\\/]node_modules[\\/](react-bootstrap|bootstrap)[\\/]/,
 					name: 'vendor_bootstrap',
 				},
-				threejsScene: {
-					test: /[\\/]node_modules[\\/](threejs-scene)[\\/]/,
-					name: 'vendor_threejsScene',
-				},
 			},
 		},
 	},
@@ -62,18 +59,25 @@ module.exports = {
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene: 'threejs_scene@http://localhost:4000/remoteEntry.js',
+				// threejs_scene: 'threejs_scene@http://localhost:4000/remoteEntry.js',
+				threejs_scene:
+					'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
+				base_components:
+					'base_components@https://modules.obsess-vr.com/beta/ObsessVR/v2/component-library/base-components/main/remoteEntry.js',
+				// 'base_components@http://localhost:3003/remoteEntry.js',
 			},
 			shared: {
+				...deps,
 				react: {
+					requiredVersion: deps.react,
 					import: 'react',
-					singleton: true,
+					shareKey: 'react',
 					shareScope: 'default',
-					requiredVersion: '^17.0.2',
+					singleton: true,
+					eager: true,
 				},
 				'react-dom': {
-					import: 'react-dom',
-					shareScope: 'default',
+					requiredVersion: deps['react-dom'],
 					singleton: true,
 				},
 			},

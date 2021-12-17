@@ -5,10 +5,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 /**  Reducers * */
 import scenesReducer from './scenesReducer';
 import storeDataReducer from './storeDataReducer/actions';
+import modalReducer from './modalsReducer';
+import componentConfigReducer from './componentConfigReducer';
 
 const combinedReducers = combineReducers({
 	scenes: scenesReducer,
 	storeData: storeDataReducer,
+	modalData: modalReducer,
+	componentConfig: componentConfigReducer,
 });
 
 const middlewares = [thunk];

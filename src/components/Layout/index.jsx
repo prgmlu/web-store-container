@@ -1,102 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './layout.scss';
-import { Button, Carousel, Col, Container, Image, Modal, ProgressBar, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+
+// eslint-disable-next-line import/no-unresolved
+import { DynamicComponent } from 'base_components/lib';
 import { getProductData } from '../../apis/webStoreAPI';
-import { formURL } from '../../utils/apiUtils';
+import TopUILayer from '../Loaders/TopUILayer';
+import { setModalVisibility } from '../../redux_store/modalsReducer/actions';
 
-class ProductData {
-	name = '';
-	sku = '';
-	carouselImages = '';
-	detailsBody1 = '';
-	locale = '';
-	price = null;
-	priceCurrency = '';
-	pricePrefix = '';
-	priceSuffix = '';
-	url = '';
+const LoadDynamicModalComponents = () => {
+	const componentConfigs = useSelector((state) => state.componentConfig);
+	const dispatch = useDispatch();
+	const storeData = useSelector((state) => state.storeData);
 
-	async map(productData = {}) {
-		console.log('=> map', productData);
-		this.name = productData.name;
-		this.sku = productData.sku;
-		this.url = formURL(productData.url);
-		this.carouselImages = productData?.carousel_images?.carousel?.map((imgUrl) =>
-			formURL(imgUrl),
-		);
-		this.detailsBody1 = productData.details_body_1;
-		this.locale = productData.locale;
-		this.price = productData.price;
-		this.priceCurrency = productData.price_currency;
-	}
-}
+	const onHideModal = (key) => dispatch(setModalVisibility(key, false));
 
-const ProductModalContent = ({ productData }) => {
-	return (
-		<Container>
-			<Row style={{ justifyContent: 'center' }}>{productData.name}</Row>
-			<Row style={{ justifyContent: 'center' }}>{productData.sku}</Row>
-			<Row
-				style={{ justifyContent: 'center' }}
-			>{`${productData.priceCurrency} ${productData.price}`}</Row>
-			<Row>
-				<Carousel>
-					{productData.carouselImages?.map((imgUrl) => (
-						<Carousel.Item key={imgUrl}>
-							<Image src={imgUrl} thumbnail />
-						</Carousel.Item>
-					))}
-				</Carousel>
-			</Row>
-			<div style={{ display: 'flex', justifyContent: 'center' }}>
-				<Button
-					onClick={() => {
-						window.open(productData.url, 'window');
-					}}
-				>
-					BUY NOW
-				</Button>
-			</div>
-		</Container>
-	);
-};
-
-ProductModalContent.propTypes = {
-	productData: PropTypes.instanceOf(ProductData).isRequired,
-};
-
-const ProductModal = ({ storeId, onHide, data }) => {
-	const [productData, setProductData] = useState(null);
-
-	useEffect(() => {
-		getProductData(storeId, data.product_sku).then((res) => {
-			const newProductData = new ProductData();
-			newProductData.map(res).then(() => {
-				console.log('=>', newProductData);
-				setProductData(newProductData);
-			});
-		});
-	}, []);
-
-	return (
-		<Modal show centered onHide={onHide}>
-			{productData ? <ProductModalContent productData={productData} /> : <ProgressBar />}
-		</Modal>
-	);
-};
-
-const HotspotClickHandler = () => {
-	const [modalComponent, setModalComponent] = useState(null);
-
-	const onOpenProductModal = (data) => {
-		setModalComponent(<ProductModal onHide={() => setModalComponent(null)} data={data} />);
+	const controllers = {
+		getProductData: (productSku) => getProductData(storeData.id, productSku),
 	};
-	window.addEventListener('openProductModal', (evt) => {
-		onOpenProductModal(evt.data);
-	});
 
-	return modalComponent;
+	return (
+		<>
+			{Object.keys(componentConfigs)?.map((key) => {
+				const currentConfig = componentConfigs[key];
+				if (currentConfig.kind === 'modal') {
+					const { modalConfig, remoteConfig, controllerSubscriptions } = currentConfig;
+					const { selector, defaultOpen } = modalConfig;
+					const modalData = useSelector((state) => state.modalData[selector]);
+					const modalVisibility = useSelector((state) =>
+						selector in state.modalData
+							? state.modalData[selector].visible
+							: defaultOpen,
+					);
+					const subscriptions = {};
+					// eslint-disable-next-line no-return-assign
+					controllerSubscriptions.forEach(
+						(subKey) => (subscriptions[subKey] = controllers[subKey]),
+					);
+					return (
+						<DynamicComponent
+							remoteConfig={remoteConfig}
+							modalProps={{
+								show: modalVisibility,
+								onHide: () => {
+									onHideModal(selector);
+								},
+								...modalConfig,
+							}}
+							contentProps={{
+								...modalData,
+							}}
+							subscriptions={subscriptions}
+						/>
+					);
+				}
+				return null;
+			})}
+		</>
+	);
 };
 
 const Layout = ({ children }) => {
@@ -104,11 +66,13 @@ const Layout = ({ children }) => {
 		// initialize materialize
 	});
 
+	const componentConfig = useSelector((state) => state.componentConfig);
+
 	return (
 		<>
 			{children}
-			<div className="topUILayer">{/* <TopNavBar/> */}</div>
-			<HotspotClickHandler />
+			{componentConfig?.topUILayer && <TopUILayer {...componentConfig.topUILayer} />}
+			<LoadDynamicModalComponents />
 		</>
 	);
 };

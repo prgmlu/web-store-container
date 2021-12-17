@@ -4,6 +4,8 @@ import config from 'config';
 import axiosApi from './axiosApi';
 import { setScenes } from '../redux_store/scenesReducer/actions';
 import { setStoreData } from '../redux_store/storeDataReducer';
+import componentConfig from './sampleComponentMap';
+import { setComponentConfig } from '../redux_store/componentConfigReducer/actions';
 
 export const getStoreData = () => (dispatch) =>
 	axiosApi
@@ -30,3 +32,5 @@ export const getProductData = (storeId, productId) =>
 		.get(`/v1/store/product?store_id=${config.STORE_ID}&product_id=${productId}`)
 		.then((res) => res.data)
 		.catch((err) => Promise.reject(err.response));
+
+export const getComponentConfig = () => (dispatch) => dispatch(setComponentConfig(componentConfig));

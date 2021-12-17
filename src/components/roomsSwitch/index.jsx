@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllScenes, getStoreData } from '../../apis/webStoreAPI';
+import { getAllScenes, getComponentConfig, getStoreData } from '../../apis/webStoreAPI';
 import Room from '../Room';
 
 const RoomsSwitch = () => {
@@ -13,6 +13,7 @@ const RoomsSwitch = () => {
 
 	useEffect(() => {
 		dispatch(getAllScenes());
+		dispatch(getComponentConfig());
 	}, []);
 
 	return (
