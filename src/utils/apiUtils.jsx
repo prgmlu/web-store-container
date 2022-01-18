@@ -17,9 +17,6 @@ const OriginUrlPrefixDict = {
 
 export function getCurrentBucket() {
 	return S3Bucket.BETA;
-	// if (process.browser && ['coco.beta.obsessvr.com', 'coco.obsessvr.com'].includes(window.location.hostname) ) {
-	// }
-	// return S3Bucket.DEV;
 }
 
 export function formURL(urlObject) {

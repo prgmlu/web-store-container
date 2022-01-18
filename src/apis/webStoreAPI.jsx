@@ -1,21 +1,20 @@
 // Disabling import config as it eslint is unable to tell that it is coming from webpack externals.
 // eslint-disable-next-line import/no-unresolved
-import config from 'config';
 import axiosApi from './axiosApi';
-import { setScenes } from '../redux_store/scenesReducer/actions';
-import { setStoreData } from '../redux_store/storeDataReducer';
+import { setScenes } from '../redux_stores/scenesReducer/actions';
 import componentConfig from './sampleComponentMap';
-import { setComponentConfig } from '../redux_store/componentConfigReducer/actions';
+import { setComponentConfig } from '../redux_stores/componentConfigReducer/actions';
+import { setStoreData } from '../redux_stores/storeDataReducer/actions';
 
-export const getStoreData = () => (dispatch) =>
+export const getStoreData = (storeId) => (dispatch) =>
 	axiosApi
-		.get(`/v1/store-with-id?id=${config.STORE_ID}`)
+		.get(`/v1/store-with-id?id=${storeId}`)
 		.then((res) => dispatch(setStoreData(res.data)))
 		.catch((err) => Promise.reject(err.response));
 
-export const getAllScenes = () => (dispatch) =>
+export const getAllScenes = (storeId) => (dispatch) =>
 	axiosApi
-		.get(`/v1/scene/all?id=${config.STORE_ID}`)
+		.get(`/v1/scene/all?id=${storeId}`)
 		.then((res) => {
 			dispatch(setScenes(res.data));
 		})
@@ -29,8 +28,9 @@ export const getSceneObjects = (sceneId) =>
 
 export const getProductData = (storeId, productId) =>
 	axiosApi
-		.get(`/v1/store/product?store_id=${config.STORE_ID}&product_id=${productId}`)
+		.get(`/v1/store/product?store_id=${storeId}&product_id=${productId}`)
 		.then((res) => res.data)
 		.catch((err) => Promise.reject(err.response));
 
-export const getComponentConfig = () => (dispatch) => dispatch(setComponentConfig(componentConfig));
+export const getComponentConfig = (storeId) => (dispatch) =>
+	dispatch(setComponentConfig(componentConfig));

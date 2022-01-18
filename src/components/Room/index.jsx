@@ -7,9 +7,8 @@ import Scene, { Hotspot } from 'threejs_scene/lib';
 import { useNavigate } from 'react-router';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
-import Layout from '../Layout';
 import './room.scss';
-import { setModalProps } from '../../redux_store/modalsReducer/actions';
+import { setModalProps } from '../../redux_stores/modalsReducer/actions';
 import { modalKeys } from '../../apis/sampleComponentMap';
 
 const Room = ({ sceneData }) => {
@@ -34,9 +33,14 @@ const Room = ({ sceneData }) => {
 		setRoomObjects([]);
 		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
 	};
+
 	const onHotspotMarkerClicked = (data) => {
-		console.log('=> hotspotClicked', data.hotspot_type);
-		dispatch(setModalProps(modalKeys[data.hotspot_type], { ...data, visible: true }));
+		dispatch(
+			setModalProps(modalKeys[data.hotspot_type], {
+				...data,
+				visible: true,
+			}),
+		);
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
@@ -53,35 +57,33 @@ const Room = ({ sceneData }) => {
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return (
-		<Layout>
-			<Scene
-				sceneId={sceneData.id}
-				bgConf={bgConfig}
-				allowHotspotsToMove={false}
-				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
-					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
-				}
-			>
-				{roomObjects.map((item) => (
-					<Hotspot
-						key={item._id.$oid}
-						type="hotspot"
-						collider_transform={item.collider_transform}
-						transform={item.transform}
-						iconConfig={{ dotColor: 'black' }}
-						imageURL={
-							item.type === 'NavMarker'
-								? 'https://obsessvr-webstore-assets-public.s3.amazonaws.com/arrow.svg'
-								: null
-						}
-						userData={{
-							props: item?.props || {},
-							type: item.type,
-						}}
-					/>
-				))}
-			</Scene>
-		</Layout>
+		<Scene
+			sceneId={sceneData.id}
+			bgConf={bgConfig}
+			allowHotspotsToMove={false}
+			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+			}
+		>
+			{roomObjects.map((item) => (
+				<Hotspot
+					key={item._id.$oid}
+					type="hotspot"
+					collider_transform={item.collider_transform}
+					transform={item.transform}
+					iconConfig={{ dotColor: 'black' }}
+					imageURL={
+						item.type === 'NavMarker'
+							? 'https://obsessvr-webstore-assets-public.s3.amazonaws.com/arrow.svg'
+							: null
+					}
+					userData={{
+						props: item?.props || {},
+						type: item.type,
+					}}
+				/>
+			))}
+		</Scene>
 	);
 };
 
