@@ -9,7 +9,6 @@ import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
 import { setModalProps } from '../../redux_stores/modalsReducer/actions';
-import { modalKeys } from '../../apis/sampleComponentMap';
 
 const Room = ({ sceneData }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
@@ -36,7 +35,7 @@ const Room = ({ sceneData }) => {
 
 	const onHotspotMarkerClicked = (data) => {
 		dispatch(
-			setModalProps(modalKeys[data.hotspot_type], {
+			setModalProps(data.hotspot_type, {
 				...data,
 				visible: true,
 			}),

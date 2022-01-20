@@ -14,6 +14,9 @@ const DynamicModal = ({ config }) => {
 
 	const modalData = useSelector((state) => state.modalData[selector] || {});
 	modalData.storeId = useSelector((state) => state.storeData.id);
+	modalData.storeStyling = useSelector(
+		(state) => state.storeData.styling || {},
+	);
 
 	const modalVisibility = useSelector((state) =>
 		selector in state.modalData

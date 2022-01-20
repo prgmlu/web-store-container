@@ -102,6 +102,8 @@ module.exports = (options) => {
 		config.devServer = {
 			port: 3000,
 			historyApiFallback: true,
+			open: true,
+			hot: 'only',
 		};
 	}
 

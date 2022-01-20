@@ -4,8 +4,8 @@ const componentConfig = {
 	modules: {
 		getProductData: {
 			remoteConfig: {
-				// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
-				url: `http://localhost:3007/remoteEntry.js`,
+				url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
+				// url: `http://localhost:3007/remoteEntry.js`,
 				scope: 'product_data_module',
 				module: './modules',
 			},
@@ -79,15 +79,16 @@ const componentConfig = {
 			kind: 'modal',
 			remoteConfig: {
 				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+				// url: `http://localhost:3002/remoteEntry.js`,
 				scope: 'product_modal',
 				module: './ProductModal',
 			},
 			modalConfig: {
-				selector: 'productModal',
+				selector: 'product',
 				defaultOpen: false,
 				centered: true,
 			},
-			controllerSubscriptions: ['getProductData'],
+			controllerSubscriptions: ['axios', 'getProductData'],
 		},
 		videoModal: {
 			kind: 'modal',
@@ -97,7 +98,7 @@ const componentConfig = {
 				module: './VideoModal',
 			},
 			modalConfig: {
-				selector: 'videoModal',
+				selector: 'video',
 				defaultOpen: false,
 				centered: true,
 			},
@@ -111,18 +112,13 @@ const componentConfig = {
 				module: './TextModal',
 			},
 			modalConfig: {
-				selector: 'textModal',
+				selector: 'text_with_button',
 				defaultOpen: false,
 				centered: true,
 			},
 			controllerSubscriptions: [],
 		},
 	},
-};
-
-export const modalKeys = {
-	product: 'productModal',
-	video: 'videoModal',
 };
 
 export default componentConfig;
