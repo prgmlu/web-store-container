@@ -108,6 +108,23 @@ const componentConfig = {
 			},
 			controllerSubscriptions: [],
 		},
+		videoWithButtonModal: {
+			kind: 'modal',
+			remoteConfig: {
+				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
+				// url: `http://localhost:3011/remoteEntry.js`,
+				scope: 'video_with_button_modal',
+				module: './VideoWithButtonModal',
+			},
+			modalConfig: {
+				selector: 'video_with_button',
+				defaultOpen: false,
+				centered: true,
+				animation: true,
+				size: 'sm',
+			},
+			controllerSubscriptions: [],
+		},
 		textModal: {
 			kind: 'modal',
 			remoteConfig: {
@@ -136,6 +153,23 @@ const componentConfig = {
 				defaultOpen: false,
 				centered: true,
 				animation: true,
+			},
+			controllerSubscriptions: [],
+		},
+		imageModal: {
+			kind: 'modal',
+			remoteConfig: {
+				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js`,
+				// url: `http://localhost:3012/remoteEntry.js`,
+				scope: 'image_modal',
+				module: './ImageModal',
+			},
+			modalConfig: {
+				selector: 'image',
+				defaultOpen: false,
+				centered: true,
+				animation: true,
+				size: 'md',
 			},
 			controllerSubscriptions: [],
 		},
