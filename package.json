@@ -7,8 +7,11 @@
 		"> 0.25%, not dead"
 	],
 	"scripts": {
-		"start": "webpack-dev-server --config ./webpack/webpack.config.js",
+		"start": "webpack-dev-server --config ./webpack/webpack.config.js --env buildEnv=development",
 		"build": "webpack --config webpack/webpack.config.js",
+		"build-dev": "webpack --config ./webpack/webpack.config.js --env buildEnv=development",
+		"build-beta": "webpack --config ./webpack/webpack.config.js --env buildEnv=beta",
+		"build-prod": "webpack --config ./webpack/webpack.config.js --env buildEnv=production",
 		"analyze": "npm run build && source-map-explorer 'dist/*.js'",
 		"lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
 		"lint-fix": "eslint --ignore-path .gitignore --fix --ext .js,.ts,.tsx .",

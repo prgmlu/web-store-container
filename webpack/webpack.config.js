@@ -6,14 +6,15 @@ const { loadConfig } = require('../configs');
 const deps = require('../package.json').dependencies;
 
 module.exports = (options) => {
-	const { WEBPACK_SERVE } = options;
+	const { WEBPACK_SERVE, buildEnv } = options;
+	console.log('=>', options);
 	const config = {
 		entry: './src/index.jsx',
 		mode: 'development',
 		devtool: 'source-map',
 		output: {
 			path: path.join(__dirname, '../dist'),
-			publicPath: 'http://localhost:3000/',
+			// publicPath: 'http://localhost:3000/',
 			clean: true,
 		},
 		resolve: {
@@ -97,9 +98,8 @@ module.exports = (options) => {
 		template: './public/index.html',
 	};
 
+	webpackPluginOptions.storeId = loadConfig(buildEnv).STORE_ID;
 	if (WEBPACK_SERVE) {
-		webpackPluginOptions.storeId = loadConfig('development').STORE_ID;
-
 		config.devServer = {
 			port: 3000,
 			historyApiFallback: true,
