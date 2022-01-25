@@ -1,6 +1,6 @@
 {
 	"API_URL": "https://api.beta.obsess-vr.com/webstore",
-	"STORE_ID": "5f319733135089517fd8a79d",
+	"STORE_ID": "60468dbdfa6880c812fc8584",
 	"CDN_BASE_URL": "https://cdn.obsess-vr.com",
 	"MODULES_BASE_URL" : "https://modules.obsess-vr.com/beta"
 }

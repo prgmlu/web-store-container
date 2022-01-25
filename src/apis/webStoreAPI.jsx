@@ -33,4 +33,4 @@ export const getProductData = (storeId, productId) =>
 		.catch((err) => Promise.reject(err.response));
 
 export const getComponentConfig = (storeId) => (dispatch) =>
-	dispatch(setComponentConfig(componentConfig));
+	dispatch(setComponentConfig(componentConfig[storeId]));

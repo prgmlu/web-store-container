@@ -1,177 +1,384 @@
 const modulesBase = 'https://modules.obsess-vr.com/beta';
 
 const componentConfig = {
-	modules: {
-		getProductData: {
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
-				// url: `http://localhost:3007/remoteEntry.js`,
-				scope: 'product_data_module',
-				module: './modules',
-			},
-		},
-	},
-	overlayComponents: {
-		kind: 'container',
-		components: [
-			{
-				kind: 'container',
-				containerStyling: {
-					backgroundColor: 'blue',
-					display: 'inline',
+	'60468dbdfa6880c812fc8584': {
+		modules: {
+			getProductData: {
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
+					// url: `http://localhost:3007/remoteEntry.js`,
+					scope: 'product_data_module',
+					module: './modules',
 				},
-				components: [
-					{
-						kind: 'component',
-						name: 'store_logo',
-						remoteConfig: {
-							url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
-							scope: 'store_logo',
-							module: './StoreLogo',
-						},
-						componentProps: {
-							imageUrl:
-								'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Ralph_Lauren/5f176763135089517fd8a1c6/images/RL-logo-White.png',
-							redirectUrl:
-								'https://www.ralphlauren.com/?utm_source=milan-spiga',
-						},
-						styling: {
-							width: '20%',
-							height: 'auto',
-						},
-					},
-				],
 			},
-			{
-				kind: 'container',
-				containerStyling: {
-					backgroundColor: 'green',
-					bottom: '0',
-					right: '0',
-					position: 'fixed',
+		},
+		overlayComponents: {
+			kind: 'container',
+			components: [
+				{
+					kind: 'container',
+					containerStyling: {
+						display: 'inline',
+					},
+					components: [
+						{
+							kind: 'component',
+							name: 'store_logo',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
+								scope: 'store_logo',
+								module: './StoreLogo',
+							},
+							styling: {
+								width: '17vw',
+								height: 'auto',
+								padding: '16px',
+								borderRadius: '10px',
+							},
+						},
+					],
 				},
-				components: [
-					{
-						kind: 'component',
-						name: 'store_logo',
-						remoteConfig: {
-							url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
-							scope: 'store_logo',
-							module: './StoreLogo',
-						},
-						componentProps: {
-							imageUrl:
-								'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Ralph_Lauren/5f176763135089517fd8a1c6/images/RL-logo-White.png',
-							redirectUrl:
-								'https://www.ralphlauren.com/?utm_source=milan-spiga',
-						},
-						styling: {
-							width: '20%',
-							height: 'auto',
-						},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: 0,
+						top: 0,
+						display: 'flex',
+						padding: '8px',
 					},
-				],
-			},
-		],
-	},
-	modals: {
-		productModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
-				// url: `http://localhost:3002/remoteEntry.js`,
-				scope: 'product_modal',
-				module: './ProductModal',
-			},
-			modalConfig: {
-				selector: 'product',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
-			},
-			controllerSubscriptions: ['axios', 'getProductData'],
+					components: [
+						{
+							name: 'navigation_menu',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/american-girl/remoteEntry.js`,
+								scope: 'navigation_menu',
+								module: './NavigationMenu',
+							},
+							styling: {
+								alignItems: 'center',
+								display: 'flex',
+								flexDirection: 'column',
+							},
+							iconStyling: {
+								height: '2em',
+								width: 'auto',
+								color: 'red',
+							},
+							menuStyling: {
+								paddingTop: '20px',
+								paddingBottom: '30px',
+								paddingLeft: '20px',
+								paddingRight: '20px',
+								width: '10vw',
+								borderRadius: '0px 0px 0px 30px',
+								border: 'none',
+							},
+							primaryTextStyle: {
+								color: '#000000',
+								fontWeight: 1,
+							},
+							secondaryTextStyle: {
+								color: '#00000050',
+								fontWeight: 5,
+							},
+							navItems: [
+								{
+									logoUrl:
+										'https://cdn.obsess-vr.com/american-girl/AGPlace_Logo.svg',
+									links: [
+										{
+											name: 'Store entrance',
+											isLink: true,
+											path: '',
+										},
+										{
+											name: 'First floor',
+											subLinks: [
+												{
+													name: 'World By Us',
+													path: 'world-by-us-ny',
+												},
+												{
+													name: 'Cultural Celebrations',
+													path: 'view-5',
+												},
+												{
+													name: 'Girl of the year: Kira Bailey',
+													path: 'view-7',
+												},
+												{
+													name: 'Julie Albright 1974',
+													path: 'julie',
+												},
+												{
+													name: 'Courtney Moore 1986',
+													path: 'courtney',
+												},
+												{
+													name: 'Holiday Shop',
+													path: 'view-16',
+												},
+												{
+													name: 'Truly Me',
+													path: 'truly-me',
+												},
+												{
+													name: 'Dolled Up Salon',
+													path: 'salon',
+												},
+												{
+													name: 'Doll Hospital',
+													path: 'view-39',
+												},
+											],
+										},
+										{
+											name: 'Lower level',
+											subLinks: [
+												{
+													name: 'Historical characters',
+													path: 'historical-character',
+												},
+												{
+													name: 'The Corner Book Shop',
+													path: 'bookshop',
+												},
+												{
+													name: 'WellieWishers',
+													path: 'view-84',
+												},
+												{
+													name: 'Bitty Baby',
+													path: 'view-86',
+												},
+												{
+													name: 'American Girl Caf\u00e9',
+													path: 'cafe',
+												},
+												{
+													name: 'Personal shopping',
+													path: 'view-75',
+												},
+											],
+										},
+									],
+								},
+								{
+									logoUrl:
+										'https://cdn.obsess-vr.com/american-girl/AGMuseum_logo.svg',
+									path: 'museum',
+									isLink: true,
+									links: [
+										{
+											name: 'First floor',
+											isLink: false,
+											subLinks: [
+												{
+													name: 'Entrance',
+													path: 'museum-entry',
+												},
+												{
+													name: 'Felicity Merriman 1774',
+													path: 'museum-felicity',
+												},
+												{
+													name: 'Josefina Montoya 1824',
+													path: 'museum-josefina',
+												},
+												{
+													name: 'Kirsten Larson 1854',
+													path: 'museum-kirsten',
+												},
+												{
+													name: 'Addy Walker 1864',
+													path: 'museum-addy',
+												},
+												{
+													name: 'Samantha Parkington 1904',
+													path: 'museum-samantha',
+												},
+												{
+													name: 'Molly McIntire 1944',
+													path: 'museum-molly',
+												},
+												{
+													name: 'American Girl garage',
+													path: 'museum-garage',
+												},
+												{
+													name: 'Historical character archives',
+													path: 'museum-hc',
+												},
+											],
+										},
+										{
+											name: 'Second floor',
+											subLinks: [
+												{
+													name: 'Kaya 1764',
+													path: 'museum-kaya',
+												},
+												{
+													name: 'Rebecca Rubin 1914',
+													path: 'museum-rebecca',
+												},
+												{
+													name: 'Kit Kittredge 1934',
+													path: 'museum-kit',
+												},
+												{
+													name: 'Nanea Mitchell 1941',
+													path: 'museum-nanea',
+												},
+												{
+													name: 'Maryellen Larkin 1954',
+													path: 'museum-maryellen',
+												},
+												{
+													name: 'Melody Ellison 1964',
+													path: 'museum-melody',
+												},
+												{
+													name: 'Courtney Moore 1986',
+													path: 'museum-courtney',
+												},
+												{
+													name: 'Girl of the Year archives',
+													path: 'museum-goty',
+												},
+											],
+										},
+										{
+											name: 'Third floor',
+											subLinks: [
+												{
+													name: 'Kira Bailey 2021',
+													path: 'museum-kira',
+												},
+												{
+													name: 'World by Us',
+													path: 'world-by-us',
+												},
+												{
+													name: 'American Girl play lounge',
+													path: 'museum-play',
+												},
+											],
+										},
+										{
+											name: 'Gift shop',
+											isLink: true,
+											path: 'museum-gifts',
+										},
+									],
+								},
+							],
+						},
+					],
+				},
+			],
 		},
-		videoModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
-				// url: `http://localhost:3008/remoteEntry.js`,
-				scope: 'video_modal',
-				module: './VideoModal',
+		modals: {
+			productModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3002/remoteEntry.js`,
+					scope: 'product_modal',
+					module: './ProductModal',
+				},
+				modalConfig: {
+					selector: 'product',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+				},
+				controllerSubscriptions: ['axios', 'getProductData'],
 			},
-			modalConfig: {
-				selector: 'video',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
-				size: 'sm',
+			videoModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3008/remoteEntry.js`,
+					scope: 'video_modal',
+					module: './VideoModal',
+				},
+				modalConfig: {
+					selector: 'video',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+				controllerSubscriptions: [],
 			},
-			controllerSubscriptions: [],
-		},
-		videoWithButtonModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
-				// url: `http://localhost:3011/remoteEntry.js`,
-				scope: 'video_with_button_modal',
-				module: './VideoWithButtonModal',
+			videoWithButtonModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3011/remoteEntry.js`,
+					scope: 'video_with_button_modal',
+					module: './VideoWithButtonModal',
+				},
+				modalConfig: {
+					selector: 'video_with_button',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+				controllerSubscriptions: [],
 			},
-			modalConfig: {
-				selector: 'video_with_button',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
-				size: 'sm',
+			textModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
+					scope: 'text_modal',
+					module: './TextModal',
+				},
+				modalConfig: {
+					selector: 'textbox',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+				},
+				controllerSubscriptions: [],
 			},
-			controllerSubscriptions: [],
-		},
-		textModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
-				scope: 'text_modal',
-				module: './TextModal',
+			textWithButtonModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3009/remoteEntry.js`,
+					scope: 'text_with_button_modal',
+					module: './TextWithButtonModal',
+				},
+				modalConfig: {
+					selector: 'text_with_button',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+				},
+				controllerSubscriptions: [],
 			},
-			modalConfig: {
-				selector: 'textbox',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
+			imageModal: {
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3012/remoteEntry.js`,
+					scope: 'image_modal',
+					module: './ImageModal',
+				},
+				modalConfig: {
+					selector: 'image',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'md',
+				},
+				controllerSubscriptions: [],
 			},
-			controllerSubscriptions: [],
-		},
-		textWithButtonModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js`,
-				// url: `http://localhost:3009/remoteEntry.js`,
-				scope: 'text_with_button_modal',
-				module: './TextWithButtonModal',
-			},
-			modalConfig: {
-				selector: 'text_with_button',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
-			},
-			controllerSubscriptions: [],
-		},
-		imageModal: {
-			kind: 'modal',
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js`,
-				// url: `http://localhost:3012/remoteEntry.js`,
-				scope: 'image_modal',
-				module: './ImageModal',
-			},
-			modalConfig: {
-				selector: 'image',
-				defaultOpen: false,
-				centered: true,
-				animation: true,
-				size: 'md',
-			},
-			controllerSubscriptions: [],
 		},
 	},
 };
