@@ -7,7 +7,6 @@ const deps = require('../package.json').dependencies;
 
 module.exports = (options) => {
 	const { WEBPACK_SERVE, buildEnv } = options;
-	console.log('=>', options);
 	const config = {
 		entry: './src/index.jsx',
 		mode: 'development',
