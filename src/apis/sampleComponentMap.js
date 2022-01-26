@@ -30,7 +30,7 @@ const componentConfig = {
 								module: './StoreLogo',
 							},
 							styling: {
-								width: '17vw',
+								width: '17rem',
 								height: 'auto',
 								padding: '16px',
 								borderRadius: '10px',
@@ -275,6 +275,26 @@ const componentConfig = {
 									],
 								},
 							],
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: 0,
+						bottom: 0,
+						padding: '4px',
+					},
+					components: [
+						{
+							name: 'powered_by_obsess',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js`,
+								scope: 'powered_by_obsess',
+								module: './PoweredByObsess',
+							},
 						},
 					],
 				},
