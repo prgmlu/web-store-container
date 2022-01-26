@@ -22,8 +22,8 @@ const componentConfig = {
 					},
 					components: [
 						{
-							kind: 'component',
 							name: 'store_logo',
+							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
 								scope: 'store_logo',
@@ -291,9 +291,51 @@ const componentConfig = {
 							name: 'powered_by_obsess',
 							kind: 'component',
 							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/music-controller/main/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
+								scope: 'music_controller',
+								module: './MusicController',
+							},
+						},
+						{
+							name: 'powered_by_obsess',
+							kind: 'component',
+							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js`,
 								scope: 'powered_by_obsess',
 								module: './PoweredByObsess',
+							},
+							textStyling: { color: 'white', fontSize: '0.9rem' },
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						top: '40%',
+						display: 'flex',
+					},
+					components: [
+						{
+							name: 'some_component',
+							kind: 'action_component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/pure-components/clickable-image/main/remoteEntry.js`,
+								// url: `http://localhost:3010/remoteEntry.js`,
+								scope: 'clickable_image',
+								module: './ClickableImage',
+							},
+							imageStyling: {
+								width: '40px',
+								height: 'auto',
+							},
+							imageUrl:
+								'https://cdn.obsess-vr.com/american-girl/AG_write_review.png',
+							actionType: 'triggerModal',
+							actionProps: {
+								selector: 'image',
+								// link: 'https://obsessar.com',
 							},
 						},
 					],

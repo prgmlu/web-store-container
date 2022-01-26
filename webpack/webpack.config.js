@@ -74,7 +74,8 @@ module.exports = (options) => {
 					'threejs_scene@http://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
 				// 'threejs_scene@http://localhost:4000/remoteEntry.js',
 				base_components:
-					'base_components@https://modules.obsess-vr.com/beta/ObsessVR/v2/component-library/base-components/main/remoteEntry.js',
+					// 'base_components@https://modules.obsess-vr.com/beta/ObsessVR/v2/component-library/base-components/main/remoteEntry.js',
+					'base_components@http://localhost:3003/remoteEntry.js',
 			},
 			shared: {
 				...deps,

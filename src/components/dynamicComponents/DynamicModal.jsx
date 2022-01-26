@@ -1,10 +1,10 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import React from 'react';
 // eslint-disable-next-line import/no-unresolved
-import { DynamicComponent } from 'base_components/lib';
 
 import { setModalVisibility } from '../../redux_stores/modalsReducer/actions';
+import DynamicComponent from './DynamicComponent';
 
 const DynamicModal = ({ config }) => {
 	const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { WebpackUtils } from 'base_components/lib';
 import { registerShareable } from '../../redux_stores/functionsReducer/actions';
+import WebpackUtils from '../../utils/WebpackUtils';
 
 const ModulesLayer = () => {
 	const modules = useSelector((state) => state.componentConfig.modules || {});
