@@ -441,6 +441,40 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3013/remoteEntry.js`,
+					scope: 'image_carousel_modal',
+					module: './ImageCarouselModal',
+				},
+				modalConfig: {
+					selector: 'image_carousel',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+				controllerSubscriptions: [],
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3014/remoteEntry.js`,
+					scope: 'iframe_modal',
+					module: './IFrameModal',
+				},
+				modalConfig: {
+					selector: 'iframe',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'lg',
+				},
+				controllerSubscriptions: [],
+			},
 		],
 	},
 };

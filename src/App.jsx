@@ -7,7 +7,7 @@ import PasswordPage from './PasswordPage';
 
 const cookies = new Cookies();
 const devCookie = cookies.get('obsess-dev-cookie');
-console.log('=>', devCookie);
+
 const App = () =>
 	devCookie ? (
 		<Provider store={makeReduxStore()}>

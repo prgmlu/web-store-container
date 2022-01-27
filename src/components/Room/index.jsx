@@ -33,13 +33,34 @@ const Room = ({ sceneData }) => {
 		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
 	};
 
+	const onLinkMarkerClicked = (data) => {
+		const linkUrl = formURL(data.url)
+		window.open(linkUrl, '_blank');
+	}
+
+	const onSoundMarkerClicked = (data) => {
+		// this needs work
+		// const audioFile = formURL(data.url)
+		// const audio = new Audio(audioFile);
+		// audio.play();
+	}
+
 	const onHotspotMarkerClicked = (data) => {
-		dispatch(
-			setModalProps(data.hotspot_type, {
-				...data,
-				visible: true,
-			}),
-		);
+		switch(data.hotspot_type) {
+			case 'link':
+				onLinkMarkerClicked(data);
+				break;
+			case 'sound':
+				onSoundMarkerClicked(data);
+				break;
+			default:
+				dispatch(
+					setModalProps(data.hotspot_type, {
+						...data,
+						visible: true,
+					}),
+				);
+		}
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
