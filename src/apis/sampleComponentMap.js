@@ -288,7 +288,7 @@ const componentConfig = {
 					},
 					components: [
 						{
-							name: 'powered_by_obsess',
+							name: 'music_controller',
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/music-controller/main/remoteEntry.js`,
@@ -342,8 +342,8 @@ const componentConfig = {
 				},
 			],
 		},
-		modals: {
-			productModal: {
+		modals: [
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
@@ -359,7 +359,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: ['axios', 'getProductData'],
 			},
-			videoModal: {
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
@@ -376,7 +376,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
-			videoWithButtonModal: {
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
@@ -393,7 +393,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
-			textModal: {
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
@@ -408,7 +408,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
-			textWithButtonModal: {
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js`,
@@ -424,7 +424,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
-			imageModal: {
+			{
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js`,
@@ -441,7 +441,7 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
-		},
+		],
 	},
 };
 

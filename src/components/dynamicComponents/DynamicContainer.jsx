@@ -29,7 +29,7 @@ const DynamicContainer = ({ components }) => (
 					/>
 				);
 			}
-			return <div />;
+			return null;
 		})}
 	</>
 );
