@@ -20,22 +20,32 @@ const RoomRoutes = () => {
 		}
 	}, [storeId]);
 
-	return (
-		<Routes>
-			{Object.keys(scenes).map((sceneId) => {
-				const scene = scenes[sceneId];
-				return (
-					<Route
-						key={scene.id}
-						path={
-							sceneId === storeData?.scenes[0] ? '/' : scene.name
-						}
-						element={<Room sceneData={scene} />}
-					/>
-				);
-			})}
-		</Routes>
-	);
+	const getRoutes = () => {
+		const routes = Object.keys(scenes).map((sceneId) => {
+			const scene = scenes[sceneId];
+			return (
+				<Route
+					key={scene.id}
+					path={scene.name}
+					element={<Room sceneData={scene} />}
+				/>
+			);
+		});
+
+		const firstScene = scenes[storeData.scenes[0]];
+		if (firstScene) {
+			routes.push(
+				<Route
+					key="root"
+					path="/"
+					element={<Room sceneData={firstScene} />}
+				/>,
+			);
+		}
+		return routes;
+	};
+
+	return <Routes>{getRoutes()}</Routes>;
 };
 
 export default RoomRoutes;
