@@ -13,6 +13,7 @@ const loadComponent = async (scope, module) => {
 	const container = window[scope]; // or get the container somewhere else
 	// Initialize the container, it may provide shared modules
 	// eslint-disable-next-line camelcase,no-undef
+	console.log('=>', scope, module);
 	await container.init(__webpack_share_scopes__.default);
 	const factory = await window[scope].get(module);
 	return factory();

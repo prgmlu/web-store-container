@@ -34,19 +34,19 @@ const Room = ({ sceneData }) => {
 	};
 
 	const onLinkMarkerClicked = (data) => {
-		const linkUrl = formURL(data.url)
+		const linkUrl = formURL(data.url);
 		window.open(linkUrl, '_blank');
-	}
+	};
 
 	const onSoundMarkerClicked = (data) => {
 		// this needs work
 		// const audioFile = formURL(data.url)
 		// const audio = new Audio(audioFile);
 		// audio.play();
-	}
+	};
 
 	const onHotspotMarkerClicked = (data) => {
-		switch(data.hotspot_type) {
+		switch (data.hotspot_type) {
 			case 'link':
 				onLinkMarkerClicked(data);
 				break;

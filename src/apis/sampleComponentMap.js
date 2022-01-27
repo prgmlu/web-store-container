@@ -5,7 +5,7 @@ const componentConfig = {
 		modules: {
 			getProductData: {
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/variant/american-girl/remoteEntry.js`,
 					// url: `http://localhost:3007/remoteEntry.js`,
 					scope: 'product_data_module',
 					module: './modules',
@@ -461,7 +461,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3014/remoteEntry.js`,
 					scope: 'iframe_modal',
 					module: './IFrameModal',

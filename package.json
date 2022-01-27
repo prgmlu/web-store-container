@@ -16,7 +16,8 @@
 		"lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
 		"lint-fix": "eslint --ignore-path .gitignore --fix --ext .js,.ts,.tsx .",
 		"prettier": "prettier --check src/",
-		"format": "prettier --write src/"
+		"format": "prettier --write src/",
+		"sync-ag": "aws s3 sync --acl public-read --delete dist s3://virtualplace.americangirl.com/place-test"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.5",
