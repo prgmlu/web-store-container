@@ -475,6 +475,23 @@ const componentConfig = {
 				},
 				controllerSubscriptions: [],
 			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3015/remoteEntry.js`,
+					scope: 'quiz_modal',
+					module: './QuizModal',
+				},
+				modalConfig: {
+					selector: 'quiz',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+				controllerSubscriptions: [],
+			},
 		],
 	},
 };
