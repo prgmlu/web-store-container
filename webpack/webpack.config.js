@@ -73,9 +73,6 @@ module.exports = (options) => {
 				threejs_scene:
 					'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
 				// 'threejs_scene@http://localhost:4000/remoteEntry.js',
-				base_components:
-					// 'base_components@https://modules.obsess-vr.com/beta/ObsessVR/v2/component-library/base-components/main/remoteEntry.js',
-					'base_components@http://localhost:3003/remoteEntry.js',
 			},
 			shared: {
 				...deps,
@@ -99,6 +96,8 @@ module.exports = (options) => {
 	};
 
 	webpackPluginOptions.storeId = loadConfig(buildEnv).STORE_ID;
+	config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
+
 	if (WEBPACK_SERVE) {
 		config.devServer = {
 			port: 3000,
@@ -107,8 +106,6 @@ module.exports = (options) => {
 			hot: 'only',
 		};
 	}
-
-	config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
 
 	config.externals = {
 		config: JSON.stringify(loadConfig('development')),

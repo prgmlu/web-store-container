@@ -26,11 +26,5 @@ export const getSceneObjects = (sceneId) =>
 		.then((res) => res.data)
 		.catch((err) => Promise.reject(err.response));
 
-export const getProductData = (storeId, productId) =>
-	axiosApi
-		.get(`/v1/store/product?store_id=${storeId}&product_id=${productId}`)
-		.then((res) => res.data)
-		.catch((err) => Promise.reject(err.response));
-
 export const getComponentConfig = (storeId) => (dispatch) =>
 	dispatch(setComponentConfig(componentConfig[storeId]));

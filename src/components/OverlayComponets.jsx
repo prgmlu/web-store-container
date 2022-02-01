@@ -4,7 +4,7 @@ import DynamicContainer from './dynamicComponents/DynamicContainer';
 
 const OverlayComponents = () => {
 	const overlayComponents = useSelector(
-		(state) => state.componentConfig.overlayComponents,
+		(state) => state?.componentConfig?.overlayComponents || {},
 	);
 
 	const { components } = overlayComponents;

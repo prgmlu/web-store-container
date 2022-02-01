@@ -17,7 +17,9 @@
 		"lint-fix": "eslint --ignore-path .gitignore --fix --ext .js,.ts,.tsx .",
 		"prettier": "prettier --check src/",
 		"format": "prettier --write src/",
-		"sync-ag": "aws s3 sync --acl public-read --delete dist s3://virtualplace.americangirl.com/place-test"
+		"sync-ag": "aws s3 sync --acl public-read --delete dist s3://virtualplace.americangirl.com/place-test",
+		"purge-ag": "aws cloudfront create-invalidation --distribution-id E3UE9O7QESGIB9 --paths \"/place-test/*\";",
+		"deploy-ag": "rm -rf ./dist && npm run build-beta && npm run sync-ag && npm run purge-ag && exit"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.5",

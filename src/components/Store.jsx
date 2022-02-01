@@ -6,7 +6,7 @@ import ModulesLayer from './loaders/ModulesLayer';
 
 const Store = () => {
 	const dispatch = useDispatch();
-	const storeId = useSelector((state) => state.storeData.id);
+	const storeId = useSelector((state) => state?.storeData?.id);
 	dispatch(getComponentConfig(storeId));
 
 	return (

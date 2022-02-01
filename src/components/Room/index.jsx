@@ -12,6 +12,7 @@ import { setModalProps } from '../../redux_stores/modalsReducer/actions';
 
 const Room = ({ sceneData }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
+	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -19,6 +20,13 @@ const Room = ({ sceneData }) => {
 	useEffect(() => {
 		getSceneObjects(sceneData.id).then((res) => {
 			setRoomObjects(res);
+			setLinkedScenes(
+				res
+					.filter((item) => item.type === 'NavMarker')
+					.map((item) => scenes[item?.props?.linked_room_id.$oid])
+					.filter((item) => 'cube_map_dir' in item)
+					.map((item) => formURL(item.cube_map_dir)),
+			);
 		});
 	}, [sceneData.id]);
 
@@ -80,6 +88,7 @@ const Room = ({ sceneData }) => {
 		<Scene
 			sceneId={sceneData.id}
 			bgConf={bgConfig}
+			linkedScenes={linkedScenes}
 			allowHotspotsToMove={false}
 			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 				onSceneMouseUp(e, sceneObject, marker, isDragEvent)

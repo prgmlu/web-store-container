@@ -8,10 +8,10 @@ import { getAllScenes, getStoreData } from '../apis/webStoreAPI';
 const RoomRoutes = () => {
 	const dispatch = useDispatch();
 
-	const storeId = useSelector((state) => state.storeData.id);
+	const storeId = useSelector((state) => state?.storeData?.id);
 
-	const scenes = useSelector((state) => state.scenes);
-	const storeData = useSelector((state) => state.storeData);
+	const scenes = useSelector((state) => state?.scenes || {});
+	const storeData = useSelector((state) => state?.storeData);
 
 	useEffect(() => {
 		if (storeId) {
@@ -21,6 +21,9 @@ const RoomRoutes = () => {
 	}, [storeId]);
 
 	const getRoutes = () => {
+		if (Object.keys(scenes).length === 0) {
+			return null;
+		}
 		const routes = Object.keys(scenes).map((sceneId) => {
 			const scene = scenes[sceneId];
 			return (

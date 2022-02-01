@@ -4,7 +4,9 @@ import { registerShareable } from '../../redux_stores/functionsReducer/actions';
 import WebpackUtils from '../../utils/WebpackUtils';
 
 const ModulesLayer = () => {
-	const modules = useSelector((state) => state.componentConfig.modules || {});
+	const modules = useSelector(
+		(state) => state?.componentConfig?.modules || {},
+	);
 	const dispatch = useDispatch();
 
 	const onScriptLoaded = (scope, module) => {

@@ -9,22 +9,43 @@ import componentConfigReducer from './componentConfigReducer';
 import storeDataReducer from './storeDataReducer';
 import functionsReducer from './functionsReducer';
 
-const combinedReducers = combineReducers({
+const staticReducers = {
 	scenes: scenesReducer,
 	storeData: storeDataReducer,
 	modalData: modalReducer,
 	componentConfig: componentConfigReducer,
 	shareableFunctions: functionsReducer,
-});
+};
 
-const middlewares = [thunk];
-const middlewareEnhancer = applyMiddleware(...middlewares);
-const enhancers = [middlewareEnhancer];
-const composedEnhancers =
-	process.env.NODE_ENV === 'development'
+const createReducer = (asyncReducers) =>
+	combineReducers({
+		...staticReducers,
+		...asyncReducers,
+	});
+
+const createEnhancers = () => {
+	const middlewares = [thunk];
+	const middlewareEnhancer = applyMiddleware(...middlewares);
+	const enhancers = [middlewareEnhancer];
+	return process.env.NODE_ENV === 'development'
 		? composeWithDevTools(...enhancers)
 		: compose(...enhancers);
+};
 
-export default function makeReduxStore() {
-	return createStore(combinedReducers, undefined, composedEnhancers);
-}
+const makeReduxStore = () => {
+	const enhancers = createEnhancers();
+	const store = createStore(createReducer({}), enhancers);
+
+	store.asyncReducers = {};
+
+	store.injectReducer = (key, asyncReducer) => {
+		store.asyncReducers[key] = asyncReducer;
+		store.replaceReducer(createReducer(store.asyncReducers));
+		return store;
+	};
+
+	return store;
+};
+
+const store = makeReduxStore();
+export default store;
