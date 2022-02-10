@@ -13,7 +13,7 @@ const componentConfig = {
 			},
 			cartController: {
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/variant/cart-controller/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js`,
 					// url: `http://localhost:3014/remoteEntry.js`,
 					scope: 'cart_controller_module',
 					module: './modules',
@@ -56,6 +56,16 @@ const componentConfig = {
 						padding: '8px',
 					},
 					components: [
+						{
+							name: 'cart_component',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/main/remoteEntry.js`,
+								scope: 'cart_component',
+								module: './CartComponent',
+							},
+							styling: {},
+						},
 						{
 							name: 'navigation_menu',
 							kind: 'component',
@@ -354,8 +364,8 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
-					// url: `http://localhost:3002/remoteEntry.js`,
+					// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+					url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
 					module: './ProductModal',
 				},
