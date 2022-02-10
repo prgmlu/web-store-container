@@ -11,6 +11,14 @@ const componentConfig = {
 					module: './modules',
 				},
 			},
+			cartController: {
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/variant/cart-controller/remoteEntry.js`,
+					// url: `http://localhost:3014/remoteEntry.js`,
+					scope: 'cart_controller_module',
+					module: './modules',
+				},
+			},
 		},
 		overlayComponents: {
 			kind: 'container',
