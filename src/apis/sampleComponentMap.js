@@ -61,10 +61,20 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/main/remoteEntry.js`,
+								// url: `http://localhost:3016/remoteEntry.js`,
 								scope: 'cart_component',
 								module: './CartComponent',
 							},
-							styling: {},
+							styling: {
+								alignItems: 'center',
+								display: 'flex',
+								flexDirection: 'column',
+								marginRight: '1em',
+							},
+							iconStyling: {
+								height: '2em',
+								width: 'auto',
+							},
 						},
 						{
 							name: 'navigation_menu',
