@@ -10,9 +10,9 @@ const ModulesLayer = () => {
 	const dispatch = useDispatch();
 
 	const onScriptLoaded = (scope, module) => {
-		WebpackUtils.loadComponent(scope, module).then((factory) =>
-			dispatch(registerShareable(factory.default)),
-		);
+		WebpackUtils.loadComponent(scope, module).then((factory) => {
+			dispatch(registerShareable(factory.default));
+		});
 	};
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ const ModulesLayer = () => {
 			);
 			document.head.appendChild(element);
 		});
-	}, [modules]);
+	}, []);
 
 	return null;
 };

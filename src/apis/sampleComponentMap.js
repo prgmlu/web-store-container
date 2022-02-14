@@ -8,7 +8,7 @@ const componentConfig = {
 					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/variant/american-girl/remoteEntry.js`,
 					// url: `http://localhost:3007/remoteEntry.js`,
 					scope: 'product_data_module',
-					module: './modules',
+					module: './product_modules',
 				},
 			},
 			cartController: {
@@ -16,7 +16,7 @@ const componentConfig = {
 					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js`,
 					// url: `http://localhost:3014/remoteEntry.js`,
 					scope: 'cart_controller_module',
-					module: './modules',
+					module: './cart_modules',
 				},
 			},
 		},
@@ -374,8 +374,8 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
-					url: `http://localhost:3002/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
 					module: './ProductModal',
 				},
