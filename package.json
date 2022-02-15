@@ -18,8 +18,11 @@
 		"prettier": "prettier --check src/",
 		"format": "prettier --write src/",
 		"sync-ag": "aws s3 sync --acl public-read --delete dist s3://virtualplace.americangirl.com/place-test",
+		"sync-ct": "aws s3 sync --acl public-read --delete dist s3://obsess-beta-stores/charlottetilbury/pillow-talk-party-test",
 		"purge-ag": "aws cloudfront create-invalidation --distribution-id E3UE9O7QESGIB9 --paths \"/place-test/*\";",
-		"deploy-ag": "rm -rf ./dist && npm run build-beta && npm run sync-ag && npm run purge-ag && exit"
+		"purge-ct": "aws cloudfront create-invalidation --distribution-id \tE20LTLSUZJ6WZ6 --paths \"/pillow-talk-party-test/*\";",
+		"deploy-ag": "rm -rf ./dist && npm run build-beta && npm run sync-ag && npm run purge-ag && exit",
+		"deploy-ct": "rm -rf ./dist && npm run build-beta && npm run sync-ct && npm run purge-ct && exit"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.5",
