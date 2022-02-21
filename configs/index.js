@@ -4,10 +4,10 @@ const prodConfig = require('./config.production.json');
 
 function loadConfig(env) {
 	if (env === 'production') {
-		return devConfig;
+		return prodConfig;
 	}
 	if (env === 'beta') {
-		return devConfig;
+		return betaConfig;
 	}
 	return devConfig;
 }

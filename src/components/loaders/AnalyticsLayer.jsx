@@ -28,8 +28,9 @@ const AnalyticsLayer = () => {
 				const analyticsData = {
 					betaAnalyticsID: analyticsModule.betaAnalyticsID,
 					prodAnalyticsID: analyticsModule.prodAnalyticsID,
-					additionalAnalyticsIDs: analyticsModule.additionalAnalyticsIDs,
-				}
+					additionalAnalyticsIDs:
+						analyticsModule.additionalAnalyticsIDs,
+				};
 
 				const element = WebpackUtils.createElement(url, () =>
 					loadModuleScript(scope, module, analyticsData),

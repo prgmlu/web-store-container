@@ -10,7 +10,7 @@ import store from '../../redux_stores';
 const DynamicModal = ({ config }) => {
 	const dispatch = useDispatch();
 
-	const { modalConfig, remoteConfig, controllerSubscriptions } = config;
+	const { modalConfig, remoteConfig } = config;
 	const { selector, defaultOpen, ...modalProps } = modalConfig;
 
 	const modalData = useSelector((state) => state.modalData[selector] || {});
@@ -26,13 +26,13 @@ const DynamicModal = ({ config }) => {
 	);
 	const subscriptions = {};
 
-	controllerSubscriptions.forEach(
-		// eslint-disable-next-line no-return-assign
-		(subKey) =>
-			(subscriptions[subKey] = useSelector(
-				(state) => state.shareableFunctions[subKey] || {},
-			)),
-	);
+	// controllerSubscriptions.forEach(
+	// 	// eslint-disable-next-line no-return-assign
+	// 	(subKey) =>
+	// 		(subscriptions[subKey] = useSelector(
+	// 			(state) => state.shareableFunctions[subKey] || {},
+	// 		)),
+	// );
 
 	const onHideModal = (key) => dispatch(setModalVisibility(key, false));
 
