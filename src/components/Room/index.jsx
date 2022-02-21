@@ -17,6 +17,9 @@ const Room = ({ sceneData }) => {
 	const scenes = useSelector((state) => state.scenes);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
+	const sendAnalyticsEvent = useSelector(
+		(state) => state.shareableFunctions.sendAnalyticsEvent,
+	);
 
 	useEffect(() => {
 		getSceneObjects(sceneData.id).then((res) => {
@@ -41,18 +44,36 @@ const Room = ({ sceneData }) => {
 	const onNavMarkerClicked = (data) => {
 		setRoomObjects([]);
 		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
+
+		sendAnalyticsEvent({
+			eventCategory: 'Navigation',
+			eventAction: 'Arrow clicked',
+			eventLabel: scenes[sceneData.id].name,
+		});
 	};
 
 	const onLinkMarkerClicked = (data) => {
 		const linkUrl = formURL(data.url);
 		window.open(linkUrl, '_blank');
+
+		sendAnalyticsEvent({
+			eventCategory: 'Content',
+			eventAction: 'Link',
+			eventLabel: linkUrl,
+		});
 	};
 
 	const onSoundMarkerClicked = (data) => {
 		// this needs work
-		// const audioFile = formURL(data.url)
+		const audioFile = formURL(data.url);
 		// const audio = new Audio(audioFile);
 		// audio.play();
+
+		sendAnalyticsEvent({
+			eventCategory: 'Content',
+			eventAction: 'Sound',
+			eventLabel: audioFile,
+		});
 	};
 
 	const onHotspotMarkerClicked = (data) => {
