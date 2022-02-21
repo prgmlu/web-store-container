@@ -521,6 +521,19 @@ const componentConfig = {
 				controllerSubscriptions: [],
 			},
 		],
+		analyticsModules: [
+			{
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js`,
+					// url: `http://localhost:3016/remoteEntry.js`,
+					scope: 'ga_module',
+					module: './ga_module',
+				},
+				betaAnalyticsID: 'UA-91780857-16',
+				prodAnalyticsID: 'UA-91780857-16',
+				additionalAnalyticsIDs: []
+			},
+		],
 	},
 };
 

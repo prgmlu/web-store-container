@@ -8,6 +8,7 @@ import modalReducer from './modalsReducer';
 import componentConfigReducer from './componentConfigReducer';
 import storeDataReducer from './storeDataReducer';
 import functionsReducer from './functionsReducer';
+import analyticsReducer from './analyticsReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -15,6 +16,7 @@ const staticReducers = {
 	modalData: modalReducer,
 	componentConfig: componentConfigReducer,
 	shareableFunctions: functionsReducer,
+	analytics: analyticsReducer,
 };
 
 const createReducer = (asyncReducers) =>
