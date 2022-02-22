@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import config from 'config';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
@@ -15,7 +16,7 @@ const DynamicComponent = (props) => {
 
 	return (
 		<React.Suspense fallback={fallBackComponent}>
-			<LoadedComponent {...passThrough} />
+			<LoadedComponent {...passThrough} env={config.ENV}/>
 		</React.Suspense>
 	);
 };
