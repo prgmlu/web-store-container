@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 import { setModalVisibility } from '../../redux_stores/modalsReducer/actions';
 import DynamicComponent from './DynamicComponent';
-import store from '../../redux_stores';
 
 const DynamicModal = ({ config }) => {
 	const dispatch = useDispatch();
@@ -49,7 +48,6 @@ const DynamicModal = ({ config }) => {
 			contentProps={{
 				...modalData,
 			}}
-			store={store}
 			subscriptions={subscriptions}
 		/>
 	);

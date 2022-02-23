@@ -22,20 +22,24 @@ const Room = ({ sceneData }) => {
 	);
 
 	useEffect(() => {
-		getSceneObjects(sceneData.id).then((res) => {
-			setRoomObjects(res);
-			setLinkedScenes(
-				res
-					.filter((item) => item.type === 'NavMarker')
-					.map((item) => scenes[item?.props?.linked_room_id.$oid])
-					.filter((item) => 'cube_map_dir' in item)
-					.map((item) => formURL(item.cube_map_dir)),
-			);
-		});
+		getSceneObjects(sceneData.id)
+			.then((res) => {
+				setRoomObjects(res);
+				setLinkedScenes(
+					res
+						.filter((item) => item.type === 'NavMarker')
+						.map((item) => scenes[item?.props?.linked_room_id.$oid])
+						.filter((item) => 'cube_map_dir' in item)
+						.map((item) => formURL(item.cube_map_dir)),
+				);
+			})
+			.catch(() => {
+				setRoomObjects([]);
+				setLinkedScenes([]);
+			});
 	}, [sceneData.id]);
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
-
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
