@@ -693,7 +693,7 @@ const componentConfig = {
 					defaultOpen: false,
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'lg',
 				},
 			},
 			{
@@ -709,7 +709,6 @@ const componentConfig = {
 					defaultOpen: false,
 					centered: true,
 					animation: true,
-					size: 'sm',
 				},
 			},
 			{
@@ -834,6 +833,7 @@ const componentConfig = {
 					defaultOpen: false,
 					centered: true,
 					animation: true,
+					size: 'lg',
 				},
 			},
 		],
