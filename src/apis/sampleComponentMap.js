@@ -538,7 +538,7 @@ const componentConfig = {
 			},
 			cartController: {
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/variant/charlotte-tilbury/remoteEntry.js`,
 					// url: `http://localhost:3014/remoteEntry.js`,
 					scope: 'cart_controller_module',
 					module: './cart_modules',
@@ -586,7 +586,7 @@ const componentConfig = {
 							name: 'cart_component',
 							kind: 'component',
 							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/main/remoteEntry.js`,
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/variant/charlotte-tilbury/remoteEntry.js`,
 								// url: `http://localhost:3016/remoteEntry.js`,
 								scope: 'cart_component',
 								module: './CartComponent',
@@ -595,7 +595,6 @@ const componentConfig = {
 								alignItems: 'center',
 								display: 'flex',
 								flexDirection: 'column',
-								marginRight: '1em',
 							},
 							iconStyling: {
 								height: '2em',
@@ -636,6 +635,33 @@ const componentConfig = {
 						},
 					],
 				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: '50%',
+						bottom: 0,
+						display: 'flex',
+						padding: '8px',
+					},
+					components: [
+						{
+							name: 'gem_collection_game_component',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
+								scope: 'gem_collection_game_component',
+								module: './GemsCounter',
+							},
+							styling: {
+								alignItems: 'center',
+								display: 'flex',
+								flexDirection: 'column',
+							},
+						},
+					],
+				},
 			],
 		},
 		modals: [
@@ -664,6 +690,22 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'gem_collection_game_component',
+					module: './GemsVideoModal',
+				},
+				modalConfig: {
+					selector: 'gem_game',
 					defaultOpen: false,
 					centered: true,
 					animation: true,
@@ -782,8 +824,8 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js`,
-					url: `http://localhost:3006/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
 					scope: 'youtube_embed_modal',
 					module: './YoutubeEmbedModal',
 				},
