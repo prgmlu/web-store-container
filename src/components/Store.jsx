@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { HashRouter as Router } from 'react-router-dom';
 import { getComponentConfig } from '../apis/webStoreAPI';
 import UILayer from './loaders/UILayer';
 import ModulesLayer from './loaders/ModulesLayer';
@@ -11,11 +12,11 @@ const Store = () => {
 	dispatch(getComponentConfig(storeId));
 
 	return (
-		<>
+		<Router>
 			<UILayer />
 			<ModulesLayer />
 			<AnalyticsLayer />
-		</>
+		</Router>
 	);
 };
 
