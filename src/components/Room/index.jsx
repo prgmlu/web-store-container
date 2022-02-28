@@ -88,6 +88,11 @@ const Room = ({ sceneData }) => {
 			case 'sound':
 				onSoundMarkerClicked(data);
 				break;
+			case 'custom':
+				dispatch(
+					setModalProps(data.selector, { ...data, visible: true }),
+				);
+				break;
 			default:
 				dispatch(
 					setModalProps(data.hotspot_type, {
