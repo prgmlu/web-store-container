@@ -26,7 +26,7 @@ const HotspotMarker = ({ item, ...props }) => (
 		transform={item.transform}
 		iconConfig={{ dotColor: 'black' }}
 		userData={{
-			props: item?.props || {},
+			props: { ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 			type: item.type,
 		}}
 	/>
