@@ -639,10 +639,9 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						right: '50%',
-						bottom: 0,
-						display: 'flex',
-						padding: '8px',
+						width: '100%',
+						bottom: '0px',
+						textAlign: 'center',
 					},
 					components: [
 						{
@@ -650,15 +649,20 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-								// url: `http://localhost:3006/remoteEntry.js`,
+								// url: `http://localhost:3020/remoteEntry.js`,
 								scope: 'gem_collection_game_component',
-								module: './GemsCounter',
+								module: './GemsCollectionStatusUI',
 							},
 							styling: {
-								alignItems: 'center',
-								display: 'flex',
-								flexDirection: 'column',
+								iconWidth: '30rem',
 							},
+							gemCollectionIconsInOrder: [
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_0-removebg.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_1-removebg.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_2-removebg.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
+							],
 						},
 					],
 				},
