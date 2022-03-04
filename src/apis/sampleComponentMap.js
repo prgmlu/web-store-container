@@ -418,20 +418,7 @@ const componentConfig = {
 					size: 'sm',
 				},
 			},
-			{
-				kind: 'modal',
-				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
-					scope: 'text_modal',
-					module: './TextModal',
-				},
-				modalConfig: {
-					selector: 'textbox',
-					defaultOpen: false,
-					centered: true,
-					animation: true,
-				},
-			},
+
 			{
 				kind: 'modal',
 				remoteConfig: {
@@ -607,41 +594,12 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						right: 0,
-						bottom: 0,
-						padding: '4px',
-					},
-					components: [
-						{
-							name: 'stream_mode',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
-								scope: 'stream_mode',
-								module: './StreamMode',
-							},
-							textStyling: { color: 'white', fontSize: '0.9rem' },
-						},
-
-						{
-							name: 'powered_by_obsess',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js`,
-								scope: 'powered_by_obsess',
-								module: './PoweredByObsess',
-							},
-							textStyling: { color: 'white', fontSize: '0.9rem' },
-						},
-					],
-				},
-				{
-					kind: 'container',
-					containerStyling: {
-						position: 'fixed',
-						width: '100%',
+						left: 1,
+						right: 1,
 						bottom: '0px',
 						textAlign: 'center',
+						// backgroundColor: 'red',
+						pointerEvents: 'none',
 					},
 					components: [
 						{
@@ -649,7 +607,7 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-								// url: `http://localhost:3020/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
 								scope: 'gem_collection_game_component',
 								module: './GemsCollectionStatusUI',
 							},
@@ -663,6 +621,61 @@ const componentConfig = {
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
 							],
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						// display: 'flex',
+						// flexDirection: 'column',
+						// alignItems: 'end',
+						position: 'fixed',
+						textAlign: 'end',
+						right: 0,
+						bottom: 0,
+						padding: '4px',
+					},
+					components: [
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								// url: `http://localhost:30013/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './ProducerControlPanel',
+							},
+						},
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								// url: `http://localhost:30013/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './AudiencePanel',
+							},
+						},
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								// url: `http://localhost:30013/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './StreamMode',
+							},
+						},
+						{
+							name: 'powered_by_obsess',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js`,
+								scope: 'powered_by_obsess',
+								module: './PoweredByObsess',
+							},
+							textStyling: { color: 'white', fontSize: '0.9rem' },
 						},
 					],
 				},
@@ -731,20 +744,7 @@ const componentConfig = {
 					size: 'sm',
 				},
 			},
-			{
-				kind: 'modal',
-				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
-					scope: 'text_modal',
-					module: './TextModal',
-				},
-				modalConfig: {
-					selector: 'textbox',
-					defaultOpen: false,
-					centered: true,
-					animation: true,
-				},
-			},
+
 			{
 				kind: 'modal',
 				remoteConfig: {
@@ -1003,20 +1003,7 @@ const componentConfig = {
 					size: 'sm',
 				},
 			},
-			{
-				kind: 'modal',
-				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-modal/main/remoteEntry.js`,
-					scope: 'text_modal',
-					module: './TextModal',
-				},
-				modalConfig: {
-					selector: 'textbox',
-					defaultOpen: false,
-					centered: true,
-					animation: true,
-				},
-			},
+
 			{
 				kind: 'modal',
 				remoteConfig: {
