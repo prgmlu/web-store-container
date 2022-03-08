@@ -598,7 +598,6 @@ const componentConfig = {
 						right: 1,
 						bottom: '0px',
 						textAlign: 'center',
-						// backgroundColor: 'red',
 						pointerEvents: 'none',
 					},
 					components: [
@@ -620,6 +619,13 @@ const componentConfig = {
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_2-removebg.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
+							],
+							gemCollectionStatusModalInOrder: [
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage6_game - opening.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage6_game - 1st diamond.png',
+								'',
+								'',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage6_game - add to bag.png',
 							],
 						},
 					],
