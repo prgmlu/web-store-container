@@ -21,6 +21,8 @@ const Room = ({ sceneData }) => {
 		(state) => state.shareableFunctions.sendAnalyticsEvent,
 	);
 
+	const allData = useSelector((data) => data);
+
 	useEffect(() => {
 		getSceneObjects(sceneData.id)
 			.then((res) => {
@@ -125,6 +127,8 @@ const Room = ({ sceneData }) => {
 			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 			}
+			allData={allData}
+			dispatch={dispatch}
 		>
 			<RoomObjects roomObjects={roomObjects} />
 		</Scene>
