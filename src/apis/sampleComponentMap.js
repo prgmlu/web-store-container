@@ -738,6 +738,21 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js`,
+					// url: `http://localhost:3019/remoteEntry.js`,
+					scope: 'wall_of_fame_game_component',
+					module: './WallofFameGameModal',
+				},
+				modalConfig: {
+					selector: 'wall_of_fame_game',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3011/remoteEntry.js`,
 					scope: 'video_with_button_modal',
@@ -751,7 +766,6 @@ const componentConfig = {
 					size: 'sm',
 				},
 			},
-
 			{
 				kind: 'modal',
 				remoteConfig: {
