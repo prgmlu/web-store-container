@@ -9,6 +9,7 @@ import componentConfigReducer from './componentConfigReducer';
 import storeDataReducer from './storeDataReducer';
 import functionsReducer from './functionsReducer';
 import analyticsReducer from './analyticsReducer';
+import accessibilityReducer from './accessibilityReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -17,6 +18,7 @@ const staticReducers = {
 	componentConfig: componentConfigReducer,
 	shareableFunctions: functionsReducer,
 	analytics: analyticsReducer,
+	accessibility: accessibilityReducer,
 };
 
 const createReducer = (asyncReducers) =>

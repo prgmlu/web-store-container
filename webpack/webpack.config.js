@@ -71,8 +71,8 @@ module.exports = (options) => {
 			name: 'web-store-container',
 			remotes: {
 				threejs_scene:
-					'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
-				// 'threejs_scene@http://192.168.1.159:4000/remoteEntry.js',
+				'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
+				// 'threejs_scene@http://192.168.1.159:4000/remoteEntry.js'
 			},
 			shared: {
 				...deps,
