@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Hotspot } from 'threejs_scene/lib';
 
 const NavMarker = ({ item, ...props }) => (
@@ -36,16 +36,29 @@ HotspotMarker.propTypes = {
 	item: PropTypes.object.isRequired,
 };
 
-const RoomObjects = ({ roomObjects, ...props }) => (
-	<>
-		{roomObjects.map((item) => {
-			if (item.type === 'NavMarker') {
-				return <NavMarker item={item} {...props} key={item._id.$oid} />;
-			}
-			return <HotspotMarker item={item} {...props} key={item._id.$oid} />;
-		})}
-	</>
-);
+const RoomObjects = ({ roomObjects, ...props }) => {
+	if (roomObjects.length <= 0) return null;
+	let navMarkerStartIdx = -1;
+
+	return (
+		<>
+			{roomObjects.map((item) => {
+				if (item.type === 'NavMarker') {
+					navMarkerStartIdx += 1;
+					return (
+						<NavMarker
+							item={item}
+							key={item._id.$oid}
+							navMarkerIdx={navMarkerStartIdx}
+							{...props}
+						/>
+					);
+				}
+				return <HotspotMarker item={item} {...props} key={item._id.$oid} />;
+			})}
+		</>
+	)
+};
 
 RoomObjects.propTypes = {
 	roomObjects: PropTypes.array.isRequired,
