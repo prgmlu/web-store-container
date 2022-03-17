@@ -44,12 +44,13 @@ const RoomObjects = ({ roomObjects, ...props }) => {
 		<>
 			{roomObjects.map((item) => {
 				if (item.type === 'NavMarker') {
-					navMarkerStartIdx += 1;
+					const isNavMarkerVisible = !item.props.hide;
+					if (isNavMarkerVisible) navMarkerStartIdx += 1;
 					return (
 						<NavMarker
 							item={item}
 							key={item._id.$oid}
-							navMarkerIdx={navMarkerStartIdx}
+							navMarkerIdx={isNavMarkerVisible ? navMarkerStartIdx : undefined}
 							{...props}
 						/>
 					);

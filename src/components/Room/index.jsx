@@ -35,7 +35,7 @@ const Room = ({ sceneData }) => {
 						.filter((item) => 'cube_map_dir' in item)
 						.map((item) => formURL(item.cube_map_dir)),
 				);
-				const navMarkerCount = res.filter(item => item.type === 'NavMarker').length;
+				const navMarkerCount = res.filter(item => item.type === 'NavMarker' && item.props.hide === false).length;
 				dispatch(setNavMarkerCount(navMarkerCount))
 			})
 			.catch(() => {
