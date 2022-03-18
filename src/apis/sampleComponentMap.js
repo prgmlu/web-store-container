@@ -1,4 +1,6 @@
-const modulesBase = 'https://modules.obsess-vr.com/beta';
+import config from 'config';
+
+const modulesBase = config.MODULES_BASE_URL;
 
 const componentConfig = {
 	'60468dbdfa6880c812fc8584': {
