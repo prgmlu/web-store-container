@@ -16,22 +16,7 @@
 		"lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
 		"lint-fix": "eslint --ignore-path .gitignore --fix --ext .js,.ts,.tsx .",
 		"prettier": "prettier --check src/",
-		"format": "prettier --write src/",
-		"sync-ag": "aws s3 sync --acl public-read --delete dist s3://virtualplace.americangirl.com/place-test",
-		"sync-ct": "aws s3 sync --acl public-read --delete dist s3://obsess-beta-stores/charlottetilbury/pillow-talk-party-test",
-		"sync-zoya": "aws s3 sync --acl public-read --delete dist s3://obsess-beta-stores/zoya/bangalore",
-		"sync-zoya-prod": "aws s3 sync --acl public-read --delete dist s3://obsess-prod-stores/zoya/bangalore",
-		"sync-dior-v2": "aws s3 sync --acl public-read --delete dist s3://obsess-beta-stores/dior/dior-version-2",
-		"purge-ag": "aws cloudfront create-invalidation --distribution-id E3UE9O7QESGIB9 --paths \"/place-test/*\";",
-		"purge-dior-v2": "aws cloudfront create-invalidation --distribution-id E2VPPPVF0ZX48D --paths \"/dior-version-2/*\";",
-		"purge-ct": "aws cloudfront create-invalidation --distribution-id \tE20LTLSUZJ6WZ6 --paths \"/pillow-talk-party-test/*\";",
-		"purge-zoya": "aws cloudfront create-invalidation --distribution-id \tEOTYW19TKNMGE --paths \"/bangalore/*\";",
-		"purge-zoya-prod": "aws cloudfront create-invalidation --distribution-id \tE26AAGI8DURDKQ --paths \"/bangalore/*\";",
-		"deploy-ag": "rm -rf ./dist && npm run build-beta && npm run sync-ag && npm run purge-ag && exit",
-		"deploy-ct": "rm -rf ./dist && npm run build-beta && npm run sync-ct && npm run purge-ct && exit",
-		"deploy-dior-v2": "rm -rf ./dist && npm run build-beta && npm run sync-dior-v2 && npm run purge-dior-v2 && exit",
-		"deploy-zoya": "rm -rf ./dist && npm run build-beta && npm run sync-zoya && npm run purge-zoya && exit",
-		"deploy-zoya-prod": "rm -rf ./dist && npm run build-prod && npm run sync-zoya-prod && npm run purge-zoya-prod && exit"
+		"format": "prettier --write src/"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.15.5",

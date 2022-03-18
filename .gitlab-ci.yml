@@ -58,3 +58,21 @@ deploy:beta:
     - build:beta
   only:
     - main
+
+build:production:
+  <<: *build-template
+  variables:
+    BUILD_ENV: production
+  only:
+    - main
+
+
+deploy:production:
+  <<: *deploy-template
+  variables:
+    BUILD_ENV: production
+  when: manual
+  needs:
+    - build:production
+  only:
+    - main
