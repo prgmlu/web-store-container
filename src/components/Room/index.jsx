@@ -24,7 +24,7 @@ const Room = ({ sceneData }) => {
 	const sendAnalyticsEvent = useSelector(
 		(state) => state.shareableFunctions.sendAnalyticsEvent,
 	);
-
+	console.log('=> sceneData', sceneData);
 	const allReduxStoreData = useSelector((data) => data);
 
 	useEffect(() => {
@@ -52,15 +52,36 @@ const Room = ({ sceneData }) => {
 	}, [sceneData.id]);
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
+
+	const formatDate = (date, format) => {
+		const map = {
+			mm: date.getMonth() + 1,
+			dd: date.getDate(),
+			yy: date.getFullYear().toString().slice(-2),
+			hh: date.getHours().toString(),
+			yyyy: date.getFullYear(),
+		};
+
+		return format.replace(/mm|dd|hh|yy|yyy/gi, (matched) => map[matched]);
+	};
+
+	const getBustKey = (sceneJson) => {
+		if (sceneJson?.image_integrity) {
+			return sceneData.image_integrity.replace(/\D/g, '');
+		}
+		return formatDate(new Date(), 'hhmmddyyyy');
+	};
+
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
+		imageIntegrity: getBustKey(sceneData),
+		useWebp: true,
 	};
 
 	const onNavMarkerClicked = (data) => {
 		setRoomObjects([]);
 		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
-
 		sendAnalyticsEvent({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',

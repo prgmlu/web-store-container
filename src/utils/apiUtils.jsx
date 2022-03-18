@@ -1,6 +1,6 @@
 import config from 'config';
 export const S3Bucket = Object.freeze({
-	development: 'obsess-cms-dev',
+	dev: 'obsess-cms-beta',
 	beta: 'obsess-cms-beta',
 	prod: 'obsess-cms-prod',
 });
