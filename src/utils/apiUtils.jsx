@@ -1,7 +1,8 @@
+import config from 'config';
 export const S3Bucket = Object.freeze({
-	DEV: 'obsess-cms-dev',
-	BETA: 'obsess-cms-beta',
-	PROD: 'obsess-cms-prod',
+	development: 'obsess-cms-dev',
+	beta: 'obsess-cms-beta',
+	prod: 'obsess-cms-prod',
 });
 
 const UrlOriginEnum = Object.freeze({
@@ -16,7 +17,7 @@ const OriginUrlPrefixDict = {
 };
 
 export function getCurrentBucket() {
-	return S3Bucket.BETA;
+	return S3Bucket[config.ENV];
 }
 
 export function formURL(urlObject) {

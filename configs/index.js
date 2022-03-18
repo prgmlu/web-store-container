@@ -1,15 +1,16 @@
 const devConfig = require('./config.development.json');
 const betaConfig = require('./config.beta.json');
 const prodConfig = require('./config.production.json');
+const storeConfig = require('./config.store.json');
 
 function loadConfig(env) {
 	if (env === 'production') {
-		return prodConfig;
+		return { ...prodConfig, ...storeConfig };
 	}
 	if (env === 'beta') {
-		return betaConfig;
+		return { ...betaConfig, ...storeConfig };
 	}
-	return devConfig;
+	return { ...devConfig, ...storeConfig };
 }
 
 module.exports = { loadConfig };

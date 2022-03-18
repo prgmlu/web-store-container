@@ -7,7 +7,7 @@
 		"> 0.25%, not dead"
 	],
 	"scripts": {
-		"start": "webpack-dev-server --config ./webpack/webpack.config.js --env buildEnv=development",
+		"start": "BUILD_ENV=production webpack-dev-server --config ./webpack/webpack.config.js",
 		"build": "webpack --config webpack/webpack.config.js",
 		"build-dev": "BUILD_ENV=development npm run build",
 		"build-beta": "BUILD_ENV=beta npm run build",
@@ -50,6 +50,7 @@
 		"webpack-dev-server": "^4.6.0"
 	},
 	"dependencies": {
+		"@fvilers/disable-react-devtools": "^1.2.1",
 		"axios": "^0.24.0",
 		"bootstrap": "^5.1.3",
 		"prop-types": "^15.7.2",

@@ -30,6 +30,8 @@ const getPublicPath = (env) => {
 module.exports = (options) => {
 	const { WEBPACK_SERVE } = options;
 	const { BUILD_ENV } = process.env;
+	const envConfig = loadConfig(BUILD_ENV);
+
 	const config = {
 		entry: './src/index.jsx',
 		mode: getMode(BUILD_ENV),
@@ -66,35 +68,34 @@ module.exports = (options) => {
 		},
 	};
 
-	config.optimization = {
-		runtimeChunk: 'single',
-		splitChunks: {
-			chunks: 'all',
-			maxInitialRequests: Infinity,
-			minSize: 0,
-			cacheGroups: {
-				reactVendor: {
-					test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-					name: 'vendor_react',
-				},
-				utilityVendor: {
-					test: /[\\/]node_modules[\\/](axios|react-redux|redux)[\\/]/,
-					name: 'vendor_utility',
-				},
-				bootstrapVendor: {
-					test: /[\\/]node_modules[\\/](react-bootstrap|bootstrap)[\\/]/,
-					name: 'vendor_bootstrap',
-				},
-			},
-		},
-	};
+	// config.optimization = {
+	// 	runtimeChunk: 'single',
+	// 	splitChunks: {
+	// 		chunks: 'all',
+	// 		maxInitialRequests: Infinity,
+	// 		minSize: 0,
+	// 		cacheGroups: {
+	// 			reactVendor: {
+	// 				test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+	// 				name: 'vendor_react',
+	// 			},
+	// 			utilityVendor: {
+	// 				test: /[\\/]node_modules[\\/](axios|react-redux|redux)[\\/]/,
+	// 				name: 'vendor_utility',
+	// 			},
+	// 			bootstrapVendor: {
+	// 				test: /[\\/]node_modules[\\/](react-bootstrap|bootstrap)[\\/]/,
+	// 				name: 'vendor_bootstrap',
+	// 			},
+	// 		},
+	// 	},
+	// };
 
 	config.plugins.push(
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene:
-					'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
+				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`,
 				// 'threejs_scene@http://localhost:4000/remoteEntry.js'
 			},
 			shared: {
@@ -131,7 +132,7 @@ module.exports = (options) => {
 	}
 
 	config.externals = {
-		config: JSON.stringify(loadConfig('development')),
+		config: JSON.stringify(envConfig),
 	};
 
 	return config;
