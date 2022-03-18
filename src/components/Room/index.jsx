@@ -9,7 +9,10 @@ import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
 import { setModalProps } from '../../redux_stores/modalsReducer/actions';
-import { setNavMarkerCount, resetCurrentAccessibilityNavIdx } from '../../redux_stores/accessibilityReducer/actions';
+import {
+	setNavMarkerCount,
+	resetCurrentAccessibilityNavIdx,
+} from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
 
 const Room = ({ sceneData }) => {
@@ -35,14 +38,17 @@ const Room = ({ sceneData }) => {
 						.filter((item) => 'cube_map_dir' in item)
 						.map((item) => formURL(item.cube_map_dir)),
 				);
-				const navMarkerCount = res.filter(item => item.type === 'NavMarker' && item.props.hide === false).length;
-				dispatch(setNavMarkerCount(navMarkerCount))
+				const navMarkerCount = res.filter(
+					(item) =>
+						item.type === 'NavMarker' && item.props.hide === false,
+				).length;
+				dispatch(setNavMarkerCount(navMarkerCount));
 			})
 			.catch(() => {
 				setRoomObjects([]);
 				setLinkedScenes([]);
 			});
-		dispatch(resetCurrentAccessibilityNavIdx())
+		dispatch(resetCurrentAccessibilityNavIdx());
 	}, [sceneData.id]);
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
@@ -122,11 +128,11 @@ const Room = ({ sceneData }) => {
 
 	const onEnterKeyToSelectNavMarker = (e, marker, isMarkerActive) => {
 		if (e.key === 'Enter' && marker && isMarkerActive) {
-			e.preventDefault()
+			e.preventDefault();
 			const { props } = marker.userData;
 			onNavMarkerClicked(props);
 		}
-	}
+	};
 
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.

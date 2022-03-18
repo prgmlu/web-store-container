@@ -5,15 +5,38 @@ const path = require('path');
 const { loadConfig } = require('../configs');
 const deps = require('../package.json').dependencies;
 
+const getMode = (env) => {
+	switch (env) {
+		case 'beta':
+			return 'development';
+		case 'production':
+			return 'production';
+		default:
+			return 'development';
+	}
+};
+
+const getPublicPath = (env) => {
+	switch (env) {
+		case 'beta':
+			return process.env.MODULES_PATH;
+		case 'production':
+			return process.env.MODULES_PATH;
+		default:
+			return 'http://localhost:3000/';
+	}
+};
+
 module.exports = (options) => {
-	const { WEBPACK_SERVE, buildEnv } = options;
+	const { WEBPACK_SERVE } = options;
+	const { BUILD_ENV } = process.env;
 	const config = {
 		entry: './src/index.jsx',
-		mode: 'development',
+		mode: getMode(BUILD_ENV),
 		devtool: 'source-map',
 		output: {
 			path: path.join(__dirname, '../dist'),
-			// publicPath: 'http://localhost:3000/',
+			publicPath: getPublicPath(BUILD_ENV),
 			clean: true,
 		},
 		resolve: {
@@ -71,7 +94,7 @@ module.exports = (options) => {
 			name: 'web-store-container',
 			remotes: {
 				threejs_scene:
-				'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
+					'threejs_scene@https://modules.obsess-vr.com/beta/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js',
 				// 'threejs_scene@http://localhost:4000/remoteEntry.js'
 			},
 			shared: {
@@ -95,10 +118,10 @@ module.exports = (options) => {
 		template: './public/index.html',
 	};
 
-	webpackPluginOptions.storeId = loadConfig(buildEnv).STORE_ID;
-	config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
-
 	if (WEBPACK_SERVE) {
+		webpackPluginOptions.storeId = loadConfig(BUILD_ENV).STORE_ID;
+		config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
+
 		config.devServer = {
 			port: 3000,
 			historyApiFallback: true,

@@ -10,7 +10,7 @@ COPY . .
 ARG BUILD_ENV=production
 ARG MODULE_PATH
 
-RUN npm run build-ci
+RUN npm run build
 
 FROM alpine:3.7
 

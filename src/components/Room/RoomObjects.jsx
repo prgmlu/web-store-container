@@ -50,15 +50,21 @@ const RoomObjects = ({ roomObjects, ...props }) => {
 						<NavMarker
 							item={item}
 							key={item._id.$oid}
-							navMarkerIdx={isNavMarkerVisible ? navMarkerStartIdx : undefined}
+							navMarkerIdx={
+								isNavMarkerVisible
+									? navMarkerStartIdx
+									: undefined
+							}
 							{...props}
 						/>
 					);
 				}
-				return <HotspotMarker item={item} {...props} key={item._id.$oid} />;
+				return (
+					<HotspotMarker item={item} {...props} key={item._id.$oid} />
+				);
 			})}
 		</>
-	)
+	);
 };
 
 RoomObjects.propTypes = {

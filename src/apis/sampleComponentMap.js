@@ -574,12 +574,11 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-chat/main/remoteEntry.js`,
-								//url: `http://localhost:3012/remoteEntry.js`,
+								// url: `http://localhost:3012/remoteEntry.js`,
 								scope: 'store_chat',
 								module: './StoreChat',
 							},
-							styling: {
-							},
+							styling: {},
 						},
 					],
 				},
