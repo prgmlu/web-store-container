@@ -1158,7 +1158,7 @@ const componentConfig = {
 			},
 		],
 	},
-	'6226937877a42068b85ce8cc': {
+	'62268e6fb452e0eb474fd20c': {
 		modules: {
 			getProductData: {
 				remoteConfig: {
