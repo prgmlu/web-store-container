@@ -17,7 +17,7 @@ before_script:
   stage: build
   script:
     - BUILD_IMAGE=$CI_REGISTRY_IMAGE/${BUILD_ENV}:${CI_COMMIT_SHORT_SHA}
-    - MODULE_PATH=${CURRENT_ENV}/${CI_PROJECT_PATH}/${CI_COMMIT_REF_NAME}
+    - MODULE_PATH=${BUILD_ENV}/${CI_PROJECT_PATH}/${CI_COMMIT_REF_NAME}
     - docker build --build-arg BUILD_ENV=${BUILD_ENV} --build-arg MODULE_PATH=${MODULE_PATH} --compress --rm -f Dockerfile -t $BUILD_IMAGE .
     - docker push $BUILD_IMAGE
 
@@ -26,9 +26,9 @@ before_script:
   stage: deploy
   script:
     - BUILD_IMAGE=$CI_REGISTRY_IMAGE/${BUILD_ENV}:${CI_COMMIT_SHORT_SHA}
-    - MODULE_PATH=${CURRENT_ENV}/${CI_PROJECT_PATH}/${CI_COMMIT_REF_NAME}
+    - MODULE_PATH=${BUILD_ENV}/${CI_PROJECT_PATH}/${CI_COMMIT_REF_NAME}
     - DEPLOY_PATH=${DEPLOY_PATH_BASE}/${MODULE_PATH}
-    - IMAGE_CONTAINER=deploy_${CI_COMMIT_SHORT_SHA}_${CURRENT_ENV}
+    - IMAGE_CONTAINER=deploy_${CI_COMMIT_SHORT_SHA}_${BUILD_ENV}
     - docker create --name $IMAGE_CONTAINER $BUILD_IMAGE
     - mkdir /dist
     - docker cp $IMAGE_CONTAINER:/dist /
