@@ -565,8 +565,8 @@ const componentConfig = {
 						position: 'fixed',
 						left: '0',
 						bottom: '0',
-						height: '500px',
-						width: '500px',
+						height: '50%',
+						width: '30%',
 					},
 					components: [
 						{
