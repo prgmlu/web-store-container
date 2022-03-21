@@ -773,6 +773,7 @@ const componentConfig = {
 					defaultOpen: false,
 					centered: true,
 					animation: true,
+					size: 'sm',
 				},
 			},
 			{
