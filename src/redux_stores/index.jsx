@@ -10,6 +10,7 @@ import storeDataReducer from './storeDataReducer';
 import functionsReducer from './functionsReducer';
 import analyticsReducer from './analyticsReducer';
 import accessibilityReducer from './accessibilityReducer';
+import defaultIconsReducer from './defaultIconsReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -19,6 +20,7 @@ const staticReducers = {
 	shareableFunctions: functionsReducer,
 	analytics: analyticsReducer,
 	accessibility: accessibilityReducer,
+	defaultIcons: defaultIconsReducer,
 };
 
 const createReducer = (asyncReducers) =>

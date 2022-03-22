@@ -63,6 +63,7 @@
 		"redux": "^4.1.2",
 		"redux-devtools-extension": "^2.13.9",
 		"redux-thunk": "^2.4.1",
+		"supports-webp": "^2.0.1",
 		"universal-cookie": "^4.0.4",
 		"uuid": "^8.3.2"
 	},

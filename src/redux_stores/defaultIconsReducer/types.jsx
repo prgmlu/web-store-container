@@ -1,0 +1,1 @@
+export const SET_DEFAULT_ICONS = 'SET_DEFAULT_ICONS';

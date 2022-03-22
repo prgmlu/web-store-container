@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
-import Scene from 'threejs_scene/lib';
+import Scene from 'threejs_scene/Scene';
 import { useNavigate } from 'react-router';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
@@ -15,7 +15,7 @@ import {
 } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
 
-const Room = ({ sceneData }) => {
+const Room = ({ sceneData, webpSupport }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
@@ -24,7 +24,6 @@ const Room = ({ sceneData }) => {
 	const sendAnalyticsEvent = useSelector(
 		(state) => state.shareableFunctions.sendAnalyticsEvent,
 	);
-	console.log('=> sceneData', sceneData);
 	const allReduxStoreData = useSelector((data) => data);
 
 	useEffect(() => {
@@ -76,7 +75,7 @@ const Room = ({ sceneData }) => {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
 		imageIntegrity: getBustKey(sceneData),
-		useWebp: true,
+		useWebp: webpSupport,
 	};
 
 	const onNavMarkerClicked = (data) => {
@@ -157,7 +156,7 @@ const Room = ({ sceneData }) => {
 
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
-	return (
+	return sceneData ? (
 		<Scene
 			sceneId={sceneData.id}
 			bgConf={bgConfig}
@@ -175,10 +174,15 @@ const Room = ({ sceneData }) => {
 				onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}
 			/>
 		</Scene>
-	);
+	) : null;
 };
 
 Room.propTypes = {
 	sceneData: PropTypes.object.isRequired,
+	webpSupport: PropTypes.bool,
+};
+
+Room.defaultProps = {
+	webpSupport: true,
 };
 export default Room;

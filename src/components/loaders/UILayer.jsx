@@ -7,13 +7,16 @@ import OverlayComponents from '../OverlayComponets';
 import RoomRoutes from '../RoomRoutes';
 import FontsLoader from './FontsLoader';
 
-const UILayer = () => (
-	<>
-		<RoomRoutes />
-		<OverlayComponents />
-		<ModalLoader />
-		<FontsLoader />
-	</>
-);
+const UILayer = () => {
+	console.log('=> UILayer');
+	return (
+		<>
+			<RoomRoutes />
+			<OverlayComponents />
+			<ModalLoader />
+			<FontsLoader />
+		</>
+	);
+};
 
 export default UILayer;

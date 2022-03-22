@@ -5,6 +5,7 @@ import { setScenes } from '../redux_stores/scenesReducer/actions';
 import componentConfig from './sampleComponentMap';
 import { setComponentConfig } from '../redux_stores/componentConfigReducer/actions';
 import { setStoreData } from '../redux_stores/storeDataReducer/actions';
+import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
 
 export const getStoreData = (storeId) => (dispatch) =>
 	axiosApi
@@ -28,3 +29,9 @@ export const getSceneObjects = (sceneId) =>
 
 export const getComponentConfig = (storeId) => (dispatch) =>
 	dispatch(setComponentConfig(componentConfig[storeId]));
+
+export const getDefaultIcons = () => (dispatch) =>
+	axiosApi
+		.get(`v1/default_icons`)
+		.then((res) => dispatch(setDefaultIcons(res.data)))
+		.catch((err) => Promise.reject(err.response));

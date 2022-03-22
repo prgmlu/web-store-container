@@ -15,6 +15,7 @@ const loadComponent = async (scope, module) => {
 	// eslint-disable-next-line camelcase,no-undef
 	await container.init(__webpack_share_scopes__.default);
 	const factory = await window[scope].get(module);
+	// if (scope === 'shop_with_friends') {
 	return factory();
 };
 
@@ -77,10 +78,12 @@ const withDynamicScript = (remoteConfig, fallBackComponent) => {
 	}, [url]);
 
 	if (!ready) {
+		console.log('=> !ready');
 		return () => fallBackComponent;
 	}
 
 	if (failed) {
+		console.log('=> failed');
 		return () => fallBackComponent;
 	}
 	return React.lazy(() => loadComponent(scope, module));

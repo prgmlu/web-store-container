@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Room from './Room';
-import { getAllScenes, getStoreData } from '../apis/webStoreAPI';
+import {
+	getAllScenes,
+	getDefaultIcons,
+	getStoreData,
+} from '../apis/webStoreAPI';
+import supportsWebP from 'supports-webp';
 
 const RoomRoutes = () => {
 	const dispatch = useDispatch();
@@ -11,14 +16,21 @@ const RoomRoutes = () => {
 	const storeId = useSelector((state) => state?.storeData?.id);
 
 	const scenes = useSelector((state) => state?.scenes || {});
-	const storeData = useSelector((state) => state?.storeData);
+	const storeData = useSelector((state) => state?.storeData || {});
+	const [webpSupport, setWebpSupport] = useState(true);
+
+	console.log(
+		'=> RoomRoutes',
+		Object.keys(scenes).length,
+		Object.keys(storeData).length,
+	);
 
 	useEffect(() => {
-		if (storeId) {
-			dispatch(getStoreData(storeId));
-			dispatch(getAllScenes(storeId));
-		}
-	}, [storeId]);
+		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
+		dispatch(getStoreData(storeId));
+		dispatch(getDefaultIcons());
+		dispatch(getAllScenes(storeId));
+	}, []);
 
 	const getRoutes = () => {
 		if (Object.keys(scenes).length === 0) {
@@ -30,7 +42,9 @@ const RoomRoutes = () => {
 				<Route
 					key={scene.id}
 					path={scene.name}
-					element={<Room sceneData={scene} />}
+					element={
+						<Room sceneData={scene} webpSupport={webpSupport} />
+					}
 				/>
 			);
 		});
@@ -39,9 +53,14 @@ const RoomRoutes = () => {
 		if (firstScene) {
 			routes.push(
 				<Route
-					key="root"
+					key="initial"
 					path="/"
-					element={<Room sceneData={firstScene} />}
+					element={
+						<Room
+							sceneData={firstScene}
+							webpSupport={webpSupport}
+						/>
+					}
 				/>,
 			);
 		}

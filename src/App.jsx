@@ -9,7 +9,6 @@ import store from './redux_stores';
 const cookies = new Cookies();
 const devCookie = cookies.get('obsess-dev-cookie');
 
-console.log('=>', process.env.NODE_ENV);
 if (process.env.NODE_ENV === 'production') {
 	disableReactDevTools();
 }
