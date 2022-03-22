@@ -844,6 +844,22 @@ const componentConfig = {
 					size: 'lg',
 				},
 			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/event-countdown-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3022/remoteEntry.js`,
+					scope: 'event_countdown_modal',
+					module: './EventCountdownModal',
+				},
+				modalConfig: {
+					selector: 'masterclass_schedule_modal',
+					defaultOpen: false,
+					centered: true,
+					animation: true,
+					size: 'sm'
+				},
+			},
 		],
 		analyticsModules: [
 			{
