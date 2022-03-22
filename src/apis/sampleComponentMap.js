@@ -646,6 +646,15 @@ const componentConfig = {
 					},
 					components: [
 						{
+							name: 'shop_with_friends',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
+								scope: 'shop_with_friends',
+								module: './ShopWithFriends',
+							},
+						},
+						{
 							name: 'powered_by_obsess',
 							kind: 'component',
 							remoteConfig: {
@@ -654,16 +663,6 @@ const componentConfig = {
 								module: './PoweredByObsess',
 							},
 							textStyling: { color: 'white', fontSize: '0.9rem' },
-						},
-						{
-							name: 'shop_with_friends',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
-								//url: `http://localhost:30014/remoteEntry.js`,
-								scope: 'shop_with_friends',
-								module: './ShopWithFriends',
-							},
 						},
 					],
 				},
@@ -857,7 +856,7 @@ const componentConfig = {
 					defaultOpen: false,
 					centered: true,
 					animation: true,
-					size: 'sm'
+					size: 'sm',
 				},
 			},
 		],
