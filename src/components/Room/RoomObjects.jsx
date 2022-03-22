@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hotspot from 'threejs_scene/Hotspot';
+import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import config from 'config';
 import { useSelector } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
@@ -89,12 +90,47 @@ HotspotMarker.propTypes = {
 	item: PropTypes.object.isRequired,
 };
 
+const animatedGlbConfigs = [
+	{
+		id: 0,
+		type: 'cream',
+		pos: [-0.206, 0, 0.235],
+		scale: [1, 1, 1],
+		outerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/MagicCream_anim_v004.glb',
+		innerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/MagicCream_anim_v008.glb',
+	},
+	{
+		id: 1,
+		type: 'lashes',
+		pos: [-0.05, 0, 0.235],
+		scale: [1, 1, 1],
+		outerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
+		innerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
+	},
+	{
+		id: 2,
+		type: 'matte',
+		pos: [0.05, 0, 0.235],
+		scale: [1, 1, 1],
+		outerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/MatteRevolution_anim_v003.glb',
+		innerObjectUrl:
+			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
+	},
+];
+
 const RoomObjects = ({ roomObjects, ...props }) => {
 	if (roomObjects.length <= 0) return null;
 	let navMarkerStartIdx = -1;
 
 	return (
 		<>
+			<AnimatedGLB {...props} />
+
 			{roomObjects.map((item) => {
 				if (item.type === 'NavMarker') {
 					const isNavMarkerVisible = !item.props.hide;

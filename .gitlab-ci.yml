@@ -41,6 +41,25 @@ before_script:
     - docker rmi $BUILD_IMAGE
 
 
+
+build:feature:
+  <<: *build-template
+  variables:
+    BUILD_ENV: feature
+  only:
+    - /^feature\/.*$/
+
+
+deploy:feature:
+  <<: *deploy-template
+  variables:
+    BUILD_ENV: feature
+  when: on_success
+  needs:
+    - build:feature
+  only:
+    - /^feature\/.*$/
+
 build:beta:
   <<: *build-template
   variables:

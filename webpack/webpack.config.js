@@ -11,6 +11,8 @@ const getMode = (env) => {
 			return 'development';
 		case 'production':
 			return 'production';
+		case 'client':
+			return 'production';
 		default:
 			return 'development';
 	}
@@ -18,9 +20,13 @@ const getMode = (env) => {
 
 const getPublicPath = (env) => {
 	switch (env) {
+		case 'feature':
+			return process.env.MODULES_PATH;
 		case 'beta':
 			return process.env.MODULES_PATH;
 		case 'production':
+			return process.env.MODULES_PATH;
+		case 'client':
 			return process.env.MODULES_PATH;
 		default:
 			return 'http://localhost:3000/';
@@ -95,7 +101,7 @@ module.exports = (options) => {
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`,
+				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/animated-glb/remoteEntry.js`,
 				// threejs_scene:
 				// 	'threejs_scene@http://localhost:4000/remoteEntry.js',
 			},
@@ -120,10 +126,12 @@ module.exports = (options) => {
 		template: './public/index.html',
 	};
 
-	if (WEBPACK_SERVE) {
+	if (WEBPACK_SERVE || BUILD_ENV === 'feature') {
 		webpackPluginOptions.storeId = loadConfig(BUILD_ENV).STORE_ID;
 		config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
+	}
 
+	if (WEBPACK_SERVE) {
 		config.devServer = {
 			port: 3000,
 			historyApiFallback: true,

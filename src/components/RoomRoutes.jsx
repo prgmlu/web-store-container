@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
+import supportsWebP from 'supports-webp';
 
 import Room from './Room';
-import {
-	getAllScenes,
-	getDefaultIcons,
-	getStoreData,
-} from '../apis/webStoreAPI';
-import supportsWebP from 'supports-webp';
+import { getAllScenes } from '../apis/webStoreAPI';
 
 const RoomRoutes = () => {
 	const dispatch = useDispatch();
@@ -27,8 +23,6 @@ const RoomRoutes = () => {
 
 	useEffect(() => {
 		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
-		dispatch(getStoreData(storeId));
-		dispatch(getDefaultIcons());
 		dispatch(getAllScenes(storeId));
 	}, []);
 
