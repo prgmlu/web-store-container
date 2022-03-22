@@ -565,29 +565,6 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						left: '0',
-						bottom: '0',
-						height: '50%',
-						width: '30%',
-					},
-					components: [
-						{
-							name: 'store_chat',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-chat/main/remoteEntry.js`,
-								// url: `http://localhost:3012/remoteEntry.js`,
-								scope: 'store_chat',
-								module: './StoreChat',
-							},
-							styling: {},
-						},
-					],
-				},
-				{
-					kind: 'container',
-					containerStyling: {
-						position: 'fixed',
 						right: 0,
 						top: 0,
 						display: 'flex',
@@ -669,36 +646,6 @@ const componentConfig = {
 					},
 					components: [
 						{
-							name: 'stream_mode',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
-								// url: `http://localhost:30013/remoteEntry.js`,
-								scope: 'stream_mode',
-								module: './ProducerControlPanel',
-							},
-						},
-						{
-							name: 'stream_mode',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
-								// url: `http://localhost:30013/remoteEntry.js`,
-								scope: 'stream_mode',
-								module: './AudiencePanel',
-							},
-						},
-						{
-							name: 'stream_mode',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
-								// url: `http://localhost:30013/remoteEntry.js`,
-								scope: 'stream_mode',
-								module: './StreamMode',
-							},
-						},
-						{
 							name: 'powered_by_obsess',
 							kind: 'component',
 							remoteConfig: {
@@ -707,6 +654,16 @@ const componentConfig = {
 								module: './PoweredByObsess',
 							},
 							textStyling: { color: 'white', fontSize: '0.9rem' },
+						},
+						{
+							name: 'shop_with_friends',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
+								//url: `http://localhost:30014/remoteEntry.js`,
+								scope: 'shop_with_friends',
+								module: './ShopWithFriends',
+							},
 						},
 					],
 				},
