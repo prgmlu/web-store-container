@@ -11,10 +11,12 @@ const getNavMarkerImage = (type) => {
 		stairs_down: 'stairs-down-black.svg',
 		up: 'arrow-black.svg',
 	};
+
 	let arrowKey = 'arrow.svg';
 	if (type in arrowsMap) {
 		arrowKey = arrowsMap[type];
 	}
+
 	return `${config.CDN_BASE_URL}/${arrowKey}`;
 };
 
@@ -56,23 +58,9 @@ const HotspotMarker = ({ item, ...props }) => {
 		let url = '';
 		if (typeKey) {
 			const hotspotIconSearchKey = stylingIcons[typeKey].name;
-			// console.log(
-			// 	'=> hotspotIconSearchKey',
-			// 	hotspotIconSearchKey,
-			// 	defaultIcons,
-			// );
-			// console.log('=> hotspotIconSearchKey', hotspotIconSearchKey);
 			if (hotspotIconSearchKey in storeIconFiles) {
-				// console.log(
-				// 	'=> hotspotIconSearchKey in storeIconFiles',
-				// 	hotspotIconSearchKey in storeIconFiles,
-				// );
 				url = formURL(storeIconFiles[hotspotIconSearchKey].url);
 			} else if (hotspotIconSearchKey in defaultIcons) {
-				// console.log(
-				// 	'=> hotspotIconSearchKey in defaultIcons',
-				// 	hotspotIconSearchKey in defaultIcons,
-				// );
 				url = formURL(defaultIcons[hotspotIconSearchKey]);
 			}
 		}
@@ -86,13 +74,13 @@ const HotspotMarker = ({ item, ...props }) => {
 			type="hotspot"
 			collider_transform={item.collider_transform}
 			transform={item.transform}
-			iconConfig={{ dotColor: 'black' }}
+			iconConfig={{ primaryColor: 'black', secondaryColor: 'blue' }}
 			userData={{
 				props:
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 				type: item.type,
 			}}
-			imageURL={getHotspotImage()}
+			// imageURL={getHotspotImage()}
 		/>
 	);
 };
@@ -110,7 +98,6 @@ const RoomObjects = ({ roomObjects, ...props }) => {
 			{roomObjects.map((item) => {
 				if (item.type === 'NavMarker') {
 					const isNavMarkerVisible = !item.props.hide;
-					console.log('=> NavMarker', isNavMarkerVisible);
 					if (isNavMarkerVisible) navMarkerStartIdx += 1;
 					return (
 						<NavMarker
