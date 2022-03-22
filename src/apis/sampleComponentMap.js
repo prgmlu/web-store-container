@@ -672,8 +672,8 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js`,
-					// url: `http://localhost:3002/remoteEntry.js`,
+					// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js`,
+					url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
 					module: './ProductModal',
 				},
@@ -846,7 +846,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/event-countdown-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/event-countdown-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3022/remoteEntry.js`,
 					scope: 'event_countdown_modal',
 					module: './EventCountdownModal',
