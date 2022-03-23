@@ -565,6 +565,30 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
+						left: '0',
+						bottom: '0',
+						height: '500px',
+						width: '500px',
+					},
+					components: [
+						{
+							name: 'store_chat',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-chat/main/remoteEntry.js`,
+								//url: `http://localhost:3012/remoteEntry.js`,
+								scope: 'store_chat',
+								module: './StoreChat',
+							},
+							styling: {
+							},
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
 						right: 0,
 						top: 0,
 						display: 'flex',
