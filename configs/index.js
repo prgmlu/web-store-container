@@ -1,16 +1,20 @@
 const devConfig = require('./config.development.json');
 const betaConfig = require('./config.beta.json');
 const prodConfig = require('./config.production.json');
+const clientConfig = require('./config.client.json');
 const storeConfig = require('./config.store.json');
 
 function loadConfig(env) {
+	let config = devConfig;
+	if (env === 'client') {
+		config = clientConfig;
+	}
 	if (env === 'production') {
-		return { ...prodConfig, ...storeConfig };
+		config = prodConfig;
+	} else if (env === 'beta') {
+		config = betaConfig;
 	}
-	if (env === 'beta') {
-		return { ...betaConfig, ...storeConfig };
-	}
-	return { ...devConfig, ...storeConfig };
+	return { ...config, ...storeConfig };
 }
 
 module.exports = { loadConfig };

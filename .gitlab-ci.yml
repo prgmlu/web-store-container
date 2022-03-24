@@ -76,3 +76,21 @@ deploy:production:
     - build:production
   only:
     - main
+
+build:client:
+  <<: *build-template
+  variables:
+    BUILD_ENV: client
+  only:
+    - main
+
+
+deploy:client:
+  <<: *deploy-template
+  variables:
+    BUILD_ENV: client
+  when: manual
+  needs:
+    - build:client
+  only:
+    - main

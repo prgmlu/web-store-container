@@ -3,6 +3,7 @@ export const S3Bucket = Object.freeze({
 	dev: 'obsess-cms-beta',
 	beta: 'obsess-cms-beta',
 	prod: 'obsess-cms-prod',
+	client: 'obsess-cms-prod',
 });
 
 const UrlOriginEnum = Object.freeze({

@@ -6,25 +6,18 @@ const { loadConfig } = require('../configs');
 const deps = require('../package.json').dependencies;
 
 const getMode = (env) => {
-	switch (env) {
-		case 'beta':
-			return 'development';
-		case 'production':
-			return 'production';
-		default:
-			return 'development';
+	const prodEnvs = ['production', 'client'];
+	if (prodEnvs.includes(env)) {
+		return 'production';
 	}
+	return 'development';
 };
 
-const getPublicPath = (env) => {
-	switch (env) {
-		case 'beta':
-			return process.env.MODULES_PATH;
-		case 'production':
-			return process.env.MODULES_PATH;
-		default:
-			return 'http://localhost:3000/';
+const getPublicPath = (webpackServe) => {
+	if (webpackServe) {
+		return 'http://localhost:3000/';
 	}
+	return process.env.MODULES_PATH;
 };
 
 module.exports = (options) => {
@@ -38,7 +31,7 @@ module.exports = (options) => {
 		devtool: 'source-map',
 		output: {
 			path: path.join(__dirname, '../dist'),
-			publicPath: getPublicPath(BUILD_ENV),
+			publicPath: getPublicPath(WEBPACK_SERVE),
 			clean: true,
 		},
 		resolve: {
