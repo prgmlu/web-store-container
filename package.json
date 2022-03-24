@@ -7,7 +7,7 @@
 		"> 0.25%, not dead"
 	],
 	"scripts": {
-		"start": "BUILD_ENV=client webpack-dev-server --config ./webpack/webpack.config.js",
+		"start": "BUILD_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
 		"build": "webpack --config webpack/webpack.config.js",
 		"build-dev": "BUILD_ENV=development npm run build",
 		"build-beta": "BUILD_ENV=beta npm run build",
