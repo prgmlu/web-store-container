@@ -18,12 +18,7 @@ const RoomRoutes = () => {
 	const scenes = useSelector((state) => state?.scenes || {});
 	const storeData = useSelector((state) => state?.storeData || {});
 	const [webpSupport, setWebpSupport] = useState(true);
-
-	console.log(
-		'=> RoomRoutes',
-		Object.keys(scenes).length,
-		Object.keys(storeData).length,
-	);
+	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
 
 	useEffect(() => {
 		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
@@ -67,7 +62,7 @@ const RoomRoutes = () => {
 		return routes;
 	};
 
-	return <Routes>{getRoutes()}</Routes>;
+	return renderScene ? <Routes>{getRoutes()}</Routes> : null;
 };
 
 export default RoomRoutes;
