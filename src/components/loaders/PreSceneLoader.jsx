@@ -12,7 +12,6 @@ const PreScene = () => {
 	);
 	const dispatch = useDispatch();
 	useEffect(() => {
-		console.log('=> preSceneComponent', preSceneComponent);
 		if (preSceneComponent === null) {
 			dispatch(setPreScreenVisibility(false));
 			dispatch(setSceneVisibility(true));

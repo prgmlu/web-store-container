@@ -8,11 +8,12 @@ const OverlayComponents = () => {
 		(state) => state?.componentConfig?.overlayComponents || {},
 	);
 
+	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
 	const { components } = overlayComponents;
 
 	return (
 		<div className="overlayComponents">
-			<DynamicContainer components={components} />
+			{renderScene && <DynamicContainer components={components} />}
 			<PreSceneLoader />
 		</div>
 	);
