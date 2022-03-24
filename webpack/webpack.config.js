@@ -2,11 +2,14 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const { loadConfig } = require('../configs');
+
 const deps = require('../package.json').dependencies;
 
+const prodEnvs = ['production', 'client'];
+
 const getMode = (env) => {
-	const prodEnvs = ['production', 'client'];
 	if (prodEnvs.includes(env)) {
 		return 'production';
 	}
@@ -112,6 +115,21 @@ module.exports = (options) => {
 	const webpackPluginOptions = {
 		template: './public/index.html',
 	};
+
+	if (prodEnvs.includes(BUILD_ENV)) {
+		config.optimization = {
+			minimizer: [
+				new TerserPlugin({
+					terserOptions: {
+						compress: {
+							drop_console: true,
+						},
+						mangle: true,
+					},
+				}),
+			],
+		};
+	}
 
 	if (WEBPACK_SERVE) {
 		webpackPluginOptions.storeId = loadConfig(BUILD_ENV).STORE_ID;
