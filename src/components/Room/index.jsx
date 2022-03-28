@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { withLocalize } from 'react-localize-redux';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
@@ -14,8 +15,9 @@ import {
 	resetCurrentAccessibilityNavIdx,
 } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
+import { getLocalizedPath } from '../../utils/urlHelpers';
 
-const Room = ({ sceneData, webpSupport }) => {
+const Room = ({ sceneData, webpSupport, activeLanguage }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
@@ -27,7 +29,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const allReduxStoreData = useSelector((data) => data);
 
 	useEffect(() => {
-		getSceneObjects(sceneData.id)
+		getSceneObjects(sceneData.id, activeLanguage?.code)
 			.then((res) => {
 				setRoomObjects(res);
 				setLinkedScenes(
@@ -80,7 +82,13 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onNavMarkerClicked = (data) => {
 		setRoomObjects([]);
-		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
+
+		navigate(
+			getLocalizedPath(
+				activeLanguage?.code,
+				scenes[data.linked_room_id.$oid].name,
+			),
+		);
 		sendAnalyticsEvent({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',
@@ -185,4 +193,4 @@ Room.propTypes = {
 Room.defaultProps = {
 	webpSupport: true,
 };
-export default Room;
+export default withLocalize(Room);

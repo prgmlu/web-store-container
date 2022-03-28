@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 /**  Reducers * */
+import { localizeReducer } from 'react-localize-redux';
 import scenesReducer from './scenesReducer';
 import modalReducer from './modalsReducer';
 import componentConfigReducer from './componentConfigReducer';
@@ -23,6 +24,7 @@ const staticReducers = {
 	accessibility: accessibilityReducer,
 	defaultIcons: defaultIconsReducer,
 	sceneLoad: sceneLoadReducer,
+	localize: localizeReducer,
 };
 
 const createReducer = (asyncReducers) =>

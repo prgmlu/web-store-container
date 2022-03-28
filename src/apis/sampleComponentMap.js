@@ -383,7 +383,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -398,7 +398,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -414,7 +414,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -431,7 +431,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -446,7 +446,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -462,7 +462,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -478,7 +478,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -494,7 +494,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -680,7 +680,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -695,7 +695,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -711,7 +711,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'gem_game',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -727,7 +727,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'wall_of_fame_game',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -743,7 +743,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -759,7 +759,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -774,7 +774,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -790,7 +790,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -806,7 +806,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -822,7 +822,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -838,7 +838,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -854,7 +854,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'masterclass_schedule_modal',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -876,8 +876,8 @@ const componentConfig = {
 		],
 		preSceneComponent: {
 			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
-				// url: `http://localhost:3006/remoteEntry.js`,
+				// url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
+				url: `http://localhost:3006/remoteEntry.js`,
 				scope: 'entrance_video',
 				module: './EntranceVideo',
 			},
@@ -994,7 +994,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1009,7 +1009,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1025,7 +1025,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1042,7 +1042,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1057,7 +1057,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -1073,7 +1073,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1089,7 +1089,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -1105,7 +1105,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1121,7 +1121,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1222,7 +1222,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1237,7 +1237,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1253,7 +1253,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1270,7 +1270,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1285,7 +1285,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -1301,7 +1301,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1317,7 +1317,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -1333,7 +1333,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1349,7 +1349,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',

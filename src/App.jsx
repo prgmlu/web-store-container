@@ -5,6 +5,7 @@ import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import Store from './components/Store';
 import PasswordPage from './PasswordPage';
 import store from './redux_stores';
+import { LocalizeProvider } from 'react-localize-redux';
 
 const cookies = new Cookies();
 const devCookie = cookies.get('obsess-dev-cookie');
@@ -16,7 +17,9 @@ if (process.env.NODE_ENV === 'production') {
 const App = () =>
 	devCookie ? (
 		<Provider store={store}>
-			<Store store={store} />
+			<LocalizeProvider store={store}>
+				<Store store={store} />
+			</LocalizeProvider>
 		</Provider>
 	) : (
 		<PasswordPage />

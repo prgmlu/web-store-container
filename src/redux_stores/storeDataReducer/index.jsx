@@ -1,8 +1,10 @@
 import { SET_STORE_DATA } from './types';
+import { getStoreIdFromHtml } from '../../utils/htmlHelpers';
 
 const initialState = {
-	id: document.getElementById('storeId').getAttribute('value'),
+	id: getStoreIdFromHtml(),
 	scenes: [],
+	loaded: false,
 };
 
 export default function storeDataReducer(state = initialState, action = {}) {

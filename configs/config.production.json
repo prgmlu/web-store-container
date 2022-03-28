@@ -2,5 +2,7 @@
 	"API_URL": "https://api.obsess-vr.com/webstore",
 	"CDN_BASE_URL": "https://cdn.obsess-vr.com",
 	"MODULES_BASE_URL": "https://modules.obsess-vr.com/production",
-	"ENV": "prod"
+	"ENV": "prod",
+	"S3_BUCKET": "obsess-cms-prod"
+
 }

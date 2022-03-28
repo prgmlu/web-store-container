@@ -10,7 +10,14 @@ import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
 export const getStoreData = (storeId) => (dispatch) =>
 	axiosApi
 		.get(`/v1/store-with-id?id=${storeId}`)
-		.then((res) => dispatch(setStoreData(res.data)))
+		.then((res) =>
+			dispatch(
+				setStoreData({
+					...res.data,
+					loaded: true,
+				}),
+			),
+		)
 		.catch((err) => Promise.reject(err.response));
 
 export const getAllScenes = (storeId) => (dispatch) =>
@@ -21,11 +28,23 @@ export const getAllScenes = (storeId) => (dispatch) =>
 		})
 		.catch((err) => Promise.reject(err.response));
 
-export const getSceneObjects = (sceneId) =>
-	axiosApi
-		.get(`/v2/scene/objects?id=${sceneId}`)
+export const getSceneObjects = (sceneId, locale) => {
+	let prefix = `/v2/scene/objects`;
+
+	const requestParams = new URLSearchParams({
+		id: sceneId,
+	});
+
+	if (locale && locale.length > 0) {
+		prefix = `/v2/scene/objects-with-locale`;
+		requestParams.locale = locale;
+	}
+
+	return axiosApi
+		.get(`${prefix}?${requestParams}`)
 		.then((res) => res.data)
 		.catch((err) => Promise.reject(err.response));
+};
 
 export const getComponentConfig = (storeId) => (dispatch) =>
 	dispatch(setComponentConfig(componentConfig[storeId]));

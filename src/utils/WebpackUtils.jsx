@@ -54,7 +54,6 @@ const withDynamicScript = (remoteConfig, fallBackComponent) => {
 	const { url, scope, module } = remoteConfig;
 
 	const onScriptLoaded = () => {
-		console.log('=> scriptLoaded');
 		setReady(true);
 	};
 
