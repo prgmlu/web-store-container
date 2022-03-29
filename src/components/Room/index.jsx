@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withLocalize } from 'react-localize-redux';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
@@ -16,8 +15,9 @@ import {
 } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
 import { getLocalizedPath } from '../../utils/urlHelpers';
+import useLocalize from '../../utils/useLocalize';
 
-const Room = ({ sceneData, webpSupport, activeLanguage }) => {
+const Room = ({ sceneData, webpSupport }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
@@ -27,9 +27,10 @@ const Room = ({ sceneData, webpSupport, activeLanguage }) => {
 		(state) => state.shareableFunctions.sendAnalyticsEvent,
 	);
 	const allReduxStoreData = useSelector((data) => data);
+	const { activeLocale } = useLocalize();
 
 	useEffect(() => {
-		getSceneObjects(sceneData.id, activeLanguage?.code)
+		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				setRoomObjects(res);
 				setLinkedScenes(
@@ -85,7 +86,7 @@ const Room = ({ sceneData, webpSupport, activeLanguage }) => {
 
 		navigate(
 			getLocalizedPath(
-				activeLanguage?.code,
+				activeLocale,
 				scenes[data.linked_room_id.$oid].name,
 			),
 		);
@@ -193,4 +194,4 @@ Room.propTypes = {
 Room.defaultProps = {
 	webpSupport: true,
 };
-export default withLocalize(Room);
+export default Room;

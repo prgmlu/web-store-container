@@ -8,14 +8,17 @@ import RoomRoutes from '../RoomRoutes';
 import FontsLoader from './FontsLoader';
 import PreSceneLoader from './PreSceneLoader';
 
-const UILayer = () => (
-	<>
-		<RoomRoutes />
-		<OverlayComponents />
-		<PreSceneLoader />
-		<ModalLoader />
-		<FontsLoader />
-	</>
-);
+const UILayer = () => {
+	console.log('=> UILayer');
+	return (
+		<>
+			<RoomRoutes />
+			<OverlayComponents />
+			<PreSceneLoader />
+			<ModalLoader />
+			<FontsLoader />
+		</>
+	);
+};
 
 export default UILayer;

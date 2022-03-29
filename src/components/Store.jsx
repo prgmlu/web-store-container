@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
-import { withLocalize } from 'react-localize-redux';
-import { renderToStaticMarkup } from 'react-dom/server';
 
 import {
 	getAllScenes,
@@ -14,12 +12,23 @@ import UILayer from './loaders/UILayer';
 import ModulesLayer from './loaders/ModulesLayer';
 import AnalyticsLayer from './loaders/AnalyticsLayer';
 import { getLocaleFromHtml } from '../utils/htmlHelpers';
+import useLocalize from '../utils/useLocalize';
 
-const LocalizedStore = withLocalize(({ children, ...props }) => {
-	const localesEnabled = useSelector(
-		(state) => state?.storeData?.locales_enabled,
-	);
+const Store = () => {
+	const dispatch = useDispatch();
+	const storeId = useSelector((state) => state?.storeData?.id);
+	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
+	const localize = useLocalize();
+
+	useEffect(() => {
+		dispatch(getComponentConfig(storeId));
+		dispatch(getStoreData(storeId));
+		dispatch(getDefaultIcons());
+		dispatch(getAllScenes(storeId));
+	}, []);
+
 	const locales = useSelector((state) => state.storeData.locales);
+
 	const defaultLocale = useSelector(
 		(state) => state.storeData.default_locale,
 	);
@@ -70,51 +79,26 @@ const LocalizedStore = withLocalize(({ children, ...props }) => {
 		return null;
 	};
 
-	const onMissingTranslation = ({ defaultTranslation }) => {
-		return defaultTranslation;
-	};
-
 	useEffect(() => {
-		if (localesEnabled) {
-			props.initialize({
-				languages: locales.map((item) => ({ code: item })),
-				options: {
-					renderToStaticMarkup,
-					defaultLanguage: defaultLocale,
-					onMissingTranslation,
-				},
-			});
-			const activeLocale = getActiveLocale();
-			if (activeLocale) {
-				props.setActiveLanguage(activeLocale);
-			}
+		if (storeDataLoaded) {
+			dispatch(
+				localize.initialize({
+					locales,
+					defaultLocale,
+					activeLocale: getActiveLocale(),
+					fallBackLocale: defaultLocale,
+				}),
+			);
 		}
-	}, []);
-
-	return children;
-});
-
-const Store = () => {
-	const dispatch = useDispatch();
-	const storeId = useSelector((state) => state?.storeData?.id);
-	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
-
-	useEffect(() => {
-		dispatch(getComponentConfig(storeId));
-		dispatch(getStoreData(storeId));
-		dispatch(getDefaultIcons());
-		dispatch(getAllScenes(storeId));
-	}, []);
+	}, [storeDataLoaded]);
 
 	return (
 		storeDataLoaded && (
-			<LocalizedStore>
-				<Router>
-					<UILayer />
-					<ModulesLayer />
-					<AnalyticsLayer />
-				</Router>
-			</LocalizedStore>
+			<Router>
+				<UILayer />
+				<ModulesLayer />
+				<AnalyticsLayer />
+			</Router>
 		)
 	);
 };

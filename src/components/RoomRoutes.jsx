@@ -3,14 +3,15 @@ import { Route, Routes, useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import supportsWebP from 'supports-webp';
 import config from 'config';
-import { withLocalize } from 'react-localize-redux';
 import Room from './Room';
+import useLocalize from '../utils/useLocalize';
 
-const RoomRoutes = ({ activeLanguage, languages }) => {
+const RoomRoutes = () => {
 	const scenes = useSelector((state) => state?.scenes || {});
 	const storeDataScenes = useSelector(
 		(state) => state?.storeData.scenes || [],
 	);
+
 	const [webpSupport, setWebpSupport] = useState(true);
 	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
 	const showClientLinkLocale = useSelector(
@@ -22,7 +23,7 @@ const RoomRoutes = ({ activeLanguage, languages }) => {
 		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
 	}, []);
 
-	const activeLangCode = activeLanguage?.code || false;
+	const { activeLocale, locales } = useLocalize();
 
 	const shouldShowLocale = () => {
 		if (config.ENV !== 'client') {
@@ -39,51 +40,48 @@ const RoomRoutes = ({ activeLanguage, languages }) => {
 		 * - #/scene_name
 		 *
 		 * */
-
 		if (!shouldShowLocale()) {
-			return;
+			return null;
 		}
 
 		// Case: #/
 		const hashPath = window.location.hash;
 
 		if (hashPath === '#/' || hashPath === '') {
-			return `/${activeLangCode}`;
+			return `/${activeLocale}`;
 		}
 
 		// Case: #/localeCode/anyString
-		const availableLangs = languages.map((item) => item.code);
 		const hashPathParts = hashPath.split('/');
-		if (availableLangs.includes(hashPathParts[1])) {
+		if (locales.includes(hashPathParts[1])) {
 			return null;
 		}
 
 		// Case: #/anyString
-		return hashPath.replace('#', `/${activeLangCode}`);
+		return hashPath.replace('#', `/${activeLocale}`);
 	};
 
 	const getLocalizedPath = (sceneName) => {
-		const localeCode = activeLanguage?.code;
-
-		if (shouldShowLocale() && localeCode && localeCode !== '') {
-			return `${localeCode}/${sceneName}`;
+		if (shouldShowLocale() && activeLocale && activeLocale !== '') {
+			return `${activeLocale}/${sceneName}`;
 		}
 		return sceneName;
 	};
 
 	useEffect(() => {
-		if (activeLangCode) {
+		if (activeLocale) {
 			const defaultRedirect = getDefaultRedirect();
 			if (defaultRedirect) {
 				navigate(defaultRedirect);
 			}
 		}
-	}, [activeLangCode]);
+	}, [activeLocale]);
 
 	const getRoutes = () => {
 		if (Object.keys(scenes).length === 0) {
 			return null;
 		}
+
 		const routes = Object.keys(scenes).map((sceneId) => {
 			const scene = scenes[sceneId];
 			return (
@@ -118,4 +116,4 @@ const RoomRoutes = ({ activeLanguage, languages }) => {
 	return renderScene ? <Routes>{getRoutes()}</Routes> : null;
 };
 
-export default withLocalize(RoomRoutes);
+export default RoomRoutes;
