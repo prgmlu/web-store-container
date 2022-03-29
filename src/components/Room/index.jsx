@@ -104,9 +104,10 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onSoundMarkerClicked = (data) => {
 		// this needs work
+		console.log('=> data', data);
 		const audioFile = formURL(data.url);
-		// const audio = new Audio(audioFile);
-		// audio.play();
+		const audio = new Audio(audioFile);
+		audio.play();
 
 		sendAnalyticsEvent({
 			eventCategory: 'Content',
