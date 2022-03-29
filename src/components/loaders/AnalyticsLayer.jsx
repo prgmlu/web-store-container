@@ -4,7 +4,6 @@ import { useLocation } from 'react-router';
 import config from 'config';
 import WebpackUtils from '../../utils/WebpackUtils';
 import { setSendEventsArr } from '../../redux_stores/analyticsReducer/actions';
-import { registerShareable } from '../../redux_stores/functionsReducer/actions';
 
 const AnalyticsLayer = () => {
 	const storeName = useSelector((state) => state?.storeData?.name);
@@ -16,7 +15,6 @@ const AnalyticsLayer = () => {
 
 	const dispatch = useDispatch();
 	const location = useLocation();
-	const { pathname } = location;
 
 	const loadModuleScript = (scope, module, analyticsData) => {
 		WebpackUtils.loadComponent(scope, module).then((factory) => {
@@ -46,38 +44,24 @@ const AnalyticsLayer = () => {
 		}
 	}, [storeName]);
 
-	const sendEventsArr = useSelector(
-		(state) => state?.analytics?.sendEventsArr,
-	);
-
-	useEffect(() => {
-		const sendEventWrappedFunction = (trackingData) =>
-			sendEventsArr.forEach((sendEvent) => {
-				sendEvent(trackingData);
-			});
-		if (sendEventsArr.length > 0) {
-			dispatch(
-				registerShareable({
-					sendAnalyticsEvent: sendEventWrappedFunction,
-				}),
-			);
-		}
-	}, [sendEventsArr]);
-
-	const sendAnalyticsEvent = useSelector(
-		(state) => state?.shareableFunctions?.sendAnalyticsEvent,
-	);
-
-	useEffect(() => {
-		if (sendAnalyticsEvent) {
-			const sceneName = pathname.split('/').pop();
-			sendAnalyticsEvent({
-				sceneName,
-				locale,
-				pageView: true,
-			});
-		}
-	}, [pathname]);
+	// const sendEventsArr = useSelector(
+	// 	(state) => state?.analytics?.sendEventsArr,
+	// );
+	// const { pathname } = location;
+	// const sendAnalyticsEvent = useSelector(
+	// 	(state) => state?.shareableFunctions?.sendAnalyticsEvent,
+	// );
+	//
+	// useEffect(() => {
+	// 	if (sendAnalyticsEvent) {
+	// 		const sceneName = pathname.split('/').pop();
+	// 		sendAnalyticsEvent({
+	// 			sceneName,
+	// 			locale,
+	// 			pageView: true,
+	// 		});
+	// 	}
+	// }, [pathname]);
 
 	return null;
 };

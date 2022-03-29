@@ -15,6 +15,7 @@ import {
 import RoomObjects from './RoomObjects';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const Room = ({ sceneData, webpSupport }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
@@ -22,9 +23,8 @@ const Room = ({ sceneData, webpSupport }) => {
 	const scenes = useSelector((state) => state.scenes);
 	const { navigate } = useLocalizedNavigation();
 	const dispatch = useDispatch();
-	const sendAnalyticsEvent = useSelector(
-		(state) => state.shareableFunctions.sendAnalyticsEvent,
-	);
+	const { collect } = useAnalytics();
+
 	const allReduxStoreData = useSelector((data) => data);
 	const { activeLocale } = useLocalize();
 
@@ -84,7 +84,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		setRoomObjects([]);
 
 		navigate(scenes[data.linked_room_id.$oid].name);
-		sendAnalyticsEvent({
+		collect({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',
 			eventLabel: scenes[sceneData.id].name,
@@ -95,7 +95,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		const linkUrl = formURL(data.url);
 		window.open(linkUrl, '_blank');
 
-		sendAnalyticsEvent({
+		collect({
 			eventCategory: 'Content',
 			eventAction: 'Link',
 			eventLabel: linkUrl,
@@ -108,7 +108,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		const audio = new Audio(audioFile);
 		audio.play();
 
-		sendAnalyticsEvent({
+		collect({
 			eventCategory: 'Content',
 			eventAction: 'Sound',
 			eventLabel: audioFile,

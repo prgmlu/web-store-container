@@ -602,6 +602,14 @@ const componentConfig = {
 						textAlign: 'center',
 						pointerEvents: 'none',
 					},
+					containerStylingMobile: {
+						position: 'fixed',
+						left: 1,
+						right: 1,
+						bottom: '1.5rem',
+						textAlign: 'center',
+						pointerEvents: 'none',
+					},
 					components: [
 						{
 							name: 'gem_collection_game_component',
