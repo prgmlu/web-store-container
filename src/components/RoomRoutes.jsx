@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import supportsWebP from 'supports-webp';
 import config from 'config';
 import Room from './Room';
 import useLocalize from '../hooks/useLocalize';
-import { registerShareable } from '../redux_stores/functionsReducer/actions';
 
 const RoomRoutes = () => {
+	const navigate = useNavigate();
 	const scenes = useSelector((state) => state?.scenes || {});
 	const storeDataScenes = useSelector(
 		(state) => state?.storeData.scenes || [],
@@ -18,7 +18,6 @@ const RoomRoutes = () => {
 	const showClientLinkLocale = useSelector(
 		(state) => state.storeData?.client_link_config?.show === true,
 	);
-	const navigate = useNavigate();
 
 	useEffect(() => {
 		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));

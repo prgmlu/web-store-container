@@ -28,6 +28,9 @@ const Store = () => {
 	}, []);
 
 	const locales = useSelector((state) => state.storeData.locales);
+	const localesEnabled = useSelector(
+		(state) => state.storeData.locales_enabled,
+	);
 
 	const defaultLocale = useSelector(
 		(state) => state.storeData.default_locale,
@@ -63,6 +66,9 @@ const Store = () => {
 		 * Priorities
 		 * -
 		 * */
+		if (!localesEnabled) {
+			return null;
+		}
 
 		/* Return locale from hashPath */
 		const localeFromHashPath = getLocaleFromHashPath();
@@ -74,6 +80,10 @@ const Store = () => {
 		const localeFromHtml = getLocaleFromHtml();
 		if (localeFromHtml && localeFromHtml !== '') {
 			return localeFromHtml;
+		}
+
+		if (defaultLocale) {
+			return defaultLocale;
 		}
 
 		return null;
