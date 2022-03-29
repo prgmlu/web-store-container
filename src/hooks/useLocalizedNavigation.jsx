@@ -1,11 +1,8 @@
-import { useNavigate } from 'react-router';
 import { createSelector } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { getLocalizedPath } from '../utils/urlHelpers';
 
 const useLocalizedNavigation = () => {
-	const navigate = useNavigate();
-
 	const activeLocaleSelector = createSelector(
 		(state) => state?.localize || {},
 		(localize) => localize,
@@ -15,7 +12,7 @@ const useLocalizedNavigation = () => {
 
 	return {
 		navigate: (sceneName) => {
-			navigate(getLocalizedPath(activeLocale, sceneName));
+			window.location.hash = getLocalizedPath(activeLocale, sceneName);
 		},
 	};
 };
