@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import supportsWebP from 'supports-webp';
 import config from 'config';
 import Room from './Room';
-import useLocalize from '../utils/useLocalize';
+import useLocalize from '../hooks/useLocalize';
+import { registerShareable } from '../redux_stores/functionsReducer/actions';
 
 const RoomRoutes = () => {
 	const scenes = useSelector((state) => state?.scenes || {});

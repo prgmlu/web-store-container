@@ -12,7 +12,7 @@ import UILayer from './loaders/UILayer';
 import ModulesLayer from './loaders/ModulesLayer';
 import AnalyticsLayer from './loaders/AnalyticsLayer';
 import { getLocaleFromHtml } from '../utils/htmlHelpers';
-import useLocalize from '../utils/useLocalize';
+import useLocalize from '../hooks/useLocalize';
 
 const Store = () => {
 	const dispatch = useDispatch();

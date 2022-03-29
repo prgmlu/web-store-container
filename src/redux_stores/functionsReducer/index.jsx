@@ -3,14 +3,16 @@
 import { REGISTER_SHAREABLE, SET_FUNCTIONS } from './types';
 import axiosApi from '../../apis/axiosApi';
 import { formURL } from '../../utils/apiUtils';
-import useTranslate from '../../utils/useTranslate';
-import useLocalize from '../../utils/useLocalize';
+import useTranslate from '../../hooks/useTranslate';
+import useLocalize from '../../hooks/useLocalize';
+import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 
 const initialState = {
 	axios: axiosApi,
 	formURL,
 	useTranslate,
 	useLocalize,
+	useLocalizedNavigation,
 };
 
 export default function functionsReducer(state = initialState, action = {}) {

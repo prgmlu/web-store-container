@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
-import { useNavigate } from 'react-router';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
@@ -14,14 +13,14 @@ import {
 	resetCurrentAccessibilityNavIdx,
 } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
-import { getLocalizedPath } from '../../utils/urlHelpers';
-import useLocalize from '../../utils/useLocalize';
+import useLocalize from '../../hooks/useLocalize';
+import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 
 const Room = ({ sceneData, webpSupport }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
-	const navigate = useNavigate();
+	const { navigate } = useLocalizedNavigation();
 	const dispatch = useDispatch();
 	const sendAnalyticsEvent = useSelector(
 		(state) => state.shareableFunctions.sendAnalyticsEvent,
@@ -84,12 +83,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const onNavMarkerClicked = (data) => {
 		setRoomObjects([]);
 
-		navigate(
-			getLocalizedPath(
-				activeLocale,
-				scenes[data.linked_room_id.$oid].name,
-			),
-		);
+		navigate(scenes[data.linked_room_id.$oid].name);
 		sendAnalyticsEvent({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',

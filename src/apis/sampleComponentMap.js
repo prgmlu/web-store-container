@@ -608,7 +608,7 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-								// url: `http://localhost:3006/remoteEntry.js`,
+								// url: `http://localhost:3009/remoteEntry.js`,
 								scope: 'gem_collection_game_component',
 								module: './GemsCollectionStatusUI',
 							},
@@ -622,12 +622,39 @@ const componentConfig = {
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
 							],
+							gemAssets: {
+								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
+								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
+							},
 							gemCollectionStatusModalInOrder: [
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/openingModal.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/firstDiamondModal.png',
 								'',
 								'',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/allDiamondModal.png',
+							],
+							toolbarBackground:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/barBackground.png',
+							toolbarCtaAssets: [
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/boudoirIcon.png',
+									text: 'BOUDOIR',
+									route: '/entrance',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/partyIcon.png',
+									text: 'PARTY',
+									route: '/disco-game',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/swfIcon.png',
+									text: 'SHOP WITH FRIENDS',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/consultationIcon.png',
+									text: 'VIRTUAL CONSULTATIONS',
+									href: 'https://www.charlottetilbury.com/us/virtual-consultations-with-team-tilbury?&nst=0&gclid=EAIaIQobChMIh8q0sviW7AIVjsDACh05uwDEEAAYASAAEgKUbPD_BwE&gclsrc=aw.ds',
+								},
 							],
 						},
 					],
@@ -705,7 +732,7 @@ const componentConfig = {
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-					// url: `http://localhost:3006/remoteEntry.js`,
+					// url: `http://localhost:3009/remoteEntry.js`,
 					scope: 'gem_collection_game_component',
 					module: './GemsVideoModal',
 				},
