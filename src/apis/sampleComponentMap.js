@@ -638,21 +638,21 @@ const componentConfig = {
 							toolbarCtaAssets: [
 								{
 									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/boudoirIcon.png',
-									text: 'BOUDOIR',
-									route: '/entrance',
+									category: 'boudoir',
+									route: 'entrance',
 								},
 								{
 									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/partyIcon.png',
-									text: 'PARTY',
-									route: '/disco-game',
+									category: 'party',
+									route: 'disco-game',
 								},
 								{
 									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/swfIcon.png',
-									text: 'SHOP WITH FRIENDS',
+									category: 'swf',
 								},
 								{
 									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/consultationIcon.png',
-									text: 'VIRTUAL CONSULTATIONS',
+									category: 'consultation',
 									href: 'https://www.charlottetilbury.com/us/virtual-consultations-with-team-tilbury?&nst=0&gclid=EAIaIQobChMIh8q0sviW7AIVjsDACh05uwDEEAAYASAAEgKUbPD_BwE&gclsrc=aw.ds',
 								},
 							],
