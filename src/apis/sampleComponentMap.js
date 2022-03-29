@@ -677,10 +677,12 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
+								// url: `http://localhost:30014/remoteEntry.js`,
 								scope: 'shop_with_friends',
 								module: './ShopWithFriends',
 							},
 							textStyling: { color: 'white', fontSize: '0.9rem' },
+							showButton: false,
 						},
 						{
 							name: 'powered_by_obsess',
