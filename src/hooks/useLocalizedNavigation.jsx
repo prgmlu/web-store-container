@@ -1,3 +1,4 @@
+import config from 'config';
 import { createSelector } from '@reduxjs/toolkit';
 import { useSelector } from 'react-redux';
 import { getLocalizedPath } from '../utils/urlHelpers';
@@ -9,10 +10,17 @@ const useLocalizedNavigation = () => {
 	);
 
 	const { activeLocale } = useSelector(activeLocaleSelector);
-
+	const hideLocaleInClientLink =
+		config.ENV === 'client' &&
+		useSelector(
+			(state) =>
+				state?.storeData?.client_link_config?.show === false || false,
+		);
 	return {
 		navigate: (sceneName) => {
-			window.location.hash = getLocalizedPath(activeLocale, sceneName);
+			window.location.hash = hideLocaleInClientLink
+				? getLocalizedPath('', sceneName)
+				: getLocalizedPath(activeLocale, sceneName);
 		},
 	};
 };
