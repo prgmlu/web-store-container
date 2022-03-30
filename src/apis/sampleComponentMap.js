@@ -1035,6 +1035,32 @@ const componentConfig = {
 				scope: 'entrance_video',
 				module: './EntranceVideo',
 			},
+			translations: {
+				uk: {
+					welcomeMessage:
+						'Darlings! Join my NEW! Virtual Pillow Talk Party',
+				},
+				us: {
+					welcomeMessage:
+						'Darlings! Join my NEW! Virtual Pillow Talk Party',
+				},
+				fr: {
+					welcomeMessage:
+						'Darlings! Rejoignez ma NOUVELLE Pillow Talk Party virtuelle',
+				},
+				de: {
+					welcomeMessage:
+						'Darling! Sei bei meiner NEUEN! virtuellen Pillow Talk Party dabei',
+				},
+				it: {
+					welcomeMessage:
+						'Darling! Partecipa al mio NUOVO Pillow Talk Party virtuale',
+				},
+				es: {
+					welcomeMessage:
+						'¡Darling! Únete a mi NUEVA Pillow Talk Party',
+				},
+			},
 		},
 	},
 	'620169c8af3260eeddbbf2de': {

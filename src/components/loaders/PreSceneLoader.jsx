@@ -25,7 +25,10 @@ const PreScene = () => {
 
 	return (
 		componentNotNull() && (
-			<DynamicComponent remoteConfig={preSceneComponent.remoteConfig} />
+			<DynamicComponent
+				remoteConfig={preSceneComponent.remoteConfig}
+				{...preSceneComponent}
+			/>
 		)
 	);
 };
