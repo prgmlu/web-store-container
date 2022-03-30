@@ -710,6 +710,22 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/welcome-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'welcome_modal',
+					module: './WelcomeModal',
+				},
+				modalConfig: {
+					selector: 'welcome_modal',
+					centered: true,
+					animation: true,
+					bgImageUrl:
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-modal-bg.png',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js`,
 					// url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
@@ -717,7 +733,6 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-
 					centered: true,
 					animation: true,
 				},
@@ -914,7 +929,7 @@ const componentConfig = {
 		preSceneComponent: {
 			remoteConfig: {
 				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
-				// url: `http://localhost:3006/remoteEntry.js`,
+				// url: `http://localhost:3007/remoteEntry.js`,
 				scope: 'entrance_video',
 				module: './EntranceVideo',
 			},
