@@ -55,8 +55,9 @@ const HotspotMarker = ({ item, ...props }) => {
 	const storeIconFiles = useSelector(
 		(state) => state?.storeData?.styling?.store_icon_files || {},
 	);
+	const { hotspot_type: hotspotType, selector } = item?.props || {};
+
 	const getHotspotImage = () => {
-		const { hotspot_type: hotspotType } = item?.props || {};
 		const typeKey = defaultHotspotIconsKeys[hotspotType];
 		let url = '';
 		if (typeKey) {
@@ -71,7 +72,12 @@ const HotspotMarker = ({ item, ...props }) => {
 		return url;
 	};
 
-	return (
+	const isAnimatedGlb =
+		hotspotType === 'custom' && selector === 'animated_glb';
+
+	return isAnimatedGlb ? (
+		<AnimatedGLB scene={item.scene.$oid} {...props} />
+	) : (
 		<Hotspot
 			{...props}
 			type="hotspot"
@@ -94,47 +100,12 @@ HotspotMarker.propTypes = {
 	item: PropTypes.object.isRequired,
 };
 
-const animatedGlbConfigs = [
-	{
-		id: 0,
-		type: 'cream',
-		pos: [-0.206, 0, 0.235],
-		scale: [1, 1, 1],
-		outerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/MagicCream_anim_v004.glb',
-		innerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/MagicCream_anim_v008.glb',
-	},
-	{
-		id: 1,
-		type: 'lashes',
-		pos: [-0.05, 0, 0.235],
-		scale: [1, 1, 1],
-		outerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
-		innerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
-	},
-	{
-		id: 2,
-		type: 'matte',
-		pos: [0.05, 0, 0.235],
-		scale: [1, 1, 1],
-		outerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/MatteRevolution_anim_v003.glb',
-		innerObjectUrl:
-			'https://cdn.obsess-vr.com/charlotte-tilbury/PushUpLashes_anim_v006.glb',
-	},
-];
-
 const RoomObjects = ({ roomObjects, ...props }) => {
 	if (roomObjects.length <= 0) return null;
 	let navMarkerStartIdx = -1;
 
 	return (
 		<>
-			<AnimatedGLB {...props} />
-
 			{roomObjects.map((item) => {
 				if (item.type === 'NavMarker') {
 					const isNavMarkerVisible = !item.props.hide;
