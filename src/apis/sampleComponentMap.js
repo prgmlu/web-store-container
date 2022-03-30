@@ -589,6 +589,51 @@ const componentConfig = {
 								height: '2em',
 								width: 'auto',
 							},
+							translations: {
+								us: {
+									removeFromBag: 'Remove from bag',
+									noBagItem: 'THERE ARE NO ITEMS IN YOUR BAG',
+									placeOrder: 'Place order',
+									bagHeading2:
+										'Once you have added items to your bag, they will appear here',
+								},
+								uk: {
+									noBagItem: 'THERE ARE NO ITEMS IN YOUR BAG',
+									placeOrder: 'Place order',
+									removeFromBag: 'Remove from bag',
+									bagHeading2:
+										'Once you have added items to your bag, they will appear here',
+								},
+								fr: {
+									placeOrder: 'Passer à la caisse',
+									noBagItem:
+										"IL N'Y A PAS D'ARTICLES DANS VOTRE SAC",
+									removeFromBag: 'Supprimer',
+									bagHeading2:
+										'Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.',
+								},
+								it: {
+									placeOrder: 'Procedi al pagamento',
+									noBagItem: 'LA TUA SHOPPING BAG È VUOTA',
+									removeFromBag: 'Elimina',
+									bagHeading2:
+										'Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui',
+								},
+								de: {
+									noBagItem: 'DEIN WARENKORB IST LEER',
+									bagHeading2:
+										'Alle Artikel in deinem Warenkorb werden hier angezeigt',
+									removeFromBag: 'Entfernen',
+									placeOrder: 'Warenkorb ansehen',
+								},
+								es: {
+									placeOrder: 'Ver bolsa y pagar',
+									noBagItem: 'NO HAY ARTÍCULOS EN TU BOLSA',
+									removeFromBag: 'Eliminar',
+									bagHeading2:
+										'Cuando añadas artículos a tu bolsa, aparecerán aquí',
+								},
+							},
 						},
 					],
 				},
