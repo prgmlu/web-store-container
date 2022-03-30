@@ -712,7 +712,7 @@ const componentConfig = {
 										de: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										it: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										fr: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-										es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party'
+										es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 									},
 								},
 							],
