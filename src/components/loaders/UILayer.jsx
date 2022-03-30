@@ -9,7 +9,6 @@ import FontsLoader from './FontsLoader';
 import PreSceneLoader from './PreSceneLoader';
 
 const UILayer = () => {
-	console.log('=> UILayer');
 	return (
 		<>
 			<RoomRoutes />

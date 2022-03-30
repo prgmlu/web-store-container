@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Hotspot from 'threejs_scene/Hotspot';
+import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import config from 'config';
 import { useSelector } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
@@ -54,8 +55,9 @@ const HotspotMarker = ({ item, ...props }) => {
 	const storeIconFiles = useSelector(
 		(state) => state?.storeData?.styling?.store_icon_files || {},
 	);
+	const { hotspot_type: hotspotType, selector } = item?.props || {};
+
 	const getHotspotImage = () => {
-		const { hotspot_type: hotspotType } = item?.props || {};
 		const typeKey = defaultHotspotIconsKeys[hotspotType];
 		let url = '';
 		if (typeKey) {
@@ -70,7 +72,12 @@ const HotspotMarker = ({ item, ...props }) => {
 		return url;
 	};
 
-	return (
+	const isAnimatedGlb =
+		hotspotType === 'custom' && selector === 'animated_glb';
+
+	return isAnimatedGlb ? (
+		<AnimatedGLB scene={item.scene.$oid} {...props} />
+	) : (
 		<Hotspot
 			{...props}
 			type="hotspot"

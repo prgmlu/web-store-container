@@ -10,6 +10,7 @@
 		"start": "BUILD_ENV=development webpack-dev-server --config ./webpack/webpack.config.js",
 		"build": "webpack --config webpack/webpack.config.js",
 		"build-dev": "BUILD_ENV=development npm run build",
+		"build-feature": "BUILD_ENV=feature npm run build",
 		"build-beta": "BUILD_ENV=beta npm run build",
 		"build-prod": "BUILD_ENV=production npm run build",
 		"build-client": "BUILD_ENV=client npm run build",
