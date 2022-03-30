@@ -706,7 +706,14 @@ const componentConfig = {
 								{
 									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/consultationIcon.png',
 									category: 'consultation',
-									href: 'https://www.charlottetilbury.com/us/virtual-consultations-with-team-tilbury?&nst=0&gclid=EAIaIQobChMIh8q0sviW7AIVjsDACh05uwDEEAAYASAAEgKUbPD_BwE&gclsrc=aw.ds',
+									href: {
+										uk: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+										us: 'https://www.charlottetilbury.com/product/free-pillow-talk-party-na',
+										de: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+										it: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+										fr: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+										es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party'
+									},
 								},
 							],
 						},
