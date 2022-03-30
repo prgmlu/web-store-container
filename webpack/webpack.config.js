@@ -91,7 +91,7 @@ module.exports = (options) => {
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/animated-glb/remoteEntry.js`,
+				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`,
 				// threejs_scene:
 				// 	'threejs_scene@http://localhost:4000/remoteEntry.js',
 			},
