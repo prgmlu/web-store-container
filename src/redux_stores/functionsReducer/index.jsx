@@ -6,6 +6,7 @@ import { formURL } from '../../utils/apiUtils';
 import useTranslate from '../../hooks/useTranslate';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const initialState = {
 	axios: axiosApi,
@@ -13,6 +14,7 @@ const initialState = {
 	useTranslate,
 	useLocalize,
 	useLocalizedNavigation,
+	useAnalytics,
 };
 
 export default function functionsReducer(state = initialState, action = {}) {
