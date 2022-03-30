@@ -20,10 +20,6 @@ const DynamicContainer = ({ components }) => {
 	return (
 		<>
 			{components.map((component, ix) => {
-				console.log(
-					'=> componentStyling ',
-					selectContainerStyling(component),
-				);
 				if (component.kind === 'container') {
 					return (
 						<div style={selectContainerStyling(component)} key={ix}>

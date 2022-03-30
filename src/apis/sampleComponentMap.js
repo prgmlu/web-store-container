@@ -772,7 +772,33 @@ const componentConfig = {
 					centered: true,
 					animation: true,
 					bgImageUrl:
-						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-modal-bg.png',
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcomeAsset.png',
+					translations: {
+						us: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/us/welcomeAsset.png',
+						},
+						uk: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcomeAsset.png',
+						},
+						fr: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/fr/welcomeAsset.png',
+						},
+						de: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/de/welcomeAsset.png',
+						},
+						it: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/it/welcomeAsset.png',
+						},
+						es: {
+							bgImageUrl:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/es/welcomeAsset.png',
+						},
+					},
 				},
 			},
 			{
