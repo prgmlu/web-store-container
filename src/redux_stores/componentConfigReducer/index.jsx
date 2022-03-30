@@ -5,6 +5,7 @@ const initialState = {
 		components: [],
 	},
 	modals: {},
+	loaded: false,
 };
 
 export default function componentConfigReducer(

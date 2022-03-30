@@ -11,6 +11,7 @@ const DynamicModal = ({ config }) => {
 			remoteConfig={remoteConfig}
 			modalConfig={{
 				...modalConfig,
+				dialogClassName: 'modal-dialog-override',
 			}}
 		/>
 	);

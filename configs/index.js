@@ -5,17 +5,16 @@ const clientConfig = require('./config.client.json');
 const storeConfig = require('./config.store.json');
 
 function loadConfig(env) {
-	// const config =
+	let config = devConfig;
 	if (env === 'client') {
-		return { ...clientConfig, ...storeConfig };
+		config = clientConfig;
 	}
 	if (env === 'production') {
-		return { ...prodConfig, ...storeConfig };
+		config = prodConfig;
+	} else if (env === 'beta') {
+		config = betaConfig;
 	}
-	if (env === 'beta') {
-		return { ...betaConfig, ...storeConfig };
-	}
-	return { ...devConfig, ...storeConfig };
+	return { ...config, ...storeConfig };
 }
 
 module.exports = { loadConfig };

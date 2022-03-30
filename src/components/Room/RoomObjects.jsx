@@ -28,7 +28,9 @@ const NavMarker = ({ item, ...props }) => {
 			type="hotspot"
 			collider_transform={item.collider_transform}
 			transform={item.transform}
-			iconConfig={{ dotColor: 'black' }}
+			iconConfig={{
+				showIcon: item?.props?.hide === false,
+			}}
 			imageURL={getNavMarkerImage(item?.props?.sprite_type || '')}
 			userData={{ props: item?.props || {}, type: item.type }}
 		/>
@@ -75,7 +77,9 @@ const HotspotMarker = ({ item, ...props }) => {
 			type="hotspot"
 			collider_transform={item.collider_transform}
 			transform={item.transform}
-			iconConfig={{ primaryColor: 'black', secondaryColor: 'blue' }}
+			iconConfig={{
+				showIcon: item?.props?.show_icon,
+			}}
 			userData={{
 				props:
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},

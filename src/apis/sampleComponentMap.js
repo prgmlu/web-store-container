@@ -383,7 +383,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -398,7 +398,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -414,7 +414,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -431,7 +431,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -446,7 +446,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -462,7 +462,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -478,7 +478,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -494,7 +494,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -589,6 +589,51 @@ const componentConfig = {
 								height: '2em',
 								width: 'auto',
 							},
+							translations: {
+								us: {
+									removeFromBag: 'Remove from bag',
+									noBagItem: 'THERE ARE NO ITEMS IN YOUR BAG',
+									placeOrder: 'Place order',
+									bagHeading2:
+										'Once you have added items to your bag, they will appear here',
+								},
+								uk: {
+									noBagItem: 'THERE ARE NO ITEMS IN YOUR BAG',
+									placeOrder: 'Place order',
+									removeFromBag: 'Remove from bag',
+									bagHeading2:
+										'Once you have added items to your bag, they will appear here',
+								},
+								fr: {
+									placeOrder: 'Passer à la caisse',
+									noBagItem:
+										"IL N'Y A PAS D'ARTICLES DANS VOTRE SAC",
+									removeFromBag: 'Supprimer',
+									bagHeading2:
+										'Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.',
+								},
+								it: {
+									placeOrder: 'Procedi al pagamento',
+									noBagItem: 'LA TUA SHOPPING BAG È VUOTA',
+									removeFromBag: 'Elimina',
+									bagHeading2:
+										'Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui',
+								},
+								de: {
+									noBagItem: 'DEIN WARENKORB IST LEER',
+									bagHeading2:
+										'Alle Artikel in deinem Warenkorb werden hier angezeigt',
+									removeFromBag: 'Entfernen',
+									placeOrder: 'Warenkorb ansehen',
+								},
+								es: {
+									placeOrder: 'Ver bolsa y pagar',
+									noBagItem: 'NO HAY ARTÍCULOS EN TU BOLSA',
+									removeFromBag: 'Eliminar',
+									bagHeading2:
+										'Cuando añadas artículos a tu bolsa, aparecerán aquí',
+								},
+							},
 						},
 					],
 				},
@@ -602,13 +647,21 @@ const componentConfig = {
 						textAlign: 'center',
 						pointerEvents: 'none',
 					},
+					containerStylingMobile: {
+						position: 'fixed',
+						left: 1,
+						right: 1,
+						bottom: '1.5rem',
+						textAlign: 'center',
+						pointerEvents: 'none',
+					},
 					components: [
 						{
 							name: 'gem_collection_game_component',
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-								// url: `http://localhost:3006/remoteEntry.js`,
+								// url: `http://localhost:3009/remoteEntry.js`,
 								scope: 'gem_collection_game_component',
 								module: './GemsCollectionStatusUI',
 							},
@@ -622,12 +675,39 @@ const componentConfig = {
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
 							],
+							gemAssets: {
+								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
+								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
+							},
 							gemCollectionStatusModalInOrder: [
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/openingModal.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/firstDiamondModal.png',
 								'',
 								'',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/allDiamondModal.png',
+							],
+							toolbarBackground:
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/barBackground.png',
+							toolbarCtaAssets: [
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/boudoirIcon.png',
+									category: 'boudoir',
+									route: 'entrance',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/partyIcon.png',
+									category: 'party',
+									route: 'disco-game',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/swfIcon.png',
+									category: 'swf',
+								},
+								{
+									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/consultationIcon.png',
+									category: 'consultation',
+									href: 'https://www.charlottetilbury.com/us/virtual-consultations-with-team-tilbury?&nst=0&gclid=EAIaIQobChMIh8q0sviW7AIVjsDACh05uwDEEAAYASAAEgKUbPD_BwE&gclsrc=aw.ds',
+								},
 							],
 						},
 					],
@@ -650,9 +730,12 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
+								// url: `http://localhost:30014/remoteEntry.js`,
 								scope: 'shop_with_friends',
 								module: './ShopWithFriends',
 							},
+							textStyling: { color: 'white', fontSize: '0.9rem' },
+							showButton: false,
 						},
 						{
 							name: 'powered_by_obsess',
@@ -672,16 +755,81 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					// url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js`,
-					url: `http://localhost:3002/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/welcome-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'welcome_modal',
+					module: './WelcomeModal',
+				},
+				modalConfig: {
+					selector: 'welcome_modal',
+					centered: true,
+					animation: true,
+					bgImageUrl:
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-modal-bg.png',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js`,
+					// url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
 					module: './ProductModal',
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
 					centered: true,
 					animation: true,
+					translations: {
+						us: {
+							readMore: 'Read more',
+							addToBag: 'Add to bag',
+							productInformation: 'Product information',
+							tryItOnMe: 'Try it on me',
+							addedToBag: 'Added to bag',
+							removeFromBag: 'Remove from bag',
+						},
+						uk: {
+							readMore: 'Read more',
+							addToBag: 'Add to bag',
+							productInformation: 'Product information',
+							tryItOnMe: 'Try it on me',
+							addedToBag: 'Added to bag',
+							removeFromBag: 'Remove from bag',
+						},
+						de: {
+							readMore: 'Weiterlesen',
+							addToBag: 'IN DEN WARENKORB',
+							productInformation: 'PRODUKTINFORMATIONEN',
+							tryItOnMe: 'An Mir Testen',
+							addedToBag: 'Zum Warenkorb hinzugefügt',
+							removeFromBag: 'Entfernen',
+						},
+						fr: {
+							readMore: 'En savoir plus',
+							addToBag: 'Ajouter au panier',
+							productInformation: 'DÉTAILS DU PRODUIT',
+							tryItOnMe: 'Mon test personnalisé',
+							addedToBag: 'Ajouté au panier',
+							removeFromBag: 'Supprimer',
+						},
+						it: {
+							readMore: 'Leggi di più',
+							addToBag: 'AGGIUNGI ALLA SHOPPING BAG',
+							productInformation: 'DETTAGLI PRODOTTO',
+							tryItOnMe: 'Provalo su di me',
+							addedToBag: 'Aggiunto alla shopping bag',
+							removeFromBag: 'Elimina',
+						},
+						es: {
+							readMore: 'Más información',
+							addToBag: 'AÑADIR A LA CESTA',
+							productInformation: 'INFORMACIÓN DEL PRODUCTO',
+							tryItOnMe: 'Prueba personalizada',
+							addedToBag: 'AÑADIDO DE LA Bolsa',
+							removeFromBag: 'Eliminar',
+						},
+					},
 				},
 			},
 			{
@@ -694,7 +842,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -704,13 +852,13 @@ const componentConfig = {
 				kind: 'modal',
 				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-					// url: `http://localhost:3006/remoteEntry.js`,
+					// url: `http://localhost:3009/remoteEntry.js`,
 					scope: 'gem_collection_game_component',
 					module: './GemsVideoModal',
 				},
 				modalConfig: {
 					selector: 'gem_game',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -726,7 +874,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'wall_of_fame_game',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -742,7 +890,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -758,7 +906,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -773,7 +921,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -789,7 +937,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -805,7 +953,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -821,7 +969,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -837,7 +985,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -853,7 +1001,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'masterclass_schedule_modal',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -873,6 +1021,14 @@ const componentConfig = {
 				additionalAnalyticsIDs: [],
 			},
 		],
+		preSceneComponent: {
+			remoteConfig: {
+				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
+				// url: `http://localhost:3007/remoteEntry.js`,
+				scope: 'entrance_video',
+				module: './EntranceVideo',
+			},
+		},
 	},
 	'620169c8af3260eeddbbf2de': {
 		modules: {
@@ -985,7 +1141,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1000,7 +1156,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1016,7 +1172,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1033,7 +1189,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1048,7 +1204,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -1064,7 +1220,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1080,7 +1236,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -1096,7 +1252,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1112,7 +1268,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1213,7 +1369,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'product',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1228,7 +1384,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1244,7 +1400,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'video_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1261,7 +1417,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'text_with_button',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 				},
@@ -1276,7 +1432,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'md',
@@ -1292,7 +1448,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1308,7 +1464,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'iframe',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'lg',
@@ -1324,7 +1480,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'quiz',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',
@@ -1340,7 +1496,7 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'youtube_embed',
-					defaultOpen: false,
+
 					centered: true,
 					animation: true,
 					size: 'sm',

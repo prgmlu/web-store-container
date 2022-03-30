@@ -6,12 +6,14 @@ import ModalLoader from './ModalsLoader';
 import OverlayComponents from '../OverlayComponets';
 import RoomRoutes from '../RoomRoutes';
 import FontsLoader from './FontsLoader';
+import PreSceneLoader from './PreSceneLoader';
 
 const UILayer = () => {
 	return (
 		<>
 			<RoomRoutes />
 			<OverlayComponents />
+			<PreSceneLoader />
 			<ModalLoader />
 			<FontsLoader />
 		</>

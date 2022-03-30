@@ -78,14 +78,13 @@ const withDynamicScript = (remoteConfig, fallBackComponent) => {
 	}, [url]);
 
 	if (!ready) {
-		console.log('=> !ready');
 		return () => fallBackComponent;
 	}
 
 	if (failed) {
-		console.log('=> failed');
 		return () => fallBackComponent;
 	}
+
 	return React.lazy(() => loadComponent(scope, module));
 };
 

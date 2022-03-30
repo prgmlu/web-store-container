@@ -2,35 +2,25 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const { loadConfig } = require('../configs');
+
 const deps = require('../package.json').dependencies;
 
+const prodEnvs = ['production', 'client'];
+
 const getMode = (env) => {
-	switch (env) {
-		case 'beta':
-			return 'development';
-		case 'production':
-			return 'production';
-		case 'client':
-			return 'production';
-		default:
-			return 'development';
+	if (prodEnvs.includes(env)) {
+		return 'production';
 	}
+	return 'development';
 };
 
-const getPublicPath = (env) => {
-	switch (env) {
-		case 'feature':
-			return process.env.MODULES_PATH;
-		case 'beta':
-			return process.env.MODULES_PATH;
-		case 'production':
-			return process.env.MODULES_PATH;
-		case 'client':
-			return process.env.MODULES_PATH;
-		default:
-			return 'http://localhost:3000/';
+const getPublicPath = (webpackServe) => {
+	if (webpackServe) {
+		return 'http://localhost:3000/';
 	}
+	return process.env.MODULES_PATH;
 };
 
 module.exports = (options) => {
@@ -44,7 +34,7 @@ module.exports = (options) => {
 		devtool: 'source-map',
 		output: {
 			path: path.join(__dirname, '../dist'),
-			publicPath: getPublicPath(BUILD_ENV),
+			publicPath: getPublicPath(WEBPACK_SERVE),
 			clean: true,
 		},
 		resolve: {
@@ -126,12 +116,25 @@ module.exports = (options) => {
 		template: './public/index.html',
 	};
 
+	if (prodEnvs.includes(BUILD_ENV)) {
+		config.optimization = {
+			minimizer: [
+				new TerserPlugin({
+					terserOptions: {
+						compress: {
+							drop_console: true,
+						},
+						mangle: true,
+					},
+				}),
+			],
+		};
+	}
+
 	if (WEBPACK_SERVE || BUILD_ENV === 'feature') {
 		webpackPluginOptions.storeId = loadConfig(BUILD_ENV).STORE_ID;
 		config.plugins.push(new HtmlWebpackPlugin(webpackPluginOptions));
-	}
 
-	if (WEBPACK_SERVE) {
 		config.devServer = {
 			port: 3000,
 			historyApiFallback: true,

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
-import { useNavigate } from 'react-router';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
@@ -14,20 +13,23 @@ import {
 	resetCurrentAccessibilityNavIdx,
 } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
+import useLocalize from '../../hooks/useLocalize';
+import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const Room = ({ sceneData, webpSupport }) => {
 	const [roomObjects, setRoomObjects] = useState([]);
 	const [linkedScenes, setLinkedScenes] = useState([]);
 	const scenes = useSelector((state) => state.scenes);
-	const navigate = useNavigate();
+	const { navigate } = useLocalizedNavigation();
 	const dispatch = useDispatch();
-	const sendAnalyticsEvent = useSelector(
-		(state) => state.shareableFunctions.sendAnalyticsEvent,
-	);
+	const { collect } = useAnalytics();
+
 	const allReduxStoreData = useSelector((data) => data);
+	const { activeLocale } = useLocalize();
 
 	useEffect(() => {
-		getSceneObjects(sceneData.id)
+		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				setRoomObjects(res);
 				setLinkedScenes(
@@ -80,8 +82,9 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onNavMarkerClicked = (data) => {
 		setRoomObjects([]);
-		navigate(`/${scenes[data.linked_room_id.$oid].name}`);
-		sendAnalyticsEvent({
+
+		navigate(scenes[data.linked_room_id.$oid].name);
+		collect({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',
 			eventLabel: scenes[sceneData.id].name,
@@ -92,7 +95,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		const linkUrl = formURL(data.url);
 		window.open(linkUrl, '_blank');
 
-		sendAnalyticsEvent({
+		collect({
 			eventCategory: 'Content',
 			eventAction: 'Link',
 			eventLabel: linkUrl,
@@ -102,10 +105,10 @@ const Room = ({ sceneData, webpSupport }) => {
 	const onSoundMarkerClicked = (data) => {
 		// this needs work
 		const audioFile = formURL(data.url);
-		// const audio = new Audio(audioFile);
-		// audio.play();
+		const audio = new Audio(audioFile);
+		audio.play();
 
-		sendAnalyticsEvent({
+		collect({
 			eventCategory: 'Content',
 			eventAction: 'Sound',
 			eventLabel: audioFile,
