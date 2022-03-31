@@ -50,7 +50,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				setRoomObjects([]);
 				setLinkedScenes([]);
 			});
-		sendGaTrackingData({event: "scene_loaded"})
+		sendGaTrackingData({ event: 'scene_loaded' });
 		dispatch(resetCurrentAccessibilityNavIdx());
 	}, [sceneData.id]);
 
@@ -63,7 +63,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				eventAction: 'Product hotspot clicked',
 				eventLabel: data.product_sku,
 			});
-		} else if (data?.event === "scene_loaded"){
+		} else if (data?.event === 'scene_loaded') {
 			collect({
 				eventCategory: 'Navigation',
 				eventAction: 'Scene loaded',

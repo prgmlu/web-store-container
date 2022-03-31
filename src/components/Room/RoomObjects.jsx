@@ -6,22 +6,34 @@ import config from 'config';
 import { useSelector } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
 
-const getNavMarkerImage = (type) => {
-	const arrowsMap = {
-		stairs_up: 'stairs-up-black.svg',
-		stairs_down: 'stairs-down-black.svg',
-		up: 'arrow-black.svg',
+const NavMarker = ({ item, ...props }) => {
+	const navigationArrowIcon = useSelector(
+		(state) => state?.storeData?.styling?.navigation_arrow_icon || {},
+	);
+
+	const getNavMarkerImage = (type) => {
+		const arrowsMap = {
+			stairs_up: 'stairs-up-black.svg',
+			stairs_down: 'stairs-down-black.svg',
+			up: 'arrow-black.svg',
+		};
+
+		let arrowKey = 'arrow.svg';
+		if (type in arrowsMap) {
+			arrowKey = arrowsMap[type];
+		}
+		let arrowUrl = `${config.CDN_BASE_URL}/${arrowKey}`;
+
+		if (
+			navigationArrowIcon &&
+			Object.keys(navigationArrowIcon).length > 0
+		) {
+			arrowUrl = formURL(navigationArrowIcon);
+		}
+
+		return arrowUrl;
 	};
 
-	let arrowKey = 'arrow.svg';
-	if (type in arrowsMap) {
-		arrowKey = arrowsMap[type];
-	}
-
-	return `${config.CDN_BASE_URL}/${arrowKey}`;
-};
-
-const NavMarker = ({ item, ...props }) => {
 	return (
 		<Hotspot
 			{...props}
