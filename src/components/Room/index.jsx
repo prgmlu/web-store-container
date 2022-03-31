@@ -43,13 +43,14 @@ const Room = ({ sceneData, webpSupport }) => {
 					(item) =>
 						item.type === 'NavMarker' && item.props.hide === false,
 				).length;
-				sendGaTrackingData({event: "scene_loaded"})
+
 				dispatch(setNavMarkerCount(navMarkerCount));
 			})
 			.catch(() => {
 				setRoomObjects([]);
 				setLinkedScenes([]);
 			});
+		sendGaTrackingData({event: "scene_loaded"})
 		dispatch(resetCurrentAccessibilityNavIdx());
 	}, [sceneData.id]);
 
