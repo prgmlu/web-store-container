@@ -1056,8 +1056,8 @@ const componentConfig = {
 		],
 		preSceneComponent: {
 			remoteConfig: {
-				// url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
-				url: `http://localhost:3007/remoteEntry.js`,
+				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js`,
+				// url: `http://localhost:3007/remoteEntry.js`,
 				scope: 'entrance_video',
 				module: './EntranceVideo',
 			},
