@@ -43,6 +43,7 @@ const Room = ({ sceneData, webpSupport }) => {
 					(item) =>
 						item.type === 'NavMarker' && item.props.hide === false,
 				).length;
+				sendGaTrackingData({event: "scene_loaded"})
 				dispatch(setNavMarkerCount(navMarkerCount));
 			})
 			.catch(() => {
@@ -60,6 +61,12 @@ const Room = ({ sceneData, webpSupport }) => {
 				eventCategory: 'Product',
 				eventAction: 'Product hotspot clicked',
 				eventLabel: data.product_sku,
+			});
+		} else if (data?.event === "scene_loaded"){
+			collect({
+				eventCategory: 'Navigation',
+				eventAction: 'Scene loaded',
+				eventLabel: scenes[sceneData.id].name,
 			});
 		}
 	};
