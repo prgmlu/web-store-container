@@ -54,6 +54,15 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
 
+	const sendGaTrackingData = (data) => {
+		if (data?.hotspot_type === 'product') {
+			collect({
+				eventCategory: 'Product',
+				eventAction: 'Product hotspot clicked',
+				eventLabel: data.product_sku,
+			});
+		}
+	};
 	const formatDate = (date, format) => {
 		const map = {
 			mm: date.getMonth() + 1,
@@ -135,6 +144,7 @@ const Room = ({ sceneData, webpSupport }) => {
 						visible: true,
 					}),
 				);
+				sendGaTrackingData(data);
 		}
 	};
 
