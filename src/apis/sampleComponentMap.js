@@ -668,17 +668,6 @@ const componentConfig = {
 							styling: {
 								iconWidth: '30rem',
 							},
-							gemCollectionIconsInOrder: [
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_0-removebg.png',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_1-removebg.png',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_2-removebg.png',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_3-removebg.png',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/VS_PT_Party_Map_Stage5_toolbar_4-removebg.png',
-							],
-							gemAssets: {
-								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
-								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
-							},
 							gemCollectionStatusModalInOrder: [
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/openingModal.png',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/firstDiamondModal.png',
@@ -686,36 +675,14 @@ const componentConfig = {
 								'',
 								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/allDiamondModal.png',
 							],
-							toolbarBackground:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/barBackground.png',
-							toolbarCtaAssets: [
-								{
-									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/boudoirIcon.png',
-									category: 'boudoir',
-									route: 'entrance',
-								},
-								{
-									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/partyIcon.png',
-									category: 'party',
-									route: 'disco-game',
-								},
-								{
-									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/swfIcon.png',
-									category: 'swf',
-								},
-								{
-									icon: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/consultationIcon.png',
-									category: 'consultation',
-									href: {
+							virtualConsultationLinks: {
 										uk: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										us: 'https://www.charlottetilbury.com/product/free-pillow-talk-party-na',
 										de: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										it: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										fr: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 										es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-									},
-								},
-							],
+							}
 						},
 					],
 				},
