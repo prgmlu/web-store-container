@@ -665,16 +665,15 @@ const componentConfig = {
 								scope: 'gem_collection_game_component',
 								module: './GemsCollectionStatusUI',
 							},
-							styling: {
-								iconWidth: '30rem',
+							gemAssets: {
+								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
+								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
 							},
-							gemCollectionStatusModalInOrder: [
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/openingModal.png',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/firstDiamondModal.png',
-								'',
-								'',
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/allDiamondModal.png',
-							],
+							gemCollectionStatusModal: {
+								background:
+									'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass_event_background.png',
+								gemCount: 4,
+							},
 							virtualConsultationLinks: {
 								uk: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 								us: 'https://www.charlottetilbury.com/product/free-pillow-talk-party-na',
