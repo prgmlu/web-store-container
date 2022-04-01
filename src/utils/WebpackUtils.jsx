@@ -13,7 +13,12 @@ const loadComponent = async (scope, module) => {
 	const container = window[scope]; // or get the container somewhere else
 	// Initialize the container, it may provide shared modules
 	// eslint-disable-next-line camelcase,no-undef
-	await container.init(__webpack_share_scopes__.default);
+	try {
+		await container.init(__webpack_share_scopes__.default);
+	} catch (e) {
+		console.error('Unable to laod ', scope, module);
+		console.error(e);
+	}
 	const factory = await window[scope].get(module);
 	// if (scope === 'shop_with_friends') {
 	return factory();

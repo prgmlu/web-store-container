@@ -1054,6 +1054,14 @@ const componentConfig = {
 				},
 			},
 		},
+		sceneTransition: {
+			remoteConfig: {
+				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js`,
+				// url: `http://localhost:3006/remoteEntry.js`,
+				scope: 'scene_transition',
+				module: './SceneTransition',
+			},
+		},
 	},
 	'620169c8af3260eeddbbf2de': {
 		modules: {

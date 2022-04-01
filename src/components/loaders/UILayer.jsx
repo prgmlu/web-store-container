@@ -7,17 +7,17 @@ import OverlayComponents from '../OverlayComponets';
 import RoomRoutes from '../RoomRoutes';
 import FontsLoader from './FontsLoader';
 import PreSceneLoader from './PreSceneLoader';
+import SceneTransitionLoader from './SceneTransitionLoader';
 
-const UILayer = () => {
-	return (
-		<>
-			<RoomRoutes />
-			<OverlayComponents />
-			<PreSceneLoader />
-			<ModalLoader />
-			<FontsLoader />
-		</>
-	);
-};
+const UILayer = () => (
+	<>
+		<RoomRoutes />
+		<SceneTransitionLoader />
+		<OverlayComponents />
+		<PreSceneLoader />
+		<ModalLoader />
+		<FontsLoader />
+	</>
+);
 
 export default UILayer;
