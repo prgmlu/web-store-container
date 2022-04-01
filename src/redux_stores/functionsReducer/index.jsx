@@ -7,6 +7,7 @@ import useTranslate from '../../hooks/useTranslate';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
+import useCartActions from '../../hooks/useCartActions';
 
 const initialState = {
 	axios: axiosApi,
@@ -15,6 +16,7 @@ const initialState = {
 	useLocalize,
 	useLocalizedNavigation,
 	useAnalytics,
+	useCartActions,
 };
 
 export default function functionsReducer(state = initialState, action = {}) {

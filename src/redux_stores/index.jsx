@@ -13,6 +13,7 @@ import accessibilityReducer from './accessibilityReducer';
 import defaultIconsReducer from './defaultIconsReducer';
 import sceneLoadReducer from './sceneLoadReducer';
 import localizeReducer from './localizeReducer';
+import cartReducer from './cartReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -25,6 +26,7 @@ const staticReducers = {
 	defaultIcons: defaultIconsReducer,
 	sceneLoad: sceneLoadReducer,
 	localize: localizeReducer,
+	obsessCart: cartReducer,
 };
 
 const createReducer = (asyncReducers) =>
