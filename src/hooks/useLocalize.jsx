@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-	initialize,
-	setTranslationsForLang,
-} from '../redux_stores/localizeReducer/actions';
 import { createSelector } from '@reduxjs/toolkit';
+import { setTranslationsForLang } from '../redux_stores/localizeReducer/actions';
 
 const useLocalize = () => {
 	const dispatch = useDispatch();
@@ -18,7 +15,6 @@ const useLocalize = () => {
 	const activeLocale = useSelector(activeLocaleSelector);
 
 	return {
-		initialize,
 		activeLocale,
 		enabled,
 		locales,
