@@ -1054,14 +1054,24 @@ const componentConfig = {
 				},
 			},
 		},
-		sceneTransition: {
-			remoteConfig: {
-				url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js`,
-				// url: `http://localhost:3006/remoteEntry.js`,
-				scope: 'scene_transition',
-				module: './SceneTransition',
+		sceneTransition: [
+			{
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'scene_transition',
+					module: './SceneTransition',
+				},
+				selector: 'scene_transition_1',
+				data: {
+					sceneName: 'disco-game',
+					videoUrl:
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_LANDSCAPE.mp4',
+					videoUrlMobile:
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_PORTRAIT.mp4',
+				},
 			},
-		},
+		],
 	},
 	'620169c8af3260eeddbbf2de': {
 		modules: {

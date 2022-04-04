@@ -4,15 +4,22 @@ import DynamicComponent from '../dynamicComponents/DynamicComponent';
 
 const SceneTransitionLoader = () => {
 	const sceneTransitionCompConfig = useSelector(
-		(state) => state?.componentConfig.sceneTransition || {},
+		(state) => state?.componentConfig.sceneTransition || [],
 	);
 
 	return (
-		Object.keys(sceneTransitionCompConfig).length > 0 && (
-			<DynamicComponent
-				remoteConfig={sceneTransitionCompConfig.remoteConfig}
-			/>
-		)
+		<>
+			{sceneTransitionCompConfig.map((item, ix) => {
+				const { remoteConfig, ...props } = item;
+				return (
+					<DynamicComponent
+						key={ix}
+						remoteConfig={remoteConfig}
+						{...props}
+					/>
+				);
+			})}
+		</>
 	);
 };
 
