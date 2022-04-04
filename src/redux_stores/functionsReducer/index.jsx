@@ -8,6 +8,7 @@ import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
 import useCartActions from '../../hooks/useCartActions';
+import usePathChange from '../../hooks/usePathChange';
 
 const initialState = {
 	axios: axiosApi,
@@ -17,6 +18,7 @@ const initialState = {
 	useLocalizedNavigation,
 	useAnalytics,
 	useCartActions,
+	usePathChange,
 };
 
 export default function functionsReducer(state = initialState, action = {}) {
