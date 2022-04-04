@@ -1027,6 +1027,8 @@ const componentConfig = {
 				scope: 'entrance_video',
 				module: './EntranceVideo',
 			},
+			overlayBg: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/entrance_bg_desktop.jpg',
+			overlayBgMobile: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/entrance_bg_mobile.jpg',
 			translations: {
 				uk: {
 					welcomeMessage:
