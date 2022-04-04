@@ -6,6 +6,7 @@ import WebpackUtils from '../../utils/WebpackUtils';
 import { setSendEventsArr } from '../../redux_stores/analyticsReducer/actions';
 
 const AnalyticsLayer = () => {
+	console.log('=> Analytics Layer');
 	const storeName = useSelector((state) => state?.storeData?.name);
 	const analyticsModules = useSelector(
 		(state) => state?.componentConfig?.analyticsModules || [],

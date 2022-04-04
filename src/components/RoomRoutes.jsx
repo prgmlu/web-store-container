@@ -23,6 +23,8 @@ const RoomRoutes = () => {
 		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
 	}, []);
 
+	console.log('=> RoomRoutes: webpSupport');
+
 	const { activeLocale, locales } = useLocalize();
 
 	const shouldShowLocale = () => {

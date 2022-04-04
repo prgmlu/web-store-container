@@ -19,6 +19,8 @@ const Store = () => {
 	const storeId = useSelector((state) => state?.storeData?.id);
 	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
 
+	console.log('=> Store', storeDataLoaded);
+
 	useEffect(() => {
 		dispatch(getComponentConfig(storeId));
 		dispatch(getStoreData(storeId));

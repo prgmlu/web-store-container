@@ -9,15 +9,18 @@ import FontsLoader from './FontsLoader';
 import PreSceneLoader from './PreSceneLoader';
 import SceneTransitionLoader from './SceneTransitionLoader';
 
-const UILayer = () => (
-	<>
-		<RoomRoutes />
-		<SceneTransitionLoader />
-		<OverlayComponents />
-		<PreSceneLoader />
-		<ModalLoader />
-		<FontsLoader />
-	</>
-);
+const UILayer = () => {
+	console.log('=> UILayer');
+	return (
+		<>
+			<RoomRoutes />
+			<SceneTransitionLoader />
+			<OverlayComponents />
+			<PreSceneLoader />
+			<ModalLoader />
+			<FontsLoader />
+		</>
+	);
+};
 
 export default UILayer;

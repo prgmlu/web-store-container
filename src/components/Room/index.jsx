@@ -25,7 +25,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
 	const { collect } = useAnalytics();
 
-	const allReduxStoreData = useSelector((data) => data);
+	const allReduxStoreData = {};
 	const { activeLocale } = useLocalize();
 
 	useEffect(() => {
