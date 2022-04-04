@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router';
 import config from 'config';
 import WebpackUtils from '../../utils/WebpackUtils';
 import { setSendEventsArr } from '../../redux_stores/analyticsReducer/actions';
@@ -15,7 +14,6 @@ const AnalyticsLayer = () => {
 	const locale = undefined; // update with localization
 
 	const dispatch = useDispatch();
-	const location = useLocation();
 
 	const loadModuleScript = (scope, module, analyticsData) => {
 		WebpackUtils.loadComponent(scope, module).then((factory) => {

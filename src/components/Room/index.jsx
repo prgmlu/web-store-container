@@ -16,43 +16,21 @@ import RoomObjects from './RoomObjects';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
+import { setRoomObjectsTwo } from '../../redux_stores/roomObjectsReducer/actions';
 
 const Room = ({ sceneData, webpSupport }) => {
-	const [roomObjects, setRoomObjects] = useState([]);
-	const [linkedScenes, setLinkedScenes] = useState([]);
-	const scenes = useSelector((state) => state.scenes);
-	const { navigate } = useLocalizedNavigation();
 	const dispatch = useDispatch();
+
+	// const [linkedScenes, setLinkedScenes] = useState([]);
+
+	const scenes = useSelector((state) => state.scenes);
+
+	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 
-	const allReduxStoreData = {};
 	const { activeLocale } = useLocalize();
 
-	useEffect(() => {
-		getSceneObjects(sceneData.id, activeLocale)
-			.then((res) => {
-				setRoomObjects(res);
-				setLinkedScenes(
-					res
-						.filter((item) => item.type === 'NavMarker')
-						.map((item) => scenes[item?.props?.linked_room_id.$oid])
-						.filter((item) => 'cube_map_dir' in item)
-						.map((item) => formURL(item.cube_map_dir)),
-				);
-				const navMarkerCount = res.filter(
-					(item) =>
-						item.type === 'NavMarker' && item.props.hide === false,
-				).length;
-
-				dispatch(setNavMarkerCount(navMarkerCount));
-			})
-			.catch(() => {
-				setRoomObjects([]);
-				setLinkedScenes([]);
-			});
-		sendGaTrackingData({ event: 'scene_loaded' });
-		dispatch(resetCurrentAccessibilityNavIdx());
-	}, [sceneData.id]);
+	console.log('=> Room-');
 
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
 
@@ -71,6 +49,28 @@ const Room = ({ sceneData, webpSupport }) => {
 			});
 		}
 	};
+
+	useEffect(() => {
+		getSceneObjects(sceneData.id, activeLocale)
+			.then((res) => {
+				dispatch(setRoomObjectsTwo(res));
+				// setLinkedScenes(
+				// 	res
+				// 		.filter((item) => item.type === 'NavMarker')
+				// 		.map((item) => scenes[item?.props?.linked_room_id.$oid])
+				// 		.filter((item) => 'cube_map_dir' in item)
+				// 		.map((item) => formURL(item.cube_map_dir)),
+				// );
+			})
+			.catch(() => {
+				dispatch(setRoomObjectsTwo([]));
+
+				// setLinkedScenes([]);
+			});
+		sendGaTrackingData({ event: 'scene_loaded' });
+		dispatch(resetCurrentAccessibilityNavIdx());
+	}, [sceneData.id]);
+
 	const formatDate = (date, format) => {
 		const map = {
 			mm: date.getMonth() + 1,
@@ -98,7 +98,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onNavMarkerClicked = (data) => {
-		setRoomObjects([]);
+		dispatch(setRoomObjectsTwo([]));
 
 		navigate(scenes[data.linked_room_id.$oid].name);
 		collect({
@@ -181,17 +181,14 @@ const Room = ({ sceneData, webpSupport }) => {
 		<Scene
 			sceneId={sceneData.id}
 			bgConf={bgConfig}
-			linkedScenes={linkedScenes}
+			linkedScenes={[]}
 			allowHotspotsToMove={false}
 			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 			}
-			allReduxStoreData={allReduxStoreData}
 			dispatch={dispatch}
 		>
 			<RoomObjects
-				roomObjects={roomObjects}
-				allReduxStoreData={allReduxStoreData}
 				onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}
 			/>
 		</Scene>

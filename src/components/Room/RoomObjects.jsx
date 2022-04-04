@@ -112,27 +112,22 @@ HotspotMarker.propTypes = {
 	item: PropTypes.object.isRequired,
 };
 
-const RoomObjects = ({ roomObjects, ...props }) => {
-	if (roomObjects.length <= 0) return null;
-	let navMarkerStartIdx = -1;
+const RoomObjects = ({ ...props }) => {
+	const roomObjects = useSelector((state) => state?.roomObjects || []);
 
+	const roomObjectsArr = Object.keys(roomObjects).map(
+		(key) => roomObjects[key],
+	);
+
+	if (roomObjectsArr.length <= 0) return null;
+
+	console.log('=> RoomObjects', roomObjectsArr.length);
 	return (
 		<>
-			{roomObjects.map((item) => {
+			{roomObjectsArr.map((item) => {
 				if (item.type === 'NavMarker') {
-					const isNavMarkerVisible = !item.props.hide;
-					if (isNavMarkerVisible) navMarkerStartIdx += 1;
 					return (
-						<NavMarker
-							item={item}
-							key={item._id.$oid}
-							navMarkerIdx={
-								isNavMarkerVisible
-									? navMarkerStartIdx
-									: undefined
-							}
-							{...props}
-						/>
+						<NavMarker item={item} key={item._id.$oid} {...props} />
 					);
 				}
 				return (
@@ -143,7 +138,5 @@ const RoomObjects = ({ roomObjects, ...props }) => {
 	);
 };
 
-RoomObjects.propTypes = {
-	roomObjects: PropTypes.array.isRequired,
-};
+RoomObjects.propTypes = {};
 export default RoomObjects;

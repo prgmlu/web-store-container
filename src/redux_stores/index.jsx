@@ -14,6 +14,7 @@ import defaultIconsReducer from './defaultIconsReducer';
 import sceneLoadReducer from './sceneLoadReducer';
 import localizeReducer from './localizeReducer';
 import cartReducer from './cartReducer';
+import roomObjectReducer from './roomObjectsReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -27,6 +28,7 @@ const staticReducers = {
 	sceneLoad: sceneLoadReducer,
 	localize: localizeReducer,
 	obsessCart: cartReducer,
+	roomObjects: roomObjectReducer,
 };
 
 const createReducer = (asyncReducers) =>
