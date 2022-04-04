@@ -1030,27 +1030,27 @@ const componentConfig = {
 			translations: {
 				uk: {
 					welcomeMessage:
-						'Darlings! Join my NEW! Virtual Pillow Talk Party',
+						'DARLINGS! JOIN MY NEW! VIRTUAL PILLOW TALK PARTY'
 				},
 				us: {
 					welcomeMessage:
-						'Darlings! Join my NEW! Virtual Pillow Talk Party',
+						'DARLINGS! JOIN MY NEW! VIRTUAL PILLOW TALK PARTY'
 				},
 				fr: {
 					welcomeMessage:
-						'Darlings! Rejoignez ma NOUVELLE Pillow Talk Party virtuelle',
+						'DARLINGS! REJOIGNEZ MA NOUVELLE PILLOW TALK PARTY VIRTUELLE'
 				},
 				de: {
 					welcomeMessage:
-						'Darling! Sei bei meiner NEUEN! virtuellen Pillow Talk Party dabei',
+						'DARLING! SEI BEI MEINER NEUEN! VIRTUELLEN PILLOW TALK PARTY DABEI'
 				},
 				it: {
 					welcomeMessage:
-						'Darling! Partecipa al mio NUOVO Pillow Talk Party virtuale',
+						'DARLING! PARTECIPA AL MIO NUOVO PILLOW TALK PARTY VIRTUALE'
 				},
 				es: {
 					welcomeMessage:
-						'¡Darling! Únete a mi NUEVA Pillow Talk Party',
+						'¡DARLING! ÚNETE A MI NUEVA PILLOW TALK PARTY'
 				},
 			},
 		},
