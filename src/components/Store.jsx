@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
+import { initialize } from '../redux_stores/localizeReducer/actions';
 
 import {
 	getAllScenes,
@@ -12,13 +13,11 @@ import UILayer from './loaders/UILayer';
 import ModulesLayer from './loaders/ModulesLayer';
 import AnalyticsLayer from './loaders/AnalyticsLayer';
 import { getLocaleFromHtml } from '../utils/htmlHelpers';
-import useLocalize from '../hooks/useLocalize';
 
 const Store = () => {
 	const dispatch = useDispatch();
 	const storeId = useSelector((state) => state?.storeData?.id);
 	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
-	const localize = useLocalize();
 
 	useEffect(() => {
 		dispatch(getComponentConfig(storeId));
@@ -92,7 +91,7 @@ const Store = () => {
 	useEffect(() => {
 		if (storeDataLoaded) {
 			dispatch(
-				localize.initialize({
+				initialize({
 					locales,
 					defaultLocale,
 					activeLocale: getActiveLocale(),
