@@ -15,6 +15,7 @@ import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
 import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
 import { isMobile } from 'react-device-detect';
+import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
 
 const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
@@ -71,7 +72,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				// setLinkedScenes([]);
 			});
 		sendGaTrackingData({ event: 'scene_loaded' });
-		dispatch(resetCurrentAccessibilityNavIdx());
+		dispatch(setActiveScene(sceneData.id));
 	}, [sceneData.id]);
 
 	const formatDate = (date, format) => {
