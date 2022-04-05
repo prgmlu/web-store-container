@@ -13,19 +13,19 @@ import UILayer from './loaders/UILayer';
 import ModulesLayer from './loaders/ModulesLayer';
 import AnalyticsLayer from './loaders/AnalyticsLayer';
 import { getLocaleFromHtml } from '../utils/htmlHelpers';
+import { setWebpSupport } from '../redux_stores/storeDataReducer/actions';
 
 const Store = () => {
 	const dispatch = useDispatch();
 	const storeId = useSelector((state) => state?.storeData?.id);
 	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
 
-	console.log('=> Store', storeDataLoaded);
-
 	useEffect(() => {
 		dispatch(getComponentConfig(storeId));
 		dispatch(getStoreData(storeId));
 		dispatch(getDefaultIcons());
 		dispatch(getAllScenes(storeId));
+		dispatch(setWebpSupport());
 	}, []);
 
 	const locales = useSelector((state) => state.storeData.locales);

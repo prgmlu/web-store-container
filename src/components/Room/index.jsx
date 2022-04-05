@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -8,15 +8,13 @@ import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
 import { setModalProps } from '../../redux_stores/modalsReducer/actions';
-import {
-	setNavMarkerCount,
-	resetCurrentAccessibilityNavIdx,
-} from '../../redux_stores/accessibilityReducer/actions';
+import { resetCurrentAccessibilityNavIdx } from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
-import { setRoomObjectsTwo } from '../../redux_stores/roomObjectsReducer/actions';
+import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
+import { isMobile } from 'react-device-detect';
 
 const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
@@ -53,7 +51,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	useEffect(() => {
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
-				dispatch(setRoomObjectsTwo(res));
+				dispatch(setRoomObjects(res));
 				// setLinkedScenes(
 				// 	res
 				// 		.filter((item) => item.type === 'NavMarker')
@@ -63,8 +61,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				// );
 			})
 			.catch(() => {
-				dispatch(setRoomObjectsTwo([]));
-
+				dispatch(setRoomObjects([]));
 				// setLinkedScenes([]);
 			});
 		sendGaTrackingData({ event: 'scene_loaded' });
@@ -95,10 +92,11 @@ const Room = ({ sceneData, webpSupport }) => {
 		backgroundUrl: formURL(url),
 		imageIntegrity: getBustKey(sceneData),
 		useWebp: webpSupport,
+		skipLargest: isMobile,
 	};
 
 	const onNavMarkerClicked = (data) => {
-		dispatch(setRoomObjectsTwo([]));
+		dispatch(setRoomObjects([]));
 
 		navigate(scenes[data.linked_room_id.$oid].name);
 		collect({
@@ -187,6 +185,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 			}
 			dispatch={dispatch}
+			fps={isMobile ? 30 : 60}
 		>
 			<RoomObjects
 				onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}

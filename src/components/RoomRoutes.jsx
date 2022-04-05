@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
-import supportsWebP from 'supports-webp';
 import config from 'config';
 import Room from './Room';
 import useLocalize from '../hooks/useLocalize';
@@ -13,17 +12,14 @@ const RoomRoutes = () => {
 		(state) => state?.storeData.scenes || [],
 	);
 
-	const [webpSupport, setWebpSupport] = useState(true);
+	const supportsWebp = useSelector(
+		(state) => state?.storeData?.supportsWebp || false,
+	);
+
 	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
 	const showClientLinkLocale = useSelector(
 		(state) => state.storeData?.client_link_config?.show === true,
 	);
-
-	useEffect(() => {
-		supportsWebP.then((webpSupported) => setWebpSupport(webpSupported));
-	}, []);
-
-	console.log('=> RoomRoutes: webpSupport');
 
 	const { activeLocale, locales } = useLocalize();
 
@@ -91,7 +87,7 @@ const RoomRoutes = () => {
 					key={scene.id}
 					path={getLocalizedPath(scene.name)}
 					element={
-						<Room sceneData={scene} webpSupport={webpSupport} />
+						<Room sceneData={scene} webpSupport={supportsWebp} />
 					}
 				/>
 			);
@@ -106,7 +102,7 @@ const RoomRoutes = () => {
 					element={
 						<Room
 							sceneData={firstScene}
-							webpSupport={webpSupport}
+							webpSupport={supportsWebp}
 						/>
 					}
 				/>,
