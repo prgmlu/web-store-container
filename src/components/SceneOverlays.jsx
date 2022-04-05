@@ -8,7 +8,7 @@ const SceneOverlays = () => {
 	);
 
 	const sceneOverlay = useSelector(
-		(state) => state?.componentConfig?.sceneOverlays[activeScene],
+		(state) => state?.componentConfig?.sceneOverlays?.[activeScene],
 	);
 
 	if (sceneOverlay === undefined || Object.keys(sceneOverlay).length === 0) {

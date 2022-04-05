@@ -69,7 +69,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	);
 	const { hotspot_type: hotspotType, selector } = item?.props || {};
 
-	const { useAnalytics } = useSelector( (state) => state.shareableFunctions);
+	const { useAnalytics } = useSelector((state) => state.shareableFunctions);
 	const { collect } = useAnalytics();
 
 	const getHotspotImage = () => {
