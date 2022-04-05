@@ -8,8 +8,12 @@ import useLocalize from '../hooks/useLocalize';
 const RoomRoutes = () => {
 	const navigate = useNavigate();
 	const scenes = useSelector((state) => state?.scenes || {});
-	const { scenes: storeDataScenes, supportsWebp } = useSelector(
-		(state) => state?.storeData || {},
+	const storeDataScenes = useSelector(
+		(state) => state?.storeData.scenes || [],
+	);
+
+	const supportsWebp = useSelector(
+		(state) => state?.storeData?.supportsWebp || false,
 	);
 
 	const renderScene = useSelector((state) => state.sceneLoad.renderScene);

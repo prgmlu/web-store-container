@@ -44,15 +44,14 @@ const Room = ({ sceneData, webpSupport }) => {
 				eventCategory: 'Navigation',
 				eventAction: 'Scene loaded',
 				eventLabel: scenes[sceneData.id].name,
-				non_interaction: true
+				non_interaction: true,
 			});
 			collect({
-				pageView: true
+				pageView: true,
 			});
-		}else{
+		} else {
 			collect(data);
 		}
-
 	};
 
 	useEffect(() => {
@@ -149,8 +148,8 @@ const Room = ({ sceneData, webpSupport }) => {
 				dispatch(
 					setModalProps(data.selector, { ...data, visible: true }),
 				);
-				if(data?.data?.gaConfig){
-					sendGaTrackingData(data?.data?.gaConfig)
+				if (data?.data?.gaConfig) {
+					sendGaTrackingData(data?.data?.gaConfig);
 				}
 				break;
 			default:

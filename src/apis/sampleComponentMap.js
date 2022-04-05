@@ -866,8 +866,8 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					// url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js`,
-					url: `http://localhost:3019/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js`,
+					// url: `http://localhost:3019/remoteEntry.js`,
 					scope: 'wall_of_fame_game_component',
 					module: './WallofFameGameModal',
 				},
