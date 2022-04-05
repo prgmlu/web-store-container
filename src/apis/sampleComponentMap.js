@@ -583,30 +583,6 @@ const componentConfig = {
 				{
 					kind: 'container',
 					containerStyling: {
-						display: 'inline',
-					},
-					components: [
-						{
-							name: 'store_logo',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
-								// url: `http://localhost:3006/remoteEntry.js`,
-								scope: 'store_logo',
-								module: './StoreLogo',
-							},
-							styling: {
-								width: '17rem',
-								height: 'auto',
-								padding: '16px',
-								borderRadius: '10px',
-							},
-						},
-					],
-				},
-				{
-					kind: 'container',
-					containerStyling: {
 						position: 'fixed',
 						right: 0,
 						top: 0,
