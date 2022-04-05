@@ -1,8 +1,13 @@
-import { SET_PRE_SCENE_VISIBILITY, SET_SCENE_VISIBILITY } from './types';
+import {
+	SET_PRE_SCENE_VISIBILITY,
+	SET_SCENE_VISIBILITY,
+	SET_ACTIVE_SCENE,
+} from './types';
 
 const initialState = {
 	preScreenVisible: true,
 	renderScene: false,
+	activeScene: '',
 };
 
 const sceneLoadReducer = (state = initialState, action = {}) => {
@@ -13,6 +18,9 @@ const sceneLoadReducer = (state = initialState, action = {}) => {
 		}
 		case SET_SCENE_VISIBILITY: {
 			return { ...state, renderScene: payload };
+		}
+		case SET_ACTIVE_SCENE: {
+			return { ...state, activeScene: payload };
 		}
 		default:
 			return state;

@@ -7,6 +7,7 @@ import OverlayComponents from '../OverlayComponets';
 import RoomRoutes from '../RoomRoutes';
 import FontsLoader from './FontsLoader';
 import PreSceneLoader from './PreSceneLoader';
+import SceneOverlays from '../SceneOverlays';
 import SceneTransitionLoader from './SceneTransitionLoader';
 
 const UILayer = () => {
@@ -16,6 +17,7 @@ const UILayer = () => {
 			<RoomRoutes />
 			<SceneTransitionLoader />
 			<OverlayComponents />
+			<SceneOverlays />
 			<PreSceneLoader />
 			<ModalLoader />
 			<FontsLoader />

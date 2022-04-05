@@ -534,6 +534,49 @@ const componentConfig = {
 				},
 			},
 		},
+		sceneOverlays: {
+			'6242242a42f102f9875fa895': {
+				kind: 'container',
+				components: [
+					{
+						kind: 'container',
+						containerStyling: {
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							height: '100%',
+							width: '100%',
+							pointerEvents: 'none',
+						},
+						components: [
+							{
+								name: 'tooltip_overlay',
+								kind: 'component',
+								remoteConfig: {
+									url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/tooltip-overlay/main/remoteEntry.js`,
+									// url: `http://localhost:3030/remoteEntry.js`,
+									scope: 'tooltip_overlay',
+									module: './TooltipOverlay',
+								},
+								styling: {
+									width: '20vh',
+								},
+								delayInSeconds: 3,
+								assets: {
+									desktopTooltip:
+										'https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-desktop.gif',
+									mobileTooltip:
+										'https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-mobile.gif',
+								},
+							},
+						],
+					},
+				],
+			},
+		},
 		overlayComponents: {
 			kind: 'container',
 			components: [
