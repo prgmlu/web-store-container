@@ -541,9 +541,6 @@ const componentConfig = {
 					{
 						kind: 'container',
 						containerStyling: {
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
 							position: 'absolute',
 							top: 0,
 							left: 0,
@@ -580,6 +577,54 @@ const componentConfig = {
 		overlayComponents: {
 			kind: 'container',
 			components: [
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						left: 1,
+						right: 1,
+						bottom: '0px',
+						textAlign: 'center',
+						pointerEvents: 'none',
+					},
+					containerStylingMobile: {
+						position: 'fixed',
+						left: 1,
+						right: 1,
+						bottom: '1.5rem',
+						textAlign: 'center',
+						pointerEvents: 'none',
+					},
+					components: [
+						{
+							name: 'gem_collection_game_component',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
+								// url: `http://localhost:3009/remoteEntry.js`,
+								scope: 'gem_collection_game_component',
+								module: './GemsCollectionStatusUI',
+							},
+							gemAssets: {
+								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
+								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
+							},
+							gemCollectionStatusModal: {
+								background:
+									'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass_event_background.png',
+								gemCount: 4,
+							},
+							virtualConsultationLinks: {
+								uk: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+								us: 'https://www.charlottetilbury.com/product/free-pillow-talk-party-na',
+								de: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+								it: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+								fr: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+								es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
+							},
+						},
+					],
+				},
 				{
 					kind: 'container',
 					containerStyling: {
@@ -652,54 +697,6 @@ const componentConfig = {
 									bagHeading2:
 										'Cuando añadas artículos a tu bolsa, aparecerán aquí',
 								},
-							},
-						},
-					],
-				},
-				{
-					kind: 'container',
-					containerStyling: {
-						position: 'fixed',
-						left: 1,
-						right: 1,
-						bottom: '0px',
-						textAlign: 'center',
-						pointerEvents: 'none',
-					},
-					containerStylingMobile: {
-						position: 'fixed',
-						left: 1,
-						right: 1,
-						bottom: '1.5rem',
-						textAlign: 'center',
-						pointerEvents: 'none',
-					},
-					components: [
-						{
-							name: 'gem_collection_game_component',
-							kind: 'component',
-							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js`,
-								// url: `http://localhost:3009/remoteEntry.js`,
-								scope: 'gem_collection_game_component',
-								module: './GemsCollectionStatusUI',
-							},
-							gemAssets: {
-								filled: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png',
-								empty: 'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png',
-							},
-							gemCollectionStatusModal: {
-								background:
-									'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass_event_background.png',
-								gemCount: 4,
-							},
-							virtualConsultationLinks: {
-								uk: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-								us: 'https://www.charlottetilbury.com/product/free-pillow-talk-party-na',
-								de: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-								it: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-								fr: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
-								es: 'https://www.charlottetilbury.com/product/free-pillow-talk-party',
 							},
 						},
 					],
