@@ -69,6 +69,9 @@ const HotspotMarker = ({ item, ...props }) => {
 	);
 	const { hotspot_type: hotspotType, selector } = item?.props || {};
 
+	const { useAnalytics } = useSelector( (state) => state.shareableFunctions);
+	const { collect } = useAnalytics();
+
 	const getHotspotImage = () => {
 		const typeKey = defaultHotspotIconsKeys[hotspotType];
 		let url = '';
@@ -88,7 +91,7 @@ const HotspotMarker = ({ item, ...props }) => {
 		hotspotType === 'custom' && selector === 'animated_glb';
 
 	return isAnimatedGlb ? (
-		<AnimatedGLB scene={item.scene.$oid} {...props} />
+		<AnimatedGLB scene={item.scene.$oid} collect={collect} {...props} />
 	) : (
 		<Hotspot
 			{...props}
