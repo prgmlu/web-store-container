@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { batch, useDispatch, useSelector } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 import { initialize } from '../redux_stores/localizeReducer/actions';
 
@@ -17,25 +17,24 @@ import { setWebpSupport } from '../redux_stores/storeDataReducer/actions';
 
 const Store = () => {
 	const dispatch = useDispatch();
-	const storeId = useSelector((state) => state?.storeData?.id);
-	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
+
+	const {
+		id: storeId,
+		loaded: storeDataLoaded,
+		locales,
+		locales_enabled: localesEnabled,
+		default_locale: defaultLocale,
+	} = useSelector((state) => state?.storeData || {});
 
 	useEffect(() => {
-		dispatch(getComponentConfig(storeId));
-		dispatch(getStoreData(storeId));
-		dispatch(getDefaultIcons());
-		dispatch(getAllScenes(storeId));
-		dispatch(setWebpSupport());
+		batch(() => {
+			dispatch(getComponentConfig(storeId));
+			dispatch(getStoreData(storeId));
+			dispatch(getAllScenes(storeId));
+			dispatch(getDefaultIcons());
+			dispatch(setWebpSupport());
+		});
 	}, []);
-
-	const locales = useSelector((state) => state.storeData.locales);
-	const localesEnabled = useSelector(
-		(state) => state.storeData.locales_enabled,
-	);
-
-	const defaultLocale = useSelector(
-		(state) => state.storeData.default_locale,
-	);
 
 	const getLocaleFromHashPath = () => {
 		/*
