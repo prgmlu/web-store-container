@@ -149,7 +149,8 @@ const Room = ({ sceneData, webpSupport }) => {
 					setModalProps(data.selector, { ...data, visible: true }),
 				);
 				if (data?.data?.gaConfig) {
-					sendGaTrackingData(data?.data?.gaConfig);
+					const gaConfig = data?.data?.gaConfig || {};
+					sendGaTrackingData({ ...gaConfig });
 				}
 				break;
 			default:
