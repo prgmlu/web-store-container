@@ -1032,7 +1032,7 @@ const componentConfig = {
 					module: './ga_module',
 				},
 				betaAnalyticsID: 'UA-91780857-16',
-				prodAnalyticsID: 'UA-91780857-16',
+				prodAnalyticsID: 'UA-91780857-58',
 				additionalAnalyticsIDs: [],
 			},
 		],
