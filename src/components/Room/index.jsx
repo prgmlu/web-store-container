@@ -48,6 +48,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				non_interaction: true,
 			});
 			collect({
+				sceneName: scenes[sceneData.id].name,
 				pageView: true,
 			});
 		} else {
