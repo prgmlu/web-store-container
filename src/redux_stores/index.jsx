@@ -13,7 +13,6 @@ import accessibilityReducer from './accessibilityReducer';
 import defaultIconsReducer from './defaultIconsReducer';
 import sceneLoadReducer from './sceneLoadReducer';
 import localizeReducer from './localizeReducer';
-import cartReducer from './cartReducer';
 import roomObjectReducer from './roomObjectsReducer';
 
 const staticReducers = {
@@ -27,7 +26,6 @@ const staticReducers = {
 	defaultIcons: defaultIconsReducer,
 	sceneLoad: sceneLoadReducer,
 	localize: localizeReducer,
-	obsessCart: cartReducer,
 	roomObjects: roomObjectReducer,
 };
 
