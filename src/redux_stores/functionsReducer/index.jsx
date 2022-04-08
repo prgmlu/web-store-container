@@ -7,7 +7,6 @@ import useTranslate from '../../hooks/useTranslate';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
-import useCartActions from '../../hooks/useCartActions';
 import usePathChange from '../../hooks/usePathChange';
 
 const initialState = {
@@ -17,7 +16,6 @@ const initialState = {
 	useLocalize,
 	useLocalizedNavigation,
 	useAnalytics,
-	useCartActions,
 	usePathChange,
 };
 
