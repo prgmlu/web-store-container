@@ -1875,6 +1875,26 @@ const componentConfig = {
 						},
 					],
 				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						bottom: '10px',
+						left: '10px',
+					},
+					components: [
+						{
+							name: 'spotify_modal',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/spotify-integration/main/remoteEntry.js`,
+								//url: `http://localhost:3006/remoteEntry.js`,
+								scope: 'spotify_modal',
+								module: './SpotifyModal',
+							},
+						},
+					],
+				},
 			],
 		},
 		modals: [
