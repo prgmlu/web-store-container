@@ -57,6 +57,9 @@ deploy:feature:
   when: on_success
   needs:
     - build:feature
+  environment:
+    name: ${CI_COMMIT_REF_NAME}
+    url: https://modules.obsess-vr.com/feature/${CI_PROJECT_PATH}/${CI_COMMIT_REF_NAME}/index.html
   only:
     - /^feature\/.*$/
 
