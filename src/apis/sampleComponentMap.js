@@ -1882,7 +1882,8 @@ const componentConfig = {
 						bottom: 0,
 						padding: '4px',
 						display: 'flex',
-						alignItems: 'center',
+						alignItems: 'end',
+						flexDirection: 'column',
 					},
 					components: [
 						{
@@ -1890,13 +1891,15 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/share-buttons-component/main/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
 								scope: 'share_buttoons_component',
 								module: './ShareButtonsComponent',
 							},
-							style: {
-								marginRight: '10px',
-							},
 							dimension: 'width',
+							iconSize: '1.2rem',
+							style: {
+								paddingBottom: '5px',
+							},
 							links: [
 								{
 									name: 'mail',
