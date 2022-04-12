@@ -1993,7 +1993,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'lg',
 				},
 			},
 			{
@@ -2009,7 +2009,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'lg',
 				},
 			},
 
@@ -2057,7 +2057,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'md',
 				},
 			},
 			{
@@ -2089,7 +2089,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'md',
 				},
 			},
 			{
@@ -2105,7 +2105,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'md',
 				},
 			},
 		],
