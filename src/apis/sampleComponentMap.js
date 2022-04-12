@@ -1881,8 +1881,50 @@ const componentConfig = {
 						right: 0,
 						bottom: 0,
 						padding: '4px',
+						display: 'flex',
+						alignItems: 'center',
 					},
 					components: [
+						{
+							name: 'share_buttoons_component',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/share-buttons-component/main/remoteEntry.js`,
+								scope: 'share_buttoons_component',
+								module: './ShareButtonsComponent',
+							},
+							style: {
+								marginRight: '10px',
+							},
+							dimension: 'width',
+							links: [
+								{
+									name: 'mail',
+									url: 'mailto:?body=https://raos.obsessvr.com/virtual-saucery/',
+									imageUrl:
+										'https://cdn.obsessvr.com/mail.svg',
+								},
+								{
+									name: 'tiktok',
+									url: 'https://www.tiktok.com/@raoshomemade',
+									imageUrl:
+										'https://cdn.obsessvr.com/tiktok.svg',
+								},
+								{
+									name: 'facebook',
+									url: 'https://www.facebook.com/raoshomemade',
+									imageUrl:
+										'https://cdn.obsessvr.com/facebook.svg',
+								},
+
+								{
+									name: 'instagram',
+									url: 'https://www.instagram.com/raoshomemade/',
+									imageUrl:
+										'https://cdn.obsess-vr.com/instagram.svg',
+								},
+							],
+						},
 						{
 							name: 'powered_by_obsess',
 							kind: 'component',
@@ -1891,7 +1933,10 @@ const componentConfig = {
 								scope: 'powered_by_obsess',
 								module: './PoweredByObsess',
 							},
-							textStyling: { color: 'white', fontSize: '0.9rem' },
+							textStyling: {
+								color: 'white',
+								fontSize: '0.9rem',
+							},
 						},
 					],
 				},
@@ -1908,7 +1953,6 @@ const componentConfig = {
 							kind: 'component',
 							remoteConfig: {
 								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/spotify-integration/main/remoteEntry.js`,
-								//url: `http://localhost:3006/remoteEntry.js`,
 								scope: 'spotify_modal',
 								module: './SpotifyModal',
 							},
