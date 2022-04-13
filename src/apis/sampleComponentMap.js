@@ -1962,6 +1962,65 @@ const componentConfig = {
 						},
 					],
 				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						height: '100%',
+						width: '100%',
+						pointerEvents: 'none',
+					},
+					components: [
+						{
+							name: 'tooltip_overlay',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/tooltip-overlay/variant/descriptive/remoteEntry.js`,
+								// url: `http://localhost:3030/remoteEntry.js`,
+								scope: 'tooltip_overlay',
+								module: './TooltipOverlay',
+							},
+							btnStyling: {
+								width: '180px',
+								height: '45px',
+								color: 'white',
+								backgroundColor: '#B5252C',
+							},
+							delayInSeconds: 3,
+							tooltipLogo:
+								'https://cdn.obsessvr.com/raos/tooltip-logo.png',
+							tooltipBody: "Welcome to The Saucery by Rao's Homemade ™",
+							tooltipItems: [
+								{
+									imageUrl:
+										'https://cdn.obsessvr.com/tooltip-browse.png',
+									title: 'Browse',
+									body: 'Click and drag the screen or use the arrows on the floor to explore',
+								},
+								{
+									imageUrl:
+										'https://cdn.obsessvr.com/tooltip-product.png',
+									title: 'Product',
+									body: 'Click on icon to see product details and shop',
+								},
+								{
+									imageUrl:
+										'https://cdn.obsessvr.com/tooltip-info.png',
+									title: 'Image/Text Hotspot',
+									body: 'Click on icon to view exclusive content',
+								},
+								{
+									imageUrl:
+										'https://cdn.obsessvr.com/tooltip-play.png',
+									title: 'Video',
+									body: 'Click on icon to view exclusive videos',
+								},
+							],
+						},
+					],
+				},
 			],
 		},
 		modals: [
