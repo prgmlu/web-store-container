@@ -1408,6 +1408,18 @@ const componentConfig = {
 					},
 					components: [
 						{
+							name: 'shop_with_friends',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js`,
+								// url: `http://localhost:30014/remoteEntry.js`,
+								scope: 'shop_with_friends',
+								module: './ShopWithFriends',
+							},
+							textStyling: { color: 'white', fontSize: '0.9rem' },
+							showButton: true,
+						},
+						{
 							name: 'powered_by_obsess',
 							kind: 'component',
 							remoteConfig: {
@@ -1988,7 +2000,7 @@ const componentConfig = {
 								color: 'white',
 								backgroundColor: '#B5252C',
 							},
-							delayInSeconds: 3,
+							delayInSeconds: 10,
 							tooltipLogo:
 								'https://cdn.obsessvr.com/raos/tooltip-logo.png',
 							tooltipBody: "Welcome to The Saucery by Rao's Homemade ™",
