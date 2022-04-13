@@ -744,7 +744,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/welcome-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/charlotte-tilbury/remoteEntry.js`,
 					// url: `http://localhost:3006/remoteEntry.js`,
 					scope: 'welcome_modal',
 					module: './WelcomeModal',
@@ -754,31 +754,31 @@ const componentConfig = {
 					centered: true,
 					animation: true,
 					bgImageUrl:
-						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcomeAsset.png',
+						'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png',
 					translations: {
 						us: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/us/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/us/welcome.png',
 						},
 						uk: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png',
 						},
 						fr: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/fr/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/fr/welcome.png',
 						},
 						de: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/de/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/de/welcome.png',
 						},
 						it: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/it/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/it/welcome.png',
 						},
 						es: {
 							bgImageUrl:
-								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/es/welcomeAsset.png',
+								'https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/es/welcome.png',
 						},
 					},
 				},
