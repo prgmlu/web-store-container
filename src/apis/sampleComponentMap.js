@@ -2055,6 +2055,20 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/obsess-selfie-app/main/remoteEntry.js`,
+					// url: `http://localhost:3020/remoteEntry.js`,
+					scope: 'selfie_modal',
+					module: './SelfieModal',
+				},
+				modalConfig: {
+					selector: 'selfie',
+					centered: true,
+					animation: true,
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3008/remoteEntry.js`,
 					scope: 'video_modal',
