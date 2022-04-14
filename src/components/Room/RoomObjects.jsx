@@ -124,7 +124,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				type: item.type,
 			}}
 			// imageURL={getHotspotImage()}
-			onClick={() => onClicked(item?.props)}
+			// onClick={() => onClicked(item?.props)}
 		/>
 	);
 };
