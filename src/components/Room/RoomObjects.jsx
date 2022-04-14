@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hotspot from 'threejs_scene/Hotspot';
 import AnimatedGLB from 'threejs_scene/AnimatedGLB';
+import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
 import config from 'config';
 import { useSelector } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
@@ -90,9 +91,25 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isAnimatedGlb =
 		hotspotType === 'custom' && selector === 'animated_glb';
 
-	return isAnimatedGlb ? (
-		<AnimatedGLB scene={item.scene.$oid} collect={collect} {...props} />
-	) : (
+	const isVideo = hotspotType === 'embedded_video';
+
+	if (isVideo) {
+		return (
+			<InSceneVidComponent
+				{...props}
+				src={formURL(item?.props?.url)}
+				transform={item.transform}
+			/>
+		);
+	}
+
+	if (isAnimatedGlb) {
+		return (
+			<AnimatedGLB scene={item.scene.$oid} collect={collect} {...props} />
+		);
+	}
+
+	return (
 		<Hotspot
 			{...props}
 			type="hotspot"
@@ -107,6 +124,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				type: item.type,
 			}}
 			// imageURL={getHotspotImage()}
+			onClick={() => onClicked(item?.props)}
 		/>
 	);
 };
@@ -124,7 +142,6 @@ const RoomObjects = ({ ...props }) => {
 
 	if (roomObjectsArr.length <= 0) return null;
 
-	console.log('=> RoomObjects', roomObjectsArr.length);
 	return (
 		<>
 			{roomObjectsArr.map((item) => {

@@ -2003,7 +2003,8 @@ const componentConfig = {
 							delayInSeconds: 10,
 							tooltipLogo:
 								'https://cdn.obsessvr.com/raos/tooltip-logo.png',
-							tooltipBody: "Welcome to The Saucery by Rao's Homemade ™",
+							tooltipBody:
+								"Welcome to The Saucery by Rao's Homemade ™",
 							tooltipItems: [
 								{
 									imageUrl:
