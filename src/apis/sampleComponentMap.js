@@ -1989,7 +1989,7 @@ const componentConfig = {
 								width: 'auto',
 							},
 						},
-					]
+					],
 				},
 				{
 					kind: 'container',
@@ -2007,6 +2007,7 @@ const componentConfig = {
 								scope: 'spotify_modal',
 								module: './SpotifyModal',
 							},
+							playlistUrl: 'kajsbdfakjsbdfakjsdbv',
 						},
 					],
 				},
@@ -2091,7 +2092,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/obsess-selfie-app/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/obsess-selfie-app/main/remoteEntry.js`,
 					// url: `http://localhost:3020/remoteEntry.js`,
 					scope: 'selfie_modal',
 					module: './SelfieModal',
