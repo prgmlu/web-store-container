@@ -1844,19 +1844,23 @@ const componentConfig = {
 		modules: {
 			getProductData: {
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/variant/shopify/remoteEntry.js`,
 					// url: `http://localhost:3007/remoteEntry.js`,
 					scope: 'product_data_module',
 					module: './product_modules',
 				},
+				shopifyUrl: 'raoshomemade.myshopify.com',
+				shopifyToken: '1a73e8f7f8e885cb89cb342288cc0dca',
 			},
 			cartController: {
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/variant/shopify/remoteEntry.js`,
 					// url: `http://localhost:3014/remoteEntry.js`,
 					scope: 'cart_controller_module',
 					module: './cart_modules',
 				},
+				shopifyUrl: 'raoshomemade.myshopify.com',
+				shopifyToken: '1a73e8f7f8e885cb89cb342288cc0dca',
 			},
 		},
 		overlayComponents: {
@@ -1954,6 +1958,38 @@ const componentConfig = {
 							},
 						},
 					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: 0,
+						top: 0,
+						display: 'flex',
+						padding: '8px',
+					},
+					components: [
+						{
+							name: 'cart_component',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/main/remoteEntry.js`,
+								// url: `http://localhost:3016/remoteEntry.js`,
+								scope: 'cart_component',
+								module: './CartComponent',
+							},
+							styling: {
+								alignItems: 'center',
+								display: 'flex',
+								flexDirection: 'column',
+								marginRight: '1em',
+							},
+							iconStyling: {
+								height: '2em',
+								width: 'auto',
+							},
+						},
+					]
 				},
 				{
 					kind: 'container',
