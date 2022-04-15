@@ -2007,7 +2007,8 @@ const componentConfig = {
 								scope: 'spotify_modal',
 								module: './SpotifyModal',
 							},
-							playlistUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DWT1R6bXL4dyW?utm_source=generator&theme=0',
+							playlistUrl:
+								'https://open.spotify.com/embed/playlist/37i9dQZF1DWT1R6bXL4dyW?utm_source=generator&theme=0',
 						},
 					],
 				},
@@ -2077,7 +2078,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/raos/remoteEntry.js`,
 					// url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
 					module: './ProductModal',
