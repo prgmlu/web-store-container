@@ -2007,7 +2007,7 @@ const componentConfig = {
 								scope: 'spotify_modal',
 								module: './SpotifyModal',
 							},
-							playlistUrl: 'kajsbdfakjsbdfakjsdbv',
+							playlistUrl: 'https://open.spotify.com/embed/playlist/37i9dQZF1DWT1R6bXL4dyW?utm_source=generator&theme=0',
 						},
 					],
 				},
