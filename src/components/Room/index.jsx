@@ -76,7 +76,6 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(setActiveScene(sceneData.id));
 	}, [sceneData.id]);
 
-
 	const formatDate = (date, format) => {
 		const map = {
 			mm: date.getMonth() + 1,
@@ -190,21 +189,22 @@ const Room = ({ sceneData, webpSupport }) => {
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
 		<Scene
-				sceneId={sceneData.id}
-				bgConf={bgConfig}
-				linkedScenes={[]}
-				allowHotspotsToMove={false}
-				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
-					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
-				}
-				dispatch={dispatch}
-				fps={isMobile ? 30 : 60}
-				type="containerInstance"
-			>
-				<RoomObjects
-					onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}
-				/>
-			</Scene>
+			sceneId={sceneData.id}
+			bgConf={bgConfig}
+			linkedScenes={[]}
+			allowHotspotsToMove={false}
+			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+			}
+			dispatch={dispatch}
+			fps={isMobile ? 30 : 60}
+			type="containerInstance"
+			orbitControlsConfig={sceneData?.controls}
+		>
+			<RoomObjects
+				onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}
+			/>
+		</Scene>
 	) : null;
 };
 

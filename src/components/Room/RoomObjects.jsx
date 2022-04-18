@@ -123,8 +123,6 @@ const HotspotMarker = ({ item, ...props }) => {
 				type: item.type,
 			}}
 			imageURL={getHotspotImage()}
-			// imageURL={`${config.CDN_BASE_URL}/stairs-up-black.svg`}
-			// onClick={() => onClicked(item?.props)}
 		/>
 	);
 };
