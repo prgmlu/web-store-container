@@ -84,7 +84,6 @@ const HotspotMarker = ({ item, ...props }) => {
 				url = formURL(defaultIcons[hotspotIconSearchKey]);
 			}
 		}
-
 		return url;
 	};
 
@@ -123,7 +122,8 @@ const HotspotMarker = ({ item, ...props }) => {
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 				type: item.type,
 			}}
-			// imageURL={getHotspotImage()}
+			imageURL={getHotspotImage()}
+			// imageURL={`${config.CDN_BASE_URL}/stairs-up-black.svg`}
 			// onClick={() => onClicked(item?.props)}
 		/>
 	);
