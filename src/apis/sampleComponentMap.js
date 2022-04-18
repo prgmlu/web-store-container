@@ -2102,6 +2102,13 @@ const componentConfig = {
 					selector: 'selfie',
 					centered: true,
 					animation: true,
+					size: 'l',
+					closeIcon: 'https://cdn.obsess-vr.com/raos/close-icon.png',
+					label: '#SauceryByRaos',
+					styling: {
+						mainColor: '#f8f8ee',
+						altColor: '#b5252c',
+					},
 				},
 			},
 			{
