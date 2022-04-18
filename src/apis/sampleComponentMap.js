@@ -1437,6 +1437,23 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3030/remoteEntry.js`,
+					scope: 'zoom_modal',
+					module: './ZoomModal',
+				},
+				modalConfig: {
+					selector: 'zoom',
+					centered: true,
+					animation: true,
+					hotspotanimation: {
+						type: 'none',
+					},
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3002/remoteEntry.js`,
 					scope: 'product_modal',
