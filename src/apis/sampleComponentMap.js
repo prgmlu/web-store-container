@@ -2241,7 +2241,7 @@ const componentConfig = {
 					scope: 'ga_module',
 					module: './ga_module',
 				},
-				betaAnalyticsID: 'UA-91780857-16',
+				betaAnalyticsID: 'UA-202877817-43',
 				prodAnalyticsID: 'UA-91780857-16',
 				additionalAnalyticsIDs: [],
 			},
