@@ -91,7 +91,7 @@ const Store = () => {
 	};
 
 	useEffect(() => {
-		if (storeDataLoaded) {
+		if (storeDataLoaded && localesEnabled) {
 			dispatch(
 				initialize({
 					locales,
