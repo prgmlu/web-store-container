@@ -1990,7 +1990,7 @@ const componentConfig = {
 							name: 'cart_component',
 							kind: 'component',
 							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/main/remoteEntry.js`,
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/cart-component/variant/raos/remoteEntry.js`,
 								// url: `http://localhost:3016/remoteEntry.js`,
 								scope: 'cart_component',
 								module: './CartComponent',
@@ -1999,11 +1999,12 @@ const componentConfig = {
 								alignItems: 'center',
 								display: 'flex',
 								flexDirection: 'column',
-								marginRight: '1em',
 							},
 							iconStyling: {
-								height: '2em',
+								height: '2.5em',
 								width: 'auto',
+								marginRight: '1em',
+								marginBottom: '1em',
 							},
 						},
 					],
