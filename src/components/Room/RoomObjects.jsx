@@ -77,9 +77,9 @@ const HotspotMarker = ({ item, ...props }) => {
 		const typeKey = defaultHotspotIconsKeys[hotspotType];
 		let url = '';
 		if (typeKey) {
-			const hotspotIconSearchKey = stylingIcons[typeKey].name;
+			const hotspotIconSearchKey = stylingIcons[typeKey]?.name;
 			if (hotspotIconSearchKey in storeIconFiles) {
-				url = formURL(storeIconFiles[hotspotIconSearchKey].url);
+				url = formURL(storeIconFiles[hotspotIconSearchKey]?.url);
 			} else if (hotspotIconSearchKey in defaultIcons) {
 				url = formURL(defaultIcons[hotspotIconSearchKey]);
 			}
