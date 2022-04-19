@@ -1,19 +1,17 @@
 import {
-	SET_TOTAL_NAV_MARKER_INDEXES,
-	RESET_CURRENT_ACCESSIBILITY_NAV_IDX,
-	HANDLE_LEFT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
-	HANDLE_RIGHT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
+	SET_ACCESSIBILITY_SELECTOR,
+	SET_ACTIVE_NAV_INDEX,
+	SET_NAV_MARKER_COUNT,
+	SET_ACTIVE_HOTSPOT_INDEX,
+	SET_HOTSPOT_MARKER_COUNT,
 } from './types';
-import {
-	handleLeftArrowKeyAccessibilityNavIdx,
-	handleRightArrowKeyAccessibilityNavIdx,
-} from './actions';
 
 const initialState = {
-	navMarkerCount: undefined,
-	currentAccessibilityNavIdx: undefined,
-	handleLeftArrowKeyAccessibilityNavIdx,
-	handleRightArrowKeyAccessibilityNavIdx,
+	accessibilitySelector: undefined, // either 'navigation' or 'hotspot'
+	activeNavIndex: undefined,
+	navMarkerCount: 0,
+	activeHotspotIndex: undefined,
+	hotspotMarkerCount: 0,
 };
 
 export default function accessibilityReducer(
@@ -21,34 +19,18 @@ export default function accessibilityReducer(
 	action = {},
 ) {
 	const { type, payload } = action;
-	const { currentAccessibilityNavIdx, navMarkerCount } = state;
-	let updatedIdx;
 
 	switch (type) {
-		case SET_TOTAL_NAV_MARKER_INDEXES:
+		case SET_ACCESSIBILITY_SELECTOR:
+			return { ...state, accessibilitySelector: payload };
+		case SET_ACTIVE_NAV_INDEX:
+			return { ...state, activeNavIndex: payload };
+		case SET_NAV_MARKER_COUNT:
 			return { ...state, navMarkerCount: payload };
-
-		case HANDLE_LEFT_ARROW_KEY_ACCESSIBILITY_NAV_IDX:
-			if (currentAccessibilityNavIdx === undefined) {
-				updatedIdx = 0;
-			} else if (currentAccessibilityNavIdx <= 0) {
-				updatedIdx = navMarkerCount - 1;
-			} else {
-				updatedIdx = (currentAccessibilityNavIdx - 1) % navMarkerCount;
-			}
-			return { ...state, currentAccessibilityNavIdx: updatedIdx };
-
-		case HANDLE_RIGHT_ARROW_KEY_ACCESSIBILITY_NAV_IDX:
-			if (currentAccessibilityNavIdx === undefined) {
-				updatedIdx = 0;
-			} else {
-				updatedIdx = (currentAccessibilityNavIdx + 1) % navMarkerCount;
-			}
-			return { ...state, currentAccessibilityNavIdx: updatedIdx };
-
-		case RESET_CURRENT_ACCESSIBILITY_NAV_IDX:
-			return { ...state, currentAccessibilityNavIdx: undefined };
-
+		case SET_ACTIVE_HOTSPOT_INDEX:
+			return { ...state, activeHotspotIndex: payload };
+		case SET_HOTSPOT_MARKER_COUNT:
+			return { ...state, hotspotMarkerCount: payload };
 		default:
 			return state;
 	}

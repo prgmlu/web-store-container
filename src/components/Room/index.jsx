@@ -8,7 +8,13 @@ import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
 import { setModalProps } from '../../redux_stores/modalsReducer/actions';
-import { resetCurrentAccessibilityNavIdx } from '../../redux_stores/accessibilityReducer/actions';
+import {
+	setAccessibilitySelector,
+	setActiveNavIndex,
+	setNavMarkerCount,
+	setActiveHotspotIndex,
+	setHotspotMarkerCount,
+} from '../../redux_stores/accessibilityReducer/actions';
 import RoomObjects from './RoomObjects';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
@@ -23,7 +29,13 @@ const Room = ({ sceneData, webpSupport }) => {
 	// const [linkedScenes, setLinkedScenes] = useState([]);
 
 	const scenes = useSelector((state) => state.scenes);
-
+	const {
+		accessibilitySelector,
+		activeNavIndex,
+		navMarkerCount,
+		activeHotspotIndex,
+		hotspotMarkerCount,
+	} = useSelector((state) => state?.accessibility);
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 
@@ -67,6 +79,14 @@ const Room = ({ sceneData, webpSupport }) => {
 				// 		.filter((item) => 'cube_map_dir' in item)
 				// 		.map((item) => formURL(item.cube_map_dir)),
 				// );
+				const navCount = res.filter(
+					(item) => item.type === 'NavMarker',
+				).length;
+				const nonNavCount = res.filter(
+					(item) => item.type !== 'NavMarker',
+				).length;
+				dispatch(setNavMarkerCount(navCount));
+				dispatch(setHotspotMarkerCount(nonNavCount));
 			})
 			.catch(() => {
 				dispatch(setRoomObjects([]));
@@ -75,6 +95,76 @@ const Room = ({ sceneData, webpSupport }) => {
 		sendGaTrackingData({ event: 'scene_loaded' });
 		dispatch(setActiveScene(sceneData.id));
 	}, [sceneData.id]);
+
+	const accessibilityListener = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		if (e.altKey === false) return;
+		if (
+			activeNavIndex === undefined &&
+			(e.key === 'ArrowLeft' || e.key === 'ArrowRight')
+		) {
+			dispatch(setAccessibilitySelector('navigation'));
+			dispatch(setActiveNavIndex(0));
+			dispatch(setActiveHotspotIndex(undefined));
+			return;
+		}
+		if (
+			activeHotspotIndex === undefined &&
+			(e.key === 'ArrowUp' || e.key === 'ArrowDown')
+		) {
+			dispatch(setAccessibilitySelector('hotspot'));
+			dispatch(setActiveHotspotIndex(0));
+			dispatch(setActiveNavIndex(undefined));
+			return;
+		}
+
+		let updatedNavIndex = activeNavIndex;
+		let updatedHotspotIndex = activeHotspotIndex;
+
+		switch (e.key) {
+			case 'ArrowLeft':
+				updatedNavIndex -= 1;
+				break;
+			case 'ArrowRight':
+				updatedNavIndex += 1;
+				break;
+			case 'ArrowUp':
+				updatedHotspotIndex += 1;
+				break;
+			case 'ArrowDown':
+				updatedHotspotIndex -= 1;
+				break;
+			default:
+				break;
+		}
+
+		if (accessibilitySelector === 'navigation') {
+			if (updatedNavIndex < 0) {
+				updatedNavIndex = navMarkerCount - 1;
+			} else if (updatedNavIndex >= navMarkerCount) {
+				updatedNavIndex %= navMarkerCount;
+			}
+			dispatch(setActiveNavIndex(updatedNavIndex));
+		}
+
+		if (accessibilitySelector === 'hotspot') {
+			if (updatedHotspotIndex < 0) {
+				updatedHotspotIndex = hotspotMarkerCount - 1;
+			} else if (updatedHotspotIndex >= hotspotMarkerCount) {
+				updatedHotspotIndex %= hotspotMarkerCount;
+			}
+			dispatch(setActiveHotspotIndex(updatedHotspotIndex));
+		}
+	};
+
+	useEffect(() => {
+		document.addEventListener('keyup', accessibilityListener);
+
+		return () => {
+			document.removeEventListener('keyup', accessibilityListener);
+		};
+	}, [activeNavIndex, activeHotspotIndex, accessibilitySelector]);
 
 	const formatDate = (date, format) => {
 		const map = {
@@ -105,6 +195,9 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onNavMarkerClicked = (data) => {
 		dispatch(setRoomObjects([]));
+		dispatch(setActiveNavIndex(undefined));
+		dispatch(setActiveHotspotIndex(undefined));
+		dispatch(setAccessibilitySelector(undefined));
 
 		navigate(scenes[data.linked_room_id.$oid].name);
 		collect({
@@ -177,14 +270,6 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	};
 
-	const onEnterKeyToSelectNavMarker = (e, marker, isMarkerActive) => {
-		if (e.key === 'Enter' && marker && isMarkerActive) {
-			e.preventDefault();
-			const { props } = marker.userData;
-			onNavMarkerClicked(props);
-		}
-	};
-
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -202,7 +287,9 @@ const Room = ({ sceneData, webpSupport }) => {
 			orbitControlsConfig={sceneData?.controls}
 		>
 			<RoomObjects
-				onEnterKeyToSelectNavMarker={onEnterKeyToSelectNavMarker}
+				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+				}
 			/>
 		</Scene>
 	) : null;
