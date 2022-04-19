@@ -2165,7 +2165,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/variant/raos/remoteEntry.js`,
 					// url: `http://localhost:3009/remoteEntry.js`,
 					scope: 'text_with_button_modal',
 					module: './TextWithButtonModal',
@@ -2175,6 +2175,8 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
+					closeIcon:
+						'https://cdn.obsess-vr.com/modal-close-icon-normal.png',
 				},
 			},
 			{
