@@ -1743,7 +1743,7 @@ const componentConfig = {
 
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'lg',
 				},
 			},
 
