@@ -1,23 +1,32 @@
 import {
-	SET_TOTAL_NAV_MARKER_INDEXES,
-	RESET_CURRENT_ACCESSIBILITY_NAV_IDX,
-	HANDLE_LEFT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
-	HANDLE_RIGHT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
+	SET_ACCESSIBILITY_SELECTOR,
+	SET_ACTIVE_NAV_INDEX,
+	SET_NAV_MARKER_COUNT,
+	SET_ACTIVE_HOTSPOT_INDEX,
+	SET_HOTSPOT_MARKER_COUNT,
 } from './types';
 
-export const setNavMarkerCount = (data) => ({
-	type: SET_TOTAL_NAV_MARKER_INDEXES,
+export const setAccessibilitySelector = (data) => ({
+	type: SET_ACCESSIBILITY_SELECTOR,
 	payload: data,
 });
 
-export const handleLeftArrowKeyAccessibilityNavIdx = () => ({
-	type: HANDLE_LEFT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
+export const setActiveNavIndex = (data) => ({
+	type: SET_ACTIVE_NAV_INDEX,
+	payload: data,
 });
 
-export const handleRightArrowKeyAccessibilityNavIdx = () => ({
-	type: HANDLE_RIGHT_ARROW_KEY_ACCESSIBILITY_NAV_IDX,
+export const setNavMarkerCount = (data) => ({
+	type: SET_NAV_MARKER_COUNT,
+	payload: data,
 });
 
-export const resetCurrentAccessibilityNavIdx = () => ({
-	type: RESET_CURRENT_ACCESSIBILITY_NAV_IDX,
+export const setActiveHotspotIndex = (data) => ({
+	type: SET_ACTIVE_HOTSPOT_INDEX,
+	payload: data,
+});
+
+export const setHotspotMarkerCount = (data) => ({
+	type: SET_HOTSPOT_MARKER_COUNT,
+	payload: data,
 });

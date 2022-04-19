@@ -138,18 +138,40 @@ const RoomObjects = ({ ...props }) => {
 		(key) => roomObjects[key],
 	);
 
-	if (roomObjectsArr.length <= 0) return null;
+	const { activeNavIndex, activeHotspotIndex } = useSelector(
+		(state) => state?.accessibility,
+	);
 
+	let navMarkerIndexCounter = -1;
+	let hotspotMarkerIndexCounter = -1;
+
+	if (roomObjectsArr.length <= 0) return null;
 	return (
 		<>
 			{roomObjectsArr.map((item) => {
 				if (item.type === 'NavMarker') {
+					navMarkerIndexCounter += 1;
 					return (
-						<NavMarker item={item} key={item._id.$oid} {...props} />
+						<NavMarker
+							key={item._id.$oid}
+							item={item}
+							{...props}
+							activeNavIndex={activeNavIndex}
+							navMarkerIndex={navMarkerIndexCounter}
+							accessibilityHighlightColor="gray"
+						/>
 					);
 				}
+				hotspotMarkerIndexCounter += 1;
 				return (
-					<HotspotMarker item={item} {...props} key={item._id.$oid} />
+					<HotspotMarker
+						key={item._id.$oid}
+						item={item}
+						{...props}
+						activeHotspotIndex={activeHotspotIndex}
+						hotspotMarkerIndex={hotspotMarkerIndexCounter}
+						accessibilityHighlightColor="gray"
+					/>
 				);
 			})}
 		</>
