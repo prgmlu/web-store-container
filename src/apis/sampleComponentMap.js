@@ -2001,7 +2001,7 @@ const componentConfig = {
 								flexDirection: 'column',
 							},
 							iconStyling: {
-								height: '2.5em',
+								height: '2em',
 								width: 'auto',
 								marginRight: '1em',
 								marginBottom: '1em',
