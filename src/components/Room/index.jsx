@@ -255,7 +255,7 @@ const Room = ({ sceneData, webpSupport }) => {
 						visible: true,
 					}),
 				);
-				sendGaTrackingData(data);
+				
 		}
 	};
 
