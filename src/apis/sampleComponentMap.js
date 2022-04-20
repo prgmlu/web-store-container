@@ -1980,7 +1980,7 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						right: 10,
+						right: 0,
 						top: 10,
 						display: 'flex',
 						padding: '8px',
