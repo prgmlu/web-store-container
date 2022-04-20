@@ -4,6 +4,7 @@ import { REGISTER_SHAREABLE, SET_FUNCTIONS } from './types';
 import axiosApi from '../../apis/axiosApi';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import { formURL } from '../../utils/apiUtils';
+import { getFilename } from '../../utils/fileUtils';
 import useTranslate from '../../hooks/useTranslate';
 import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
@@ -14,6 +15,7 @@ const initialState = {
 	axios: axiosApi,
 	getSceneObjects,
 	formURL,
+	getFilename,
 	useTranslate,
 	useLocalize,
 	useLocalizedNavigation,

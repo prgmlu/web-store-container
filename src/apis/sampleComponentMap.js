@@ -2119,12 +2119,11 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'selfie',
+
 					centered: true,
 					animation: true,
-					size: 'l',
-					closeIcon: 'https://cdn.obsess-vr.com/raos/close-icon.png',
-					backgroundImage:
-						'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
+					size: 'lg',
+					backgroundImage: 'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
 					label: '#SauceryByRaos',
 					styling: {
 						mainColor: '#f8f8ee',
@@ -2164,7 +2163,6 @@ const componentConfig = {
 					size: 'lg',
 				},
 			},
-
 			{
 				kind: 'modal',
 				remoteConfig: {
