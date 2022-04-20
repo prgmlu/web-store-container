@@ -2050,6 +2050,7 @@ const componentConfig = {
 								scope: 'tooltip_overlay',
 								module: './TooltipOverlay',
 							},
+							showButtonOnMobile: true,
 							btnStyling: {
 								width: '180px',
 								height: '45px',
@@ -2122,7 +2123,8 @@ const componentConfig = {
 					animation: true,
 					size: 'l',
 					closeIcon: 'https://cdn.obsess-vr.com/raos/close-icon.png',
-					backgroundImage: 'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
+					backgroundImage:
+						'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
 					label: '#SauceryByRaos',
 					styling: {
 						mainColor: '#f8f8ee',
