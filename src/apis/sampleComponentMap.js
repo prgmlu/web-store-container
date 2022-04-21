@@ -1686,13 +1686,21 @@ const componentConfig = {
 					},
 					components: [
 						{
+							kind: 'container',
+							containerStyling: {
+								position: 'fixed',
+								top: '20px',
+								right: '20px',
+							},
 							name: 'navigation_menu',
 							kind: 'component',
 							remoteConfig: {
-								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/navigation-menu/main/remoteEntry.js`,
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/lululemon/remoteEntry.js`,
 								scope: 'navigation_menu',
 								module: './NavigationMenu',
 							},
+							navArrowImage:
+								'https://cdn.obsess-vr.com/lululemon/lulu-arrow.png',
 						},
 					],
 				},
@@ -2123,7 +2131,8 @@ const componentConfig = {
 					centered: true,
 					animation: true,
 					size: 'lg',
-					backgroundImage: 'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
+					backgroundImage:
+						'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
 					label: '#SauceryByRaos',
 					styling: {
 						mainColor: '#f8f8ee',
