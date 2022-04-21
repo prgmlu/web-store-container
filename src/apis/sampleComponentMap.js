@@ -1788,10 +1788,11 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-
+					closeIcon:
+						'https://cdn.obsess-vr.com/plain-black-close.png',
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'xl',
 				},
 			},
 			{
@@ -2123,7 +2124,8 @@ const componentConfig = {
 					centered: true,
 					animation: true,
 					size: 'lg',
-					backgroundImage: 'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
+					backgroundImage:
+						'https://cdn.obsess-vr.com/raos/RaosSelfieBkg.png',
 					label: '#SauceryByRaos',
 					styling: {
 						mainColor: '#f8f8ee',
