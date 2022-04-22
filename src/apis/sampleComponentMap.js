@@ -1801,7 +1801,7 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
-					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js`,
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/variant/scrollableImages/remoteEntry.js`,
 					// url: `http://localhost:3013/remoteEntry.js`,
 					scope: 'image_carousel_modal',
 					module: './ImageCarouselModal',
