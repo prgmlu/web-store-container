@@ -1808,10 +1808,11 @@ const componentConfig = {
 				},
 				modalConfig: {
 					selector: 'image_carousel',
-
+					closeIcon:
+						'https://cdn.obsess-vr.com/plain-black-close.png',
 					centered: true,
 					animation: true,
-					size: 'sm',
+					size: 'xl',
 				},
 			},
 			{
