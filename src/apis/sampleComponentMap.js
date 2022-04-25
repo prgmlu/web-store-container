@@ -1692,6 +1692,44 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
+						left: 0,
+						bottom: 0,
+						padding: '4px',
+					},
+					components: [
+						{
+							name: 'music_controller',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/music-controller/variant/scene-music/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
+								scope: 'music_controller',
+								module: './MusicController',
+							},
+							enableSoundBar: true,
+							sceneMusic: {
+								'624c4f7e176e517390e84d62':'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
+								'62559777a4fe541530619c7f':'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
+								'62559971093fc705a5cdb1bb':'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
+								'625599f3e344ed25cd9bf64e':'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
+								'62559231b452e0eb474fdaf8':'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+								'6255951c77a42068b85cf344':'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+								'625595a8513c86cac387a29e':'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+								'62559a58312bce15cb8a4d45':'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+								'625592c0b452e0eb474fdafa':'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								'625591db8cebd8804828e588':'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								'625590ff8b2962d480a15517':'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								'623099e7d9db4c9fd43717e1':'https://cdn.obsess-vr.com/lululemon/mirror-studio.mp3',
+								'62559315d9db4c9fd4371cf4':'https://cdn.obsess-vr.com/lululemon/mirror-studio.mp3',
+								'625593bd8b2962d480a1551e':'https://cdn.obsess-vr.com/lululemon/mirror-studio.mp3',
+							}
+						},
+					]
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
 						right: 0,
 						top: 0,
 						padding: '0.5em',
