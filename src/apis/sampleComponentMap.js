@@ -1716,6 +1716,31 @@ const componentConfig = {
 						},
 					],
 				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						top: 0,
+						left: 0,
+						height: '100%',
+						width: '100%',
+						pointerEvents: 'none',
+					},
+					components: [
+						{
+							name: 'tooltip_overlay',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/tooltip-overlay/main/remoteEntry.js`,
+								// url: `http://localhost:3030/remoteEntry.js`,
+								scope: 'tooltip_overlay',
+								module: './TooltipOverlay',
+							},
+							title: 'Welcome to the 2022 Virtual Leadership Summit.',
+							delayInSeconds: 10,
+						},
+					],
+				},
 			],
 		},
 		modals: [
