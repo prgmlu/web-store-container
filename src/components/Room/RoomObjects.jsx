@@ -98,6 +98,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				{...props}
 				src={formURL(item?.props?.url)}
 				transform={item.transform}
+				keyColor={item?.props?.chroma_key}
 			/>
 		);
 	}

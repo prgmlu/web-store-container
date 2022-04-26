@@ -255,7 +255,6 @@ const Room = ({ sceneData, webpSupport }) => {
 						visible: true,
 					}),
 				);
-				
 		}
 	};
 

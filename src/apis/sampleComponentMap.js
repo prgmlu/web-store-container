@@ -1750,7 +1750,6 @@ const componentConfig = {
 					},
 					components: [
 						{
-							kind: 'container',
 							containerStyling: {
 								position: 'fixed',
 								top: '20px',
