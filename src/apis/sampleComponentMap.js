@@ -1662,6 +1662,7 @@ const componentConfig = {
 						right: 0,
 						bottom: 0,
 						padding: '4px',
+						textAlign: 'right',
 					},
 					components: [
 						{
