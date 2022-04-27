@@ -1745,10 +1745,11 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						width: '10em',
+						width: '8em',
 						right: '1em',
 						top: '1em',
 						display: 'flex',
+						backgroundColor: 'rgba(255, 255, 255, 0.35)',
 						justifyContent: 'space-between',
 					},
 					components: [
@@ -1761,7 +1762,8 @@ const componentConfig = {
 								scope: 'progress_bar',
 								module: './ProgressBar',
 							},
-							dropdownText: 'You have explored * out of the * scenes in the store.'
+							dropdownText: 'You have explored * out of the * scenes in the store.',
+							ctaText: 'Explore the rest',
 						},
 						{
 							containerStyling: {
