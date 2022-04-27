@@ -1762,7 +1762,9 @@ const componentConfig = {
 								scope: 'progress_bar',
 								module: './ProgressBar',
 							},
-							dropdownText: 'You have explored * out of the * scenes in the store.',
+							dropdownText:
+								'You have explored * out of the * scenes in',
+							storeText: 'the summit house.',
 							ctaText: 'Explore the rest',
 						},
 						{
