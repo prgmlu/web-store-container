@@ -1744,11 +1744,24 @@ const componentConfig = {
 					kind: 'container',
 					containerStyling: {
 						position: 'fixed',
-						right: 0,
-						top: 0,
-						padding: '0.5em',
+						width: '10em',
+						right: '1em',
+						top: '1em',
+						display: 'flex',
+						justifyContent: 'space-between',
 					},
 					components: [
+						{
+							name: 'progress_bar',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/progress-bar/main/remoteEntry.js`,
+								// url: `http://localhost:3031/remoteEntry.js`,
+								scope: 'progress_bar',
+								module: './ProgressBar',
+							},
+							dropdownText: 'You have explored * out of the * scenes in the store.'
+						},
 						{
 							containerStyling: {
 								position: 'fixed',
