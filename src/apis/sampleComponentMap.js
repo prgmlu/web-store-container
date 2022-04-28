@@ -14,6 +14,7 @@ const modulesBase = config.MODULES_BASE_URL;
 5f319733135089517fd8a79d - Test Store Aug 2020
 62680aff6dd9bca3536d3bde - Bravo Demo
 6266e8c2716212a167423e84 - Prada Beauty
+62696219b9aca18715d5b3b9 - Honest 
 */
 
 const componentConfig = {
@@ -3633,6 +3634,252 @@ const componentConfig = {
 			},
 		],
 	},
+	'62696219b9aca18715d5b3b9': {
+		modules: {
+			getProductData: {
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js`,
+					// url: `http://localhost:3007/remoteEntry.js`,
+					scope: 'product_data_module',
+					module: './product_modules',
+				},
+			},
+			cartController: {
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js`,
+					// url: `http://localhost:3014/remoteEntry.js`,
+					scope: 'cart_controller_module',
+					module: './cart_modules',
+				},
+			},
+		},
+		overlayComponents: {
+			kind: 'container',
+			components: [
+				{
+					kind: 'container',
+					containerStyling: {
+						display: 'inline',
+					},
+					components: [
+						{
+							name: 'store_logo',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js`,
+								// url: `http://localhost:3006/remoteEntry.js`,
+								scope: 'store_logo',
+								module: './StoreLogo',
+							},
+							styling: {
+								width: '10rem',
+								height: 'auto',
+								padding: '16px',
+								borderRadius: '10px',
+							},
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: 0,
+						bottom: 0,
+						padding: '4px',
+					},
+					components: [
+						{
+							name: 'powered_by_obsess',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js`,
+								scope: 'powered_by_obsess',
+								module: './PoweredByObsess',
+							},
+							textStyling: { color: 'white', fontSize: '0.9rem' },
+						},
+					],
+				},
+			],
+		},
+		modals: [
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3030/remoteEntry.js`,
+					scope: 'zoom_modal',
+					module: './ZoomModal',
+				},
+				modalConfig: {
+					selector: 'zoom',
+					centered: true,
+					animation: true,
+					hotspotanimation: {
+						type: 'none',
+					},
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3002/remoteEntry.js`,
+					scope: 'product_modal',
+					module: './ProductModal',
+				},
+				modalConfig: {
+					selector: 'product',
+
+					centered: true,
+					animation: true,
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3008/remoteEntry.js`,
+					scope: 'video_modal',
+					module: './VideoModal',
+				},
+				modalConfig: {
+					selector: 'video',
+
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3011/remoteEntry.js`,
+					scope: 'video_with_button_modal',
+					module: './VideoWithButtonModal',
+				},
+				modalConfig: {
+					selector: 'video_with_button',
+
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3009/remoteEntry.js`,
+					scope: 'text_with_button_modal',
+					module: './TextWithButtonModal',
+				},
+				modalConfig: {
+					selector: 'text_with_button',
+
+					centered: true,
+					animation: true,
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3012/remoteEntry.js`,
+					scope: 'image_modal',
+					module: './ImageModal',
+				},
+				modalConfig: {
+					selector: 'image',
+
+					centered: true,
+					animation: true,
+					size: 'md',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3013/remoteEntry.js`,
+					scope: 'image_carousel_modal',
+					module: './ImageCarouselModal',
+				},
+				modalConfig: {
+					selector: 'image_carousel',
+
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3014/remoteEntry.js`,
+					scope: 'iframe_modal',
+					module: './IFrameModal',
+				},
+				modalConfig: {
+					selector: 'iframe',
+
+					centered: true,
+					animation: true,
+					size: 'lg',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3015/remoteEntry.js`,
+					scope: 'quiz_modal',
+					module: './QuizModal',
+				},
+				modalConfig: {
+					selector: 'quiz',
+
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'youtube_embed_modal',
+					module: './YoutubeEmbedModal',
+				},
+				modalConfig: {
+					selector: 'youtube_embed',
+
+					centered: true,
+					animation: true,
+					size: 'sm',
+				},
+			},
+		],
+		analyticsModules: [
+			{
+				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js`,
+					// url: `http://localhost:3016/remoteEntry.js`,
+					scope: 'ga_module',
+					module: './ga_module',
+				},
+				betaAnalyticsID: 'UA-91780857-16',
+				prodAnalyticsID: 'UA-91780857-16',
+				additionalAnalyticsIDs: [],
+			},
+		],
+	},
+
 };
 
 export default componentConfig;
