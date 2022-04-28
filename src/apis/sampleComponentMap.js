@@ -3157,10 +3157,48 @@ const componentConfig = {
 					containerStyling: {
 						position: 'fixed',
 						right: 0,
+						top: 0,
+						padding: '4px'
+					},
+					components: [
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './StreamMode',
+							},
+						},
+					],
+				},
+				{
+					kind: 'container',
+					containerStyling: {
+						position: 'fixed',
+						right: 0,
 						bottom: 0,
 						padding: '4px',
 					},
 					components: [
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './ProducerControlPanel',
+							},
+						},
+						{
+							name: 'stream_mode',
+							kind: 'component',
+							remoteConfig: {
+								url: `${modulesBase}/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js`,
+								scope: 'stream_mode',
+								module: './AudiencePanel',
+							},
+						},
 						{
 							name: 'shop_with_friends',
 							kind: 'component',
