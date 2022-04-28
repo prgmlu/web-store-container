@@ -1852,6 +1852,20 @@ const componentConfig = {
 			{
 				kind: 'modal',
 				remoteConfig: {
+					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/music-modal/main/remoteEntry.js`,
+					// url: `http://localhost:3006/remoteEntry.js`,
+					scope: 'music_modal',
+					module: './MusicModal',
+				},
+				modalConfig: {
+					selector: 'music',
+					centered: true,
+					animation: true,
+				},
+			},
+			{
+				kind: 'modal',
+				remoteConfig: {
 					url: `${modulesBase}/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js`,
 					// url: `http://localhost:3008/remoteEntry.js`,
 					scope: 'video_modal',
