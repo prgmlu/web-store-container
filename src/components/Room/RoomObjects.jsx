@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Hotspot from 'threejs_scene/Hotspot';
 import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
+import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
@@ -91,6 +92,23 @@ const HotspotMarker = ({ item, ...props }) => {
 		hotspotType === 'custom' && selector === 'animated_glb';
 
 	const isVideo = hotspotType === 'embedded_video';
+
+	const isGreenScreenSystem =
+	hotspotType === 'custom' && selector === 'green_screen_system';
+
+	if(isGreenScreenSystem){
+        return (
+            <GreenScreenSystem
+            {...props}
+			srcs={item.props.data.srcs}
+			similarity={item.props.data.similarity}
+			smoothness={item.props.data.smoothness}
+			spill={item.props.data.spill}
+			keyColor={item.props.data.keyColor}
+			roomId={item.scene.$oid}
+             />
+        )
+    }
 
 	if (isVideo) {
 		return (
