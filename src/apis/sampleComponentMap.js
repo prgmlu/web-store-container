@@ -1732,14 +1732,18 @@ const componentConfig = {
 									'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
 								'625599f3e344ed25cd9bf64e':
 									'https://cdn.obsess-vr.com/lululemon/welcome-entrance.mp3',
+								//gallery-room
 								'62559231b452e0eb474fdaf8':
-									'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+									'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								//gallery-room-2
 								'6255951c77a42068b85cf344':
-									'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+									'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								//gallery-room-3
 								'625595a8513c86cac387a29e':
-									'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+									'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
+								//gallery-room-4
 								'62559a58312bce15cb8a4d45':
-									'https://cdn.obsess-vr.com/lululemon/gallery-room.mp3',
+									'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
 								'625592c0b452e0eb474fdafa':
 									'https://cdn.obsess-vr.com/lululemon/impact-room.mp3',
 								'625591db8cebd8804828e588':
@@ -3172,7 +3176,7 @@ const componentConfig = {
 						position: 'fixed',
 						right: 0,
 						top: 0,
-						padding: '4px'
+						padding: '4px',
 					},
 					components: [
 						{
@@ -3931,7 +3935,6 @@ const componentConfig = {
 			},
 		],
 	},
-
 };
 
 export default componentConfig;
