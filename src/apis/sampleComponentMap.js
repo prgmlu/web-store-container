@@ -1782,7 +1782,7 @@ const componentConfig = {
 								module: './ProgressBar',
 							},
 							dropdownText:
-								'You have explored * out of the * scenes in',
+								'You have explored * out of the * views in',
 							storeText: 'The Summit House.',
 							ctaText: 'Explore the rest',
 						},
