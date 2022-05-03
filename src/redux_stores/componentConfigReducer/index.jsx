@@ -15,7 +15,7 @@ export default function componentConfigReducer(
 	const { type, payload } = action;
 	switch (type) {
 		case SET_COMPONENT_CONFIG:
-			return { ...payload };
+			return { ...payload, loaded: true };
 		default:
 			return state;
 	}

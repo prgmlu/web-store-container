@@ -19,6 +19,9 @@ const Store = () => {
 	const dispatch = useDispatch();
 	const storeId = useSelector((state) => state?.storeData?.id);
 	const storeDataLoaded = useSelector((state) => state.storeData.loaded);
+	const compConfigLoaded = useSelector(
+		(state) => state?.componentConfig?.loaded,
+	);
 
 	useEffect(() => {
 		dispatch(getComponentConfig(storeId));
@@ -104,6 +107,7 @@ const Store = () => {
 	}, [storeDataLoaded]);
 
 	return (
+		compConfigLoaded &&
 		storeDataLoaded && (
 			<Router>
 				<UILayer />

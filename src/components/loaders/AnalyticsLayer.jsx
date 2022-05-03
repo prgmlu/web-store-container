@@ -42,25 +42,6 @@ const AnalyticsLayer = () => {
 		}
 	}, [storeName]);
 
-	// const sendEventsArr = useSelector(
-	// 	(state) => state?.analytics?.sendEventsArr,
-	// );
-	// const { pathname } = location;
-	// const sendAnalyticsEvent = useSelector(
-	// 	(state) => state?.shareableFunctions?.sendAnalyticsEvent,
-	// );
-	//
-	// useEffect(() => {
-	// 	if (sendAnalyticsEvent) {
-	// 		const sceneName = pathname.split('/').pop();
-	// 		sendAnalyticsEvent({
-	// 			sceneName,
-	// 			locale,
-	// 			pageView: true,
-	// 		});
-	// 	}
-	// }, [pathname]);
-
 	return null;
 };
 
