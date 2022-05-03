@@ -56,7 +56,9 @@ export const getComponentConfigApi = (storeId) => {
 
 export const getComponentConfig = (storeId) => (dispatch) => {
 	if (config.ENV === 'dev') {
-		dispatch(setComponentConfig(componentConfig[storeId]));
+		import('../../configs/components.json').then((result) =>
+			dispatch(setComponentConfig(result)),
+		);
 	} else {
 		getComponentConfigApi(storeId)
 			.then((data) => dispatch(setComponentConfig(data)))
