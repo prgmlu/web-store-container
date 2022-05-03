@@ -1,8 +1,8 @@
 // Disabling import config as it eslint is unable to tell that it is coming from webpack externals.
 // eslint-disable-next-line import/no-unresolved
+import config from 'config';
 import axiosApi from './axiosApi';
 import { setScenes } from '../redux_stores/scenesReducer/actions';
-import componentConfig from './sampleComponentMap';
 import { setComponentConfig } from '../redux_stores/componentConfigReducer/actions';
 import { setStoreData } from '../redux_stores/storeDataReducer/actions';
 import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
@@ -46,8 +46,25 @@ export const getSceneObjects = (sceneId, locale) => {
 		.catch((err) => Promise.reject(err.response));
 };
 
-export const getComponentConfig = (storeId) => (dispatch) =>
-	dispatch(setComponentConfig(componentConfig[storeId]));
+export const getComponentConfigApi = (storeId) => {
+	const urlPath = `/v1/component_config?storeId=${storeId}`;
+	return axiosApi
+		.get(urlPath)
+		.then((res) => res.data)
+		.catch((err) => Promise.reject(err));
+};
+
+export const getComponentConfig = (storeId) => (dispatch) => {
+	if (config.ENV === 'dev') {
+		import('../../configs/components.json').then((result) =>
+			dispatch(setComponentConfig(result)),
+		);
+	} else {
+		getComponentConfigApi(storeId)
+			.then((data) => dispatch(setComponentConfig(data)))
+			.catch((err) => console.error(err));
+	}
+};
 
 export const getDefaultIcons = () => (dispatch) =>
 	axiosApi

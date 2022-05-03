@@ -11,7 +11,6 @@ import SceneOverlays from '../SceneOverlays';
 import SceneTransitionLoader from './SceneTransitionLoader';
 
 const UILayer = () => {
-	console.log('=> UILayer');
 	return (
 		<>
 			<RoomRoutes />

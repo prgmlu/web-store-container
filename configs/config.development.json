@@ -4,5 +4,4 @@
 	"MODULES_BASE_URL": "https://modules.obsess-vr.com/beta",
 	"ENV": "dev",
 	"S3_BUCKET": "obsess-cms-beta"
-
 }

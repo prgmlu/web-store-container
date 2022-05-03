@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import config from 'config';
 
 const loadComponent = async (scope, module) => {
 	/** *
@@ -29,8 +30,12 @@ const createElement = (
 	onScriptLoaded = () => {},
 	onScriptFailed = () => {},
 ) => {
+	let finalUrl = url;
+	if (!finalUrl.startsWith('http')) {
+		finalUrl = `${config.MODULES_BASE_URL}${finalUrl}`;
+	}
 	const element = document.createElement('script');
-	element.src = url;
+	element.src = finalUrl;
 	element.type = 'text/javascript';
 	element.async = true;
 	element.onload = onScriptLoaded;

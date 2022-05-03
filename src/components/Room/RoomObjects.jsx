@@ -94,21 +94,21 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isVideo = hotspotType === 'embedded_video';
 
 	const isGreenScreenSystem =
-	hotspotType === 'custom' && selector === 'green_screen_system';
+		hotspotType === 'custom' && selector === 'green_screen_system';
 
-	if(isGreenScreenSystem){
-        return (
-            <GreenScreenSystem
-            {...props}
-			srcs={item.props.data.srcs}
-			similarity={item.props.data.similarity}
-			smoothness={item.props.data.smoothness}
-			spill={item.props.data.spill}
-			keyColor={item.props.data.keyColor}
-			roomId={item.scene.$oid}
-             />
-        )
-    }
+	if (isGreenScreenSystem) {
+		return (
+			<GreenScreenSystem
+				{...props}
+				srcs={item.props.data.srcs}
+				similarity={item.props.data.similarity}
+				smoothness={item.props.data.smoothness}
+				spill={item.props.data.spill}
+				keyColor={item.props.data.keyColor}
+				roomId={item.scene.$oid}
+			/>
+		);
+	}
 
 	if (isVideo) {
 		return (
