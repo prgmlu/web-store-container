@@ -2,7 +2,6 @@
 // eslint-disable-next-line import/no-unresolved
 import axiosApi from './axiosApi';
 import { setScenes } from '../redux_stores/scenesReducer/actions';
-import componentConfig from './sampleComponentMap';
 import { setComponentConfig } from '../redux_stores/componentConfigReducer/actions';
 import { setStoreData } from '../redux_stores/storeDataReducer/actions';
 import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
