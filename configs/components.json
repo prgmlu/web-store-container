@@ -26,7 +26,7 @@
 						"name": "store_logo",
 						"kind": "component",
 						"remoteConfig": {
-							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js",
+							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/feature/ticket-number/remoteEntry.js",
 							"scope": "store_logo",
 							"module": "./StoreLogo"
 						},
