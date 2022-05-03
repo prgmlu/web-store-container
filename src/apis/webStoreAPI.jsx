@@ -6,6 +6,7 @@ import componentConfig from './sampleComponentMap';
 import { setComponentConfig } from '../redux_stores/componentConfigReducer/actions';
 import { setStoreData } from '../redux_stores/storeDataReducer/actions';
 import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
+import config from 'config';
 
 export const getStoreData = (storeId) => (dispatch) =>
 	axiosApi
@@ -46,8 +47,23 @@ export const getSceneObjects = (sceneId, locale) => {
 		.catch((err) => Promise.reject(err.response));
 };
 
-export const getComponentConfig = (storeId) => (dispatch) =>
-	dispatch(setComponentConfig(componentConfig[storeId]));
+export const getComponentConfigApi = (storeId) => {
+	const urlPath = `/v1/component_config?storeId=${storeId}`;
+	return axiosApi
+		.get(urlPath)
+		.then((res) => res.data)
+		.catch((err) => Promise.reject(err));
+};
+
+export const getComponentConfig = (storeId) => (dispatch) => {
+	if (config.ENV === 'dev') {
+		dispatch(setComponentConfig(componentConfig[storeId]));
+	} else {
+		getComponentConfigApi(storeId)
+			.then((data) => dispatch(setComponentConfig(data)))
+			.catch((err) => console.error(err));
+	}
+};
 
 export const getDefaultIcons = () => (dispatch) =>
 	axiosApi

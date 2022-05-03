@@ -41,8 +41,6 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const { activeLocale } = useLocalize();
 
-	console.log('=> Room-');
-
 	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
 
 	const sendGaTrackingData = (data) => {
