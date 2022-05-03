@@ -4,6 +4,10 @@ Modules Federation Container to orchestrate modules from Obsess' component libra
 
 <hr/>
 
+# Question are always welcome :)
+
+<hr/>
+
 ## Framework References 
 
 - [React](https://reactjs.org/)
@@ -16,14 +20,28 @@ Modules Federation Container to orchestrate modules from Obsess' component libra
 
 <hr/>
 
-
-
 ## Developer setup
 
 ### Install npm packages
 ```shell
 npm install
 ```
+
+### Set Store Id
+Set store in configs/config.store.json, see below
+```json
+{
+	"STORE_ID": "6266e8c2716212a167423e84"
+}
+```
+
+### Download the component map
+```shell
+npm run prepare
+```
+
+<i>To make local updates to the component map, changes can be made in `configs/components.json`</i>
+
 
 ### Run 
 ```shell
@@ -73,5 +91,6 @@ Pre commit hooks run
 
 ### Misc
 To check the bundle sizes run `npm run analyze` to view source map for all the bundles emitted during a static build.
+
 
 # _All the best!!!_
