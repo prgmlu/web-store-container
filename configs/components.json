@@ -35,7 +35,7 @@
 			"remoteConfig": {
 				"module": "./MusicModal",
 				"scope": "music_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/music-modal/feature/add-to-media-stack/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/music-modal/main/remoteEntry.js"
 			}
 		},
 		{
@@ -146,7 +146,7 @@
 			"remoteConfig": {
 				"module": "./YoutubeEmbedModal",
 				"scope": "youtube_embed_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+				"url": "http://localhost:3006/remoteEntry.js"
 			}
 		}
 	],
@@ -198,7 +198,7 @@
 						"remoteConfig": {
 							"module": "./MusicController",
 							"scope": "music_controller",
-							"url": "/ObsessVR/v2/component-library/feature-components/music-controller/feature/main-media-stack-update/remoteEntry.js"
+							"url": "/ObsessVR/v2/component-library/feature-components/music-controller/main/remoteEntry.js"
 						}
 					},
 					{
