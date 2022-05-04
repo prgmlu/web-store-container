@@ -59,6 +59,7 @@ const defaultHotspotIconsKeys = {
 	product: 'product_hotspot_icon',
 	image: 'image_hotspot_icon',
 	video: 'video_hotspot_icon',
+	video_with_button: 'video_hotspot_icon',
 };
 
 const HotspotMarker = ({ item, ...props }) => {
