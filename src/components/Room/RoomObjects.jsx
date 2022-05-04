@@ -5,7 +5,7 @@ import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { formURL } from '../../utils/apiUtils';
 
 const NavMarker = ({ item, ...props }) => {
@@ -71,8 +71,14 @@ const HotspotMarker = ({ item, ...props }) => {
 	);
 	const { hotspot_type: hotspotType, selector } = item?.props || {};
 
+	const { pushToMediaStack, popFromMediaStack } = useSelector(
+		(state) => state?.mediaController,
+	);
+
 	const { useAnalytics } = useSelector((state) => state.shareableFunctions);
 	const { collect } = useAnalytics();
+
+	const dispatch = useDispatch();
 
 	const getHotspotImage = () => {
 		const typeKey = defaultHotspotIconsKeys[hotspotType];
@@ -96,6 +102,14 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 
+	const pushToMediaStackDispatch = (ref) => {
+		dispatch(pushToMediaStack(ref));
+	};
+
+	const popFromMediaStackDispatch = () => {
+		dispatch(popFromMediaStack());
+	};
+
 	if (isGreenScreenSystem) {
 		return (
 			<GreenScreenSystem
@@ -117,6 +131,9 @@ const HotspotMarker = ({ item, ...props }) => {
 				src={formURL(item?.props?.url)}
 				transform={item.transform}
 				keyColor={item?.props?.chroma_key}
+				onPlay={pushToMediaStackDispatch}
+				onPause={popFromMediaStackDispatch}
+				onEnd={popFromMediaStackDispatch}
 			/>
 		);
 	}

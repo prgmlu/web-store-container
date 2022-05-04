@@ -1,221 +1,229 @@
 {
-	"modules": {
-		"getProductData": {
+	"analyticsModules": [
+		{
+			"additionalAnalyticsIDs": [],
+			"betaAnalyticsID": "UA-91780857-16",
+			"prodAnalyticsID": "UA-91780857-16",
 			"remoteConfig": {
-				"url": "/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js",
-				"scope": "product_data_module",
-				"module": "./product_modules"
+				"module": "./ga_module",
+				"scope": "ga_module",
+				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
+			}
+		}
+	],
+	"modals": [
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "product"
+			},
+			"remoteConfig": {
+				"module": "./ProductModal",
+				"scope": "product_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js"
 			}
 		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "music"
+			},
+			"remoteConfig": {
+				"module": "./MusicModal",
+				"scope": "music_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/music-modal/feature/add-to-media-stack/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoModal",
+				"scope": "video_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video_with_button",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoWithButtonModal",
+				"scope": "video_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "text_with_button"
+			},
+			"remoteConfig": {
+				"module": "./TextWithButtonModal",
+				"scope": "text_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./ImageModal",
+				"scope": "image_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_carousel",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./ImageCarouselModal",
+				"scope": "image_carousel_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "iframe",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./IFrameModal",
+				"scope": "iframe_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "quiz",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./QuizModal",
+				"scope": "quiz_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "youtube_embed",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./YoutubeEmbedModal",
+				"scope": "youtube_embed_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+			}
+		}
+	],
+	"modules": {
 		"cartController": {
 			"remoteConfig": {
-				"url": "/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js",
+				"module": "./cart_modules",
 				"scope": "cart_controller_module",
-				"module": "./cart_modules"
+				"url": "/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js"
+			}
+		},
+		"getProductData": {
+			"remoteConfig": {
+				"module": "./product_modules",
+				"scope": "product_data_module",
+				"url": "/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js"
 			}
 		}
 	},
 	"overlayComponents": {
-		"kind": "container",
 		"components": [
 			{
-				"kind": "container",
-				"containerStyling": { "display": "inline" },
 				"components": [
 					{
-						"name": "store_logo",
 						"kind": "component",
+						"name": "store_logo",
 						"remoteConfig": {
-							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/feature/ticket-number/remoteEntry.js",
+							"module": "./StoreLogo",
 							"scope": "store_logo",
-							"module": "./StoreLogo"
+							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
 						},
 						"styling": {
-							"width": "10rem",
+							"borderRadius": "10px",
 							"height": "auto",
 							"padding": "16px",
-							"borderRadius": "10px"
+							"width": "10rem"
 						}
 					}
-				]
+				],
+				"containerStyling": { "display": "inline" },
+				"kind": "container"
 			},
 			{
-				"kind": "container",
-				"containerStyling": {
-					"position": "fixed",
-					"right": 0,
-					"bottom": 0,
-					"padding": "4px"
-				},
 				"components": [
 					{
-						"name": "powered_by_obsess",
+						"enableSoundBar": true,
 						"kind": "component",
+						"name": "music_controller",
 						"remoteConfig": {
-							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js",
+							"module": "./MusicController",
+							"scope": "music_controller",
+							"url": "/ObsessVR/v2/component-library/feature-components/music-controller/feature/main-media-stack-update/remoteEntry.js"
+						}
+					},
+					{
+						"kind": "component",
+						"name": "powered_by_obsess",
+						"remoteConfig": {
+							"module": "./PoweredByObsess",
 							"scope": "powered_by_obsess",
-							"module": "./PoweredByObsess"
+							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
 						},
 						"textStyling": {
 							"color": "white",
 							"fontSize": "0.9rem"
 						}
 					}
-				]
+				],
+				"containerStyling": {
+					"bottom": 0,
+					"padding": "4px",
+					"position": "fixed",
+					"right": 0
+				},
+				"kind": "container"
 			}
-		]
-	},
-	"modals": [
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js",
-				"scope": "zoom_modal",
-				"module": "./ZoomModal"
-			},
-			"modalConfig": {
-				"selector": "zoom",
-				"centered": true,
-				"animation": true,
-				"hotspotanimation": { "type": "none" }
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js",
-				"scope": "product_modal",
-				"module": "./ProductModal"
-			},
-			"modalConfig": {
-				"selector": "product",
-				"centered": true,
-				"animation": true
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js",
-				"scope": "video_modal",
-				"module": "./VideoModal"
-			},
-			"modalConfig": {
-				"selector": "video",
-				"centered": true,
-				"animation": true,
-				"size": "sm"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js",
-				"scope": "video_with_button_modal",
-				"module": "./VideoWithButtonModal"
-			},
-			"modalConfig": {
-				"selector": "video_with_button",
-				"centered": true,
-				"animation": true,
-				"size": "sm"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js",
-				"scope": "text_with_button_modal",
-				"module": "./TextWithButtonModal"
-			},
-			"modalConfig": {
-				"selector": "text_with_button",
-				"centered": true,
-				"animation": true
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js",
-				"scope": "image_modal",
-				"module": "./ImageModal"
-			},
-			"modalConfig": {
-				"selector": "image",
-				"centered": true,
-				"animation": true,
-				"size": "md"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js",
-				"scope": "image_carousel_modal",
-				"module": "./ImageCarouselModal"
-			},
-			"modalConfig": {
-				"selector": "image_carousel",
-				"centered": true,
-				"animation": true,
-				"size": "sm"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js",
-				"scope": "iframe_modal",
-				"module": "./IFrameModal"
-			},
-			"modalConfig": {
-				"selector": "iframe",
-				"centered": true,
-				"animation": true,
-				"size": "lg"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js",
-				"scope": "quiz_modal",
-				"module": "./QuizModal"
-			},
-			"modalConfig": {
-				"selector": "quiz",
-				"centered": true,
-				"animation": true,
-				"size": "sm"
-			}
-		},
-		{
-			"kind": "modal",
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js",
-				"scope": "youtube_embed_modal",
-				"module": "./YoutubeEmbedModal"
-			},
-			"modalConfig": {
-				"selector": "youtube_embed",
-				"centered": true,
-				"animation": true,
-				"size": "sm"
-			}
-		}
-	],
-	"analyticsModules": [
-		{
-			"remoteConfig": {
-				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js",
-				"scope": "ga_module",
-				"module": "./ga_module"
-			},
-			"betaAnalyticsID": "UA-91780857-16",
-			"prodAnalyticsID": "UA-91780857-16",
-			"additionalAnalyticsIDs": []
-		}
-	],
-	"store": "6266e8c2716212a167423e84"
+		],
+		"kind": "container"
+	}
 }

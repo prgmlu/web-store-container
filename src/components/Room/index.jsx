@@ -66,6 +66,13 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	};
 
+	const {
+		storeMusicRef,
+		mediaStack,
+		clearMediaStack,
+		setStoreMusicPlayState,
+	} = useSelector((state) => state?.mediaController || {});
+
 	useEffect(() => {
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
@@ -92,7 +99,28 @@ const Room = ({ sceneData, webpSupport }) => {
 			});
 		sendGaTrackingData({ event: 'scene_loaded' });
 		dispatch(setActiveScene(sceneData.id));
+		dispatch(clearMediaStack());
 	}, [sceneData.id]);
+
+	useEffect(() => {
+		if (storeMusicRef) {
+			if (mediaStack.length > 0) {
+				dispatch(
+					setStoreMusicPlayState({
+						playState: false,
+						userToggled: false,
+					}),
+				);
+			} else {
+				dispatch(
+					setStoreMusicPlayState({
+						playState: true,
+						userToggled: false,
+					}),
+				);
+			}
+		}
+	}, [storeMusicRef, mediaStack]);
 
 	const accessibilityListener = (e) => {
 		e.preventDefault();

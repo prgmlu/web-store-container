@@ -14,6 +14,7 @@ import defaultIconsReducer from './defaultIconsReducer';
 import sceneLoadReducer from './sceneLoadReducer';
 import localizeReducer from './localizeReducer';
 import roomObjectReducer from './roomObjectsReducer';
+import mediaControllerReducer from './mediaControllerReducer';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -27,6 +28,7 @@ const staticReducers = {
 	sceneLoad: sceneLoadReducer,
 	localize: localizeReducer,
 	roomObjects: roomObjectReducer,
+	mediaController: mediaControllerReducer,
 };
 
 const createReducer = (asyncReducers) =>
