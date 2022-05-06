@@ -131,10 +131,10 @@ const HotspotMarker = ({ item, ...props }) => {
 				{...props}
 				src={formURL(item?.props?.url)}
 				transform={item.transform}
+				userData={{ props: item?.props, type: item.type }}
 				keyColor={item?.props?.chroma_key}
 				onPlay={pushToMediaStackDispatch}
 				onPause={popFromMediaStackDispatch}
-				onEnd={popFromMediaStackDispatch}
 			/>
 		);
 	}

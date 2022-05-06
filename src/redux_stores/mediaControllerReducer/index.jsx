@@ -31,8 +31,8 @@ const UNSUPPORTED_TAGS = ['IFRAME'];
 
 const pauseTopRef = (ref) => {
 	if (UNSUPPORTED_TAGS.includes(ref.current.tagName)) {
-		return
-	};
+		return;
+	}
 
 	if (ref.current instanceof Element) {
 		return ref.current.pause();
@@ -43,8 +43,8 @@ const pauseTopRef = (ref) => {
 
 const playTopRef = (ref) => {
 	if (UNSUPPORTED_TAGS.includes(ref.current.tagName)) {
-		return
-	};
+		return;
+	}
 
 	if (ref.current instanceof Element) {
 		return ref.current.play();
