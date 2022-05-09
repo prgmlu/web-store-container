@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const skipPassword =
 	devCookie ||
-	['61eee2727cc889e000268652', '624b14c4d6c4aea460779506'].includes(
+	['61eee2727cc889e000268652', '624b14c4d6c4aea460779506', '623099e7d9db4c9fd43717e0'].includes(
 		getStoreIdFromHtml(),
 	);
 
