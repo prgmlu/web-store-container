@@ -103,12 +103,28 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 
-	const pushToMediaStackDispatch = (ref) => {
+	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
 	};
 
-	const popFromMediaStackDispatch = () => {
+	const popFromMediaStackWrapper = () => {
 		dispatch(popFromMediaStack());
+	};
+
+	const onPlayClicked = (src) => {
+		collect({
+			eventCategory: 'Content',
+			eventAction: 'In-scene video',
+			eventLabel: src,
+		});
+	};
+
+	const onPauseClicked = (src) => {
+		collect({
+			eventCategory: 'Content',
+			eventAction: 'In-scene video',
+			eventLabel: src,
+		});
 	};
 
 	if (isGreenScreenSystem) {
@@ -133,8 +149,10 @@ const HotspotMarker = ({ item, ...props }) => {
 				transform={item.transform}
 				userData={{ props: item?.props, type: item.type }}
 				keyColor={item?.props?.chroma_key}
-				onPlay={pushToMediaStackDispatch}
-				onPause={popFromMediaStackDispatch}
+				onPlayClicked={onPlayClicked}
+				onPauseClicked={onPauseClicked}
+				addToMediaStack={addToMediaStackWrapper}
+				popFromMediaStack={popFromMediaStackWrapper}
 			/>
 		);
 	}
