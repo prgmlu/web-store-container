@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+$border-radius: 0.6rem;
 
 #obsess-web-store-container {
 	position: absolute;
@@ -13,22 +13,22 @@
 	overflow: hidden;
 }
 
-.passwordContainer {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: 'Roboto', serif;
+.password-container {
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	overflow: hidden;
 }
 
-.passwordCard {
-	padding: 16px;
-	display: flex;
-	align-items: center;
+.password-card {
+	border-radius: $border-radius;
 }
 
-.submitButton {
-	margin-top: 8px;
+.password-input {
+	border-radius: $border-radius;
+}
+
+.password-button {
+	border-radius: $border-radius;
 }
 
 @media screen and (max-width: 575px) {

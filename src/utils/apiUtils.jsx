@@ -1,4 +1,8 @@
 import config from 'config';
+import axiosApi from '../apis/axiosApi';
+import { getStoreIdFromHtml } from './htmlHelpers';
+
+const STORE_ID = getStoreIdFromHtml();
 
 const UrlOriginEnum = Object.freeze({
 	S3: 's3',
@@ -38,4 +42,28 @@ export function formURL(urlObject) {
 		}
 	}
 	return url;
+}
+
+export async function getPasswordConfigs() {
+	try {
+		const passwordConfigs = await axiosApi.get(
+			`/v1/password-config?id=${STORE_ID}`,
+		);
+		return passwordConfigs?.data;
+	} catch (err) {
+		return console.error(err);
+	}
+}
+
+export async function validatePassword(pw) {
+	const checkPassword = window.btoa(pw);
+	try {
+		const res = await axiosApi.post(
+			`/v1/validate-password?id=${STORE_ID}`,
+			{ password: checkPassword },
+		);
+		return res?.data?.logged_in;
+	} catch (err) {
+		return console.error(err);
+	}
 }
