@@ -15,8 +15,8 @@ import {
 
 const initialState = {
 	storeMusicRef: null,
-	storeMusicPlayState: true,
-	storeMusicPrevPlayState: true,
+	storeMusicPlayState: false,
+	storeMusicPrevPlayState: false,
 	mediaStack: [],
 
 	// refs and fns
