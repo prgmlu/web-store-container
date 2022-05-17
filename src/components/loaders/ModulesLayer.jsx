@@ -10,10 +10,12 @@ const ModulesLayer = () => {
 	return (
 		<>
 			{Object.keys(modules).map((item) => {
+				const { remoteConfig, ...props } = modules[item];
 				return (
 					<DynamicComponent
 						key={item}
 						remoteConfig={modules[item].remoteConfig}
+						{...props}
 					/>
 				);
 			})}
