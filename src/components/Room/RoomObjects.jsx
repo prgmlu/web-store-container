@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Hotspot from 'threejs_scene/Hotspot';
 import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
+import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
@@ -100,6 +101,7 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	const isVideo = hotspotType === 'embedded_video';
 
+	const isImage = hotspotType === 'embedded_image';
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 
@@ -153,6 +155,16 @@ const HotspotMarker = ({ item, ...props }) => {
 				onPauseClicked={onPauseClicked}
 				addToMediaStack={addToMediaStackWrapper}
 				popFromMediaStack={popFromMediaStackWrapper}
+			/>
+		);
+	}
+
+	if (isImage) {
+		return (
+			<InSceneImageComponent
+				{...props}
+				src={formURL(item?.props?.url)}
+				transform={item.transform}
 			/>
 		);
 	}
