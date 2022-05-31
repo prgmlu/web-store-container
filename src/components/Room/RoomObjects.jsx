@@ -7,6 +7,7 @@ import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
+import { ICON_NAMES, stylingIconsMock } from '../../utils/hotspotUtils';
 import { formURL } from '../../utils/apiUtils';
 
 const NavMarker = ({ item, ...props }) => {
@@ -56,13 +57,6 @@ NavMarker.propTypes = {
 	item: PropTypes.object.isRequired,
 };
 
-const defaultHotspotIconsKeys = {
-	product: 'product_hotspot_icon',
-	image: 'image_hotspot_icon',
-	video: 'video_hotspot_icon',
-	video_with_button: 'video_hotspot_icon',
-};
-
 const HotspotMarker = ({ item, ...props }) => {
 	const defaultIcons = useSelector((state) => state.defaultIcons || {});
 	const stylingIcons = useSelector(
@@ -82,16 +76,16 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	const dispatch = useDispatch();
 
-	const getHotspotImage = () => {
-		const typeKey = defaultHotspotIconsKeys[hotspotType];
+	const getHotspotImage = (hotspotState = 'default') => {
+		const iconNameKey = ICON_NAMES[hotspotType][hotspotState];
+		const hotspotIconSearchKey = stylingIcons[iconNameKey]?.name;
+
 		let url = '';
-		if (typeKey) {
-			const hotspotIconSearchKey = stylingIcons[typeKey]?.name;
-			if (hotspotIconSearchKey in storeIconFiles) {
-				url = formURL(storeIconFiles[hotspotIconSearchKey]?.url);
-			} else if (hotspotIconSearchKey in defaultIcons) {
-				url = formURL(defaultIcons[hotspotIconSearchKey]);
-			}
+		if (hotspotIconSearchKey in storeIconFiles) {
+			url = formURL(storeIconFiles[hotspotIconSearchKey]?.url);
+		}
+		if (hotspotIconSearchKey in defaultIcons) {
+			url = formURL(defaultIcons[hotspotIconSearchKey]);
 		}
 		return url;
 	};
@@ -189,7 +183,8 @@ const HotspotMarker = ({ item, ...props }) => {
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 				type: item.type,
 			}}
-			imageURL={getHotspotImage()}
+			imageURL={getHotspotImage('default')}
+			imageHoverURL={getHotspotImage('hover')}
 		/>
 	);
 };
