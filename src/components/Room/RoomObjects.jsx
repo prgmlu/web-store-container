@@ -12,7 +12,10 @@ import { formURL } from '../../utils/apiUtils';
 
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
-		(state) => state?.storeData?.styling?.navigation_arrow_icon || {},
+		(state) => state?.storeData?.styling?.icons?.nav_arrow_icon?.name || {},
+	);
+	const storeIconFiles = useSelector(
+		(state) => state?.storeData?.styling?.store_icon_files || {},
 	);
 
 	const getNavMarkerImage = (type) => {
@@ -32,7 +35,11 @@ const NavMarker = ({ item, ...props }) => {
 			navigationArrowIcon &&
 			Object.keys(navigationArrowIcon).length > 0
 		) {
-			arrowUrl = formURL(navigationArrowIcon);
+			if (navigationArrowIcon in storeIconFiles){
+				arrowUrl = formURL(storeIconFiles[navigationArrowIcon]?.url);
+			}else{
+				arrowUrl = `${config.CDN_BASE_URL}/default_icons/${navigationArrowIcon}.svg`;
+			}
 		}
 
 		return arrowUrl;
