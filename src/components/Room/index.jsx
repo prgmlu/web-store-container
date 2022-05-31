@@ -41,7 +41,9 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const { activeLocale } = useLocalize();
 
-	const url = sceneData?.cube_map_dir || sceneData?.flat_scene_url;
+	const flatSceneUrl = isMobile ? sceneData?.mobile_flat_scene_url : sceneData?.flat_scene_url;
+
+	const url = sceneData?.cube_map_dir || flatSceneUrl;
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
