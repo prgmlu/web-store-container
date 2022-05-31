@@ -48,6 +48,7 @@ const NavMarker = ({ item, ...props }) => {
 				showIcon: item?.props?.hide === false,
 			}}
 			imageURL={getNavMarkerImage(item?.props?.sprite_type || '')}
+			imageHoverURL={getNavMarkerImage(item?.props?.sprite_type || '')}
 			userData={{ props: item?.props || {}, type: item.type }}
 		/>
 	);
