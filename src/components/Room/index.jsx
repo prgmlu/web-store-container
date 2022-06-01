@@ -41,7 +41,9 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const { activeLocale } = useLocalize();
 
-	const flatSceneUrl = isMobile ? sceneData?.mobile_flat_scene_url : sceneData?.flat_scene_url;
+	const flatSceneUrl = isMobile
+		? sceneData?.mobile_flat_scene_url
+		: sceneData?.flat_scene_url;
 
 	const url = sceneData?.cube_map_dir || flatSceneUrl;
 

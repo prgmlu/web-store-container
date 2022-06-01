@@ -7,7 +7,11 @@ import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
-import { ICON_NAMES, stylingIconsMock } from '../../utils/hotspotUtils';
+import {
+	ICON_NAMES,
+	IN_SCENE_VIDEO_PLAY_ICON,
+	IN_SCENE_VIDEO_PAUSE_ICON,
+} from '../../utils/hotspotConstants';
 import { formURL } from '../../utils/apiUtils';
 
 const NavMarker = ({ item, ...props }) => {
@@ -35,9 +39,9 @@ const NavMarker = ({ item, ...props }) => {
 			navigationArrowIcon &&
 			Object.keys(navigationArrowIcon).length > 0
 		) {
-			if (navigationArrowIcon in storeIconFiles){
+			if (navigationArrowIcon in storeIconFiles) {
 				arrowUrl = formURL(storeIconFiles[navigationArrowIcon]?.url);
-			}else{
+			} else {
 				arrowUrl = `${config.CDN_BASE_URL}/default_icons/${navigationArrowIcon}.svg`;
 			}
 		}
@@ -101,7 +105,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isAnimatedGlb =
 		hotspotType === 'custom' && selector === 'animated_glb';
 
-	const isVideo = hotspotType === 'embedded_video';
+	const isEmbeddedVideo = hotspotType === 'embedded_video';
 
 	const isImage = hotspotType === 'embedded_image';
 	const isGreenScreenSystem =
@@ -145,7 +149,7 @@ const HotspotMarker = ({ item, ...props }) => {
 		);
 	}
 
-	if (isVideo) {
+	if (isEmbeddedVideo) {
 		return (
 			<InSceneVidComponent
 				{...props}
@@ -157,6 +161,8 @@ const HotspotMarker = ({ item, ...props }) => {
 				onPauseClicked={onPauseClicked}
 				addToMediaStack={addToMediaStackWrapper}
 				popFromMediaStack={popFromMediaStackWrapper}
+				playIconUrl={IN_SCENE_VIDEO_PLAY_ICON}
+				pauseIconUrl={IN_SCENE_VIDEO_PAUSE_ICON}
 			/>
 		);
 	}
