@@ -61,4 +61,14 @@ export const ICON_NAMES = Object.freeze({
 		default: 'iframe_hotspot_icon',
 		hover: 'iframe_hotspot_icon_hover',
 	},
+	combo: {
+		// icon not yet defined in COCO
+		default: '',
+		hover: '',
+	},
+	animation: {
+		// icon not yet defined in COCO
+		default: '',
+		hover: '',
+	},
 });
