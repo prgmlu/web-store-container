@@ -89,16 +89,16 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	const dispatch = useDispatch();
 
-	const getHotspotImage = (hotspotState = 'default', specificIcon) => {
-		const iconNameKey = ICON_NAMES[hotspotType][hotspotState];
+	const getHotspotImage = (specificIcon, hotspotState = 'default') => {
+		const iconNameKey = ICON_NAMES?.[hotspotType]?.[hotspotState];
 		const hotspotIconSearchKey = stylingIcons[iconNameKey]?.name;
 
 		let url = '';
-		if (hotspotIconSearchKey in storeIconFiles) {
-			url = formURL(storeIconFiles[hotspotIconSearchKey]?.url);
-		}
 		if (hotspotIconSearchKey in defaultIcons) {
 			url = formURL(defaultIcons[hotspotIconSearchKey]);
+		}
+		if (hotspotIconSearchKey in storeIconFiles) {
+			url = formURL(storeIconFiles[hotspotIconSearchKey]?.url);
 		}
 		if (specificIcon) {
 			url = formURL(specificIcon);
@@ -217,8 +217,8 @@ const HotspotMarker = ({ item, ...props }) => {
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 				type: item.type,
 			}}
-			imageURL={getHotspotImage('default', item?.props?.icon)}
-			imageHoverURL={getHotspotImage('hover', item?.props?.hover_icon)}
+			imageURL={getHotspotImage(item?.props?.icon, 'default')}
+			imageHoverURL={getHotspotImage(item?.props?.hover_icon, 'hover')}
 		/>
 	);
 };
