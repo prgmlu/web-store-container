@@ -89,7 +89,7 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	const dispatch = useDispatch();
 
-	const getHotspotImage = (hotspotState = 'default') => {
+	const getHotspotImage = (hotspotState = 'default', specificIcon) => {
 		const iconNameKey = ICON_NAMES[hotspotType][hotspotState];
 		const hotspotIconSearchKey = stylingIcons[iconNameKey]?.name;
 
@@ -99,6 +99,9 @@ const HotspotMarker = ({ item, ...props }) => {
 		}
 		if (hotspotIconSearchKey in defaultIcons) {
 			url = formURL(defaultIcons[hotspotIconSearchKey]);
+		}
+		if (specificIcon) {
+			url = formURL(specificIcon);
 		}
 		return url;
 	};
@@ -111,8 +114,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isImage = hotspotType === 'embedded_image';
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
-		const isFireEffect =
-		hotspotType === 'custom' && selector === 'fire_effect';
+	const isFireEffect = hotspotType === 'custom' && selector === 'fire_effect';
 
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
@@ -215,8 +217,8 @@ const HotspotMarker = ({ item, ...props }) => {
 					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 				type: item.type,
 			}}
-			imageURL={getHotspotImage('default')}
-			imageHoverURL={getHotspotImage('hover')}
+			imageURL={getHotspotImage('default', item?.props?.icon)}
+			imageHoverURL={getHotspotImage('hover', item?.props?.hover_icon)}
 		/>
 	);
 };
