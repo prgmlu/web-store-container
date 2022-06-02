@@ -4,6 +4,7 @@ import Hotspot from 'threejs_scene/Hotspot';
 import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
 import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
+import FireEffect from 'threejs_scene/FireEffect';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
@@ -110,6 +111,8 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isImage = hotspotType === 'embedded_image';
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
+		const isFireEffect =
+		hotspotType === 'custom' && selector === 'fire_effect';
 
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
@@ -135,6 +138,21 @@ const HotspotMarker = ({ item, ...props }) => {
 		});
 	};
 
+	if (isFireEffect) {
+		return (
+			<FireEffect
+				{...props}
+				roomId={item.scene.$oid}
+				position={item.props.data.position}
+				scale={item.props.data.scale}
+				rotation={item.props.data.rotation}
+				magnitude={item.props.data.magnitude}
+				lacunarity={item.props.data.lacunarity}
+				gain={item.props.data.gain}
+				speed={item.props.data.speed}
+			/>
+		);
+	}
 	if (isGreenScreenSystem) {
 		return (
 			<GreenScreenSystem
