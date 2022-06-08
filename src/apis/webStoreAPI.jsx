@@ -34,10 +34,9 @@ export const getSceneObjects = (sceneId, locale) => {
 	const requestParams = new URLSearchParams({
 		id: sceneId,
 	});
-
 	if (locale && locale.length > 0) {
 		prefix = `/v2/scene/objects-with-locale`;
-		requestParams.locale = locale;
+		requestParams.set('locale', locale);
 	}
 
 	return axiosApi
