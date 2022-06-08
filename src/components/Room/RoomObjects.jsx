@@ -14,7 +14,7 @@ import {
 	IN_SCENE_VIDEO_PAUSE_ICON,
 } from '../../utils/hotspotConstants';
 import { formURL } from '../../utils/apiUtils';
-import InteractiveGLBComponent from '../../../../threejs-scene/src/interactive-glb/InteractiveGLBComponent';
+import InteractiveGLB from 'threejs_scene/InteractiveGLB';
 
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
@@ -208,7 +208,7 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	if (isInteractiveGlb) {
 		return (
-			<InteractiveGLBComponent {...props} />
+			<InteractiveGLB {...props} />
 		);
 	}
 
