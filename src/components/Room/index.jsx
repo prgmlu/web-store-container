@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
+import SoundHotspot from './SoundHotspot';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
@@ -22,11 +23,11 @@ import useAnalytics from '../../hooks/useAnalytics';
 import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
 import { isMobile } from 'react-device-detect';
 import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
+import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
+let soundMarkerTracker = undefined;
 
 const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
-
-	// const [linkedScenes, setLinkedScenes] = useState([]);
 
 	const scenes = useSelector((state) => state.scenes);
 	const {
@@ -107,23 +108,24 @@ const Room = ({ sceneData, webpSupport }) => {
 	}, [sceneData.id]);
 
 	useEffect(() => {
-		if (storeMusicRef) {
-			if (mediaStack.length > 0) {
-				dispatch(
-					setStoreMusicPlayState({
-						playState: false,
-						userToggled: false,
-					}),
-				);
-			} else {
-				dispatch(
-					setStoreMusicPlayState({
-						playState: true,
-						userToggled: false,
-					}),
-				);
-			}
+		if (!storeMusicRef) return;
+
+		if (mediaStack.length > 0) {
+			dispatch(
+				setStoreMusicPlayState({
+					playState: false,
+					userToggled: false,
+				}),
+			);
+			return;
 		}
+
+		dispatch(
+			setStoreMusicPlayState({
+				playState: true,
+				userToggled: false,
+			}),
+		);
 	}, [storeMusicRef, mediaStack]);
 
 	const accessibilityListener = (e) => {
@@ -248,17 +250,48 @@ const Room = ({ sceneData, webpSupport }) => {
 		});
 	};
 
-	const onSoundMarkerClicked = (data) => {
-		// this needs work
-		const audioFile = formURL(data.url);
-		const audio = new Audio(audioFile);
-		audio.play();
+	const [audioFile, setAudioFile] = useState('');
 
+	const handleSoundCollect = (soundURL) => {
 		collect({
 			eventCategory: 'Content',
 			eventAction: 'Sound',
-			eventLabel: audioFile,
+			eventLabel: soundURL,
 		});
+	};
+
+	const handleSoundStart = (hotspotID, soundURL) => {
+		setAudioFile(soundURL);
+		soundMarkerTracker = hotspotID;
+	};
+
+	const handleSoundStop = () => {
+		dispatch(popFromMediaStack());
+		setAudioFile('');
+		soundMarkerTracker = undefined;
+	};
+
+	const handleSoundChange = (hotspotID, soundURL) => {
+		dispatch(popFromMediaStack());
+		setAudioFile(soundURL);
+		soundMarkerTracker = hotspotID;
+	};
+
+	const onSoundMarkerClicked = (data) => {
+		const soundURL = formURL(data.url);
+		handleSoundCollect(soundURL);
+
+		if (soundMarkerTracker === undefined) {
+			handleSoundStart(data.hotspotId, soundURL);
+			return;
+		}
+		if (soundMarkerTracker === data.hotspotId) {
+			handleSoundStop();
+			return;
+		}
+		if (soundMarkerTracker !== data.hotspotId) {
+			handleSoundChange(data.hotspotId, soundURL);
+		}
 	};
 
 	const onHotspotMarkerClicked = (data) => {
@@ -289,13 +322,13 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
-		if (marker) {
-			const { type, props } = marker.userData;
-			if (type === 'NavMarker') {
-				onNavMarkerClicked(props);
-			} else if (type === 'HotspotMarker') {
-				onHotspotMarkerClicked(props);
-			}
+		if (!marker) return;
+
+		const { type, props } = marker.userData;
+		if (type === 'NavMarker') {
+			onNavMarkerClicked(props);
+		} else if (type === 'HotspotMarker') {
+			onHotspotMarkerClicked(props);
 		}
 	};
 
@@ -319,6 +352,10 @@ const Room = ({ sceneData, webpSupport }) => {
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 				}
+			/>
+			<SoundHotspot
+				audioFile={audioFile}
+				handleSoundStop={handleSoundStop}
 			/>
 		</Scene>
 	) : null;

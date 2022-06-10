@@ -29,7 +29,7 @@ const initialState = {
 
 const UNSUPPORTED_TAGS = ['IFRAME'];
 
-const pauseTopRef = (ref) => {
+const pauseMediaRef = (ref) => {
 	if (UNSUPPORTED_TAGS.includes(ref.current.tagName)) {
 		return;
 	}
@@ -41,7 +41,7 @@ const pauseTopRef = (ref) => {
 	return ref.current.getInternalPlayer().pause();
 };
 
-const playTopRef = (ref) => {
+const playMediaRef = (ref) => {
 	if (UNSUPPORTED_TAGS.includes(ref.current.tagName)) {
 		return;
 	}
@@ -50,7 +50,7 @@ const playTopRef = (ref) => {
 		return ref.current.play();
 	}
 	// ref is a react-player object
-	return ref.current.getInternalPlayer().play();
+	return ref.current.getActivePlayer().canPlay(ref.current?.props?.url);
 };
 
 export default function mediaControllerReducer(
@@ -79,8 +79,9 @@ export default function mediaControllerReducer(
 
 		case PUSH_TO_MEDIA_STACK:
 			if (state.mediaStack.length > 0) {
-				pauseTopRef(state.mediaStack.at(-1));
+				pauseMediaRef(state.mediaStack.at(-1));
 			}
+			playMediaRef(payload);
 			const updatedPushedStack = [...state.mediaStack, payload];
 			return { ...state, mediaStack: updatedPushedStack };
 
@@ -92,14 +93,15 @@ export default function mediaControllerReducer(
 				};
 			}
 
-			pauseTopRef(state.mediaStack.at(-1));
+			pauseMediaRef(state.mediaStack.at(-1));
 			const updatedPoppedStack = state.mediaStack.slice(0, -1);
 			if (updatedPoppedStack.length > 0) {
-				playTopRef(updatedPoppedStack.at(-1));
+				playMediaRef(updatedPoppedStack.at(-1));
 			}
 			return { ...state, mediaStack: updatedPoppedStack };
 
 		case CLEAR_MEDIA_STACK:
+			state.mediaStack.forEach((ref) => pauseMediaRef(ref));
 			return { ...state, mediaStack: [] };
 
 		default:
