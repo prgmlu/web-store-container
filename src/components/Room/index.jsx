@@ -47,6 +47,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		: sceneData?.flat_scene_url;
 
 	const url = sceneData?.cube_map_dir || flatSceneUrl;
+	const opacityMapUrl = sceneData?.opacity_map || null;
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
@@ -220,6 +221,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
+		opacityMapUrl: opacityMapUrl && formURL(opacityMapUrl),
 		imageIntegrity: getBustKey(sceneData),
 		useWebp: webpSupport,
 		skipLargest: isMobile,
