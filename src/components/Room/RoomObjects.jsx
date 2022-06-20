@@ -5,6 +5,7 @@ import AnimatedGLB from 'threejs_scene/AnimatedGLB';
 import InSceneVidComponent from 'threejs_scene/InSceneVidComponent';
 import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import FireEffect from 'threejs_scene/FireEffect';
+import WaterEffect from 'threejs_scene/WaterEffect';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
@@ -115,6 +116,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 	const isFireEffect = hotspotType === 'custom' && selector === 'fire_effect';
+	const isWaterEffect = hotspotType === 'custom' && selector === 'water_effect';
 
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
@@ -153,6 +155,19 @@ const HotspotMarker = ({ item, ...props }) => {
 				gain={item.props.data.gain}
 				speed={item.props.data.speed}
 			/>
+		);
+	}
+	if (isWaterEffect) {
+		return (
+				<WaterEffect
+				{...props}
+				roomId={item.scene.$oid}
+				position={item.props.data.position}
+				rotation={item.props.data.rotation}
+				scale={item.props.data.scale}
+				size={item.props.data.size}
+				distortionScale={item.props.data.distortionScale}
+				/>
 		);
 	}
 	if (isGreenScreenSystem) {
