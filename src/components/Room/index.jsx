@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -233,12 +233,14 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(setActiveHotspotIndex(undefined));
 		dispatch(setAccessibilitySelector(undefined));
 
-		navigate(scenes[data.linked_room_id.$oid].name);
+		const currentScene = scenes[sceneData.id].name;
+		const nextScene = scenes[data.linked_room_id.$oid].name;
 		collect({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',
-			eventLabel: scenes[sceneData.id].name,
+			eventLabel: `${currentScene} > ${nextScene}`,
 		});
+		navigate(nextScene);
 	};
 
 	const onLinkMarkerClicked = (data) => {
