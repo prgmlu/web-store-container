@@ -1,1 +1,431 @@
-{"analyticsModules":[{"additionalAnalyticsIDs":[],"betaAnalyticsID":"UA-91780857-16","prodAnalyticsID":"UA-91780857-16","remoteConfig":{"module":"./ga_module","scope":"ga_module","url":"/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"}}],"modals":[{"kind":"modal","modalConfig":{"animation":true,"centered":true,"hotspotanimation":{"type":"none"},"selector":"zoom"},"remoteConfig":{"module":"./ZoomModal","scope":"zoom_modal","url":"/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"product"},"remoteConfig":{"module":"./ProductModal","scope":"product_modal","url":"/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/honest/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video","size":"sm"},"remoteConfig":{"module":"./VideoModal","scope":"video_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video_with_button","size":"md"},"remoteConfig":{"module":"./VideoWithButtonModal","scope":"video_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"text_with_button"},"remoteConfig":{"module":"./TextWithButtonModal","scope":"text_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image","size":"md"},"remoteConfig":{"module":"./ImageModal","scope":"image_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image_carousel","size":"sm"},"remoteConfig":{"module":"./ImageCarouselModal","scope":"image_carousel_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"iframe","size":"lg"},"remoteConfig":{"module":"./IFrameModal","scope":"iframe_modal","url":"/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"quiz","size":"sm"},"remoteConfig":{"module":"./QuizModal","scope":"quiz_modal","url":"/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"closeIconStylingMobile":{"backgroundColor":"transparent","borderRadius":0,"filter":"invert(1)","height":"3rem","positiom":"absolute","right":0,"top":0,"width":"3rem"},"modalDescripstion":["You found your first butterfly, find the remaining 4 butterflies for a special discount.","You found your second butterfly, find the remaining 3 butterflies for a special discount.","You found your third butterfly, find the remaining 2 butterflies for a special discount.","You found your fourth butterfly, find the remaining 1 butterflies for a special discount.","Use this code to receive 15% off at checkout"],"modalHeader":"Congrats!","selector":"butterfly_game"},"remoteConfig":{"module":"./ButterflyGameModal","scope":"butterfly_collection_game_component","url":"/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"youtube_embed","size":"sm"},"remoteConfig":{"module":"./YoutubeEmbedModal","scope":"youtube_embed_modal","url":"/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"}}],"modules":{"cartController":{"remoteConfig":{"module":"./cart_modules","scope":"cart_controller_module","url":"/ObsessVR/v2/modules-library/cart-controller/variant/honest/remoteEntry.js"}},"getProductData":{"envConfigs":{"beta":{"CLIENT_ID":"af30b7a4-5006-42b7-82f1-f47482939c19","CLIENT_SECRET":"XB2Jz3V95ebshWk2","SFCC_BASE_URL":"https://development.honest.com/s/honest/dw/shop/v19_8"},"production":{"CLIENT_ID":"af30b7a4-5006-42b7-82f1-f47482939c19","CLIENT_SECRET":"XB2Jz3V95ebshWk2","SFCC_BASE_URL":"https://development.honest.com/s/honest/dw/shop/v19_8"}},"remoteConfig":{"module":"./product_modules","scope":"product_data_module","url":"/ObsessVR/v2/modules-library/product-data/variant/salesforce/remoteEntry.js"}},"wishlistController":{"remoteConfig":{"module":"./wishlist_modules","scope":"wishlist_controller_module","url":"/ObsessVR/v2/modules-library/wishlist-controller/variant/honest/remoteEntry.js"}}},"overlayComponents":{"components":[{"components":[{"kind":"component","name":"store_logo","remoteConfig":{"module":"./StoreLogo","scope":"store_logo","url":"/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"},"styling":{"height":"auto","left":"3%","position":"fixed","top":"0.65rem","width":"7rem"}},{"components":[{"kind":"component","name":"scene_switcher","parentScenes":["6273e89e8aba2a11340f1e48"],"remoteConfig":{"module":"./SceneSwitcher","scope":"scene_switcher","url":"/ObsessVR/v2/component-library/feature-components/scene-switcher/main/remoteEntry.js"},"sceneMap":{"6273e89e8aba2a11340f1e48":"6279219717057d6b9c34ab0e","6279219717057d6b9c34ab0e":"6273e89e8aba2a11340f1e48"},"styling":{"alignItems":"center","display":"flex","flexDirection":"column","fontSize":"10px","paddingTop":"0.5rem","width":"4rem"},"switchProps":{"handleDiameter":16,"height":20,"offColor":"#BBCDC3","offHandleColor":"#fff","onColor":"#BBCDC3","onHandleColor":"#fff","width":34}},{"iconStyling":{"height":"1.5rem","margin":"0 2rem 0 0"},"kind":"component","name":"wishlist_component","remoteConfig":{"module":"./WishlistComponent","scope":"wishlist_component","url":"/ObsessVR/v2/component-library/feature-components/wishlist-component/variant/honest/remoteEntry.js"}},{"iconStyling":{"height":"1.5rem","margin":"0 1rem"},"kind":"component","name":"cart_component","remoteConfig":{"module":"./CartComponent","scope":"cart_component","url":"/ObsessVR/v2/component-library/feature-components/cart-component/variant/honest/remoteEntry.js"}},{"iconStyling":{"height":"1rem","marginRight":"1.5rem","width":"auto"},"kind":"component","name":"navigation_menu","options":[{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/livingRoomDesktopImg.svg","label":"Living Room","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/livingRoomMobileImg.svg","sceneId":"6273e9c1df3663299b45cd3e"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/kitchenDesktopImg.svg","label":"Kitchen","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/kitchenMobileImg.svg","sceneId":"6273e89e8aba2a11340f1e48"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/bathroomDesktopImg.svg","label":"Bathroom","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/bathroomMobileImg.svg","sceneId":"62859b021465cb16e059bddd"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/babyroomDesktopImg.svg","label":"Babyroom","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/babyroomMobileImg.svg","sceneId":"62859b11ccec5ecabdfa4e67"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/vanityDesktopImg.svg","label":"Vanity","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/vanityMobileImg.svg","sceneId":"62981b1f3389489257f062e5"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/greenhouseDesktopImg.svg","label":"Greenhouse","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/greenhouseMobileImg.svg","sceneId":"628d147d3160d61e071d667b"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/laundryDesktopImg.svg","label":"Laundry Room","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/laundryMobileImg.svg","sceneId":"6286614dd6643f86af0b7302"},{"image":"https://cdn.obsess-vr.com/honest/navigationMenuV2/bedroomDesktopImg.svg","label":"Bedroom","mobileImage":"https://cdn.obsess-vr.com/honest/navigationMenuV2/bedroomMobileImg.svg","sceneId":"62859aef9a439a8bfc80198a"}],"remoteConfig":{"module":"./NavigationMenu","scope":"navigation_menu","url":"/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/visual/remoteEntry.js"},"styling":{"marginRight":"0.5rem"}}],"containerStyling":{"alignItems":"center","display":"flex","flexDirection":"row","height":"inherit","position":"fixed","right":"0"},"kind":"container"}],"containerStyling":{"backdropFilter":"blur(100px)","background":"rgba(255, 255, 255, 0.6)","height":"3rem","position":"fixed","top":0,"webkitBackdropFilter":"blur(100px)","width":"100%"},"kind":"container"},{"components":[{"kind":"component","name":"powered_by_obsess","remoteConfig":{"module":"./PoweredByObsess","scope":"powered_by_obsess","url":"/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"},"textStyling":{"color":"white","fontSize":"0.9rem"}}],"containerStyling":{"bottom":0,"left":0,"padding":"4px","position":"fixed"},"kind":"container"},{"components":[{"butterflyAssets":["https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-0.png","https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-1.png","https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-2.png","https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-3.png","https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-4.png","https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-5.png"],"kind":"component","name":"gem_collection_game_component","remoteConfig":{"module":"./ButterflyCollectionStatusUI","scope":"butterfly_collection_game_component","url":"/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"}}],"containerStyling":{"bottom":"2rem","left":"0.5rem","position":"fixed"},"kind":"container"}],"kind":"container"},"sceneTransition":[{"remoteConfig":{"module":"./SceneTransition","scope":"scene_transition","url":"/ObsessVR/v2/component-library/feature-components/scene-transition/variant/honest/remoteEntry.js"},"sceneModal":"video_with_button","sceneModalData":{"hotspot_type":"video_with_button","url":{"origin":"cdn","path":"clients/Obsess/62696219b9aca18715d5b3b9/images/hotspots/76831Honest_brand.mp4"},"visible":true},"sceneName":"view-2","selector":"scene_transition_1"}]}
+{
+	"analyticsModules": [
+		{
+			"additionalAnalyticsIDs": [],
+			"betaAnalyticsID": "UA-91780857-16",
+			"prodAnalyticsID": "UA-91780857-16",
+			"remoteConfig": {
+				"module": "./ga_module",
+				"scope": "ga_module",
+				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
+			}
+		}
+	],
+	"modals": [
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"hotspotanimation": { "type": "none" },
+				"selector": "zoom"
+			},
+			"remoteConfig": {
+				"module": "./ZoomModal",
+				"scope": "zoom_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "product"
+			},
+			"remoteConfig": {
+				"module": "./ProductModal",
+				"scope": "product_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/neostrata/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoModal",
+				"scope": "video_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video_with_button",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoWithButtonModal",
+				"scope": "video_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "text_with_button"
+			},
+			"remoteConfig": {
+				"module": "./TextWithButtonModal",
+				"scope": "text_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/variant/neostrata/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./ImageModal",
+				"scope": "image_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_carousel",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./ImageCarouselModal",
+				"scope": "image_carousel_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "iframe",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./IFrameModal",
+				"scope": "iframe_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"beginQuizCTA": "LET’S GO",
+				"beginQuizPrompt": "Showcase what you’ve learned. Complete the Sun Room knowledge check to earn a badge and a special offer.",
+				"centered": true,
+				"fillerImg": "https://obsessvr-webstore-assets-public.s3.amazonaws.com/neostrata/modal-filler.png",
+				"messageObj": {
+					"failure": {
+						"subtitle": "Explore more of the space to learn more about how the sun affects your skin.",
+						"title": "Thanks for playing! You're a skincare novice."
+					},
+					"success": {
+						"subtitle": "You won the Sun Care Prevent & Correct badge. Redeem free shipping on your next purchase with promo code: SUNBADGE",
+						"title": "Congratulations!"
+					}
+				},
+				"mobileClose": "https://obsessvr-webstore-assets-public.s3.amazonaws.com/close-dark.svg",
+				"selector": "quiz",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./QuizModal",
+				"scope": "quiz_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/variant/neostrata/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "youtube_embed",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./YoutubeEmbedModal",
+				"scope": "youtube_embed_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+			}
+		}
+	],
+	"modules": {
+		"cartController": {
+			"remoteConfig": {
+				"module": "./cart_modules",
+				"scope": "cart_controller_module",
+				"url": "/ObsessVR/v2/modules-library/cart-controller/variant/neostrata/remoteEntry.js"
+			}
+		},
+		"getProductData": {
+			"remoteConfig": {
+				"module": "./product_modules",
+				"scope": "product_data_module",
+				"url": "/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js"
+			}
+		}
+	},
+	"overlayComponents": {
+		"components": [
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "store_logo",
+						"remoteConfig": {
+							"module": "./StoreLogo",
+							"scope": "store_logo",
+							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
+						},
+						"styling": {
+							"height": "auto",
+							"left": "3%",
+							"position": "fixed",
+							"top": "0.65rem",
+							"width": "162px"
+						}
+					},
+					{
+						"components": [
+							{
+								"iconStyling": {
+									"marginRight": "15px",
+									"maxHeight": "30px",
+									"maxWidth": "30px"
+								},
+								"kind": "component",
+								"mobileIconStyling": {
+									"cursor": "pointer",
+									"height": "22px",
+									"marginRight": "10px",
+									"width": "22px"
+								},
+								"remoteConfig": {
+									"module": "./CartComponent",
+									"scope": "cart_component",
+									"url": "http://localhost:3016/remoteEntry.js"
+								},
+								"styling": {
+									"alignItems": "center",
+									"display": "flex",
+									"flexDirection": "column"
+								}
+							},
+							{
+								"dropdownStyling": {
+									"background": "linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(223,223,223,1) 56%, rgba(236,236,236,1) 100%)",
+									"marginTop": "9px",
+									"opacity": "0.80"
+								},
+								"iconBySceneID": {
+									"6298f355400ce6b3db706a60": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_yellow_new.svg",
+									"6298f356400ce6b3db706a62": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_grey_new.svg",
+									"6298f356400ce6b3db706a64": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_yellow_new.svg",
+									"6298f357400ce6b3db706a68": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_yellow_new.svg",
+									"629fa254585f441672e50dad": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_yellow_new.svg",
+									"629fa255585f441672e50daf": "https://cdn.obsess-vr.com/neostrata/nav-menu/Neostrata_yellow_new.svg"
+								},
+								"iconStyling": {
+									"marginRight": "20px",
+									"maxHeight": "50px",
+									"maxWidth": "50px"
+								},
+								"kind": "component",
+								"mobileIconStyling": {
+									"cursor": "pointer",
+									"height": "22px",
+									"marginRight": "10px",
+									"width": "46px"
+								},
+								"name": "navigation_menu",
+								"remoteConfig": {
+									"module": "./NavigationMenu",
+									"scope": "navigation_menu",
+									"url": "/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/icon-by-scene/remoteEntry.js"
+								},
+								"showText": false,
+								"unclickableScenes": [
+									"629fa254585f441672e50dad",
+									"6298f355400ce6b3db706a60",
+									"629fa255585f441672e50daf"
+								]
+							}
+						],
+						"containerStyling": {
+							"alignItems": "center",
+							"display": "flex",
+							"flexDirection": "row",
+							"height": "inherit",
+							"position": "fixed",
+							"right": "0"
+						},
+						"kind": "container"
+					}
+				],
+				"containerStyling": {
+					"backdropFilter": "blur(100px)",
+					"background": "rgba(255, 255, 255, 0.6)",
+					"height": "3rem",
+					"position": "fixed",
+					"top": 0,
+					"webkitBackdropFilter": "blur(100px)",
+					"width": "100%"
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "powered_by_obsess",
+						"remoteConfig": {
+							"module": "./PoweredByObsess",
+							"scope": "powered_by_obsess",
+							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
+						},
+						"textStyling": {
+							"color": "white",
+							"fontSize": "0.9rem"
+						}
+					}
+				],
+				"containerStyling": {
+					"bottom": 0,
+					"padding": "4px",
+					"position": "fixed",
+					"right": 0
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "shop_with_friends",
+						"remoteConfig": {
+							"module": "./ShopWithFriends",
+							"scope": "shop_with_friends",
+							"url": "/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js"
+						},
+						"showButton": true,
+						"textStyling": {
+							"color": "white",
+							"fontSize": "0.9rem"
+						}
+					},
+					{
+						"enableSoundBar": true,
+						"kind": "component",
+						"name": "music_controller",
+						"remoteConfig": {
+							"module": "./MusicController",
+							"scope": "music_controller",
+							"url": "/ObsessVR/v2/component-library/feature-components/music-controller/variant/scene-music/remoteEntry.js"
+						},
+						"sceneMusic": {
+							"6298f356400ce6b3db706a62": "https://cdn.obsess-vr.com/neostrata/Oasis-audio-compressed.mp3",
+							"6298f356400ce6b3db706a64": "https://cdn.obsess-vr.com/neostrata/Oasis-audio-compressed.mp3",
+							"6298f357400ce6b3db706a68": "https://cdn.obsess-vr.com/neostrata/Sun-Room-Quiet.mp3",
+							"629fa254585f441672e50dad": "https://cdn.obsess-vr.com/neostrata/Gravity-audio.mp3"
+						}
+					}
+				],
+				"containerStyling": {
+					"alignItems": "flex-end",
+					"bottom": "25px",
+					"columnGap": "15px",
+					"display": "flex",
+					"padding": "4px",
+					"position": "fixed",
+					"right": 0
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "scene_selector",
+						"options": [
+							{
+								"image": "https://cdn.obsess-vr.com/neostrata/scene-selector/sun 2.svg",
+								"label": "sun",
+								"sceneId": "6298f357400ce6b3db706a68"
+							},
+							{
+								"image": "https://cdn.obsess-vr.com/neostrata/scene-selector/lock 2.svg",
+								"label": "lock",
+								"sceneId": ""
+							},
+							{
+								"image": "https://cdn.obsess-vr.com/neostrata/scene-selector/lock 2.svg",
+								"label": "lock",
+								"sceneId": ""
+							},
+							{
+								"image": "https://cdn.obsess-vr.com/neostrata/scene-selector/lock 2.svg",
+								"label": "lock",
+								"sceneId": ""
+							}
+						],
+						"remoteConfig": {
+							"module": "./SceneSelector",
+							"scope": "scene_selector",
+							"url": "http://localhost:3040/remoteEntry.js"
+						},
+						"scenesToDisplay": [
+							"6298f356400ce6b3db706a64",
+							"6298f357400ce6b3db706a68",
+							"629fa254585f441672e50dad",
+							"6298f355400ce6b3db706a60",
+							"629fa255585f441672e50daf"
+						],
+						"styling": {
+							"display": "flex",
+							"flexDirection": "column"
+						}
+					}
+				],
+				"containerStyling": {
+					"bottom": 0,
+					"left": 0,
+					"padding": "0.5rem",
+					"position": "fixed"
+				},
+				"kind": "container"
+			}
+		],
+		"kind": "container"
+	},
+	"sceneTransition": [
+		{
+			"data": {
+				"sceneName": "environment",
+				"videoUrl": "https://cdn.obsess-vr.com/neostrata/20220621_Neostrata_animation_V7.mp4",
+				"videoUrlMobile": "https://cdn.obsess-vr.com/neostrata/20220621_Neostrata_animation_V7.mp4"
+			},
+			"remoteConfig": {
+				"module": "./SceneTransition",
+				"scope": "scene_transition",
+				"url": "/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js"
+			},
+			"selector": "scene_transition_1"
+		}
+	]
+}
