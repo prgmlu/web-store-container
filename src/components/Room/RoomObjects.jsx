@@ -18,13 +18,17 @@ import { formURL } from '../../utils/apiUtils';
 
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
-		(state) => state?.storeData?.styling?.icons?.nav_arrow_icon?.name || {},
+		(state) => state?.storeData?.styling?.icons?.nav_arrow_icon?.name || '',
+	);
+	const navigationArrowIconHover = useSelector(
+		(state) =>
+			state?.storeData?.styling?.icons?.nav_arrow_icon_hover?.name || '',
 	);
 	const storeIconFiles = useSelector(
 		(state) => state?.storeData?.styling?.store_icon_files || {},
 	);
 
-	const getNavMarkerImage = (type) => {
+	const getNavMarkerImage = (type, arrowState = 'default') => {
 		const arrowsMap = {
 			stairs_up: 'stairs-up-black.svg',
 			stairs_down: 'stairs-down-black.svg',
@@ -36,19 +40,17 @@ const NavMarker = ({ item, ...props }) => {
 			arrowKey = arrowsMap[type];
 		}
 		let arrowUrl = `${config.CDN_BASE_URL}/${arrowKey}`;
+		const navArrowWithState =
+			arrowState === 'hover'
+				? navigationArrowIconHover
+				: navigationArrowIcon;
 
-		if (
-			navigationArrowIcon &&
-			Object.keys(navigationArrowIcon).length > 0
-		) {
-			if (navigationArrowIcon in storeIconFiles) {
-				arrowUrl = formURL(storeIconFiles[navigationArrowIcon]?.url);
-			} else {
-				arrowUrl = `${config.CDN_BASE_URL}/default_icons/${navigationArrowIcon}.svg`;
-			}
+		if (!navArrowWithState) return arrowUrl;
+
+		if (navArrowWithState in storeIconFiles) {
+			return formURL(storeIconFiles[navArrowWithState]?.url);
 		}
-
-		return arrowUrl;
+		return `${config.CDN_BASE_URL}/default_icons/${navArrowWithState}.svg`;
 	};
 
 	return (
@@ -60,8 +62,14 @@ const NavMarker = ({ item, ...props }) => {
 			iconConfig={{
 				showIcon: item?.props?.hide === false,
 			}}
-			imageURL={getNavMarkerImage(item?.props?.sprite_type || '')}
-			imageHoverURL={getNavMarkerImage(item?.props?.sprite_type || '')}
+			imageURL={getNavMarkerImage(
+				item?.props?.sprite_type || '',
+				'default',
+			)}
+			imageHoverURL={getNavMarkerImage(
+				item?.props?.sprite_type || '',
+				'hover',
+			)}
 			userData={{ props: item?.props || {}, type: item.type }}
 		/>
 	);
