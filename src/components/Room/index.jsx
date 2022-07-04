@@ -49,6 +49,13 @@ const Room = ({ sceneData, webpSupport }) => {
 	const url = sceneData?.cube_map_dir || flatSceneUrl;
 	const opacityMapUrl = sceneData?.opacity_map || null;
 
+	const stylingIcons = useSelector(
+		(state) => state?.storeData?.styling?.icons || {},
+	);
+	const storeIconFiles = useSelector(
+		(state) => state?.storeData?.styling?.store_icon_files || {},
+	);
+
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
 			collect({
@@ -336,6 +343,16 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	};
 
+	const getSceneTransitionIcon = () => {
+		if (
+			'transitionIcon' in stylingIcons &&
+			stylingIcons.transitionIcon in storeIconFiles
+		) {
+			return formURL(storeIconFiles[stylingIcons.transitionIcon]);
+		}
+		return null;
+	};
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -351,6 +368,7 @@ const Room = ({ sceneData, webpSupport }) => {
 			fps={isMobile ? 30 : 60}
 			type="containerInstance"
 			orbitControlsConfig={sceneData?.controls}
+			loadingIconSrc={getSceneTransitionIcon()}
 		>
 			<RoomObjects
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>

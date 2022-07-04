@@ -124,7 +124,8 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 	const isFireEffect = hotspotType === 'custom' && selector === 'fire_effect';
-	const isWaterEffect = hotspotType === 'custom' && selector === 'water_effect';
+	const isWaterEffect =
+		hotspotType === 'custom' && selector === 'water_effect';
 
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
@@ -167,7 +168,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	}
 	if (isWaterEffect) {
 		return (
-				<WaterEffect
+			<WaterEffect
 				{...props}
 				roomId={item.scene.$oid}
 				position={item.props.data.position}
@@ -175,7 +176,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				scale={item.props.data.scale}
 				size={item.props.data.size}
 				distortionScale={item.props.data.distortionScale}
-				/>
+			/>
 		);
 	}
 	if (isGreenScreenSystem) {
