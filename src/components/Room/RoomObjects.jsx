@@ -44,18 +44,26 @@ const NavMarker = ({ item, ...props }) => {
 		if (type === 'stairs_up' || type === 'stairs_down') {
 			return arrowUrl;
 		}
-		
-		const navArrowWithState =
-			arrowState === 'hover'
-				? navigationArrowIconHover
-				: navigationArrowIcon;
-				
-		if (!navArrowWithState) return arrowUrl;
 
-		if (navArrowWithState in storeIconFiles) {
-			return formURL(storeIconFiles[navArrowWithState]?.url);
+		if (arrowState === 'hover') {
+			if ('hover_icon' in item.props) {
+				return formURL(item.props.hover_icon);
+			}
+			if (navigationArrowIconHover) {
+				return formURL(storeIconFiles[navigationArrowIconHover]?.url);
+			}
 		}
-		return `${config.CDN_BASE_URL}/default_icons/${navArrowWithState}.svg`;
+
+		if (arrowState === 'default') {
+			if ('icon' in item.props) {
+				return formURL(item.props.icon);
+			}
+			if (navigationArrowIcon) {
+				return formURL(storeIconFiles[navigationArrowIcon]?.url);
+			}
+		}
+
+		return arrowUrl;
 	};
 
 	return (
@@ -271,6 +279,7 @@ const RoomObjects = ({ ...props }) => {
 	let hotspotMarkerIndexCounter = -1;
 
 	if (roomObjectsArr.length <= 0) return null;
+
 	return (
 		<>
 			{roomObjectsArr.map((item) => {
@@ -304,4 +313,5 @@ const RoomObjects = ({ ...props }) => {
 };
 
 RoomObjects.propTypes = {};
+
 export default RoomObjects;
