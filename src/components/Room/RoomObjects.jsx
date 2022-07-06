@@ -281,6 +281,9 @@ const RoomObjects = ({ ...props }) => {
 						/>
 					);
 				}
+				// else{
+				// 	return(null)
+				// }
 				hotspotMarkerIndexCounter += 1;
 				return (
 					<HotspotMarker
