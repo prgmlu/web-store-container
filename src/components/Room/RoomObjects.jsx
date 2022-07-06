@@ -39,12 +39,17 @@ const NavMarker = ({ item, ...props }) => {
 		if (type in arrowsMap) {
 			arrowKey = arrowsMap[type];
 		}
-		let arrowUrl = `${config.CDN_BASE_URL}/${arrowKey}`;
+		const arrowUrl = `${config.CDN_BASE_URL}/${arrowKey}`;
+
+		if (type === 'stairs_up' || type === 'stairs_down') {
+			return arrowUrl;
+		}
+		
 		const navArrowWithState =
 			arrowState === 'hover'
 				? navigationArrowIconHover
 				: navigationArrowIcon;
-
+				
 		if (!navArrowWithState) return arrowUrl;
 
 		if (navArrowWithState in storeIconFiles) {
