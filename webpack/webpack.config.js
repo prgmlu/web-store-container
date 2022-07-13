@@ -93,8 +93,8 @@ module.exports = (options) => {
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				// threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/realtime-demo/remoteEntry.js`,
-				threejs_scene: 'threejs_scene@http://192.168.1.122:4000/remoteEntry.js',
+				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/realtime-demo/remoteEntry.js`,
+				// threejs_scene: 'threejs_scene@http://192.168.1.122:4000/remoteEntry.js',
 				// threejs_scene: 'threejs_scene@http://192.168.1.37:4000/remoteEntry.js',
 				// threejs_scene: 'threejs_scene@http://localhost:4000/remoteEntry.js',
 			},
