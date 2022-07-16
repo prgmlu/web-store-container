@@ -69,7 +69,7 @@ const NavMarker = ({ item, ...props }) => {
 	return (
 		<Hotspot
 			{...props}
-			type="hotspot"
+			type="HotspotMarker"
 			collider_transform={item.collider_transform}
 			transform={item.transform}
 			iconConfig={{
@@ -83,7 +83,10 @@ const NavMarker = ({ item, ...props }) => {
 				item?.props?.sprite_type || '',
 				'hover',
 			)}
-			userData={{ props: item?.props || {}, type: item.type }}
+			userData={{
+				props: item?.props || {},
+				type: item.type,
+			}}
 		/>
 	);
 };
@@ -205,7 +208,6 @@ const HotspotMarker = ({ item, ...props }) => {
 			/>
 		);
 	}
-
 	if (isEmbeddedVideo) {
 		return (
 			<InSceneVidComponent
@@ -240,22 +242,37 @@ const HotspotMarker = ({ item, ...props }) => {
 		);
 	}
 
+	const labelProps = {};
+	if (item.type === 'Label') {
+		labelProps.containerStyling = item?.props?.container;
+		labelProps.labelStyling = item?.props?.label;
+
+		if (item?.props?.hotspot_type === 'tooltip') {
+			labelProps.arrowConfig = {
+				arrow_color: item?.props?.arrow_color,
+				arrow_direction: item?.props?.arrow_direction,
+			};
+			labelProps.visible = false;
+		}
+	}
+	const userData = {
+		props: { ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
+		type: item.type,
+	};
+
 	return (
 		<Hotspot
 			{...props}
-			type="hotspot"
+			type={item?.type}
 			collider_transform={item.collider_transform}
 			transform={item.transform}
 			iconConfig={{
 				showIcon: item?.props?.show_icon,
 			}}
-			userData={{
-				props:
-					{ ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
-				type: item.type,
-			}}
+			userData={userData}
 			imageURL={getHotspotImage(item?.props?.icon, 'default')}
 			imageHoverURL={getHotspotImage(item?.props?.hover_icon, 'hover')}
+			{...labelProps}
 		/>
 	);
 };
