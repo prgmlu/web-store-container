@@ -310,7 +310,10 @@ const RoomObjects = ({ ...props }) => {
 							activeNavIndex={activeNavIndex}
 							navMarkerIndex={navMarkerIndexCounter}
 							accessibilityHighlightColor="gray"
-							animation={{...item.animation_props, baseScale: item?.transform[0] || 1}}
+							animation={{
+								...item.animation_props,
+								baseScale: item?.transform[0] || 1,
+							}}
 						/>
 					);
 				}
@@ -323,7 +326,10 @@ const RoomObjects = ({ ...props }) => {
 						activeHotspotIndex={activeHotspotIndex}
 						hotspotMarkerIndex={hotspotMarkerIndexCounter}
 						accessibilityHighlightColor="gray"
-						animation={{...item.animation_props, baseScale: item?.transform[0] || 1}}
+						animation={{
+							...item.animation_props,
+							baseScale: item?.transform[0] || 1,
+						}}
 					/>
 				);
 			})}

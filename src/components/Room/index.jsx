@@ -345,10 +345,12 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const getSceneTransitionIcon = () => {
 		if (
-			'transitionIcon' in stylingIcons &&
-			stylingIcons.transitionIcon in storeIconFiles
+			'transition_icon' in stylingIcons &&
+			stylingIcons.transition_icon.name in storeIconFiles
 		) {
-			return formURL(storeIconFiles[stylingIcons.transitionIcon]);
+			return formURL(
+				storeIconFiles[stylingIcons.transition_icon.name].url,
+			);
 		}
 		return null;
 	};
