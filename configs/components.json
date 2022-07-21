@@ -1,1 +1,541 @@
-{"analyticsModules":[{"additionalAnalyticsIDs":[],"betaAnalyticsID":"UA-91780857-16","prodAnalyticsID":"UA-91780857-58","remoteConfig":{"module":"./ga_module","scope":"ga_module","url":"/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"}}],"modals":[{"kind":"modal","modalConfig":{"animation":true,"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png","centered":true,"selector":"welcome_modal","translations":{"de":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/de/welcome.png"},"es":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/es/welcome.png"},"fr":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/fr/welcome.png"},"it":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/it/welcome.png"},"uk":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png"},"us":{"bgImageUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/us/welcome.png"}}},"remoteConfig":{"module":"./WelcomeModal","scope":"welcome_modal","url":"/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/charlotte-tilbury/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"product","translations":{"de":{"addToBag":"IN DEN WARENKORB","addedToBag":"Zum Warenkorb hinzugefügt","productInformation":"PRODUKTINFORMATIONEN","readMore":"Weiterlesen","removeFromBag":"Entfernen","tryItOnMe":"An Mir Testen"},"es":{"addToBag":"AÑADIR A LA CESTA","addedToBag":"AÑADIDO DE LA Bolsa","productInformation":"INFORMACIÓN DEL PRODUCTO","readMore":"Más información","removeFromBag":"Eliminar","tryItOnMe":"Prueba personalizada"},"fr":{"addToBag":"Ajouter au panier","addedToBag":"Ajouté au panier","productInformation":"DÉTAILS DU PRODUIT","readMore":"En savoir plus","removeFromBag":"Supprimer","tryItOnMe":"Mon test personnalisé"},"it":{"addToBag":"AGGIUNGI ALLA SHOPPING BAG","addedToBag":"Aggiunto alla shopping bag","productInformation":"DETTAGLI PRODOTTO","readMore":"Leggi di più","removeFromBag":"Elimina","tryItOnMe":"Provalo su di me"},"uk":{"addToBag":"Add to bag","addedToBag":"Added to bag","productInformation":"Product information","readMore":"Read more","removeFromBag":"Remove from bag","tryItOnMe":"Try it on me"},"us":{"addToBag":"Add to bag","addedToBag":"Added to bag","productInformation":"Product information","readMore":"Read more","removeFromBag":"Remove from bag","tryItOnMe":"Try it on me"}}},"remoteConfig":{"module":"./ProductModal","scope":"product_modal","url":"/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video","size":"lg"},"remoteConfig":{"module":"./VideoModal","scope":"video_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"gem_game","size":"sm"},"remoteConfig":{"module":"./GemsVideoModal","scope":"gem_collection_game_component","url":"/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"wall_of_fame_game","size":"sm","translations":{"us":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/us/"},"uk":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/uk/"},"fr":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/fr/"},"it":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/it/"},"de":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/de/"},"es":{"url":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/es/"}}},"remoteConfig":{"module":"./WallofFameGameModal","scope":"wall_of_fame_game_component","url":"/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video_with_button","size":"sm"},"remoteConfig":{"module":"./VideoWithButtonModal","scope":"video_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"text_with_button"},"remoteConfig":{"module":"./TextWithButtonModal","scope":"text_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image","size":"md"},"remoteConfig":{"module":"./ImageModal","scope":"image_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image_carousel","size":"sm"},"remoteConfig":{"module":"./ImageCarouselModal","scope":"image_carousel_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"iframe","size":"lg"},"remoteConfig":{"module":"./IFrameModal","scope":"iframe_modal","url":"/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"quiz","size":"sm"},"remoteConfig":{"module":"./QuizModal","scope":"quiz_modal","url":"/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"youtube_embed","size":"lg"},"remoteConfig":{"module":"./YoutubeEmbedModal","scope":"youtube_embed_modal","url":"/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"masterclass_schedule_modal","size":"sm","translations":{"us":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-us.png"},"uk":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-uk.png"},"fr":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-fr.png"},"it":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-it.png"},"de":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-de.png"},"es":{"bgUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-es.png"}}},"remoteConfig":{"module":"./EventCountdownModal","scope":"event_countdown_modal","url":"/ObsessVR/v2/component-library/webstore-modals/event-countdown-modal/main/remoteEntry.js"}}],"modules":{"cartController":{"remoteConfig":{"module":"./cart_modules","scope":"cart_controller_module","url":"/ObsessVR/v2/modules-library/cart-controller/variant/charlotte-tilbury/remoteEntry.js"}},"getProductData":{"remoteConfig":{"module":"./product_modules","scope":"product_data_module","url":"/ObsessVR/v2/modules-library/product-data/variant/charlotte-tilbury/remoteEntry.js"}}},"overlayComponents":{"components":[{"components":[{"gemAssets":{"empty":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png","filled":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png"},"gemCollectionStatusModal":{"background":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass_event_background.png","gemCount":4},"kind":"component","name":"gem_collection_game_component","remoteConfig":{"module":"./GemsCollectionStatusUI","scope":"gem_collection_game_component","url":"/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js"},"translations":{"uk":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/uk/"},"us":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party-na","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/us/"},"de":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/de/"},"it":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/it/"},"fr":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/fr/"},"es":{"virtualConsultation":"https://www.charlottetilbury.com/product/free-pillow-talk-party","boudoir":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/boudoir-","party":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/party-","swf":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/ShopWithFriends.png","virtual":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/VirtualConsultaions.png","modalImg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/es/"}}}],"containerStyling":{"bottom":"0px","left":1,"pointerEvents":"none","position":"fixed","right":1,"textAlign":"center"},"containerStylingMobile":{"bottom":"1.5rem","left":1,"pointerEvents":"none","position":"fixed","right":1,"textAlign":"center"},"kind":"container"},{"components":[{"iconStyling":{"height":"2em","width":"auto"},"kind":"component","name":"cart_component","remoteConfig":{"module":"./CartComponent","scope":"cart_component","url":"/ObsessVR/v2/component-library/feature-components/cart-component/variant/charlotte-tilbury/remoteEntry.js"},"styling":{"alignItems":"center","display":"flex","flexDirection":"column"},"translations":{"de":{"bagHeading2":"Alle Artikel in deinem Warenkorb werden hier angezeigt","noBagItem":"DEIN WARENKORB IST LEER","placeOrder":"Warenkorb ansehen","removeFromBag":"Entfernen"},"es":{"bagHeading2":"Cuando añadas artículos a tu bolsa, aparecerán aquí","noBagItem":"NO HAY ARTÍCULOS EN TU BOLSA","placeOrder":"Ver bolsa y pagar","removeFromBag":"Eliminar"},"fr":{"bagHeading2":"Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.","noBagItem":"IL N'Y A PAS D'ARTICLES DANS VOTRE SAC","placeOrder":"Passer à la caisse","removeFromBag":"Supprimer"},"it":{"bagHeading2":"Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui","noBagItem":"LA TUA SHOPPING BAG È VUOTA","placeOrder":"Procedi al pagamento","removeFromBag":"Elimina"},"uk":{"bagHeading2":"Once you have added items to your bag, they will appear here","noBagItem":"THERE ARE NO ITEMS IN YOUR BAG","placeOrder":"Place order","removeFromBag":"Remove from bag"},"us":{"bagHeading2":"Once you have added items to your bag, they will appear here","noBagItem":"THERE ARE NO ITEMS IN YOUR BAG","placeOrder":"Place order","removeFromBag":"Remove from bag"}}}],"containerStyling":{"display":"flex","padding":"8px","position":"fixed","right":0,"top":0},"kind":"container"},{"components":[{"kind":"component","name":"shop_with_friends","remoteConfig":{"module":"./ShopWithFriends","scope":"shop_with_friends","url":"/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js"},"showButton":false,"textStyling":{"color":"white","fontSize":"0.9rem"}},{"kind":"component","name":"powered_by_obsess","remoteConfig":{"module":"./PoweredByObsess","scope":"powered_by_obsess","url":"/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"},"textStyling":{"color":"white","fontSize":"0.9rem"}}],"containerStyling":{"bottom":0,"padding":"4px","position":"fixed","right":0,"textAlign":"end"},"kind":"container"}],"kind":"container"},"preSceneComponent":{"overlayBg":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/entrance_bg_desktop.jpg","overlayBgMobile":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/entrance_bg_mobile.jpg","remoteConfig":{"module":"./EntranceVideo","scope":"entrance_video","url":"/ObsessVR/v2/component-library/feature-components/entrance-video/main/remoteEntry.js"},"translations":{"de":{"welcomeMessage":"DARLING! SEI BEI MEINER NEUEN! VIRTUELLEN PILLOW TALK PARTY DABEI"},"es":{"welcomeMessage":"¡DARLING! ÚNETE A MI NUEVA PILLOW TALK PARTY"},"fr":{"welcomeMessage":"DARLINGS! REJOIGNEZ MA NOUVELLE PILLOW TALK PARTY VIRTUELLE"},"it":{"welcomeMessage":"DARLING! PARTECIPA AL MIO NUOVO PILLOW TALK PARTY VIRTUALE"},"uk":{"welcomeMessage":"DARLINGS! JOIN MY NEW! VIRTUAL PILLOW TALK PARTY"},"us":{"welcomeMessage":"DARLINGS! JOIN MY NEW! VIRTUAL PILLOW TALK PARTY"}}},"sceneOverlays":{"6242242a42f102f9875fa895":{"components":[{"components":[{"assets":{"desktopTooltip":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-desktop.gif","mobileTooltip":"https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-mobile.gif"},"delayInSeconds":3,"kind":"component","name":"tooltip_overlay","remoteConfig":{"module":"./TooltipOverlay","scope":"tooltip_overlay","url":"/ObsessVR/v2/component-library/feature-components/tooltip-overlay/main/remoteEntry.js"},"styling":{"width":"20vh"}}],"containerStyling":{"height":"100%","left":0,"pointerEvents":"none","position":"absolute","top":0,"width":"100%"},"kind":"container"}],"kind":"container"}},"sceneTransition":[{"data":{"sceneName":"disco-game","videoUrl":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_LANDSCAPE.mp4","videoUrlMobile":"https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_PORTRAIT.mp4"},"remoteConfig":{"module":"./SceneTransition","scope":"scene_transition","url":"/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js"},"selector":"scene_transition_1"}]}
+{
+    "analyticsModules": [{
+        "additionalAnalyticsIDs": [],
+        "betaAnalyticsID": "UA-91780857-16",
+        "prodAnalyticsID": "UA-91780857-58",
+        "remoteConfig": {
+            "module": "./ga_module",
+            "scope": "ga_module",
+            "url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
+        }
+    }],
+    "modals": [{
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png",
+            "centered": true,
+            "selector": "welcome_modal",
+            "translations": {
+                "de": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/de/welcome.png"
+                },
+                "es": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/es/welcome.png"
+                },
+                "fr": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/fr/welcome.png"
+                },
+                "it": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/it/welcome.png"
+                },
+                "uk": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/uk/welcome.png"
+                },
+                "us": {
+                    "bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/welcome-popup/us/welcome.png"
+                }
+            }
+        },
+        "remoteConfig": {
+            "module": "./WelcomeModal",
+            "scope": "welcome_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/charlotte-tilbury/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "product",
+            "translations": {
+                "de": {
+                    "addToBag": "IN DEN WARENKORB",
+                    "addedToBag": "Zum Warenkorb hinzugefügt",
+                    "productInformation": "PRODUKTINFORMATIONEN",
+                    "readMore": "Weiterlesen",
+                    "removeFromBag": "Entfernen",
+                    "tryItOnMe": "An Mir Testen"
+                },
+                "es": {
+                    "addToBag": "AÑADIR A LA CESTA",
+                    "addedToBag": "AÑADIDO DE LA Bolsa",
+                    "productInformation": "INFORMACIÓN DEL PRODUCTO",
+                    "readMore": "Más información",
+                    "removeFromBag": "Eliminar",
+                    "tryItOnMe": "Prueba personalizada"
+                },
+                "fr": {
+                    "addToBag": "Ajouter au panier",
+                    "addedToBag": "Ajouté au panier",
+                    "productInformation": "DÉTAILS DU PRODUIT",
+                    "readMore": "En savoir plus",
+                    "removeFromBag": "Supprimer",
+                    "tryItOnMe": "Mon test personnalisé"
+                },
+                "it": {
+                    "addToBag": "AGGIUNGI ALLA SHOPPING BAG",
+                    "addedToBag": "Aggiunto alla shopping bag",
+                    "productInformation": "DETTAGLI PRODOTTO",
+                    "readMore": "Leggi di più",
+                    "removeFromBag": "Elimina",
+                    "tryItOnMe": "Provalo su di me"
+                },
+                "uk": {
+                    "addToBag": "Add to bag",
+                    "addedToBag": "Added to bag",
+                    "productInformation": "Product information",
+                    "readMore": "Read more",
+                    "removeFromBag": "Remove from bag",
+                    "tryItOnMe": "Try it on me"
+                },
+                "us": {
+                    "addToBag": "Add to bag",
+                    "addedToBag": "Added to bag",
+                    "productInformation": "Product information",
+                    "readMore": "Read more",
+                    "removeFromBag": "Remove from bag",
+                    "tryItOnMe": "Try it on me"
+                }
+            }
+        },
+        "remoteConfig": {
+            "module": "./ProductModal",
+            "scope": "product_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "video",
+            "size": "lg"
+        },
+        "remoteConfig": {
+            "module": "./VideoModal",
+            "scope": "video_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "gem_game",
+            "size": "sm"
+        },
+        "remoteConfig": {
+            "module": "./GemsVideoModal",
+            "scope": "gem_collection_game_component",
+            "url": "/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "wall_of_fame_game",
+            "size": "sm",
+            "translations": {
+                "us": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/us/"
+                },
+                "uk": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/uk/"
+                },
+                "fr": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/fr/"
+                },
+                "it": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/it/"
+                },
+                "de": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/de/"
+                },
+                "es": {
+                    "url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/es/"
+                }
+            }
+        },
+        "remoteConfig": {
+            "module": "./WallofFameGameModal",
+            "scope": "wall_of_fame_game_component",
+            "url": "/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "video_with_button",
+            "size": "sm"
+        },
+        "remoteConfig": {
+            "module": "./VideoWithButtonModal",
+            "scope": "video_with_button_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "text_with_button"
+        },
+        "remoteConfig": {
+            "module": "./TextWithButtonModal",
+            "scope": "text_with_button_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "image",
+            "size": "md"
+        },
+        "remoteConfig": {
+            "module": "./ImageModal",
+            "scope": "image_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "image_carousel",
+            "size": "sm"
+        },
+        "remoteConfig": {
+            "module": "./ImageCarouselModal",
+            "scope": "image_carousel_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "iframe",
+            "size": "lg"
+        },
+        "remoteConfig": {
+            "module": "./IFrameModal",
+            "scope": "iframe_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "quiz",
+            "size": "sm"
+        },
+        "remoteConfig": {
+            "module": "./QuizModal",
+            "scope": "quiz_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "youtube_embed",
+            "size": "lg"
+        },
+        "remoteConfig": {
+            "module": "./YoutubeEmbedModal",
+            "scope": "youtube_embed_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+        }
+    }, {
+        "kind": "modal",
+        "modalConfig": {
+            "animation": true,
+            "centered": true,
+            "selector": "masterclass_schedule_modal",
+            "size": "sm",
+            "translations": {
+                "us": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-us.png"
+                },
+                "uk": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-uk.png"
+                },
+                "fr": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-fr.png"
+                },
+                "it": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-it.png"
+                },
+                "de": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-de.png"
+                },
+                "es": {
+                    "bgUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass-full-es.png"
+                }
+            }
+        },
+        "remoteConfig": {
+            "module": "./EventCountdownModal",
+            "scope": "event_countdown_modal",
+            "url": "/ObsessVR/v2/component-library/webstore-modals/event-countdown-modal/main/remoteEntry.js"
+        }
+    }],
+    "modules": {
+        "cartController": {
+            "remoteConfig": {
+                "module": "./cart_modules",
+                "scope": "cart_controller_module",
+                "url": "/ObsessVR/v2/modules-library/cart-controller/variant/charlotte-tilbury/remoteEntry.js"
+            }
+        },
+        "getProductData": {
+            "remoteConfig": {
+                "module": "./product_modules",
+                "scope": "product_data_module",
+                "url": "/ObsessVR/v2/modules-library/product-data/variant/charlotte-tilbury/remoteEntry.js"
+            }
+        }
+    },
+    "overlayComponents": {
+        "components": [{
+            "components": [{
+                "gemAssets": {
+                    "empty": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondEmpty.png",
+                    "filled": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/diamondFilled.png"
+                },
+                "gemCollectionStatusModal": {
+                    "background": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/countdown-event/masterclass_event_background.png",
+                    "gemCount": 4
+                },
+                "kind": "component",
+                "name": "gem_collection_game_component",
+                "remoteConfig": {
+                    "module": "./GemsCollectionStatusUI",
+                    "scope": "gem_collection_game_component",
+                    "url": "/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js"
+                },
+                "translations": {
+                    "uk": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/uk/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/uk/"
+                    },
+                    "us": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party-na",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/us/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/us/"
+                    },
+                    "de": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/de/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/de/"
+                    },
+                    "it": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/it/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/it/"
+                    },
+                    "fr": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/fr/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/fr/"
+                    },
+                    "es": {
+                        "virtualConsultation": "https://www.charlottetilbury.com/product/free-pillow-talk-party",
+                        "boudoir": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/boudoir-",
+                        "party": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/party-",
+                        "swf": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/ShopWithFriends.png",
+                        "virtual": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/bottom-bar/es/VirtualConsultaions.png",
+                        "modalImg": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/gem-game/es/"
+                    }
+                }
+            }],
+            "containerStyling": {
+                "bottom": "0px",
+                "left": 1,
+                "pointerEvents": "none",
+                "position": "fixed",
+                "right": 1,
+                "textAlign": "center"
+            },
+            "containerStylingMobile": {
+                "bottom": "1.5rem",
+                "left": 1,
+                "pointerEvents": "none",
+                "position": "fixed",
+                "right": 1,
+                "textAlign": "center"
+            },
+            "kind": "container"
+        }, {
+            "components": [{
+                "iconStyling": {
+                    "height": "2em",
+                    "width": "auto"
+                },
+                "kind": "component",
+                "name": "cart_component",
+                "remoteConfig": {
+                    "module": "./CartComponent",
+                    "scope": "cart_component",
+                    "url": "/ObsessVR/v2/component-library/feature-components/cart-component/variant/charlotte-tilbury/remoteEntry.js"
+                },
+                "styling": {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "flexDirection": "column"
+                },
+                "translations": {
+                    "de": {
+                        "bagHeading2": "Alle Artikel in deinem Warenkorb werden hier angezeigt",
+                        "noBagItem": "DEIN WARENKORB IST LEER",
+                        "placeOrder": "Warenkorb ansehen",
+                        "removeFromBag": "Entfernen"
+                    },
+                    "es": {
+                        "bagHeading2": "Cuando añadas artículos a tu bolsa, aparecerán aquí",
+                        "noBagItem": "NO HAY ARTÍCULOS EN TU BOLSA",
+                        "placeOrder": "Ver bolsa y pagar",
+                        "removeFromBag": "Eliminar"
+                    },
+                    "fr": {
+                        "bagHeading2": "Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.",
+                        "noBagItem": "IL N'Y A PAS D'ARTICLES DANS VOTRE SAC",
+                        "placeOrder": "Passer à la caisse",
+                        "removeFromBag": "Supprimer"
+                    },
+                    "it": {
+                        "bagHeading2": "Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui",
+                        "noBagItem": "LA TUA SHOPPING BAG È VUOTA",
+                        "placeOrder": "Procedi al pagamento",
+                        "removeFromBag": "Elimina"
+                    },
+                    "uk": {
+                        "bagHeading2": "Once you have added items to your bag, they will appear here",
+                        "noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
+                        "placeOrder": "Place order",
+                        "removeFromBag": "Remove from bag"
+                    },
+                    "us": {
+                        "bagHeading2": "Once you have added items to your bag, they will appear here",
+                        "noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
+                        "placeOrder": "Place order",
+                        "removeFromBag": "Remove from bag"
+                    }
+                }
+            }],
+            "containerStyling": {
+                "display": "flex",
+                "padding": "8px",
+                "position": "fixed",
+                "right": 0,
+                "top": 0
+            },
+            "kind": "container"
+        }, {
+            "components": [{
+                "kind": "component",
+                "name": "shop_with_friends",
+                "remoteConfig": {
+                    "module": "./ShopWithFriends",
+                    "scope": "shop_with_friends",
+                    "url": "/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js"
+                },
+                "showButton": false,
+                "textStyling": {
+                    "color": "white",
+                    "fontSize": "0.9rem"
+                }
+            }, {
+                "kind": "component",
+                "name": "powered_by_obsess",
+                "remoteConfig": {
+                    "module": "./PoweredByObsess",
+                    "scope": "powered_by_obsess",
+                    "url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
+                },
+                "textStyling": {
+                    "color": "white",
+                    "fontSize": "0.9rem"
+                }
+            }],
+            "containerStyling": {
+                "bottom": 0,
+                "padding": "4px",
+                "position": "fixed",
+                "right": 0,
+                "textAlign": "end"
+            },
+            "kind": "container"
+        }],
+        "kind": "container"
+    },
+    "sceneOverlays": {
+        "6242242a42f102f9875fa895": {
+            "components": [{
+                "components": [{
+                    "assets": {
+                        "desktopTooltip": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-desktop.gif",
+                        "mobileTooltip": "https://cdn.obsessvr.com/charlotte-tilbury/pillow-talk-party/drag-tooltip-mobile.gif"
+                    },
+                    "delayInSeconds": 3,
+                    "kind": "component",
+                    "name": "tooltip_overlay",
+                    "remoteConfig": {
+                        "module": "./TooltipOverlay",
+                        "scope": "tooltip_overlay",
+                        "url": "/ObsessVR/v2/component-library/feature-components/tooltip-overlay/main/remoteEntry.js"
+                    },
+                    "styling": {
+                        "width": "20vh"
+                    }
+                }],
+                "containerStyling": {
+                    "height": "100%",
+                    "left": 0,
+                    "pointerEvents": "none",
+                    "position": "absolute",
+                    "top": 0,
+                    "width": "100%"
+                },
+                "kind": "container"
+            }],
+            "kind": "container"
+        }
+    },
+    "sceneTransition": [{
+        "data": {
+            "sceneName": "disco-game",
+            "videoUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_LANDSCAPE.mp4",
+            "videoUrlMobile": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/PT_PARTY_VS_WORMHOLE_PORTRAIT.mp4"
+        },
+        "remoteConfig": {
+            "module": "./SceneTransition",
+            "scope": "scene_transition",
+            "url": "/ObsessVR/v2/component-library/feature-components/scene-transition/main/remoteEntry.js"
+        },
+        "selector": "scene_transition_1"
+    }]
+}
