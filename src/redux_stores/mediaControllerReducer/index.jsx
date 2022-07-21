@@ -79,7 +79,7 @@ export default function mediaControllerReducer(
 
 		case PUSH_TO_MEDIA_STACK:
 			if (state.mediaStack.length > 0) {
-				pauseMediaRef(state.mediaStack.at(-1));
+				pauseMediaRef(state.mediaStack[state.mediaStack.length - 1]);
 			}
 			playMediaRef(payload);
 			const updatedPushedStack = [...state.mediaStack, payload];
@@ -92,11 +92,10 @@ export default function mediaControllerReducer(
 					storeMusicPlayState: state.storeMusicPrevPlayState,
 				};
 			}
-
-			pauseMediaRef(state.mediaStack.at(-1));
+			pauseMediaRef(state.mediaStack[state.mediaStack.length - 1]);
 			const updatedPoppedStack = state.mediaStack.slice(0, -1);
 			if (updatedPoppedStack.length > 0) {
-				playMediaRef(updatedPoppedStack.at(-1));
+				playMediaRef(updatedPoppedStack[updatedPoppedStack.length - 1]);
 			}
 			return { ...state, mediaStack: updatedPoppedStack };
 
