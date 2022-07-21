@@ -87,6 +87,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	} = useSelector((state) => state?.mediaController || {});
 
 	useEffect(() => {
+		dispatch(setRoomObjects([]));
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
