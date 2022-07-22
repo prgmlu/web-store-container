@@ -93,12 +93,27 @@ const Room = ({ sceneData, webpSupport }) => {
 		setStoreMusicPlayState,
 	} = useSelector((state) => state?.mediaController || {});
 
-	useEffect(() => {
-		if (entranceVideoUrl) {
+	const getEntranceVideo = () => {
+		const videoRecord = sessionStorage.getItem('entranceVideoRecord') || [];
+		if (
+			entranceVideoUrl &&
+			(!sceneData.display_video_once_per_session ||
+				!videoRecord.includes(sceneData.id))
+		) {
 			setShowEntranceVideo(true);
+			if (!videoRecord.includes(sceneData.id)) {
+				sessionStorage.setItem('entranceVideoRecord', [
+					...videoRecord,
+					sceneData.id,
+				]);
+			}
 		} else {
 			setShowEntranceVideo(false);
 		}
+	};
+
+	useEffect(() => {
+		getEntranceVideo();
 		dispatch(setRoomObjects([]));
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
@@ -370,7 +385,7 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onVideoEnd = () => {
 		setShowEntranceVideo(false);
-	}
+	};
 
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
