@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
 import SoundHotspot from './SoundHotspot';
+import EntranceVideo from './EntranceVideo';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
@@ -49,12 +50,18 @@ const Room = ({ sceneData, webpSupport }) => {
 	const url = sceneData?.cube_map_dir || flatSceneUrl;
 	const opacityMapUrl = sceneData?.opacity_map || null;
 
+	const entranceVideoUrl = isMobile
+		? sceneData?.mobile_first_scene_video_url
+		: sceneData?.first_scene_video_url;
+
 	const stylingIcons = useSelector(
 		(state) => state?.storeData?.styling?.icons || {},
 	);
 	const storeIconFiles = useSelector(
 		(state) => state?.storeData?.styling?.store_icon_files || {},
 	);
+
+	const [showEntranceVideo, setShowEntranceVideo] = useState(false);
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
@@ -87,6 +94,11 @@ const Room = ({ sceneData, webpSupport }) => {
 	} = useSelector((state) => state?.mediaController || {});
 
 	useEffect(() => {
+		if (entranceVideoUrl) {
+			setShowEntranceVideo(true);
+		} else {
+			setShowEntranceVideo(false);
+		}
 		dispatch(setRoomObjects([]));
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
@@ -356,33 +368,45 @@ const Room = ({ sceneData, webpSupport }) => {
 		return null;
 	};
 
+	const onVideoEnd = () => {
+		setShowEntranceVideo(false);
+	}
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
-		<Scene
-			sceneId={sceneData.id}
-			bgConf={bgConfig}
-			linkedScenes={[]}
-			allowHotspotsToMove={false}
-			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
-				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
-			}
-			dispatch={dispatch}
-			fps={isMobile ? 30 : 60}
-			type="containerInstance"
-			orbitControlsConfig={sceneData?.controls}
-			loadingIconSrc={getSceneTransitionIcon()}
-		>
-			<RoomObjects
+		<>
+			{showEntranceVideo && (
+				<EntranceVideo
+					videoUrl={formURL(entranceVideoUrl)}
+					onVideoEnd={onVideoEnd}
+				/>
+			)}
+			<Scene
+				sceneId={sceneData.id}
+				bgConf={bgConfig}
+				linkedScenes={[]}
+				allowHotspotsToMove={false}
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 				}
-			/>
-			<SoundHotspot
-				audioFile={audioFile}
-				handleSoundStop={handleSoundStop}
-			/>
-		</Scene>
+				dispatch={dispatch}
+				fps={isMobile ? 30 : 60}
+				type="containerInstance"
+				orbitControlsConfig={sceneData?.controls}
+				loadingIconSrc={getSceneTransitionIcon()}
+			>
+				<RoomObjects
+					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+						onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+					}
+				/>
+				<SoundHotspot
+					audioFile={audioFile}
+					handleSoundStop={handleSoundStop}
+				/>
+			</Scene>
+		</>
 	) : null;
 };
 
