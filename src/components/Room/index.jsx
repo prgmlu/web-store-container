@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
+import SoundHotspot from './SoundHotspot';
+import EntranceVideo from './EntranceVideo';
 import { formURL } from '../../utils/apiUtils';
 import { getSceneObjects } from '../../apis/webStoreAPI';
 import './room.scss';
@@ -22,11 +24,11 @@ import useAnalytics from '../../hooks/useAnalytics';
 import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
 import { isMobile } from 'react-device-detect';
 import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
+import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
+let soundMarkerTracker = undefined;
 
 const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
-
-	// const [linkedScenes, setLinkedScenes] = useState([]);
 
 	const scenes = useSelector((state) => state.scenes);
 	const {
@@ -46,6 +48,20 @@ const Room = ({ sceneData, webpSupport }) => {
 		: sceneData?.flat_scene_url;
 
 	const url = sceneData?.cube_map_dir || flatSceneUrl;
+	const opacityMapUrl = sceneData?.opacity_map || null;
+
+	const entranceVideoUrl = isMobile
+		? sceneData?.mobile_first_scene_video_url
+		: sceneData?.first_scene_video_url;
+
+	const stylingIcons = useSelector(
+		(state) => state?.storeData?.styling?.icons || {},
+	);
+	const storeIconFiles = useSelector(
+		(state) => state?.storeData?.styling?.store_icon_files || {},
+	);
+
+	const [showEntranceVideo, setShowEntranceVideo] = useState(false);
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
@@ -77,7 +93,28 @@ const Room = ({ sceneData, webpSupport }) => {
 		setStoreMusicPlayState,
 	} = useSelector((state) => state?.mediaController || {});
 
+	const getEntranceVideo = () => {
+		const videoRecord = sessionStorage.getItem('entranceVideoRecord') || [];
+		if (
+			entranceVideoUrl &&
+			(!sceneData.display_video_once_per_session ||
+				!videoRecord.includes(sceneData.id))
+		) {
+			setShowEntranceVideo(true);
+			if (!videoRecord.includes(sceneData.id)) {
+				sessionStorage.setItem('entranceVideoRecord', [
+					...videoRecord,
+					sceneData.id,
+				]);
+			}
+		} else {
+			setShowEntranceVideo(false);
+		}
+	};
+
 	useEffect(() => {
+		getEntranceVideo();
+		dispatch(setRoomObjects([]));
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
@@ -107,23 +144,24 @@ const Room = ({ sceneData, webpSupport }) => {
 	}, [sceneData.id]);
 
 	useEffect(() => {
-		if (storeMusicRef) {
-			if (mediaStack.length > 0) {
-				dispatch(
-					setStoreMusicPlayState({
-						playState: false,
-						userToggled: false,
-					}),
-				);
-			} else {
-				dispatch(
-					setStoreMusicPlayState({
-						playState: true,
-						userToggled: false,
-					}),
-				);
-			}
+		if (!storeMusicRef) return;
+
+		if (mediaStack.length > 0) {
+			dispatch(
+				setStoreMusicPlayState({
+					playState: false,
+					userToggled: false,
+				}),
+			);
+			return;
 		}
+
+		dispatch(
+			setStoreMusicPlayState({
+				playState: true,
+				userToggled: false,
+			}),
+		);
 	}, [storeMusicRef, mediaStack]);
 
 	const accessibilityListener = (e) => {
@@ -218,6 +256,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
+		opacityMapUrl: opacityMapUrl && formURL(opacityMapUrl),
 		imageIntegrity: getBustKey(sceneData),
 		useWebp: webpSupport,
 		skipLargest: isMobile,
@@ -229,12 +268,14 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(setActiveHotspotIndex(undefined));
 		dispatch(setAccessibilitySelector(undefined));
 
-		navigate(scenes[data.linked_room_id.$oid].name);
+		const currentScene = scenes[sceneData.id].name;
+		const nextScene = scenes[data.linked_room_id.$oid].name;
 		collect({
 			eventCategory: 'Navigation',
 			eventAction: 'Arrow clicked',
-			eventLabel: scenes[sceneData.id].name,
+			eventLabel: `${currentScene} > ${nextScene}`,
 		});
+		navigate(nextScene);
 	};
 
 	const onLinkMarkerClicked = (data) => {
@@ -248,17 +289,48 @@ const Room = ({ sceneData, webpSupport }) => {
 		});
 	};
 
-	const onSoundMarkerClicked = (data) => {
-		// this needs work
-		const audioFile = formURL(data.url);
-		const audio = new Audio(audioFile);
-		audio.play();
+	const [audioFile, setAudioFile] = useState('');
 
+	const handleSoundCollect = (soundURL) => {
 		collect({
 			eventCategory: 'Content',
 			eventAction: 'Sound',
-			eventLabel: audioFile,
+			eventLabel: soundURL,
 		});
+	};
+
+	const handleSoundStart = (hotspotID, soundURL) => {
+		setAudioFile(soundURL);
+		soundMarkerTracker = hotspotID;
+	};
+
+	const handleSoundStop = () => {
+		dispatch(popFromMediaStack());
+		setAudioFile('');
+		soundMarkerTracker = undefined;
+	};
+
+	const handleSoundChange = (hotspotID, soundURL) => {
+		dispatch(popFromMediaStack());
+		setAudioFile(soundURL);
+		soundMarkerTracker = hotspotID;
+	};
+
+	const onSoundMarkerClicked = (data) => {
+		const soundURL = formURL(data.url);
+		handleSoundCollect(soundURL);
+
+		if (soundMarkerTracker === undefined) {
+			handleSoundStart(data.hotspotId, soundURL);
+			return;
+		}
+		if (soundMarkerTracker === data.hotspotId) {
+			handleSoundStop();
+			return;
+		}
+		if (soundMarkerTracker !== data.hotspotId) {
+			handleSoundChange(data.hotspotId, soundURL);
+		}
 	};
 
 	const onHotspotMarkerClicked = (data) => {
@@ -289,38 +361,67 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
-		if (marker) {
-			const { type, props } = marker.userData;
-			if (type === 'NavMarker') {
-				onNavMarkerClicked(props);
-			} else if (type === 'HotspotMarker') {
-				onHotspotMarkerClicked(props);
-			}
+		if (!marker) return;
+
+		const { type, props } = marker.userData;
+		if (type === 'NavMarker') {
+			onNavMarkerClicked(props);
+		} else if (type === 'HotspotMarker') {
+			onHotspotMarkerClicked(props);
 		}
+	};
+
+	const getSceneTransitionIcon = () => {
+		if (
+			'transition_icon' in stylingIcons &&
+			stylingIcons.transition_icon.name in storeIconFiles
+		) {
+			return formURL(
+				storeIconFiles[stylingIcons.transition_icon.name].url,
+			);
+		}
+		return null;
+	};
+
+	const onVideoEnd = () => {
+		setShowEntranceVideo(false);
 	};
 
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
-		<Scene
-			sceneId={sceneData.id}
-			bgConf={bgConfig}
-			linkedScenes={[]}
-			allowHotspotsToMove={false}
-			onMouseUp={(e, sceneObject, marker, isDragEvent) =>
-				onSceneMouseUp(e, sceneObject, marker, isDragEvent)
-			}
-			dispatch={dispatch}
-			fps={isMobile ? 30 : 60}
-			type="containerInstance"
-			orbitControlsConfig={sceneData?.controls}
-		>
-			<RoomObjects
+		<>
+			{showEntranceVideo && (
+				<EntranceVideo
+					videoUrl={formURL(entranceVideoUrl)}
+					onVideoEnd={onVideoEnd}
+				/>
+			)}
+			<Scene
+				sceneId={sceneData.id}
+				bgConf={bgConfig}
+				linkedScenes={[]}
+				allowHotspotsToMove={false}
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 				}
-			/>
-		</Scene>
+				dispatch={dispatch}
+				fps={isMobile ? 30 : 60}
+				type="containerInstance"
+				orbitControlsConfig={sceneData?.controls}
+				loadingIconSrc={getSceneTransitionIcon()}
+			>
+				<RoomObjects
+					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+						onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+					}
+				/>
+				<SoundHotspot
+					audioFile={audioFile}
+					handleSoundStop={handleSoundStop}
+				/>
+			</Scene>
+		</>
 	) : null;
 };
 
