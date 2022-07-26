@@ -43,6 +43,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const { collect } = useAnalytics();
 
 	const { activeLocale } = useLocalize();
+	const abortControl = new AbortController();
 
 	const flatSceneUrl = isMobile
 		? sceneData?.mobile_flat_scene_url
@@ -154,6 +155,11 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	useEffect(() => {
 		initNewScene();
+
+		return () => {
+			console.log('=> cancelling standing requests');
+			abortControl.abort();
+		};
 	}, [sceneData.id]);
 
 	useEffect(() => {
@@ -399,10 +405,9 @@ const Room = ({ sceneData, webpSupport }) => {
 	const onVideoEnd = () => {
 		setShowEntranceVideo(false);
 	};
-
 	useEffect(() => {
 		if (sceneBGLoaded && linkedScenes.length > 0) {
-			preLoadConnectedScenes(linkedScenes);
+			preLoadConnectedScenes(linkedScenes, abortControl);
 		}
 	}, [sceneBGLoaded, linkedScenes]);
 
