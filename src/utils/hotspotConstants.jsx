@@ -32,9 +32,8 @@ export const ICON_NAMES = Object.freeze({
 		hover: '',
 	},
 	zoom: {
-		// icon not yet defined in COCO
-		default: '',
-		hover: '',
+		default: 'zoom_hotspot_icon',
+		hover: 'zoom_hotspot_icon_hover',
 	},
 	sound: {
 		default: 'sound_hotspot_icon',
@@ -67,8 +66,7 @@ export const ICON_NAMES = Object.freeze({
 		hover: '',
 	},
 	animation: {
-		// icon not yet defined in COCO
-		default: '',
-		hover: '',
+		default: 'animated_image_hotspot_icon',
+		hover: 'animated_image_hotspot_icon_hover',
 	},
 });
