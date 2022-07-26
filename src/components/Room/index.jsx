@@ -254,7 +254,7 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const getBustKey = (sceneJson) => {
 		if (sceneJson?.image_integrity) {
-			return sceneData.image_integrity.replace(/\D/g, '');
+			return sceneJson.image_integrity.replace(/\D/g, '');
 		}
 		return formatDate(new Date(), 'hhmmddyyyy');
 	};
