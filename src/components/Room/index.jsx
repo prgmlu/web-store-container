@@ -63,6 +63,8 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const [showEntranceVideo, setShowEntranceVideo] = useState(false);
 
+	const [linkedScenes, setLinkedScenes] = useState([]);
+
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
 			collect({
@@ -118,13 +120,17 @@ const Room = ({ sceneData, webpSupport }) => {
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
-				// setLinkedScenes(
-				// 	res
-				// 		.filter((item) => item.type === 'NavMarker')
-				// 		.map((item) => scenes[item?.props?.linked_room_id.$oid])
-				// 		.filter((item) => 'cube_map_dir' in item)
-				// 		.map((item) => formURL(item.cube_map_dir)),
-				// );
+				setLinkedScenes(
+					res
+						.filter((item) => item.type === 'NavMarker')
+						.map((item) => scenes[item?.props?.linked_room_id.$oid])
+						.filter((item) => 'cube_map_dir' in item)
+						.map((item) => ({
+							imageIntegrity: getBustKey(item),
+							cube_map_dir: formURL(item?.cube_map_dir),
+							useWebp: webpSupport,
+						})),
+				);
 				const navCount = res.filter(
 					(item) => item.type === 'NavMarker',
 				).length;
@@ -400,7 +406,7 @@ const Room = ({ sceneData, webpSupport }) => {
 			<Scene
 				sceneId={sceneData.id}
 				bgConf={bgConfig}
-				linkedScenes={[]}
+				linkedScenes={linkedScenes}
 				allowHotspotsToMove={false}
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
