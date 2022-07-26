@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
+import { preLoadConnectedScenes } from 'threejs_scene/sceneUtils';
 import SoundHotspot from './SoundHotspot';
 import EntranceVideo from './EntranceVideo';
 import { formURL } from '../../utils/apiUtils';
@@ -64,6 +65,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const [showEntranceVideo, setShowEntranceVideo] = useState(false);
 
 	const [linkedScenes, setLinkedScenes] = useState([]);
+	const [sceneBGLoaded, setSceneBGLoaded] = useState(false);
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
@@ -114,9 +116,10 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	};
 
-	useEffect(() => {
+	const initNewScene = () => {
 		getEntranceVideo();
 		dispatch(setRoomObjects([]));
+		setSceneBGLoaded(false);
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
@@ -142,11 +145,15 @@ const Room = ({ sceneData, webpSupport }) => {
 			})
 			.catch(() => {
 				dispatch(setRoomObjects([]));
-				// setLinkedScenes([]);
+				setLinkedScenes([]);
 			});
 		sendGaTrackingData({ event: 'scene_loaded' });
 		dispatch(setActiveScene(sceneData.id));
 		dispatch(clearMediaStack());
+	};
+
+	useEffect(() => {
+		initNewScene();
 	}, [sceneData.id]);
 
 	useEffect(() => {
@@ -393,6 +400,12 @@ const Room = ({ sceneData, webpSupport }) => {
 		setShowEntranceVideo(false);
 	};
 
+	useEffect(() => {
+		if (sceneBGLoaded && linkedScenes.length > 0) {
+			preLoadConnectedScenes(linkedScenes);
+		}
+	}, [sceneBGLoaded, linkedScenes]);
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -406,7 +419,6 @@ const Room = ({ sceneData, webpSupport }) => {
 			<Scene
 				sceneId={sceneData.id}
 				bgConf={bgConfig}
-				linkedScenes={linkedScenes}
 				allowHotspotsToMove={false}
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
@@ -416,6 +428,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				type="containerInstance"
 				orbitControlsConfig={sceneData?.controls}
 				loadingIconSrc={getSceneTransitionIcon()}
+				onBackgroundLoaded={() => setSceneBGLoaded(true)}
 			>
 				<RoomObjects
 					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
