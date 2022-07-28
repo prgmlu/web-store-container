@@ -362,7 +362,6 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const onSceneMouseUp = (e, sceneObject, marker) => {
 		if (!marker) return;
-
 		const { type, props } = marker.userData;
 		if (type === 'NavMarker') {
 			onNavMarkerClicked(props);
@@ -415,6 +414,7 @@ const Room = ({ sceneData, webpSupport }) => {
 					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 						onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 					}
+					onHotspotMarkerClicked={onHotspotMarkerClicked}
 				/>
 				<SoundHotspot
 					audioFile={audioFile}

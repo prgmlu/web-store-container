@@ -7,6 +7,7 @@ import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import FireEffect from 'threejs_scene/FireEffect';
 import WaterEffect from 'threejs_scene/WaterEffect';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
+import InteractiveGLB from 'threejs_scene/InteractiveGLB';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -15,7 +16,6 @@ import {
 	IN_SCENE_VIDEO_PAUSE_ICON,
 } from '../../utils/hotspotConstants';
 import { formURL } from '../../utils/apiUtils';
-import InteractiveGLB from 'threejs_scene/InteractiveGLB';
 
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
@@ -246,38 +246,11 @@ const HotspotMarker = ({ item, ...props }) => {
 	}
 
 	if (isInteractiveGlb) {
-		const interactiveGLBConfig = {
-			objectTransform: {
-				position: { x: -1.735, y: -0.471, z: 0.125 },
-				rotation: { x: 0, y: Math.PI / 2.0, z: 0 },
-				scale: {x:0.6, y:0.6, z:0.6},
-			},
-			hotspotTransform: [
-				{position: { x:-0.5, y:-0.3, z:0.091 }, rotation: {x:0, y:0, z:0}, scale: {x:0.0014, y:-0.0014, z:0.0014}},
-				{position: {x:0.836, y:-0.3500, z:-0.1}, rotation: {x:0, y:0, z:0}, scale: {x:0.0014, y:-0.0014, z:0.0014}},
-				{position: {x:-0.5, y:1.0, z:-0.1}, rotation: {x:0, y:0, z:0}, scale: {x:0.0014, y:-0.0014, z:0.0014}},
-			],
-			envMaps: {
-				px: 'https://cdn.obsess-vr.com/prada/envmap_v2/px.jpg',
-				nx: 'https://cdn.obsess-vr.com/prada/envmap_v2/nx.jpg',
-				py: 'https://cdn.obsess-vr.com/prada/envmap_v2/py.jpg',
-				ny: 'https://cdn.obsess-vr.com/prada/envmap_v2/ny.jpg',
-				pz: 'https://cdn.obsess-vr.com/prada/envmap_v2/pz.jpg',
-				nz: 'https://cdn.obsess-vr.com/prada/envmap_v2/nz.jpg',
-			},
-			hotspotVideoUrl:'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Prada/6266e8c2716212a167423e84/images/hotspots/76067pradavideoparadoxe.mp4',
-			glbObjectURL: 'https://cdn.obsess-vr.com/prada/Prada_PerfumeBottle_v097.glb',
-			svgHotspotURL: 'https://cdn.obsess-vr.com/prada/Neon_hand_icon-1.svg',
-		};
 		return (
 			<InteractiveGLB 
 				{...props}
-				objectTransform={interactiveGLBConfig.objectTransform}
-				hotspotTransform={interactiveGLBConfig.hotspotTransform}
-				envMaps={interactiveGLBConfig.envMaps}
-				hotspotVideoUrl={interactiveGLBConfig.hotspotVideoUrl}
-				glbObjectURL={interactiveGLBConfig.glbObjectURL}
-				svgHotspotURL={interactiveGLBConfig.svgHotspotURL}
+				item={item}
+				onMouseUp={props.onMouseUp}
 			 />
 		);
 	}
@@ -362,6 +335,7 @@ const RoomObjects = ({ ...props }) => {
 						key={item._id.$oid}
 						item={item}
 						{...props}
+						onMouseUp={props.onHotspotMarkerClicked}
 						activeHotspotIndex={activeHotspotIndex}
 						hotspotMarkerIndex={hotspotMarkerIndexCounter}
 						accessibilityHighlightColor="gray"
