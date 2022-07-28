@@ -433,7 +433,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				}
 				dispatch={dispatch}
 				fps={isMobile ? 30 : 60}
-				enablePan={!bgConfig?.isFlatScene}
+				enablePan={bgConfig?.isFlatScene}
 				type="containerInstance"
 				orbitControlsConfig={sceneData?.controls}
 				loadingIconSrc={getSceneTransitionIcon()}
