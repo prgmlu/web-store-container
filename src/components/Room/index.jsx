@@ -26,6 +26,7 @@ import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
 import { isMobile } from 'react-device-detect';
 import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
 import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
+import { getBustKey } from '../../utils/urlHelpers';
 let soundMarkerTracker = undefined;
 
 const Room = ({ sceneData, webpSupport }) => {
@@ -41,7 +42,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	} = useSelector((state) => state?.accessibility);
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
-
+	const roomObjects = useSelector((state) => state?.roomObjects || {});
 	const { activeLocale } = useLocalize();
 	const abortControl = new AbortController();
 
@@ -119,30 +120,9 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	const initNewScene = () => {
 		getEntranceVideo();
-		dispatch(setRoomObjects([]));
-		setSceneBGLoaded(false);
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
-				setLinkedScenes(
-					res
-						.filter((item) => item.type === 'NavMarker')
-						.map((item) => scenes[item?.props?.linked_room_id.$oid])
-						.filter((item) => 'cube_map_dir' in item)
-						.map((item) => ({
-							imageIntegrity: getBustKey(item),
-							cube_map_dir: formURL(item?.cube_map_dir),
-							useWebp: webpSupport,
-						})),
-				);
-				const navCount = res.filter(
-					(item) => item.type === 'NavMarker',
-				).length;
-				const nonNavCount = res.filter(
-					(item) => item.type !== 'NavMarker',
-				).length;
-				dispatch(setNavMarkerCount(navCount));
-				dispatch(setHotspotMarkerCount(nonNavCount));
 			})
 			.catch(() => {
 				dispatch(setRoomObjects([]));
@@ -153,12 +133,50 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(clearMediaStack());
 	};
 
+	const countNavMarkersForADA = () => {
+		const navCount = Object.values(roomObjects).filter(
+			(item) => item.type === 'NavMarker',
+		).length;
+		const nonNavCount = Object.values(roomObjects).filter(
+			(item) => item.type !== 'NavMarker',
+		).length;
+		dispatch(setNavMarkerCount(navCount));
+		dispatch(setHotspotMarkerCount(nonNavCount));
+	};
+
+	const getLinkedScenes = () =>
+		Object.values(roomObjects)
+			.filter((item) => item.type === 'NavMarker')
+			.map((item) => scenes[item?.props?.linked_room_id.$oid])
+			.filter((item) => 'cube_map_dir' in item)
+			.map((item) => ({
+				sceneId: item?.id,
+				imageIntegrity: getBustKey(item),
+				cube_map_dir: formURL(item?.cube_map_dir),
+				useWebp: webpSupport,
+			}));
+
+	useEffect(() => {
+		if (Object.values(roomObjects).length > 0) {
+			countNavMarkersForADA();
+			setLinkedScenes(getLinkedScenes());
+		}
+	}, [roomObjects]);
+
+	const cleanup = () => {
+		dispatch(setRoomObjects([]));
+		setSceneBGLoaded(false);
+		dispatch(setActiveNavIndex(undefined));
+		dispatch(setActiveHotspotIndex(undefined));
+		dispatch(setAccessibilitySelector(undefined));
+	};
+
 	useEffect(() => {
 		initNewScene();
 
 		return () => {
-			console.log('=> cancelling standing requests');
 			abortControl.abort();
+			cleanup();
 		};
 	}, [sceneData.id]);
 
@@ -253,25 +271,6 @@ const Room = ({ sceneData, webpSupport }) => {
 		};
 	}, [activeNavIndex, activeHotspotIndex, accessibilitySelector]);
 
-	const formatDate = (date, format) => {
-		const map = {
-			mm: date.getMonth() + 1,
-			dd: date.getDate(),
-			yy: date.getFullYear().toString().slice(-2),
-			hh: date.getHours().toString(),
-			yyyy: date.getFullYear(),
-		};
-
-		return format.replace(/mm|dd|hh|yy|yyy/gi, (matched) => map[matched]);
-	};
-
-	const getBustKey = (sceneJson) => {
-		if (sceneJson?.image_integrity) {
-			return sceneJson.image_integrity.replace(/\D/g, '');
-		}
-		return formatDate(new Date(), 'hhmmddyyyy');
-	};
-
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
@@ -282,11 +281,6 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onNavMarkerClicked = (data) => {
-		dispatch(setRoomObjects([]));
-		dispatch(setActiveNavIndex(undefined));
-		dispatch(setActiveHotspotIndex(undefined));
-		dispatch(setAccessibilitySelector(undefined));
-
 		const currentScene = scenes[sceneData.id].name;
 		const nextScene = scenes[data.linked_room_id.$oid].name;
 		collect({
@@ -405,9 +399,18 @@ const Room = ({ sceneData, webpSupport }) => {
 	const onVideoEnd = () => {
 		setShowEntranceVideo(false);
 	};
+
+	const preLoadConnectedScenesRoomObjects = async () =>
+		Promise.all(
+			linkedScenes.map((item) =>
+				getSceneObjects(item.sceneId, activeLocale),
+			),
+		);
+
 	useEffect(() => {
 		if (sceneBGLoaded && linkedScenes.length > 0) {
 			preLoadConnectedScenes(linkedScenes, abortControl);
+			preLoadConnectedScenesRoomObjects();
 		}
 	}, [sceneBGLoaded, linkedScenes]);
 
@@ -430,6 +433,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				}
 				dispatch={dispatch}
 				fps={isMobile ? 30 : 60}
+				enablePan={!bgConfig?.isFlatScene}
 				type="containerInstance"
 				orbitControlsConfig={sceneData?.controls}
 				loadingIconSrc={getSceneTransitionIcon()}
