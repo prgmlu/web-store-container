@@ -338,7 +338,7 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
-	return sceneData ? (
+	return sceneData && sceneData.id ? (
 		<Scene
 			sceneId={sceneData.id}
 			bgConf={bgConfig}

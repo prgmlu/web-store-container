@@ -181,18 +181,6 @@
         "modalConfig": {
             "animation": true,
             "centered": true,
-            "selector": "text_with_button"
-        },
-        "remoteConfig": {
-            "module": "./TextWithButtonModal",
-            "scope": "text_with_button_modal",
-            "url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
-        }
-    }, {
-        "kind": "modal",
-        "modalConfig": {
-            "animation": true,
-            "centered": true,
             "selector": "image",
             "size": "md"
         },
@@ -288,13 +276,6 @@
         }
     }],
     "modules": {
-        "cartController": {
-            "remoteConfig": {
-                "module": "./cart_modules",
-                "scope": "cart_controller_module",
-                "url": "/ObsessVR/v2/modules-library/cart-controller/variant/charlotte-tilbury/remoteEntry.js"
-            }
-        },
         "getProductData": {
             "remoteConfig": {
                 "module": "./product_modules",
@@ -390,62 +371,7 @@
             },
             "kind": "container"
         }, {
-            "components": [{
-                "iconStyling": {
-                    "height": "2em",
-                    "width": "auto"
-                },
-                "kind": "component",
-                "name": "cart_component",
-                "remoteConfig": {
-                    "module": "./CartComponent",
-                    "scope": "cart_component",
-                    "url": "/ObsessVR/v2/component-library/feature-components/cart-component/variant/charlotte-tilbury/remoteEntry.js"
-                },
-                "styling": {
-                    "alignItems": "center",
-                    "display": "flex",
-                    "flexDirection": "column"
-                },
-                "translations": {
-                    "de": {
-                        "bagHeading2": "Alle Artikel in deinem Warenkorb werden hier angezeigt",
-                        "noBagItem": "DEIN WARENKORB IST LEER",
-                        "placeOrder": "Warenkorb ansehen",
-                        "removeFromBag": "Entfernen"
-                    },
-                    "es": {
-                        "bagHeading2": "Cuando añadas artículos a tu bolsa, aparecerán aquí",
-                        "noBagItem": "NO HAY ARTÍCULOS EN TU BOLSA",
-                        "placeOrder": "Ver bolsa y pagar",
-                        "removeFromBag": "Eliminar"
-                    },
-                    "fr": {
-                        "bagHeading2": "Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.",
-                        "noBagItem": "IL N'Y A PAS D'ARTICLES DANS VOTRE SAC",
-                        "placeOrder": "Passer à la caisse",
-                        "removeFromBag": "Supprimer"
-                    },
-                    "it": {
-                        "bagHeading2": "Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui",
-                        "noBagItem": "LA TUA SHOPPING BAG È VUOTA",
-                        "placeOrder": "Procedi al pagamento",
-                        "removeFromBag": "Elimina"
-                    },
-                    "uk": {
-                        "bagHeading2": "Once you have added items to your bag, they will appear here",
-                        "noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
-                        "placeOrder": "Place order",
-                        "removeFromBag": "Remove from bag"
-                    },
-                    "us": {
-                        "bagHeading2": "Once you have added items to your bag, they will appear here",
-                        "noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
-                        "placeOrder": "Place order",
-                        "removeFromBag": "Remove from bag"
-                    }
-                }
-            }],
+            "components": [{}],
             "containerStyling": {
                 "display": "flex",
                 "padding": "8px",
