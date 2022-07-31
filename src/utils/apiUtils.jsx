@@ -47,7 +47,7 @@ export function formURL(urlObject) {
 export async function getPasswordConfigs() {
 	try {
 		const passwordConfigs = await axiosApi.get(
-			`/v1/password-config?id=${STORE_ID}`,
+			`${config.API_URL}/v1/password-config?id=${STORE_ID}`,
 		);
 		return passwordConfigs?.data;
 	} catch (err) {
@@ -59,7 +59,7 @@ export async function validatePassword(pw) {
 	const checkPassword = window.btoa(pw);
 	try {
 		const res = await axiosApi.post(
-			`/v1/validate-password?id=${STORE_ID}`,
+			`${config.API_URL}/v1/validate-password?id=${STORE_ID}`,
 			{ password: checkPassword },
 		);
 		return res?.data?.logged_in;

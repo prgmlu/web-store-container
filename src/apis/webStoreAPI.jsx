@@ -7,9 +7,18 @@ import { setComponentConfig } from '../redux_stores/componentConfigReducer/actio
 import { setStoreData } from '../redux_stores/storeDataReducer/actions';
 import { setDefaultIcons } from '../redux_stores/defaultIconsReducer/actions';
 
+const reqCacheOptions = {
+	ttl: 1000 * 60 * 15,
+	interpretHeader: false,
+	methods: ['get'],
+	cachePredicate: {
+		statusCheck: (status) => status >= 200 && status < 400,
+	},
+};
+
 export const getStoreData = (storeId) => (dispatch) =>
 	axiosApi
-		.get(`/v1/store-with-id?id=${storeId}`)
+		.get(`${config.API_URL}/v1/store-with-id?id=${storeId}`)
 		.then((res) =>
 			dispatch(
 				setStoreData({
@@ -22,31 +31,33 @@ export const getStoreData = (storeId) => (dispatch) =>
 
 export const getAllScenes = (storeId) => (dispatch) =>
 	axiosApi
-		.get(`/v1/scene/all?id=${storeId}`)
+		.get(`${config.API_URL}/v1/scene/all?id=${storeId}`)
 		.then((res) => {
 			dispatch(setScenes(res.data));
 		})
 		.catch((err) => Promise.reject(err.response));
 
 export const getSceneObjects = (sceneId, locale) => {
-	let prefix = `/v2/scene/objects`;
+	let prefix = `${config.API_URL}/v2/scene/objects`;
 
 	const requestParams = new URLSearchParams({
 		id: sceneId,
 	});
 	if (locale && locale.length > 0) {
-		prefix = `/v2/scene/objects-with-locale`;
+		prefix = `${config.API_URL}/v2/scene/objects-with-locale`;
 		requestParams.set('locale', locale);
 	}
 
 	return axiosApi
-		.get(`${prefix}?${requestParams}`)
+		.get(`${prefix}?${requestParams}`, {
+			cache: reqCacheOptions,
+		})
 		.then((res) => res.data)
 		.catch((err) => Promise.reject(err.response));
 };
 
 export const getComponentConfigApi = (storeId) => {
-	const urlPath = `/v1/component_config?storeId=${storeId}`;
+	const urlPath = `${config.API_URL}/v1/component_config?storeId=${storeId}`;
 	return axiosApi
 		.get(urlPath)
 		.then((res) => res.data)
@@ -67,6 +78,6 @@ export const getComponentConfig = (storeId) => (dispatch) => {
 
 export const getDefaultIcons = () => (dispatch) =>
 	axiosApi
-		.get(`v1/default_icons`)
+		.get(`${config.API_URL}/v1/default_icons`)
 		.then((res) => dispatch(setDefaultIcons(res.data)))
 		.catch((err) => Promise.reject(err.response));

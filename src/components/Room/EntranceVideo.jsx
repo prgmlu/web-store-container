@@ -6,8 +6,8 @@ const EntranceVideo = ({ videoUrl, onVideoEnd }) => {
 			className="h-100 w-100 entrance-video"
 			controls={false}
 			autoPlay
-            muted
-            playsInline
+			muted
+			playsInline
 			style={{ objectFit: 'cover' }}
 			onEnded={onVideoEnd}
 		>

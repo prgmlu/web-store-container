@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
+import { preLoadConnectedScenes } from 'threejs_scene/sceneUtils';
 import SoundHotspot from './SoundHotspot';
 import EntranceVideo from './EntranceVideo';
 import { formURL } from '../../utils/apiUtils';
@@ -25,6 +26,7 @@ import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
 import { isMobile } from 'react-device-detect';
 import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
 import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
+import { getBustKey } from '../../utils/urlHelpers';
 let soundMarkerTracker = undefined;
 
 const Room = ({ sceneData, webpSupport }) => {
@@ -40,8 +42,9 @@ const Room = ({ sceneData, webpSupport }) => {
 	} = useSelector((state) => state?.accessibility);
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
-
+	const roomObjects = useSelector((state) => state?.roomObjects || {});
 	const { activeLocale } = useLocalize();
+	const abortControl = new AbortController();
 
 	const flatSceneUrl = isMobile
 		? sceneData?.mobile_flat_scene_url
@@ -62,6 +65,9 @@ const Room = ({ sceneData, webpSupport }) => {
 	);
 
 	const [showEntranceVideo, setShowEntranceVideo] = useState(false);
+
+	const [linkedScenes, setLinkedScenes] = useState([]);
+	const [sceneBGLoaded, setSceneBGLoaded] = useState(false);
 
 	const sendGaTrackingData = (data) => {
 		if (data?.hotspot_type === 'product') {
@@ -112,35 +118,66 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	};
 
-	useEffect(() => {
+	const initNewScene = () => {
 		getEntranceVideo();
-		dispatch(setRoomObjects([]));
 		getSceneObjects(sceneData.id, activeLocale)
 			.then((res) => {
 				dispatch(setRoomObjects(res));
-				// setLinkedScenes(
-				// 	res
-				// 		.filter((item) => item.type === 'NavMarker')
-				// 		.map((item) => scenes[item?.props?.linked_room_id.$oid])
-				// 		.filter((item) => 'cube_map_dir' in item)
-				// 		.map((item) => formURL(item.cube_map_dir)),
-				// );
-				const navCount = res.filter(
-					(item) => item.type === 'NavMarker',
-				).length;
-				const nonNavCount = res.filter(
-					(item) => item.type !== 'NavMarker',
-				).length;
-				dispatch(setNavMarkerCount(navCount));
-				dispatch(setHotspotMarkerCount(nonNavCount));
 			})
 			.catch(() => {
 				dispatch(setRoomObjects([]));
-				// setLinkedScenes([]);
+				setLinkedScenes([]);
 			});
 		sendGaTrackingData({ event: 'scene_loaded' });
 		dispatch(setActiveScene(sceneData.id));
 		dispatch(clearMediaStack());
+	};
+
+	const countNavMarkersForADA = () => {
+		const navCount = Object.values(roomObjects).filter(
+			(item) => item.type === 'NavMarker',
+		).length;
+		const nonNavCount = Object.values(roomObjects).filter(
+			(item) => item.type !== 'NavMarker',
+		).length;
+		dispatch(setNavMarkerCount(navCount));
+		dispatch(setHotspotMarkerCount(nonNavCount));
+	};
+
+	const getLinkedScenes = () =>
+		Object.values(roomObjects)
+			.filter((item) => item.type === 'NavMarker')
+			.map((item) => scenes[item?.props?.linked_room_id.$oid])
+			.filter((item) => 'cube_map_dir' in item)
+			.map((item) => ({
+				sceneId: item?.id,
+				imageIntegrity: getBustKey(item),
+				cube_map_dir: formURL(item?.cube_map_dir),
+				useWebp: webpSupport,
+			}));
+
+	useEffect(() => {
+		if (Object.values(roomObjects).length > 0) {
+			countNavMarkersForADA();
+			setLinkedScenes(getLinkedScenes());
+		}
+	}, [roomObjects]);
+
+	const cleanup = () => {
+		dispatch(setRoomObjects([]));
+		setSceneBGLoaded(false);
+		dispatch(setActiveNavIndex(undefined));
+		dispatch(setActiveHotspotIndex(undefined));
+		dispatch(setAccessibilitySelector(undefined));
+	};
+
+	useEffect(() => {
+		initNewScene();
+
+		return () => {
+			abortControl.abort();
+			cleanup();
+		};
 	}, [sceneData.id]);
 
 	useEffect(() => {
@@ -234,25 +271,6 @@ const Room = ({ sceneData, webpSupport }) => {
 		};
 	}, [activeNavIndex, activeHotspotIndex, accessibilitySelector]);
 
-	const formatDate = (date, format) => {
-		const map = {
-			mm: date.getMonth() + 1,
-			dd: date.getDate(),
-			yy: date.getFullYear().toString().slice(-2),
-			hh: date.getHours().toString(),
-			yyyy: date.getFullYear(),
-		};
-
-		return format.replace(/mm|dd|hh|yy|yyy/gi, (matched) => map[matched]);
-	};
-
-	const getBustKey = (sceneJson) => {
-		if (sceneJson?.image_integrity) {
-			return sceneData.image_integrity.replace(/\D/g, '');
-		}
-		return formatDate(new Date(), 'hhmmddyyyy');
-	};
-
 	const bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
@@ -263,11 +281,6 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onNavMarkerClicked = (data) => {
-		dispatch(setRoomObjects([]));
-		dispatch(setActiveNavIndex(undefined));
-		dispatch(setActiveHotspotIndex(undefined));
-		dispatch(setAccessibilitySelector(undefined));
-
 		const currentScene = scenes[sceneData.id].name;
 		const nextScene = scenes[data.linked_room_id.$oid].name;
 		collect({
@@ -386,6 +399,20 @@ const Room = ({ sceneData, webpSupport }) => {
 		setShowEntranceVideo(false);
 	};
 
+	const preLoadConnectedScenesRoomObjects = async () =>
+		Promise.all(
+			linkedScenes.map((item) =>
+				getSceneObjects(item.sceneId, activeLocale),
+			),
+		);
+
+	useEffect(() => {
+		if (sceneBGLoaded && linkedScenes.length > 0) {
+			preLoadConnectedScenes(linkedScenes, abortControl);
+			preLoadConnectedScenesRoomObjects();
+		}
+	}, [sceneBGLoaded, linkedScenes]);
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -399,16 +426,17 @@ const Room = ({ sceneData, webpSupport }) => {
 			<Scene
 				sceneId={sceneData.id}
 				bgConf={bgConfig}
-				linkedScenes={[]}
 				allowHotspotsToMove={false}
 				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 				}
 				dispatch={dispatch}
 				fps={isMobile ? 30 : 60}
+				enablePan={bgConfig?.isFlatScene}
 				type="containerInstance"
 				orbitControlsConfig={sceneData?.controls}
 				loadingIconSrc={getSceneTransitionIcon()}
+				onBackgroundLoaded={() => setSceneBGLoaded(true)}
 			>
 				<RoomObjects
 					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
