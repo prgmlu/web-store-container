@@ -144,7 +144,8 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isWaterEffect =
 		hotspotType === 'custom' && selector === 'water_effect';
 
-	const isInteractiveGlb = hotspotType === 'custom' && selector === 'interactive_glb';
+	const isInteractiveGlb =
+		hotspotType === 'custom' && selector === 'interactive_glb';
 
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
@@ -247,11 +248,11 @@ const HotspotMarker = ({ item, ...props }) => {
 
 	if (isInteractiveGlb) {
 		return (
-			<InteractiveGLB 
+			<InteractiveGLB
 				{...props}
 				item={item}
 				onMouseUp={props.onMouseUp}
-			 />
+			/>
 		);
 	}
 	const labelProps = {};
