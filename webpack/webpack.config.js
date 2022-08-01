@@ -60,19 +60,6 @@ module.exports = (options) => {
 						'sass-loader',
 					],
 				},
-				{
-					test: /\.(glb|gltf)$/,
-					use:
-					[
-						{
-							loader: 'file-loader',
-							options:
-							{
-								outputPath: 'assets/models/'
-							}
-						}
-					]
-				},
 			],
 		},
 	};
@@ -104,7 +91,7 @@ module.exports = (options) => {
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated-5928/remoteEntry.js`,
+				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`,
 				// threejs_scene: 'threejs_scene@http://localhost:4000/remoteEntry.js',
 			},
 			shared: {
