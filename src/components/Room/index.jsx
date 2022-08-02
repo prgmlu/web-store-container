@@ -347,6 +347,8 @@ const Room = ({ sceneData, webpSupport }) => {
 	};
 
 	const onHotspotMarkerClicked = (data) => {
+		console.log('=> data', data);
+		console.log('=> onHotspotMarkerClicked', data);
 		switch (data.hotspot_type) {
 			case 'link':
 				onLinkMarkerClicked(data);

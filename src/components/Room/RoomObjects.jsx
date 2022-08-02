@@ -17,6 +17,191 @@ import {
 } from '../../utils/hotspotConstants';
 import { formURL } from '../../utils/apiUtils';
 
+const paylo = {
+	props: {
+		data: {
+			objectTransform: {
+				position: {
+					x: -1.735,
+					y: -0.471,
+					z: 0.125,
+				},
+				rotation: {
+					x: 0,
+					y: 1.5707963267948966,
+					z: 0,
+				},
+				scale: {
+					x: 0.6,
+					y: 0.6,
+					z: 0.6,
+				},
+			},
+			glbScale: {
+				x: 0.8,
+				y: 0.8,
+				z: 0.8,
+			},
+			collider_transform: [
+				1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -8.30267773526267,
+				-0.24269834839972154, -5.56836061476424, 1,
+			],
+			envMaps: {
+				nx: 'https://cdn.obsess-vr.com/prada/envmap_v2/nx.jpg',
+				ny: 'https://cdn.obsess-vr.com/prada/envmap_v2/ny.jpg',
+				nz: 'https://cdn.obsess-vr.com/prada/envmap_v2/nz.jpg',
+				px: 'https://cdn.obsess-vr.com/prada/envmap_v2/px.jpg',
+				py: 'https://cdn.obsess-vr.com/prada/envmap_v2/py.jpg',
+				pz: 'https://cdn.obsess-vr.com/prada/envmap_v2/pz.jpg',
+			},
+			glbObjectUrl:
+				'https://cdn.obsess-vr.com/prada/Prada_PerfumeBottle_v097.glb',
+			hotspots: [
+				{
+					transform: {
+						position: {
+							x: -0.5,
+							y: -0.3,
+							z: 0.091,
+						},
+						rotation: {
+							x: 0,
+							y: 0,
+							z: 0,
+						},
+						scale: {
+							x: 0.0014,
+							y: -0.0014,
+							z: 0.0014,
+						},
+					},
+					props: {
+						_cls: 'VideoWithButtonProps',
+						button_url: {
+							origin: 'external',
+							path: '',
+						},
+						hotspot_type: 'video_with_button',
+						show_icon: true,
+						url: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Prada/6266e8c2716212a167423e84/images/hotspots/76067pradavideoparadoxe.mp4',
+						},
+						icon: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/prada/Neon_hand_icon-1.svg',
+						},
+					},
+				},
+				{
+					transform: {
+						position: {
+							x: 0.836,
+							y: -0.35,
+							z: -0.1,
+						},
+						rotation: {
+							x: 0,
+							y: 0,
+							z: 0,
+						},
+						scale: {
+							x: 0.0014,
+							y: -0.0014,
+							z: 0.0014,
+						},
+					},
+					props: {
+						_cls: 'VideoWithButtonProps',
+						button_url: {
+							origin: 'external',
+							path: '',
+						},
+						hotspot_type: 'video_with_button',
+						show_icon: true,
+						url: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Prada/6266e8c2716212a167423e84/images/hotspots/76067pradavideoparadoxe.mp4',
+						},
+						icon: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/prada/Neon_hand_icon-1.svg',
+						},
+					},
+				},
+				{
+					transform: {
+						position: {
+							x: -0.5,
+							y: 1,
+							z: -0.1,
+						},
+						rotation: {
+							x: 0,
+							y: 0,
+							z: 0,
+						},
+						scale: {
+							x: 0.0014,
+							y: -0.0014,
+							z: 0.0014,
+						},
+					},
+					props: {
+						_cls: 'VideoWithButtonProps',
+						button_url: {
+							origin: 'external',
+							path: '',
+						},
+						hotspot_type: 'video_with_button',
+						show_icon: true,
+						url: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/obsess-cms-beta/clients/Prada/6266e8c2716212a167423e84/images/hotspots/76067pradavideoparadoxe.mp4',
+						},
+						icon: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/prada/Neon_hand_icon-1.svg',
+						},
+					},
+				},
+				{
+					transform: {
+						position: {
+							x: 0.3,
+							y: 0.55,
+							z: 0.1,
+						},
+						rotation: {
+							x: 0,
+							y: 0,
+							z: 0,
+						},
+						scale: {
+							x: 0.002,
+							y: 0.002,
+							z: 0.002,
+						},
+					},
+					props: {
+						_cls: 'LinkHotspotProps',
+						hotspot_type: 'link',
+						show_icon: true,
+						url: {
+							origin: 'external',
+							path: 'https://www.instagram.com/ar/746886709684047/?ch=YjQ3NDAxMzFmOTFiMzgwMWEwY2FlMWY5MzM5MGFkYzU%3D',
+						},
+						icon: {
+							origin: 'external',
+							path: 'https://cdn.obsess-vr.com/prada/AR%20filter%20hotspot.svg',
+						},
+					},
+				},
+			],
+		},
+	},
+};
+
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
 		(state) => state?.storeData?.styling?.icons?.nav_arrow_icon?.name || '',
@@ -251,6 +436,7 @@ const HotspotMarker = ({ item, ...props }) => {
 			<InteractiveGLB
 				{...props}
 				item={item}
+				hotspotData={paylo}
 				onMouseUp={props.onMouseUp}
 			/>
 		);
