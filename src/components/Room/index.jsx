@@ -422,6 +422,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				<EntranceVideo
 					videoUrl={formURL(entranceVideoUrl)}
 					onVideoEnd={onVideoEnd}
+					onClose={()=>setShowEntranceVideo(false)}
 				/>
 			)}
 			<Scene
