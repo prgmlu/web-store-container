@@ -7,6 +7,7 @@ import InSceneImageComponent from 'threejs_scene/InSceneImageComponent';
 import FireEffect from 'threejs_scene/FireEffect';
 import WaterEffect from 'threejs_scene/WaterEffect';
 import GreenScreenSystem from 'threejs_scene/GreenScreenSystem';
+import InteractiveGLB from 'threejs_scene/InteractiveGLB';
 import config from 'config';
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -143,6 +144,9 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isWaterEffect =
 		hotspotType === 'custom' && selector === 'water_effect';
 
+	const isInteractiveGlb =
+		hotspotType === 'custom' && selector === 'interactive_glb';
+
 	const addToMediaStackWrapper = (ref) => {
 		dispatch(pushToMediaStack(ref));
 	};
@@ -242,6 +246,15 @@ const HotspotMarker = ({ item, ...props }) => {
 		);
 	}
 
+	if (isInteractiveGlb) {
+		return (
+			<InteractiveGLB
+				{...props}
+				hotspotData={item}
+				onMouseUp={props.onMouseUp}
+			/>
+		);
+	}
 	const labelProps = {};
 	if (item.type === 'Label') {
 		labelProps.containerStyling = item?.props?.container;
@@ -323,6 +336,7 @@ const RoomObjects = ({ ...props }) => {
 						key={item._id.$oid}
 						item={item}
 						{...props}
+						onMouseUp={props.onHotspotMarkerClicked}
 						activeHotspotIndex={activeHotspotIndex}
 						hotspotMarkerIndex={hotspotMarkerIndexCounter}
 						accessibilityHighlightColor="gray"
