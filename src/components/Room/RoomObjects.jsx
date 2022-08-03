@@ -54,6 +54,7 @@ const paylo = {
 				py: 'https://cdn.obsess-vr.com/prada/envmap_v2/py.jpg',
 				pz: 'https://cdn.obsess-vr.com/prada/envmap_v2/pz.jpg',
 			},
+			envMapIntensity: 3.5,
 			glbObjectUrl:
 				'https://cdn.obsess-vr.com/prada/Prada_PerfumeBottle_v100.glb',
 			hotspots: [
