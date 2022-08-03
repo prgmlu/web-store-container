@@ -170,12 +170,12 @@ const paylo = {
 				{
 					transform: {
 						position: {
-							x: 0.3,
-							y: 0.55,
+							x: 0.4,
+							y: 0.59,
 							z: 0.1,
 						},
 						rotation: {
-							x: 0,
+							x: 3.141592653589793,
 							y: 0,
 							z: 0,
 						},
