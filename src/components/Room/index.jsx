@@ -148,7 +148,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		Object.values(roomObjects)
 			.filter((item) => item.type === 'NavMarker')
 			.map((item) => scenes[item?.props?.linked_room_id.$oid])
-			.filter((item) => 'cube_map_dir' in item)
+			.filter((item) => item && 'cube_map_dir' in item)
 			.map((item) => ({
 				sceneId: item?.id,
 				imageIntegrity: getBustKey(item),
@@ -421,7 +421,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				<EntranceVideo
 					videoUrl={formURL(entranceVideoUrl)}
 					onVideoEnd={onVideoEnd}
-					onClose={()=>setShowEntranceVideo(false)}
+					onClose={() => setShowEntranceVideo(false)}
 				/>
 			)}
 			<Scene
