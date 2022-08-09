@@ -354,6 +354,14 @@ const Room = ({ sceneData, webpSupport }) => {
 			case 'sound':
 				onSoundMarkerClicked(data);
 				break;
+			case 'product_carousel':
+				dispatch(
+					setModalProps('product', {
+						...data,
+						visible: true,
+						carousel: true,
+					}),
+				);
 			case 'custom':
 				dispatch(
 					setModalProps(data.selector, { ...data, visible: true }),
