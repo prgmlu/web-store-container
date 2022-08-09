@@ -218,7 +218,11 @@ const HotspotMarker = ({ item, ...props }) => {
 				{...props}
 				src={formURL(item?.props?.url)}
 				transform={item.transform}
-				userData={{ props: item?.props, type: item.type }}
+				userData={{
+					props: item?.props,
+					type: item.type,
+					recordId: item._id.$oid,
+				}}
 				keyColor={item?.props?.chroma_key}
 				onPlayClicked={onPlayClicked}
 				onPauseClicked={onPauseClicked}
