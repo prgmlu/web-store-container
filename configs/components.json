@@ -3,20 +3,11 @@
 		{
 			"additionalAnalyticsIDs": [],
 			"betaAnalyticsID": "UA-91780857-16",
-			"prodAnalyticsID": "UA-91780857-16",
+			"prodAnalyticsID": "UA-202877817-58",
 			"remoteConfig": {
 				"module": "./ga_module",
 				"scope": "ga_module",
 				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
-			}
-		},
-		{
-			"betaAnalyticsID": "2965929",
-			"prodAnalyticsID": "2965929",
-			"remoteConfig": {
-				"module": "./hotjar_module",
-				"scope": "hotjar_module",
-				"url": "/ObsessVR/v2/modules-library/analytics/hotjar-module/main/remoteEntry.js"
 			}
 		}
 	],
@@ -39,15 +30,123 @@
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
+				"arconfig": {
+					"config": {
+						"ar": true,
+						"ar-modes": "scene-viewer webxr quick-look",
+						"background-color": "transparent",
+						"camera-controls": true,
+						"environment-intensity": 0,
+						"exposure": "1.5",
+						"reveal": "interaction"
+					},
+					"icons": {
+						"ar": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_arabic.svg",
+						"cz": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_czech.svg",
+						"de": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_german.svg",
+						"en": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_english.svg",
+						"es": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_spanish.svg",
+						"fr": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_french.svg",
+						"hu": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_hungarian.svg",
+						"it": "https://cdn.obsess-vr.com/prada/ar-icons/v2/ar_italian.svg"
+					},
+					"modalStyling": {
+						"bottom": "5px",
+						"position": "absolute",
+						"right": "5px"
+					},
+					"modelViewerStyles": {
+						"ar": { "height": "50px", "width": "155px" },
+						"cz": { "height": "50px", "width": "195px" },
+						"de": { "height": "50px", "width": "190px" },
+						"en": { "height": "50px", "width": "167px" },
+						"es": { "height": "50px", "width": "155px" },
+						"fr": { "height": "50px", "width": "167px" },
+						"hu": { "height": "50px", "width": "255px" },
+						"it": { "height": "50px", "width": "220px" }
+					}
+				},
 				"centered": true,
 				"selector": "product",
-				"size": "lg",
-				"backdrop": false
+				"translations": {
+					"cz_cz_douglas": {
+						"discoverMore": "Objevte více",
+						"pdpBodyDetails": "Květinově ambrová vůně v sobě snoubí ikonické ingredience a odhaluje tak nové vonné vjemy.Pro zachycení těch nejsvěžejších prvků květu Neroli, jsou extrahovány již jeho pupeny. Objeví se také smyslnost díky ingredienci AmbrofixTM, bio-konvertovaného jantaru, který odhaluje zářivou hřejivost. A v neposlední řadě intenzita v podobě revoluční molekule pižma: SerenolideTM, pro intenzivní, ale stále příjemnou vůni. Doplnitelný flakon Paradoxe v sobě ukrývá samotnou podstatu značky Prada a znovuobjevuje její nejikoničtější prvek: její trojúhelníkové logo. Nakloněný, ale přesto postavený na silně stojících základech. Unikátní tvar flakonu je zjemněn zaoblenými rohy, zatímco jemná růžová barva vůně pak kontrastuje s tmavě černým uzávěrem a logem Prada."
+					},
+					"cz_cz_notino": {
+						"discoverMore": "Objevte více",
+						"pdpBodyDetails": "Květinově ambrová vůně v sobě snoubí ikonické ingredience a odhaluje tak nové vonné vjemy.Pro zachycení těch nejsvěžejších prvků květu Neroli, jsou extrahovány již jeho pupeny. Objeví se také smyslnost díky ingredienci AmbrofixTM, bio-konvertovaného jantaru, který odhaluje zářivou hřejivost. A v neposlední řadě intenzita v podobě revoluční molekule pižma: SerenolideTM, pro intenzivní, ale stále příjemnou vůni. Doplnitelný flakon Paradoxe v sobě ukrývá samotnou podstatu značky Prada a znovuobjevuje její nejikoničtější prvek: její trojúhelníkové logo. Nakloněný, ale přesto postavený na silně stojících základech. Unikátní tvar flakonu je zjemněn zaoblenými rohy, zatímco jemná růžová barva vůně pak kontrastuje s tmavě černým uzávěrem a logem Prada."
+					},
+					"cz_hu_douglas": {
+						"discoverMore": "Fedezzen fel többet",
+						"pdpBodyDetails": "A virágos-borostyános illat átfogja ikonikus összetevőinek valamennyi paradoxonját, ezáltal új illatélményeket tár fel. A frissesség felfedezése a PRADA első neroli bimbókivonatával, amely a virág élénkítő aromájának új dimenzióit mutatja meg. Az érzékiség újrafelfedezése a biológiai úton átalakított borostyán, az Ambrofix™ élénk melegségével. Az intenzitás újrafelfedezése egy új, forradalmi pézsmamolekula révén: a Serenolide™ intenzív, mégis finom és könnyed illatnyomot képez, amely már az első pillanattól kezdve érezhető. A Prada márka jellegzetességét magában foglaló Paradoxe újratölthető üvege mutatja meg a márka legikonikusabb kódját: a háromszög alakú logót. Az üveg radikális, megdöntött, mégis stabilan álló formáját lekerekített szögek lágyítják, miközben az illat finom  korallrózsaszín színe kontrasztot alkot a mélyfekete kupakkal és a Prada logóval."
+					},
+					"cz_hu_notino": {
+						"discoverMore": "Fedezzen fel többet",
+						"pdpBodyDetails": "A virágos-borostyános illat átfogja ikonikus összetevőinek valamennyi paradoxonját, ezáltal új illatélményeket tár fel. A frissesség felfedezése a PRADA első neroli bimbókivonatával, amely a virág élénkítő aromájának új dimenzióit mutatja meg. Az érzékiség újrafelfedezése a biológiai úton átalakított borostyán, az Ambrofix™ élénk melegségével. Az intenzitás újrafelfedezése egy új, forradalmi pézsmamolekula révén: a Serenolide™ intenzív, mégis finom és könnyed illatnyomot képez, amely már az első pillanattól kezdve érezhető. A Prada márka jellegzetességét magában foglaló Paradoxe újratölthető üvege mutatja meg a márka legikonikusabb kódját: a háromszög alakú logót. Az üveg radikális, megdöntött, mégis stabilan álló formáját lekerekített szögek lágyítják, miközben az illat finom  korallrózsaszín színe kontrasztot alkot a mélyfekete kupakkal és a Prada logóval."
+					},
+					"de_de_douglas": {
+						"discoverMore": "Mehr entdecken",
+						"pdpBodyDetails": " Der Refill-Flakon von PRADA PARADOXE spiegelt die Essenz der Luxusmarke wider und erfindet ihr Wahrzeichen neu das ikonische Dreiecks-Logo. Die radikal gekippte Form des Flakons wird durch abgerundete Ecken gemildert; das zarte Korallenrosa des Duftes selbst kontrastiert mit der tiefschwarzen Kappe und dem Prada-Wappen."
+					},
+					"de_de_marionnaud": {
+						"discoverMore": "Mehr entdecken",
+						"pdpBodyDetails": "Der Refill-Flakon von PRADA PARADOXE spiegelt die Essenz der Luxusmarke wider und erfindet ihr Wahrzeichen neu das ikonische Dreiecks-Logo. Die radikal gekippte Form des Flakons wird durch abgerundete Ecken gemildert; das zarte Korallenrosa des Duftes selbst kontrastiert mit der tiefschwarzen Kappe und dem Prada-Wappen. "
+					},
+					"fr_fr_marionnaud": {
+						"discoverMore": "Découvrez plus",
+						"pdpBodyDetails": "Une fragrance florale ambrée qui embrasse les paradoxes d'ingrédients iconiques pour révéler de nouvelles sensations olfactives. Réinventer la fraîcheur avec la première extraction pour Prada du bouton de Néroli pour capturer la dimension lumineuse de la fleur. Réinventer la sensualité avec l’AmbrofixTM, un ambre bio- converti, révélant une chaleur vibrante. Réinventer l'intensité grâce à une nouvelle molécule de musc révolutionnaire : la SerenolideTM, pour un sillage intense et confortable, perceptible dès la note de tête. Encapsulant l'essence même de Prada, le flacon rechargeable Paradoxe réinvente le code iconique de la marque : son logo triangle. Décalée mais puissamment ancrée, la silhouette radicale de la bouteille est adoucie par des angles arrondis, tandis que la délicate couleur rose corail du parfum contraste avec le noir profond du capot et du blason Prada."
+					},
+					"fr_fr_nocibe": {
+						"discoverMore": "Découvrez plus",
+						"pdpBodyDetails": "Une fragrance florale ambrée qui embrasse les paradoxes d'ingrédients iconiques pour révéler de nouvelles sensations olfactives. Réinventer la fraîcheur avec la première extraction pour Prada du bouton de Néroli pour capturer la dimension lumineuse de la fleur. Réinventer la sensualité avec l’AmbrofixTM, un ambre bio- converti, révélant une chaleur vibrante. Réinventer l'intensité grâce à une nouvelle molécule de musc révolutionnaire : la SerenolideTM, pour un sillage intense et confortable, perceptible dès la note de tête. Encapsulant l'essence même de Prada, le flacon rechargeable Paradoxe réinvente le code iconique de la marque : son logo triangle. Décalée mais puissamment ancrée, la silhouette radicale de la bouteille est adoucie par des angles arrondis, tandis que la délicate couleur rose corail du parfum contraste avec le noir profond du capot et du blason Prada."
+					},
+					"fr_fr_retailer": {
+						"discoverMore": "Découvrez plus",
+						"pdpBodyDetails": "Une fragrance florale ambrée qui embrasse les paradoxes d'ingrédients iconiques pour révéler de nouvelles sensations olfactives. Réinventer la fraîcheur avec la première extraction pour Prada du bouton de Néroli pour capturer la dimension lumineuse de la fleur. Réinventer la sensualité avec l’AmbrofixTM, un ambre bio- converti, révélant une chaleur vibrante. Réinventer l'intensité grâce à une nouvelle molécule de musc révolutionnaire : la SerenolideTM, pour un sillage intense et confortable, perceptible dès la note de tête. Encapsulant l'essence même de Prada, le flacon rechargeable Paradoxe réinvente le code iconique de la marque : son logo triangle. Décalée mais puissamment ancrée, la silhouette radicale de la bouteille est adoucie par des angles arrondis, tandis que la délicate couleur rose corail du parfum contraste avec le noir profond du capot et du blason Prada."
+					},
+					"hu_cz_douglas": {
+						"discoverMore": "Objevte více",
+						"pdpBodyDetails": "Květinově ambrová vůně v sobě snoubí ikonické ingredience a odhaluje tak nové vonné vjemy.Pro zachycení těch nejsvěžejších prvků květu Neroli, jsou extrahovány již jeho pupeny. Objeví se také smyslnost díky ingredienci AmbrofixTM, bio-konvertovaného jantaru, který odhaluje zářivou hřejivost. A v neposlední řadě intenzita v podobě revoluční molekule pižma: SerenolideTM, pro intenzivní, ale stále příjemnou vůni. Doplnitelný flakon Paradoxe v sobě ukrývá samotnou podstatu značky Prada a znovuobjevuje její nejikoničtější prvek: její trojúhelníkové logo. Nakloněný, ale přesto postavený na silně stojících základech. Unikátní tvar flakonu je zjemněn zaoblenými rohy, zatímco jemná růžová barva vůně pak kontrastuje s tmavě černým uzávěrem a logem Prada."
+					},
+					"hu_cz_notino": {
+						"discoverMore": "Objevte více",
+						"pdpBodyDetails": "Květinově ambrová vůně v sobě snoubí ikonické ingredience a odhaluje tak nové vonné vjemy.Pro zachycení těch nejsvěžejších prvků květu Neroli, jsou extrahovány již jeho pupeny. Objeví se také smyslnost díky ingredienci AmbrofixTM, bio-konvertovaného jantaru, který odhaluje zářivou hřejivost. A v neposlední řadě intenzita v podobě revoluční molekule pižma: SerenolideTM, pro intenzivní, ale stále příjemnou vůni. Doplnitelný flakon Paradoxe v sobě ukrývá samotnou podstatu značky Prada a znovuobjevuje její nejikoničtější prvek: její trojúhelníkové logo. Nakloněný, ale přesto postavený na silně stojících základech. Unikátní tvar flakonu je zjemněn zaoblenými rohy, zatímco jemná růžová barva vůně pak kontrastuje s tmavě černým uzávěrem a logem Prada."
+					},
+					"hu_hu_douglas": {
+						"discoverMore": "Fedezzen fel többet",
+						"pdpBodyDetails": "A virágos-borostyános illat átfogja ikonikus összetevőinek valamennyi paradoxonját, ezáltal új illatélményeket tár fel. A frissesség felfedezése a PRADA első neroli bimbókivonatával, amely a virág élénkítő aromájának új dimenzióit mutatja meg. Az érzékiség újrafelfedezése a biológiai úton átalakított borostyán, az Ambrofix™ élénk melegségével. Az intenzitás újrafelfedezése egy új, forradalmi pézsmamolekula révén: a Serenolide™ intenzív, mégis finom és könnyed illatnyomot képez, amely már az első pillanattól kezdve érezhető. A Prada márka jellegzetességét magában foglaló Paradoxe újratölthető üvege mutatja meg a márka legikonikusabb kódját: a háromszög alakú logót. Az üveg radikális, megdöntött, mégis stabilan álló formáját lekerekített szögek lágyítják, miközben az illat finom  korallrózsaszín színe kontrasztot alkot a mélyfekete kupakkal és a Prada logóval."
+					},
+					"hu_hu_notino": {
+						"discoverMore": "Fedezzen fel többet",
+						"pdpBodyDetails": "A virágos-borostyános illat átfogja ikonikus összetevőinek valamennyi paradoxonját, ezáltal új illatélményeket tár fel. A frissesség felfedezése a PRADA első neroli bimbókivonatával, amely a virág élénkítő aromájának új dimenzióit mutatja meg. Az érzékiség újrafelfedezése a biológiai úton átalakított borostyán, az Ambrofix™ élénk melegségével. Az intenzitás újrafelfedezése egy új, forradalmi pézsmamolekula révén: a Serenolide™ intenzív, mégis finom és könnyed illatnyomot képez, amely már az első pillanattól kezdve érezhető. A Prada márka jellegzetességét magában foglaló Paradoxe újratölthető üvege mutatja meg a márka legikonikusabb kódját: a háromszög alakú logót. Az üveg radikális, megdöntött, mégis stabilan álló formáját lekerekített szögek lágyítják, miközben az illat finom  korallrózsaszín színe kontrasztot alkot a mélyfekete kupakkal és a Prada logóval."
+					},
+					"int_en_int": {
+						"discoverMore": "Discover More",
+						"pdpBodyDetails": "Encapsulating the very essence of Prada, the Paradoxe refillable bottle reinvents the most iconic code of the brand: its triangle logo. Tilted yet powerfully grounded, the radical shape of the bottle is softened by rounded angles. The delicate coral pink color of the fragrance contrasts with the deep black cap and Prada coat of arms."
+					},
+					"it_it_douglas": {
+						"discoverMore": "Scoprire di più",
+						"pdpBodyDetails": "Una fragranza fiorita ambrata che abbraccia le enigmatiche sfaccettature di ingredienti iconici che, paradossalmente, rivelano una nuova esperienza sensoriale. La fragranza reinventa la freschezza, grazie all’estrazione dell’essenza di Neroli prima che il bocciolo sbocci, catturando l’impalpabile dimensione fresca e croccante del fiore. Rivela un’inaspettata dimensione di sensualità grazie al nuovo processo dell’AmbrofixTM che permette all’ambra di essere estratta naturalmente, e rivela una sensazione di calore vibrante. Reinventa il concetto di intensità attraverso una nuova molecola di muschio, il SerenolideTM, che è sottile e confortevole, ma allo stesso tempo intenso. uno degli aromi più diffusi al mondo, è una molecola muschiata rivoluzionaria che ridefinisce l’intensità creando una scia intima seppur immediatamente riconoscibile. Incapsula la vera essenza Prada, il flacone ricaricabile di Paradoxe reinventa l’icona originale del brand: il logo a triangolo. Inclinato, progettato per poggiare su un lato, Prada Paradoxe forma un deciso angolo retto, ammorbidito dagli spigoli arrotondati, mentre il delicato color corallo rosato della fragranza è contrastato dal nero intenso del tappo e del logo Prada."
+					},
+					"it_it_marionnaud": {
+						"discoverMore": "Scoprire di più",
+						"pdpBodyDetails": "Una fragranza fiorita ambrata che abbraccia le enigmatiche sfaccettature di ingredienti iconici che, paradossalmente, rivelano una nuova esperienza sensoriale. La fragranza reinventa la freschezza, grazie all’estrazione dell’essenza di Neroli prima che il bocciolo sbocci, catturando l’impalpabile dimensione fresca e croccante del fiore. Rivela un’inaspettata dimensione di sensualità grazie al nuovo processo dell’AmbrofixTM che permette all’ambra di essere estratta naturalmente, e rivela una sensazione di calore vibrante. Reinventa il concetto di intensità attraverso una nuova molecola di muschio, il SerenolideTM, che è sottile e confortevole, ma allo stesso tempo intenso. uno degli aromi più diffusi al mondo, è una molecola muschiata rivoluzionaria che ridefinisce l’intensità creando una scia intima seppur immediatamente riconoscibile. Incapsula la vera essenza Prada, il flacone ricaricabile di Paradoxe reinventa l’icona originale del brand: il logo a triangolo. Inclinato, progettato per poggiare su un lato, Prada Paradoxe forma un deciso angolo retto, ammorbidito dagli spigoli arrotondati, mentre il delicato color corallo rosato della fragranza è contrastato dal nero intenso del tappo e del logo Prada."
+					},
+					"it_it_rinascente": {
+						"discoverMore": "Scoprire di più",
+						"pdpBodyDetails": "Una fragranza fiorita ambrata che abbraccia le enigmatiche sfaccettature di ingredienti iconici che, paradossalmente, rivelano una nuova esperienza sensoriale. La fragranza reinventa la freschezza, grazie all’estrazione dell’essenza di Neroli prima che il bocciolo sbocci, catturando l’impalpabile dimensione fresca e croccante del fiore. Rivela un’inaspettata dimensione di sensualità grazie al nuovo processo dell’AmbrofixTM che permette all’ambra di essere estratta naturalmente, e rivela una sensazione di calore vibrante. Reinventa il concetto di intensità attraverso una nuova molecola di muschio, il SerenolideTM, che è sottile e confortevole, ma allo stesso tempo intenso. uno degli aromi più diffusi al mondo, è una molecola muschiata rivoluzionaria che ridefinisce l’intensità creando una scia intima seppur immediatamente riconoscibile. Incapsula la vera essenza Prada, il flacone ricaricabile di Paradoxe reinventa l’icona originale del brand: il logo a triangolo. Inclinato, progettato per poggiare su un lato, Prada Paradoxe forma un deciso angolo retto, ammorbidito dagli spigoli arrotondati, mentre il delicato color corallo rosato della fragranza è contrastato dal nero intenso del tappo e del logo Prada."
+					},
+					"it_it_sephora": {
+						"discoverMore": "Scoprire di più",
+						"pdpBodyDetails": "Una fragranza fiorita ambrata che abbraccia le enigmatiche sfaccettature di ingredienti iconici che, paradossalmente, rivelano una nuova esperienza sensoriale. La fragranza reinventa la freschezza, grazie all’estrazione dell’essenza di Neroli prima che il bocciolo sbocci, catturando l’impalpabile dimensione fresca e croccante del fiore. Rivela un’inaspettata dimensione di sensualità grazie al nuovo processo dell’AmbrofixTM che permette all’ambra di essere estratta naturalmente, e rivela una sensazione di calore vibrante. Reinventa il concetto di intensità attraverso una nuova molecola di muschio, il SerenolideTM, che è sottile e confortevole, ma allo stesso tempo intenso. uno degli aromi più diffusi al mondo, è una molecola muschiata rivoluzionaria che ridefinisce l’intensità creando una scia intima seppur immediatamente riconoscibile. Incapsula la vera essenza Prada, il flacone ricaricabile di Paradoxe reinventa l’icona originale del brand: il logo a triangolo. Inclinato, progettato per poggiare su un lato, Prada Paradoxe forma un deciso angolo retto, ammorbidito dagli spigoli arrotondati, mentre il delicato color corallo rosato della fragranza è contrastato dal nero intenso del tappo e del logo Prada."
+					}
+				}
 			},
 			"remoteConfig": {
 				"module": "./ProductModal",
 				"scope": "product_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/feature/6560/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/prada/remoteEntry.js"
 			}
 		},
 		{
@@ -68,41 +167,48 @@
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
+				"backdropClassName": "video-modal-backdrop",
 				"centered": true,
+				"closeIcon": "https://cdn.obsess-vr.com/prada/video-close-icon.svg",
+				"closeIconStyling": { "backgroundColor": "#E1EFCE" },
 				"selector": "video_with_button",
-				"size": "sm"
+				"size": "xl"
 			},
 			"remoteConfig": {
 				"module": "./VideoWithButtonModal",
 				"scope": "video_with_button_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/variant/prada/remoteEntry.js"
 			}
 		},
 		{
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
+				"backdropClassName": "text-modal-backdrop",
 				"centered": true,
+				"closeIconStyling": { "backgroundColor": "#E1EFCE" },
 				"selector": "text_with_button"
 			},
 			"remoteConfig": {
 				"module": "./TextWithButtonModal",
 				"scope": "text_with_button_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/variant/prada/remoteEntry.js"
 			}
 		},
 		{
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
+				"backdropClassName": "image-modal-backdrop",
 				"centered": true,
+				"closeIconStyling": { "backgroundColor": "#E1EFCE" },
 				"selector": "image",
 				"size": "md"
 			},
 			"remoteConfig": {
 				"module": "./ImageModal",
 				"scope": "image_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/variant/prada/remoteEntry.js"
 			}
 		},
 		{
@@ -153,12 +259,99 @@
 				"animation": true,
 				"centered": true,
 				"selector": "youtube_embed",
-				"size": "sm"
+				"size": "lg"
 			},
 			"remoteConfig": {
 				"module": "./YoutubeEmbedModal",
 				"scope": "youtube_embed_modal",
 				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"backdropClassName": "image-zoom-modal-backdrop",
+				"centered": true,
+				"componentsToHide": [".navigation-menu"],
+				"selector": "image_zoom_modal",
+				"size": "sm",
+				"style": { "fontFamily": "PradaTypeFace" },
+				"translations": {
+					"cz_cz_douglas": {
+						"MobileScrollText": "Přiblížení stisknutím tlačítka",
+						"desktopScrollText": "Posouvání pro zvětšení "
+					},
+					"cz_cz_notino": {
+						"MobileScrollText": "Přiblížení stisknutím tlačítka",
+						"desktopScrollText": "Posouvání pro zvětšení "
+					},
+					"cz_hu_douglas": {
+						"MobileScrollText": "Csípés a nagyításhoz",
+						"desktopScrollText": "Görgessen a nagyításhoz "
+					},
+					"cz_hu_notino": {
+						"MobileScrollText": "Csípés a nagyításhoz",
+						"desktopScrollText": "Görgessen a nagyításhoz "
+					},
+					"de_de_douglas": {
+						"MobileScrollText": "Zum Zoomen aufziehen",
+						"desktopScrollText": "Scrollen zum Zoomen"
+					},
+					"de_de_marionnaud": {
+						"MobileScrollText": "Zum Zoomen aufziehen",
+						"desktopScrollText": "Scrollen zum Zoomen"
+					},
+					"fr_fr_marionnaud": {
+						"MobileScrollText": "Pincer pour zoomer",
+						"desktopScrollText": "Faire défiler pour zoomer"
+					},
+					"fr_fr_nocibe": {
+						"MobileScrollText": "Pincer pour zoomer",
+						"desktopScrollText": "Faire défiler pour zoomer"
+					},
+					"fr_fr_retailer": {
+						"MobileScrollText": "Pincer pour zoomer",
+						"desktopScrollText": "Faire défiler pour zoomer"
+					},
+					"hu_cz_douglas": {
+						"MobileScrollText": "Přiblížení stisknutím tlačítka",
+						"desktopScrollText": "Posouvání pro zvětšení "
+					},
+					"hu_cz_notino": {
+						"MobileScrollText": "Přiblížení stisknutím tlačítka",
+						"desktopScrollText": "Posouvání pro zvětšení "
+					},
+					"hu_hu_douglas": {
+						"MobileScrollText": "Csípés a nagyításhoz",
+						"desktopScrollText": "Görgessen a nagyításhoz "
+					},
+					"hu_hu_notino": {
+						"MobileScrollText": "Csípés a nagyításhoz",
+						"desktopScrollText": "Görgessen a nagyításhoz "
+					},
+					"it_it_douglas": {
+						"MobileScrollText": "Pizzicare per zoomare",
+						"desktopScrollText": "Scorrere per zoomare"
+					},
+					"it_it_marionnaud": {
+						"MobileScrollText": "Pizzicare per zoomare",
+						"desktopScrollText": "Scorrere per zoomare"
+					},
+					"it_it_rinascente": {
+						"MobileScrollText": "Pizzicare per zoomare",
+						"desktopScrollText": "Scorrere per zoomare"
+					},
+					"it_it_sephora": {
+						"MobileScrollText": "Pizzicare per zoomare",
+						"desktopScrollText": "Scorrere per zoomare"
+					}
+				}
+			},
+			"remoteConfig": {
+				"module": "./ImageZoomModal",
+				"scope": "image_zoom_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-zoom-modal/variant/prada/remoteEntry.js"
 			}
 		}
 	],
@@ -191,34 +384,201 @@
 							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
 						},
 						"styling": {
-							"borderRadius": "10px",
 							"height": "auto",
-							"padding": "16px",
+							"padding": "1rem",
+							"position": "fixed",
 							"width": "10rem"
 						}
-					}
-				],
-				"containerStyling": { "display": "flex" },
-				"kind": "container"
-			},
-			{
-				"components": [
+					},
 					{
-						"kind": "component",
-						"name": "stream_mode",
-						"remoteConfig": {
-							"module": "./StreamMode",
-							"scope": "stream_mode",
-							"url": "/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"
+						"components": [
+							{
+								"iconStyling": { "height": "3.2rem" },
+								"iconUrl": "https://cdn.obsess-vr.com/prada/prada-language-selector.svg",
+								"kind": "component",
+								"localeMapping": {
+									"ar": "العربية",
+									"cz": "čeština",
+									"de": "Deutsch",
+									"en": "English",
+									"es": "Español",
+									"fr": "Français",
+									"hu": "Magyar",
+									"it": "Italiano"
+								},
+								"name": "locale_selector",
+								"remoteConfig": {
+									"module": "./LocaleSelector",
+									"scope": "locale_selector",
+									"url": "/ObsessVR/v2/component-library/feature-components/locale-selector/variant/prada/remoteEntry.js"
+								},
+								"styling": { "margin": "0.25rem 0.5rem" }
+							},
+							{
+								"assets": {
+									"floorPin": "https://cdn.obsess-vr.com/prada/navigation-menu/floorPin.svg",
+									"floorPinActive": "https://cdn.obsess-vr.com/prada/navigation-menu/floorPin-active.svg",
+									"navigationMap": {
+										"ar": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/arabic full map.png",
+										"cz": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/czech full map.png",
+										"de": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/german full map.png",
+										"en": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/english full map.png",
+										"es": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/spanish full map.png",
+										"fr": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/french full map.png",
+										"hu": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/hungarian full map.png",
+										"it": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/italian full map.png"
+									}
+								},
+								"iconStyling": { "height": "3.2rem" },
+								"kind": "component",
+								"localesGroup": {
+									"ar": [
+										"gcc_ar_sephora",
+										"gcc_ar_ounass",
+										"gcc_ar_faces"
+									],
+									"cz": [
+										"cz_cz_douglas",
+										"cz_cz_notino",
+										"hu_cz_douglas",
+										"hu_cz_notino"
+									],
+									"de": ["de_de_marionnaud", "de_de_douglas"],
+									"en": [
+										"fr_en_nocibe",
+										"fr_en_marionnaud",
+										"fr_en_retailer",
+										"cz_en_douglas",
+										"hu_en_douglas",
+										"hu_en_notino",
+										"cz_en_notino",
+										"it_en_douglas",
+										"it_en_sephora",
+										"it_en_rinascente",
+										"au_en_meyer",
+										"au_en_davidjones",
+										"uk_en_boots",
+										"uk_en_theperfumeshop",
+										"uk_en_thefragranceshop",
+										"uk_en_johnlewis",
+										"gcc_en_sephora",
+										"gcc_en_faces",
+										"gcc_en_ounass",
+										"de_en_marionnaud",
+										"int_en_int",
+										"de_en_marionnaud",
+										"de_en_douglas",
+										"sp_en_elcorteingles",
+										"fr_en_dsicover"
+									],
+									"es": ["sp_es_elcorteingles"],
+									"fr": [
+										"fr_fr_nocibe",
+										"fr_fr_marionnaud",
+										"fr_fr_retailer",
+										"fr_fr_discover"
+									],
+									"hu": [
+										"hu_hu_douglas",
+										"hu_hu_notino",
+										"cz_hu_douglas",
+										"cz_hu_notino"
+									],
+									"it": [
+										"it_it_douglas",
+										"it_it_sephora",
+										"it_it_marionnaud",
+										"it_it_rinascente"
+									]
+								},
+								"mapImgStyling": {
+									"height": "18.25rem",
+									"width": "20rem"
+								},
+								"name": "navigation_menu",
+								"options": [
+									{
+										"name": "campaign-room",
+										"navigationMap": {
+											"ar": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/arabic campaign room.png",
+											"cz": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/czech campaign room.png",
+											"de": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/german campaign room.png",
+											"en": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/english campaign room.png",
+											"es": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/spanish campaign room.png",
+											"fr": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/french campaign room.png",
+											"hu": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/hungarian campaign room.png",
+											"it": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/italian campaign room.png"
+										},
+										"sceneId": "62b4d5d48fbd8f3e18416498",
+										"subMenu": [],
+										"x": "148",
+										"y": "-240"
+									},
+									{
+										"name": "fragrance-room",
+										"navigationMap": {
+											"ar": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/arabic fragrance room.png",
+											"cz": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/czech fragrance room.png",
+											"de": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/german fragrance room.png",
+											"en": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/english fragrance room.png",
+											"es": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/spanish fragrance room.png",
+											"fr": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/french fragrance room.png",
+											"hu": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/hungarian fragrance room.png",
+											"it": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/italian fragrance room.png"
+										},
+										"sceneId": "62b4d579711455aa8cc31575",
+										"subMenu": [],
+										"x": "75",
+										"y": "-160"
+									},
+									{
+										"name": "bottle-room",
+										"navigationMap": {
+											"ar": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/arabic bottle room.png",
+											"cz": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/czech bottle room.png",
+											"de": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/german bottle room.png",
+											"en": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/english bottle room.png",
+											"es": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/spanish bottle room.png",
+											"fr": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/french bottle room.png",
+											"hu": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/hungarian bottle room.png",
+											"it": "https://cdn.obsess-vr.com/prada/navigation-menu/language-map/italian bottle room.png"
+										},
+										"sceneId": "62b4d2a9da8096c03c762c21",
+										"subMenu": [],
+										"x": "230",
+										"y": "-160"
+									},
+									{
+										"name": "birds-eye-view",
+										"sceneId": "627034f92fa4d56b8e7dcc26",
+										"x": "148",
+										"y": "-80"
+									}
+								],
+								"remoteConfig": {
+									"module": "./NavigationMenu",
+									"scope": "navigation_menu",
+									"url": "/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/prada/remoteEntry.js"
+								},
+								"styling": { "margin": "0.25rem 0.5rem" }
+							}
+						],
+						"containerStyling": {
+							"display": "flex",
+							"margin": "0.5rem",
+							"position": "fixed",
+							"right": 0,
+							"top": 0
 						},
-						"shareText": ""
+						"kind": "container"
 					}
 				],
 				"containerStyling": {
-					"padding": "4px",
+					"background": "linear-gradient(180deg, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0) 100%)",
+					"height": "4rem",
 					"position": "fixed",
-					"right": 0,
-					"top": 0
+					"top": 0,
+					"width": "100%"
 				},
 				"kind": "container"
 			},
@@ -239,42 +599,50 @@
 					}
 				],
 				"containerStyling": {
+					"alignItems": "end",
 					"bottom": 0,
-					"left": 0,
+					"display": "flex",
+					"flexDirection": "column",
 					"padding": "4px",
-					"position": "fixed"
+					"position": "fixed",
+					"right": 0
 				},
 				"kind": "container"
 			},
 			{
 				"components": [
 					{
+						"enableSoundBar": false,
 						"kind": "component",
-						"name": "stream_mode",
+						"name": "music_controller",
 						"remoteConfig": {
-							"module": "./ProducerControlPanel",
-							"scope": "stream_mode",
-							"url": "/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"
+							"module": "./MusicController",
+							"scope": "music_controller",
+							"url": "/ObsessVR/v2/component-library/feature-components/music-controller/main/remoteEntry.js"
 						}
 					},
 					{
+						"imageStyling": {
+							"marginLeft": "0.8rem",
+							"pointerEvents": "none"
+						},
+						"imageUrl": "https://cdn.obsess-vr.com/prada/360-1.svg",
 						"kind": "component",
-						"name": "stream_mode",
+						"name": "clickable_image",
 						"remoteConfig": {
-							"module": "./AudiencePanel",
-							"scope": "stream_mode",
-							"url": "/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"
+							"module": "./ClickableImage",
+							"scope": "clickable_image",
+							"url": "/ObsessVR/v2/component-library/pure-components/clickable-image/main/remoteEntry.js"
 						}
 					}
 				],
 				"containerStyling": {
-					"bottom": "60%",
+					"bottom": "5px",
 					"display": "flex",
-					"flexDirection": "column",
-					"placeContent": "flex-end",
-					"position": "fixed",
-					"right": 0,
-					"width": "460px"
+					"flexDirection": "row",
+					"left": "5px",
+					"padding": "4px",
+					"position": "fixed"
 				},
 				"kind": "container"
 			}
