@@ -155,21 +155,21 @@ const HotspotMarker = ({ item, ...props }) => {
 		dispatch(popFromMediaStack());
 	};
 
-	const onPlayClicked = (src) => {
+	const inSceneVideoOnClick = () => {
 		collect({
 			eventCategory: 'Content',
 			eventAction: 'In-scene video',
-			eventLabel: src,
+			eventLabel: formURL(item?.props?.url),
 		});
 	};
 
-	const onPauseClicked = (src) => {
+	const interactiveGlbOnClick = () => {
 		collect({
-			eventCategory: 'Content',
-			eventAction: 'In-scene video',
-			eventLabel: src,
-		});
-	};
+			eventCategory: 'Custom',
+			eventAction: '3D product interacted',
+			eventLabel: item?.props?.data?.glbObjectUrl,
+		})
+	}
 
 	if (isFireEffect) {
 		return (
@@ -224,8 +224,7 @@ const HotspotMarker = ({ item, ...props }) => {
 					recordId: item._id.$oid,
 				}}
 				keyColor={item?.props?.chroma_key}
-				onPlayClicked={onPlayClicked}
-				onPauseClicked={onPauseClicked}
+				onClick={inSceneVideoOnClick}
 				addToMediaStack={addToMediaStackWrapper}
 				popFromMediaStack={popFromMediaStackWrapper}
 				playIconUrl={IN_SCENE_VIDEO_PLAY_ICON}
@@ -256,6 +255,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				{...props}
 				hotspotData={item}
 				onMouseUp={props.onMouseUp}
+				onClick={interactiveGlbOnClick}
 			/>
 		);
 	}
