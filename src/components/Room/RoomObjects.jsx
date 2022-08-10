@@ -16,6 +16,7 @@ import {
 	IN_SCENE_VIDEO_PAUSE_ICON,
 } from '../../utils/hotspotConstants';
 import { formURL } from '../../utils/apiUtils';
+import { isMobile } from 'react-device-detect';
 
 const NavMarker = ({ item, ...props }) => {
 	const navigationArrowIcon = useSelector(
@@ -168,8 +169,8 @@ const HotspotMarker = ({ item, ...props }) => {
 			eventCategory: 'Custom',
 			eventAction: '3D product interacted',
 			eventLabel: item?.props?.data?.glbObjectUrl,
-		})
-	}
+		});
+	};
 
 	if (isFireEffect) {
 		return (
@@ -317,15 +318,36 @@ const RoomObjects = ({ ...props }) => {
 	return (
 		<>
 			{roomObjectsArr.map((item) => {
-				if (item.type === 'NavMarker') {
-					navMarkerIndexCounter += 1;
+				if (
+					(isMobile && item.show_only_on !== 'desktop') ||
+					(!isMobile && item.show_only_on !== 'mobile')
+				) {
+					if (item.type === 'NavMarker') {
+						navMarkerIndexCounter += 1;
+						return (
+							<NavMarker
+								key={item._id.$oid}
+								item={item}
+								{...props}
+								activeNavIndex={activeNavIndex}
+								navMarkerIndex={navMarkerIndexCounter}
+								accessibilityHighlightColor="gray"
+								animation={{
+									...item.animation_props,
+									baseScale: item?.transform[0] || 1,
+								}}
+							/>
+						);
+					}
+					hotspotMarkerIndexCounter += 1;
 					return (
-						<NavMarker
+						<HotspotMarker
 							key={item._id.$oid}
 							item={item}
 							{...props}
-							activeNavIndex={activeNavIndex}
-							navMarkerIndex={navMarkerIndexCounter}
+							onMouseUp={props.onHotspotMarkerClicked}
+							activeHotspotIndex={activeHotspotIndex}
+							hotspotMarkerIndex={hotspotMarkerIndexCounter}
 							accessibilityHighlightColor="gray"
 							animation={{
 								...item.animation_props,
@@ -334,22 +356,6 @@ const RoomObjects = ({ ...props }) => {
 						/>
 					);
 				}
-				hotspotMarkerIndexCounter += 1;
-				return (
-					<HotspotMarker
-						key={item._id.$oid}
-						item={item}
-						{...props}
-						onMouseUp={props.onHotspotMarkerClicked}
-						activeHotspotIndex={activeHotspotIndex}
-						hotspotMarkerIndex={hotspotMarkerIndexCounter}
-						accessibilityHighlightColor="gray"
-						animation={{
-							...item.animation_props,
-							baseScale: item?.transform[0] || 1,
-						}}
-					/>
-				);
 			})}
 		</>
 	);
