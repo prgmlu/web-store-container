@@ -425,13 +425,6 @@ const Room = ({ sceneData, webpSupport }) => {
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
 		<>
-			{showEntranceVideo && (
-				<EntranceVideo
-					videoUrl={formURL(entranceVideoUrl)}
-					onVideoEnd={onVideoEnd}
-					onClose={() => setShowEntranceVideo(false)}
-				/>
-			)}
 			<Scene
 				sceneId={sceneData.id}
 				bgConf={bgConfig}
@@ -458,6 +451,13 @@ const Room = ({ sceneData, webpSupport }) => {
 					handleSoundStop={handleSoundStop}
 				/>
 			</Scene>
+			{showEntranceVideo && (
+				<EntranceVideo
+					videoUrl={formURL(entranceVideoUrl)}
+					onVideoEnd={onVideoEnd}
+					onClose={() => setShowEntranceVideo(false)}
+				/>
+			)}
 		</>
 	) : null;
 };
