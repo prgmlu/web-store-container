@@ -3,7 +3,7 @@ import React from 'react';
 const EntranceVideo = ({ videoUrl, onVideoEnd, onClose }) => {
 	return (
 		<video
-			className="h-100 w-100 entrance-video"
+			className="position-absolute h-100 w-100 entrance-video"
 			controls={false}
 			autoPlay
 			muted
