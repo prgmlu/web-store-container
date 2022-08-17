@@ -18,15 +18,18 @@ const RoomRoutes = () => {
 
 	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
 	const showClientLinkLocale = useSelector(
-		(state) => state.storeData?.client_link_config?.show === true,
+		(state) => state.storeData?.show_locale_on_client_link === true,
 	);
 
 	const { activeLocale, locales } = useLocalize();
 
 	const shouldShowLocale = () => {
+		// For beta/prod environments, always show locale
 		if (config.ENV !== 'client') {
 			return true;
 		}
+
+		// For client, show locale only if enabled from coco
 		return showClientLinkLocale === true;
 	};
 

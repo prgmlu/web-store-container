@@ -4,7 +4,7 @@ import { SET_STORE_DATA, SET_WEBP_SUPPORT } from './types';
 // eslint-disable-next-line import/prefer-default-export
 export const setStoreData = (data) => ({
 	type: SET_STORE_DATA,
-	payload: { ...data, client_link_config: { show: false } },
+	payload: { ...data },
 });
 
 export const setWebpSupport = () => (dispatch) => {
