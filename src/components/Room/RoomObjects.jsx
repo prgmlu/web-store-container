@@ -270,7 +270,7 @@ const HotspotMarker = ({ item, ...props }) => {
 				arrow_color: item?.props?.arrow_color,
 				arrow_direction: item?.props?.arrow_direction,
 			};
-			labelProps.visible = false;
+			labelProps.visible = item?.props?.show_on_load || false;
 		}
 	}
 	const userData = {
