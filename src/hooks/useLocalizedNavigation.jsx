@@ -11,15 +11,13 @@ const useLocalizedNavigation = () => {
 	);
 	const navigate = useNavigate();
 	const { activeLocale } = useSelector(activeLocaleSelector);
-	const showLocaleInClientLink =
-		config.ENV === 'client' &&
-		useSelector(
-			(state) => state?.storeData?.show_locale_on_client_link === true,
-		);
+	const showLocaleInClientLink = useSelector(
+		(state) => state?.storeData?.show_locale_on_client_link === true,
+	);
 	return {
 		navigate: (sceneName) => {
 			navigate(
-				showLocaleInClientLink
+				config.ENV !== 'client' || showLocaleInClientLink
 					? getLocalizedPath(activeLocale, sceneName)
 					: getLocalizedPath('', sceneName),
 			);
