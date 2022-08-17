@@ -15,7 +15,7 @@ const useLocalizedNavigation = () => {
 		config.ENV === 'client' &&
 		useSelector(
 			(state) =>
-				state?.storeData?.client_link_config?.show === false || false,
+				state?.storeData?.show_locale_on_client_link === false || false,
 		);
 	return {
 		navigate: (sceneName) => {
