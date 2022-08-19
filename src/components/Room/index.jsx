@@ -278,6 +278,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		imageIntegrity: getBustKey(sceneData),
 		useWebp: webpSupport,
 		skipLargest: isMobile,
+		materialProperties: sceneData?.material_properties || null,
 	};
 
 	const onNavMarkerClicked = (data) => {
