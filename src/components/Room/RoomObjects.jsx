@@ -44,6 +44,15 @@ const NavMarker = ({ item, ...props }) => {
 		const arrowUrl = `${config.CDN_BASE_URL}/${arrowKey}`;
 
 		if (type === 'stairs_up' || type === 'stairs_down') {
+			if (arrowState === 'hover') {
+				if (item.props?.hover_icon) {
+					return formURL(item.props.hover_icon);
+				}
+			} else {
+				if (item.props?.icon) {
+					return formURL(item.props.icon);
+				}
+			}
 			return arrowUrl;
 		}
 
