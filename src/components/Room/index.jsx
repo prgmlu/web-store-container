@@ -27,6 +27,8 @@ import { isMobile } from 'react-device-detect';
 import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
 import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
 import { getBustKey } from '../../utils/urlHelpers';
+import { getSceneType } from '../../utils/sceneUtils';
+
 let soundMarkerTracker = undefined;
 
 const Room = ({ sceneData, webpSupport }) => {
@@ -279,6 +281,8 @@ const Room = ({ sceneData, webpSupport }) => {
 		useWebp: webpSupport,
 		skipLargest: isMobile,
 		materialProperties: sceneData?.material_properties || null,
+		sceneType: getSceneType(sceneData),
+		_3dModelURL: sceneData?.model_url && formURL(sceneData?.model_url),
 	};
 
 	const onNavMarkerClicked = (data) => {

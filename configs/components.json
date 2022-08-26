@@ -1,1 +1,300 @@
-{"analyticsModules":[{"additionalAnalyticsIDs":[],"betaAnalyticsID":"UA-91780857-16","prodAnalyticsID":"UA-91780857-16","remoteConfig":{"module":"./ga_module","scope":"ga_module","url":"/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"}},{"betaAnalyticsID":"2965929","prodAnalyticsID":"2965929","remoteConfig":{"module":"./hotjar_module","scope":"hotjar_module","url":"/ObsessVR/v2/modules-library/analytics/hotjar-module/main/remoteEntry.js"}}],"modals":[{"kind":"modal","modalConfig":{"animation":true,"centered":true,"hotspotanimation":{"type":"none"},"selector":"zoom"},"remoteConfig":{"module":"./ZoomModal","scope":"zoom_modal","url":"/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"backdrop":false,"centered":true,"selector":"product","size":"lg"},"remoteConfig":{"module":"./ProductModal","scope":"product_modal","url":"/ObsessVR/v2/component-library/webstore-modals/product-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video","size":"sm"},"remoteConfig":{"module":"./VideoModal","scope":"video_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video_with_button","size":"sm"},"remoteConfig":{"module":"./VideoWithButtonModal","scope":"video_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"text_with_button"},"remoteConfig":{"module":"./TextWithButtonModal","scope":"text_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image","size":"md"},"remoteConfig":{"module":"./ImageModal","scope":"image_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image_carousel","size":"sm"},"remoteConfig":{"module":"./ImageCarouselModal","scope":"image_carousel_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"iframe","size":"lg"},"remoteConfig":{"module":"./IFrameModal","scope":"iframe_modal","url":"/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"quiz","size":"sm"},"remoteConfig":{"module":"./QuizModal","scope":"quiz_modal","url":"/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"youtube_embed","size":"sm"},"remoteConfig":{"module":"./YoutubeEmbedModal","scope":"youtube_embed_modal","url":"/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"}}],"modules":{"cartController":{"remoteConfig":{"module":"./cart_modules","scope":"cart_controller_module","url":"/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js"}},"getProductData":{"remoteConfig":{"module":"./product_modules","scope":"product_data_module","url":"/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js"}}},"overlayComponents":{"components":[{"components":[{"kind":"component","name":"store_logo","remoteConfig":{"module":"./StoreLogo","scope":"store_logo","url":"/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"},"styling":{"borderRadius":"10px","height":"auto","padding":"16px","width":"10rem"}}],"containerStyling":{"display":"flex"},"kind":"container"},{"components":[{"kind":"component","name":"stream_mode","remoteConfig":{"module":"./StreamMode","scope":"stream_mode","url":"/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"},"shareText":""}],"containerStyling":{"padding":"4px","position":"fixed","right":0,"top":0},"kind":"container"},{"components":[{"kind":"component","name":"powered_by_obsess","remoteConfig":{"module":"./PoweredByObsess","scope":"powered_by_obsess","url":"/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"},"textStyling":{"color":"white","fontSize":"0.9rem"}}],"containerStyling":{"bottom":0,"left":0,"padding":"4px","position":"fixed"},"kind":"container"},{"components":[{"kind":"component","name":"stream_mode","remoteConfig":{"module":"./ProducerControlPanel","scope":"stream_mode","url":"/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"}},{"kind":"component","name":"stream_mode","remoteConfig":{"module":"./AudiencePanel","scope":"stream_mode","url":"/ObsessVR/v2/component-library/feature-components/stream-mode/main/remoteEntry.js"}}],"containerStyling":{"bottom":"60%","display":"flex","flexDirection":"column","placeContent":"flex-end","position":"fixed","right":0,"width":"460px"},"kind":"container"},{"components":[{"ifUseRPM":false,"kind":"component","name":"store_chat","remoteConfig":{"module":"./StoreChat","scope":"store_chat","url":"/ObsessVR/v2/component-library/feature-components/store-chat/main/remoteEntry.js"},"styling":{"width":"20%"}}],"containerStyling":{"alignItems":"flex-end","bottom":0,"display":"flex","flexDirection":"column","height":"60%","placeContent":"flex-end","position":"fixed","right":0,"width":"460px"},"kind":"container"}],"kind":"container"}}
+{
+	"analyticsModules": [
+		{
+			"additionalAnalyticsIDs": [],
+			"betaAnalyticsID": "UA-91780857-16",
+			"prodAnalyticsID": "UA-91780857-16",
+			"remoteConfig": {
+				"module": "./ga_module",
+				"scope": "ga_module",
+				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
+			}
+		}
+	],
+	"modals": [
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"enablePan": false,
+				"hotspotanimation": { "type": "none" },
+				"mobileStyling": {
+					"maxHeight": "50vh",
+					"maxWidth": "95vw",
+					"minHeight": "50vh",
+					"minWidth": "95vw"
+				},
+				"selector": "zoom"
+			},
+			"remoteConfig": {
+				"module": "./ZoomModal",
+				"scope": "zoom_modal",
+				"url": "http://localhost:3030/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_zoom_modal",
+				"size": "sm",
+				"style": { "fontFamily": "Maax-Medium-205TF" }
+			},
+			"remoteConfig": {
+				"module": "./ImageZoomModal",
+				"scope": "image_zoom_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-zoom-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "product",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./ProductModal",
+				"scope": "product_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/zoya/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoModal",
+				"scope": "video_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video_with_button",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./VideoWithButtonModal",
+				"scope": "video_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "text_with_button"
+			},
+			"remoteConfig": {
+				"module": "./TextWithButtonModal",
+				"scope": "text_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./ImageModal",
+				"scope": "image_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_carousel",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./ImageCarouselModal",
+				"scope": "image_carousel_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "iframe",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./IFrameModal",
+				"scope": "iframe_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "quiz",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./QuizModal",
+				"scope": "quiz_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "youtube_embed",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./YoutubeEmbedModal",
+				"scope": "youtube_embed_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+			}
+		}
+	],
+	"modules": {
+		"cartController": {
+			"remoteConfig": {
+				"module": "./cart_modules",
+				"scope": "cart_controller_module",
+				"url": "/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js"
+			}
+		},
+		"getProductData": {
+			"remoteConfig": {
+				"module": "./product_modules",
+				"scope": "product_data_module",
+				"url": "/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js"
+			}
+		}
+	},
+	"overlayComponents": {
+		"components": [
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "store_logo",
+						"remoteConfig": {
+							"module": "./StoreLogo",
+							"scope": "store_logo",
+							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
+						},
+						"styling": {
+							"borderRadius": "10px",
+							"height": "auto",
+							"padding": "16px",
+							"position": "fixed",
+							"width": "10rem"
+						}
+					},
+					{
+						"components": [
+							{
+								"closeIcon": "https://cdn.obsess-vr.com/zoya/menu-close-icon.png",
+								"dropdownMenuStyle": {
+									"backdrop-filter": "blur(100px)",
+									"backgroundColor": "#BD9A87",
+									"borderRadius": "0",
+									"marginRight": "-5px",
+									"marginTop": "16px",
+									"padding": "25px 0",
+									"webkitBackdropFilter": "blur(100px)",
+									"width": "270px"
+								},
+								"dropdownSubMenuStyle": {
+									"padding": "10px 24px"
+								},
+								"kind": "component",
+								"name": "navigation_menu",
+								"remoteConfig": {
+									"module": "./NavigationMenu",
+									"scope": "navigation_menu",
+									"url": "/ObsessVR/v2/component-library/feature-components/navigation-menu/main/remoteEntry.js"
+								}
+							}
+						],
+						"containerStyling": {
+							"position": "fixed",
+							"right": 0,
+							"top": "11px"
+						},
+						"kind": "container"
+					}
+				],
+				"containerStyling": {
+					"backdropFilter": "blur(100px)",
+					"background": "rgba(255, 255, 255, 0.6)",
+					"height": "4.1rem",
+					"position": "fixed",
+					"top": 0,
+					"webkitBackdropFilter": "blur(100px)",
+					"width": "100%"
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "shop_with_friends",
+						"remoteConfig": {
+							"module": "./ShopWithFriends",
+							"scope": "shop_with_friends",
+							"url": "/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js"
+						},
+						"showButton": true,
+						"textStyling": {
+							"color": "white",
+							"fontSize": "0.9rem"
+						}
+					},
+					{
+						"kind": "component",
+						"name": "powered_by_obsess",
+						"remoteConfig": {
+							"module": "./PoweredByObsess",
+							"scope": "powered_by_obsess",
+							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
+						},
+						"textStyling": {
+							"color": "white",
+							"fontSize": "0.9rem"
+						}
+					}
+				],
+				"containerStyling": {
+					"bottom": 0,
+					"padding": "4px",
+					"position": "fixed",
+					"right": 0,
+					"textAlign": "right"
+				},
+				"kind": "container"
+			}
+		],
+		"kind": "container"
+	}
+}
