@@ -8,6 +8,7 @@ const initialState = {
 	preScreenVisible: true,
 	renderScene: false,
 	activeScene: '',
+	previousScene: '',
 };
 
 const sceneLoadReducer = (state = initialState, action = {}) => {
@@ -20,7 +21,11 @@ const sceneLoadReducer = (state = initialState, action = {}) => {
 			return { ...state, renderScene: payload };
 		}
 		case SET_ACTIVE_SCENE: {
-			return { ...state, activeScene: payload };
+			return {
+				...state,
+				previousScene: state.activeScene,
+				activeScene: payload,
+			};
 		}
 		default:
 			return state;
