@@ -442,6 +442,7 @@ const Room = ({ sceneData, webpSupport }) => {
 				enablePan={bgConfig?.isFlatScene}
 				type="containerInstance"
 				orbitControlsConfig={sceneData?.controls}
+				cameraProperties={sceneData?.camera?.camera_properties}
 				loadingIconSrc={getSceneTransitionIcon()}
 				onBackgroundLoaded={() => setSceneBGLoaded(true)}
 			>
