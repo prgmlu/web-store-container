@@ -430,33 +430,35 @@ const Room = ({ sceneData, webpSupport }) => {
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
 		<>
-			<Scene
-				sceneId={sceneData.id}
-				bgConf={bgConfig}
-				allowHotspotsToMove={false}
-				onMouseUp={(e, sceneObject, marker, isDragEvent) =>
-					onSceneMouseUp(e, sceneObject, marker, isDragEvent)
-				}
-				dispatch={dispatch}
-				fps={isMobile ? 30 : 60}
-				enablePan={bgConfig?.isFlatScene}
-				type="containerInstance"
-				orbitControlsConfig={sceneData?.controls}
-				cameraProperties={sceneData?.camera?.camera_properties}
-				loadingIconSrc={getSceneTransitionIcon()}
-				onBackgroundLoaded={() => setSceneBGLoaded(true)}
-			>
-				<RoomObjects
+			{!showEntranceVideo && (
+				<Scene
+					sceneId={sceneData.id}
+					bgConf={bgConfig}
+					allowHotspotsToMove={false}
 					onMouseUp={(e, sceneObject, marker, isDragEvent) =>
 						onSceneMouseUp(e, sceneObject, marker, isDragEvent)
 					}
-					onHotspotMarkerClicked={onHotspotMarkerClicked}
-				/>
-				<SoundHotspot
-					audioFile={audioFile}
-					handleSoundStop={handleSoundStop}
-				/>
-			</Scene>
+					dispatch={dispatch}
+					fps={isMobile ? 30 : 60}
+					enablePan={bgConfig?.isFlatScene}
+					type="containerInstance"
+					orbitControlsConfig={sceneData?.controls}
+					cameraProperties={sceneData?.camera?.camera_properties}
+					loadingIconSrc={getSceneTransitionIcon()}
+					onBackgroundLoaded={() => setSceneBGLoaded(true)}
+				>
+					<RoomObjects
+						onMouseUp={(e, sceneObject, marker, isDragEvent) =>
+							onSceneMouseUp(e, sceneObject, marker, isDragEvent)
+						}
+						onHotspotMarkerClicked={onHotspotMarkerClicked}
+					/>
+					<SoundHotspot
+						audioFile={audioFile}
+						handleSoundStop={handleSoundStop}
+					/>
+				</Scene>
+			)}
 			{showEntranceVideo && (
 				<EntranceVideo
 					videoUrl={formURL(entranceVideoUrl)}
