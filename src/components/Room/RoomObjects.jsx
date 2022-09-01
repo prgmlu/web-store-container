@@ -148,6 +148,9 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isEmbeddedVideo = hotspotType === 'embedded_video';
 
 	const isImage = hotspotType === 'embedded_image';
+
+	const isProductImage = hotspotType === 'product_image';
+
 	const isGreenScreenSystem =
 		hotspotType === 'custom' && selector === 'green_screen_system';
 	const isFireEffect = hotspotType === 'custom' && selector === 'fire_effect';
@@ -248,6 +251,16 @@ const HotspotMarker = ({ item, ...props }) => {
 			<InSceneImageComponent
 				{...props}
 				src={formURL(item?.props?.url)}
+				transform={item.transform}
+			/>
+		);
+	}
+
+	if (isProductImage) {
+		return (
+			<InSceneImageComponent
+				{...props}
+				src={formURL(item?.props?.image?.image)}
 				transform={item.transform}
 			/>
 		);
