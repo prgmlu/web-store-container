@@ -371,7 +371,16 @@ const Room = ({ sceneData, webpSupport }) => {
 						carousel: true,
 					}),
 				);
+				break;
 			case 'custom':
+				if (data?.selector === 'glb_event_hotspot') {
+					document.dispatchEvent(
+						new CustomEvent(data?.selector, {
+							detail: data.data,
+						}),
+					);
+					break;
+				}
 				dispatch(
 					setModalProps(data.selector, { ...data, visible: true }),
 				);

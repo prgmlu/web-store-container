@@ -271,6 +271,7 @@ const HotspotMarker = ({ item, ...props }) => {
 			/>
 		);
 	}
+
 	const labelProps = {};
 	if (item.type === 'Label') {
 		labelProps.containerStyling = item?.props?.container;
