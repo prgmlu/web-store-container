@@ -216,10 +216,12 @@ const HotspotMarker = ({ item, ...props }) => {
 		return (
 			<GreenScreenSystem
 				{...props}
+				id={item._id.$oid}
 				srcs={item.props.data.srcs}
 				similarity={item.props.data.similarity}
 				smoothness={item.props.data.smoothness}
 				spill={item.props.data.spill}
+				autoPlay={item.props.data?.autoPlay}
 				keyColor={item.props.data.keyColor}
 				roomId={item.scene.$oid}
 			/>

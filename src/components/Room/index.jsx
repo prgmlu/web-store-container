@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-unresolved
 import Scene from 'threejs_scene/Scene';
 import { preLoadConnectedScenes } from 'threejs_scene/sceneUtils';
+import { isMobile } from 'react-device-detect';
 import SoundHotspot from './SoundHotspot';
 import EntranceVideo from './EntranceVideo';
 import { formURL } from '../../utils/apiUtils';
@@ -23,13 +24,15 @@ import useLocalize from '../../hooks/useLocalize';
 import useLocalizedNavigation from '../../hooks/useLocalizedNavigation';
 import useAnalytics from '../../hooks/useAnalytics';
 import { setRoomObjects } from '../../redux_stores/roomObjectsReducer/actions';
-import { isMobile } from 'react-device-detect';
-import { setActiveScene } from '../../redux_stores/sceneLoadReducer/actions';
+import {
+	setActiveScene,
+	setRenderUI,
+} from '../../redux_stores/sceneLoadReducer/actions';
 import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
 import { getBustKey } from '../../utils/urlHelpers';
 import { getSceneType } from '../../utils/sceneUtils';
 
-let soundMarkerTracker = undefined;
+let soundMarkerTracker;
 
 const Room = ({ sceneData, webpSupport }) => {
 	const dispatch = useDispatch();
@@ -42,6 +45,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		activeHotspotIndex,
 		hotspotMarkerCount,
 	} = useSelector((state) => state?.accessibility);
+
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 	const roomObjects = useSelector((state) => state?.roomObjects || {});
@@ -426,6 +430,14 @@ const Room = ({ sceneData, webpSupport }) => {
 		}
 	}, [sceneBGLoaded, linkedScenes]);
 
+	const onBgLoaded = () => {
+		setSceneBGLoaded(true);
+	};
+
+	const onBGReady = () => {
+		dispatch(setRenderUI(true));
+	};
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -445,7 +457,8 @@ const Room = ({ sceneData, webpSupport }) => {
 					orbitControlsConfig={sceneData?.controls}
 					cameraProperties={sceneData?.camera?.camera_properties}
 					loadingIconSrc={getSceneTransitionIcon()}
-					onBackgroundLoaded={() => setSceneBGLoaded(true)}
+					onBackgroundLoaded={onBgLoaded}
+					onBackgroundReady={onBGReady}
 				>
 					<RoomObjects
 						onMouseUp={(e, sceneObject, marker, isDragEvent) =>

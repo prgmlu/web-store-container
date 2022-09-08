@@ -8,11 +8,15 @@ const OverlayComponents = () => {
 	);
 
 	const renderScene = useSelector((state) => state.sceneLoad.renderScene);
+	const renderUI = useSelector((state) => state.sceneLoad.renderUI);
+
 	const { components } = overlayComponents;
 
 	return (
 		<div className="overlayComponents">
-			{renderScene && <DynamicContainer components={components} />}
+			{renderScene && renderUI && (
+				<DynamicContainer components={components} />
+			)}
 		</div>
 	);
 };
