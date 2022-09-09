@@ -37,7 +37,7 @@ export const getAllScenes = (storeId) => (dispatch) =>
 		})
 		.catch((err) => Promise.reject(err.response));
 
-export const getSceneObjects = (sceneId, locale) => {
+export const getSceneObjects = (sceneId, locale, verifyProducts = true) => {
 	let prefix = `${config.API_URL}/v2/scene/objects`;
 
 	const requestParams = new URLSearchParams({
@@ -46,6 +46,10 @@ export const getSceneObjects = (sceneId, locale) => {
 	if (locale && locale.length > 0) {
 		prefix = `${config.API_URL}/v2/scene/objects-with-locale`;
 		requestParams.set('locale', locale);
+	}
+
+	if (verifyProducts) {
+		requestParams.set('verify_products', verifyProducts);
 	}
 
 	return axiosApi

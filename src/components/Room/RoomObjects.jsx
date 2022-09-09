@@ -314,6 +314,13 @@ HotspotMarker.propTypes = {
 const RoomObjects = ({ ...props }) => {
 	const roomObjects = useSelector((state) => state?.roomObjects || []);
 
+	const skipProductIfNotInDBFromConfig =
+		useSelector(
+			(state) =>
+				state?.storeData?.hotspots_configuration
+					?.hide_if_product_not_in_db,
+		) || false;
+
 	const roomObjectsArr = Object.keys(roomObjects).map(
 		(key) => roomObjects[key],
 	);
@@ -330,6 +337,13 @@ const RoomObjects = ({ ...props }) => {
 	return (
 		<>
 			{roomObjectsArr.map((item) => {
+				if (item?.props?.hotspot_type === 'product') {
+					const itemNotInDB = item?.product_in_db === false;
+					if (skipProductIfNotInDBFromConfig && itemNotInDB) {
+						return null;
+					}
+				}
+
 				if (
 					(isMobile && item.show_only_on !== 'desktop') ||
 					(!isMobile && item.show_only_on !== 'mobile')
