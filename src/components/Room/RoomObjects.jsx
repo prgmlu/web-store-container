@@ -288,6 +288,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	const userData = {
 		props: { ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 		type: item.type,
+		focusOnClick: item?.focus_on_click || false,
 	};
 
 	return (
@@ -371,6 +372,7 @@ const RoomObjects = ({ ...props }) => {
 							key={item._id.$oid}
 							item={item}
 							{...props}
+							focusOnClick={item?.focus_on_click || false}
 							onMouseUp={props.onHotspotMarkerClicked}
 							activeHotspotIndex={activeHotspotIndex}
 							hotspotMarkerIndex={hotspotMarkerIndexCounter}
