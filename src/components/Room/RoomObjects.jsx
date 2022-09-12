@@ -284,6 +284,7 @@ const HotspotMarker = ({ item, ...props }) => {
 			/>
 		);
 	}
+
 	const labelProps = {};
 	if (item.type === 'Label') {
 		labelProps.containerStyling = item?.props?.container;
@@ -300,6 +301,7 @@ const HotspotMarker = ({ item, ...props }) => {
 	const userData = {
 		props: { ...item?.props, hotspotId: item?._id?.$oid || '' } || {},
 		type: item.type,
+		focusOnClick: item?.focus_on_click || false,
 	};
 
 	return (
@@ -326,6 +328,13 @@ HotspotMarker.propTypes = {
 const RoomObjects = ({ ...props }) => {
 	const roomObjects = useSelector((state) => state?.roomObjects || []);
 
+	const skipProductIfNotInDBFromConfig =
+		useSelector(
+			(state) =>
+				state?.storeData?.hotspots_configuration
+					?.hide_if_product_not_in_db,
+		) || false;
+
 	const roomObjectsArr = Object.keys(roomObjects).map(
 		(key) => roomObjects[key],
 	);
@@ -342,6 +351,13 @@ const RoomObjects = ({ ...props }) => {
 	return (
 		<>
 			{roomObjectsArr.map((item) => {
+				if (item?.props?.hotspot_type === 'product') {
+					const itemNotInDB = item?.product_in_db === false;
+					if (skipProductIfNotInDBFromConfig && itemNotInDB) {
+						return null;
+					}
+				}
+
 				if (
 					(isMobile && item.show_only_on !== 'desktop') ||
 					(!isMobile && item.show_only_on !== 'mobile')
@@ -369,6 +385,7 @@ const RoomObjects = ({ ...props }) => {
 							key={item._id.$oid}
 							item={item}
 							{...props}
+							focusOnClick={item?.focus_on_click || false}
 							onMouseUp={props.onHotspotMarkerClicked}
 							activeHotspotIndex={activeHotspotIndex}
 							hotspotMarkerIndex={hotspotMarkerIndexCounter}
