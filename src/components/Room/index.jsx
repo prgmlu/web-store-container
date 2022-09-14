@@ -447,6 +447,17 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(setRenderUI(true));
 	};
 
+	const {
+		isEnabled: creatorToolsEnabled,
+		autoPan,
+		panSpeed,
+	} = useSelector((state) => state?.creatorTools);
+
+	const autoRotateConfig =
+		creatorToolsEnabled && autoPan === 'true'
+			? { enabled: autoPan === 'true', autoRotateSpeed: panSpeed }
+			: { enabled: false };
+
 	// Note: If you are trying to find why the entire UI lods twice initially, it is here.
 	// Layout is rendered twice causing all the other elements to re-render.
 	return sceneData ? (
@@ -468,6 +479,7 @@ const Room = ({ sceneData, webpSupport }) => {
 					loadingIconSrc={getSceneTransitionIcon()}
 					onBackgroundLoaded={onBgLoaded}
 					onBackgroundReady={onBGReady}
+					autoRotateConfig={autoRotateConfig}
 				>
 					<RoomObjects
 						onMouseUp={(e, sceneObject, marker, isDragEvent) =>

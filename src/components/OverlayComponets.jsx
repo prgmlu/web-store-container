@@ -12,9 +12,14 @@ const OverlayComponents = () => {
 
 	const { components } = overlayComponents;
 
+	const { isEnabled, hideOverlay } = useSelector(
+		(state) => state.creatorTools,
+	);
+	const hideForCreatorTools = isEnabled && hideOverlay === 'true';
+
 	return (
 		<div className="overlayComponents">
-			{renderScene && renderUI && (
+			{!hideForCreatorTools && renderScene && renderUI && (
 				<DynamicContainer components={components} />
 			)}
 		</div>

@@ -77,6 +77,12 @@ const NavMarker = ({ item, ...props }) => {
 		return arrowUrl;
 	};
 
+	const { isEnabled: creatorToolsEnabled, hideNavigation } = useSelector(
+		(state) => state?.creatorTools,
+	);
+
+	const hideNavigationForCreatorTools = creatorToolsEnabled && hideNavigation;
+
 	return (
 		<Hotspot
 			{...props}
@@ -84,7 +90,9 @@ const NavMarker = ({ item, ...props }) => {
 			collider_transform={item.collider_transform}
 			transform={item.transform}
 			iconConfig={{
-				showIcon: item?.props?.hide === false,
+				showIcon: hideNavigationForCreatorTools
+					? false
+					: item?.props?.hide === false,
 			}}
 			imageURL={getNavMarkerImage(
 				item?.props?.sprite_type || '',
@@ -304,6 +312,17 @@ const HotspotMarker = ({ item, ...props }) => {
 		focusOnClick: item?.focus_on_click || false,
 	};
 
+	const {
+		isEnabled: creatorToolsEnabled,
+		hideProductHotspots,
+		hideContentHotspots,
+	} = useSelector((state) => state?.creatorTools);
+
+	const isProductHotspot = hotspotType === 'product';
+
+	const hideForCreatorTools =
+		(isProductHotspot && hideProductHotspots) || hideContentHotspots;
+
 	return (
 		<Hotspot
 			{...props}
@@ -311,7 +330,10 @@ const HotspotMarker = ({ item, ...props }) => {
 			collider_transform={item.collider_transform}
 			transform={item.transform}
 			iconConfig={{
-				showIcon: item?.props?.show_icon,
+				showIcon:
+					creatorToolsEnabled && hideForCreatorTools
+						? false
+						: item?.props?.show_icon,
 			}}
 			userData={userData}
 			imageURL={getHotspotImage(item?.props?.icon, 'default')}

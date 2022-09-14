@@ -15,6 +15,7 @@ import sceneLoadReducer from './sceneLoadReducer';
 import localizeReducer from './localizeReducer';
 import roomObjectReducer from './roomObjectsReducer';
 import mediaControllerReducer from './mediaControllerReducer';
+import creatorTools from './creatorTools';
 
 const staticReducers = {
 	scenes: scenesReducer,
@@ -29,6 +30,7 @@ const staticReducers = {
 	localize: localizeReducer,
 	roomObjects: roomObjectReducer,
 	mediaController: mediaControllerReducer,
+	creatorTools,
 };
 
 const createReducer = (asyncReducers) =>

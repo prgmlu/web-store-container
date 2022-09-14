@@ -14,6 +14,7 @@ import ModulesLayer from './loaders/ModulesLayer';
 import AnalyticsLayer from './loaders/AnalyticsLayer';
 import { getLocaleFromHtml } from '../utils/htmlHelpers';
 import { setWebpSupport } from '../redux_stores/storeDataReducer/actions';
+import { setupCreatorTools } from '../redux_stores/creatorTools/actions';
 
 const Store = () => {
 	const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const Store = () => {
 		dispatch(getDefaultIcons());
 		dispatch(getAllScenes(storeId));
 		dispatch(setWebpSupport());
+		dispatch(setupCreatorTools());
 	}, []);
 
 	const locales = useSelector((state) => state.storeData.locales);
