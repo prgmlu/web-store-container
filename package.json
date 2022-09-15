@@ -8,6 +8,7 @@
 	],
 	"scripts": {
 		"start": "set BUILD_ENV=developent && webpack-dev-server --config ./webpack/webpack.config.js",
+		"start-local": "set BUILD_ENV=developent && webpack-dev-server --config ./webpack/webpack.config.js --env BUILD_TYPE=local",
 		"build": "webpack --config webpack/webpack.config.js",
 		"build-dev": "BUILD_ENV=development npm run build",
 		"build-feature": "BUILD_ENV=feature npm run build",

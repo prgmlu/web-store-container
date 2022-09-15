@@ -24,7 +24,7 @@ const getPublicPath = (webpackServe) => {
 };
 
 module.exports = (options) => {
-	const { WEBPACK_SERVE } = options;
+	const { WEBPACK_SERVE, BUILD_TYPE } = options;
 	const { BUILD_ENV } = process.env;
 	const envConfig = loadConfig(BUILD_ENV);
 
@@ -87,13 +87,16 @@ module.exports = (options) => {
 	// 	},
 	// };
 
+	const threeJSRemoteURL =
+		BUILD_TYPE === 'local'
+			? 'threejs_scene@http://localhost:4000/remoteEntry.js'
+			: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`;
+
 	config.plugins.push(
 		new ModuleFederationPlugin({
 			name: 'web-store-container',
 			remotes: {
-				threejs_scene: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`,
-				// threejs_scene:
-				// 	'threejs_scene@http://localhost:4000/remoteEntry.js',
+				threejs_scene: threeJSRemoteURL,
 			},
 			shared: {
 				...deps,
