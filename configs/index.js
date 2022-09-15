@@ -2,6 +2,7 @@ const devConfig = require('./config.development.json');
 const betaConfig = require('./config.beta.json');
 const prodConfig = require('./config.production.json');
 const clientConfig = require('./config.client.json');
+const developConfig = require('./config.develop.json');
 const storeConfig = require('./config.store.json');
 
 function loadConfig(env) {
@@ -13,6 +14,8 @@ function loadConfig(env) {
 		config = prodConfig;
 	} else if (env === 'beta') {
 		config = betaConfig;
+	} else if (env === 'develop') {
+		config = developConfig;
 	}
 	return { ...config, ...storeConfig };
 }
