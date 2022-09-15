@@ -393,7 +393,7 @@ const RoomObjects = ({ ...props }) => {
 								{...props}
 								activeNavIndex={activeNavIndex}
 								navMarkerIndex={navMarkerIndexCounter}
-								accessibilityHighlightColor="gray"
+								onAccessibilityMarkerClicked={props.onMouseUp}
 								animation={{
 									...item.animation_props,
 									baseScale: item?.transform[0] || 1,
@@ -409,6 +409,7 @@ const RoomObjects = ({ ...props }) => {
 							{...props}
 							focusOnClick={item?.focus_on_click || false}
 							onMouseUp={props.onHotspotMarkerClicked}
+							onAccessibilityMarkerClicked={props.onMouseUp}
 							activeHotspotIndex={activeHotspotIndex}
 							hotspotMarkerIndex={hotspotMarkerIndexCounter}
 							accessibilityHighlightColor="gray"
