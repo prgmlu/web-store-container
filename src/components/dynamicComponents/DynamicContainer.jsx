@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isMobile } from 'react-device-detect';
+import { isMobileOnly } from 'react-device-detect';
 
 import DynamicComponent from './DynamicComponent';
 import DynamicActionComponent from './DynamicActionComponent';
@@ -10,7 +10,7 @@ const DynamicContainer = ({ components }) => {
 		if (
 			'containerStylingMobile' in component &&
 			Object.keys(component.containerStylingMobile).length > 0 &&
-			isMobile
+			isMobileOnly
 		) {
 			return component.containerStylingMobile;
 		}
