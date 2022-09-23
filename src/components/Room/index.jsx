@@ -277,7 +277,9 @@ const Room = ({ sceneData, webpSupport }) => {
 		};
 	}, [activeNavIndex, activeHotspotIndex, accessibilitySelector]);
 
-	const bgConfig = {
+	const sceneType = getSceneType(sceneData);
+
+	let bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
 		backgroundUrl: formURL(url),
 		opacityMapUrl: opacityMapUrl && formURL(opacityMapUrl),
@@ -285,9 +287,35 @@ const Room = ({ sceneData, webpSupport }) => {
 		useWebp: webpSupport,
 		skipLargest: isMobile,
 		materialProperties: sceneData?.material_properties || null,
-		sceneType: getSceneType(sceneData),
+		sceneType,
 		_3dModelURL: sceneData?.model_url && formURL(sceneData?.model_url),
+		...(sceneData?.ambient_light?.enabled
+			? { ambient_light: sceneData.ambient_light }
+			: {}),
+		...(sceneData?.directional_light?.enabled
+			? { directional_light: sceneData.directional_light }
+			: {}),
+		...(sceneData?.environment_map
+			? { environmentMapURL: formURL(sceneData?.environment_map) }
+			: {}),
+		...(sceneData?.use_scene_background_as_environment_map &&
+		!sceneData?.environment_map
+			? {
+					use_scene_background_as_environment_map:
+						sceneData.use_scene_background_as_environment_map,
+			  }
+			: {}),
+		glb_model_position: sceneData?.glb_model_position,
 	};
+
+	if (['3d_model_scene', '3d_scene'].includes(sceneType)) {
+		bgConfig = {
+			...bgConfig,
+			backgroundUrl:
+				sceneData?.scene_background &&
+				formURL(sceneData.scene_background),
+		};
+	}
 
 	const onNavMarkerClicked = (data) => {
 		const currentScene = scenes[sceneData.id].name;
