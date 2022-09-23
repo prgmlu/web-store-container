@@ -323,6 +323,19 @@ const HotspotMarker = ({ item, ...props }) => {
 	const hideForCreatorTools =
 		(isProductHotspot && hideProductHotspots) || hideContentHotspots;
 
+	let hotspotConfig = {};
+
+	if (hotspotType === '3d_model') {
+	
+		hotspotConfig = {
+			...hotspotConfig,
+			type: '3d_model',
+			visualObjectConf: {
+				url: item?.props?.url && formURL(item.props.url),
+			},
+		};
+	}
+
 	return (
 		<Hotspot
 			{...props}
@@ -339,6 +352,7 @@ const HotspotMarker = ({ item, ...props }) => {
 			imageURL={getHotspotImage(item?.props?.icon, 'default')}
 			imageHoverURL={getHotspotImage(item?.props?.hover_icon, 'hover')}
 			{...labelProps}
+			{...hotspotConfig}
 		/>
 	);
 };
