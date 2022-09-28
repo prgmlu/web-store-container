@@ -5,8 +5,8 @@ const DEFAULT_PAN_SPEED = 2.0;
 const makeOptions = (config) => {
 	let panSpeed = DEFAULT_PAN_SPEED;
 
-	if ('panSpeed' in config) {
-		panSpeed = parseFloat(config.panSpeed);
+	if ('panspeed' in config) {
+		panSpeed = parseFloat(config.panspeed);
 	}
 
 	if ('pan' in config) {
