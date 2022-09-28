@@ -326,7 +326,6 @@ const HotspotMarker = ({ item, ...props }) => {
 	let hotspotConfig = {};
 
 	if (hotspotType === '3d_model') {
-	
 		hotspotConfig = {
 			...hotspotConfig,
 			type: '3d_model',

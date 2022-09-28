@@ -407,11 +407,14 @@ const Room = ({ sceneData, webpSupport }) => {
 							detail: data.data,
 						}),
 					);
-					break;
+				} else {
+					dispatch(
+						setModalProps(data.selector, {
+							...data,
+							visible: true,
+						}),
+					);
 				}
-				dispatch(
-					setModalProps(data.selector, { ...data, visible: true }),
-				);
 				if (data?.data?.gaConfig) {
 					const gaConfig = data?.data?.gaConfig || {};
 					sendGaTrackingData({ ...gaConfig });
