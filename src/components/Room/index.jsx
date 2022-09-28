@@ -485,7 +485,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	} = useSelector((state) => state?.creatorTools);
 
 	const autoRotateConfig =
-		creatorToolsEnabled && autoPan === 'true'
+		creatorToolsEnabled && !bgConfig.isFlatScene && autoPan === 'true'
 			? { enabled: autoPan === 'true', autoRotateSpeed: panSpeed }
 			: { enabled: false };
 
