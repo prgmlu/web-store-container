@@ -20,6 +20,8 @@ const makeOptions = (config) => {
 	return {
 		...config,
 		panSpeed,
+		autoPan: 'autopan' in config ? config.autopan : 'false',
+		hideOverlay: 'hideoverlay' in config ? config.hideoverlay : 'false',
 		hideProductHotspots: 'phs' in config && config.phs === 'uihide',
 		hideContentHotspots: 'chs' in config && config.chs === 'uihide',
 		hideNavigation: 'nav' in config && config.nav === 'uihide',
@@ -32,8 +34,8 @@ export const setupCreatorTools = () => (dispatch) => {
 	let payload = {
 		isEnabled: false,
 	};
-	if (urlParams.has('creatorTools')) {
-		const creatorToolsEnabled = urlParams.get('creatorTools') === 'true';
+	if (urlParams.has('creatortools')) {
+		const creatorToolsEnabled = urlParams.get('creatortools') === 'true';
 		makeOptions(Object.fromEntries(urlParams.entries()));
 		if (creatorToolsEnabled) {
 			payload = {
