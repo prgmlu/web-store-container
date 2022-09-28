@@ -11,7 +11,7 @@ const makeOptions = (config) => {
 
 	if ('pan' in config) {
 		if (['left', 'right'].includes(config.pan)) {
-			if (config.pan === 'left') {
+			if (config.pan === 'right') {
 				panSpeed = -panSpeed;
 			}
 		}
