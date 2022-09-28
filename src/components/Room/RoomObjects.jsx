@@ -321,7 +321,8 @@ const HotspotMarker = ({ item, ...props }) => {
 	const isProductHotspot = hotspotType === 'product';
 
 	const hideForCreatorTools =
-		(isProductHotspot && hideProductHotspots) || hideContentHotspots;
+		(isProductHotspot && hideProductHotspots) ||
+		(!isProductHotspot && hideContentHotspots);
 
 	let hotspotConfig = {};
 

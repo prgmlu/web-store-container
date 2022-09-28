@@ -9,9 +9,9 @@ const makeOptions = (config) => {
 		panSpeed = parseFloat(config.panSpeed);
 	}
 
-	if ('panDirection' in config) {
-		if (['left', 'right'].includes(config.panDirection)) {
-			if (config.panDirection === 'left') {
+	if ('pan' in config) {
+		if (['left', 'right'].includes(config.pan)) {
+			if (config.pan === 'left') {
 				panSpeed = -panSpeed;
 			}
 		}
