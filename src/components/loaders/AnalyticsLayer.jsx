@@ -4,13 +4,11 @@ import config from 'config';
 import WebpackUtils from '../../utils/WebpackUtils';
 import { setSendEventsArr } from '../../redux_stores/analyticsReducer/actions';
 
-const AnalyticsLayer = () => {
+const AnalyticsLayer = ({ locale }) => {
 	const storeName = useSelector((state) => state?.storeData?.name);
 	const analyticsModules = useSelector(
 		(state) => state?.componentConfig?.analyticsModules || [],
 	);
-
-	const locale = undefined; // update with localization
 
 	const dispatch = useDispatch();
 
