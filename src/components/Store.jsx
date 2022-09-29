@@ -114,7 +114,7 @@ const Store = () => {
 			<Router>
 				<UILayer />
 				<ModulesLayer />
-				<AnalyticsLayer />
+				<AnalyticsLayer locale={getActiveLocale()} />
 			</Router>
 		)
 	);
