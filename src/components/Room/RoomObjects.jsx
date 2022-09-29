@@ -342,6 +342,7 @@ const HotspotMarker = ({ item, ...props }) => {
 			type={item?.type}
 			collider_transform={item.collider_transform}
 			transform={item.transform}
+			visualObjectConf={{ animationType: item?.props?.animation_type || item?.userData?.props?.animation_type }}
 			iconConfig={{
 				showIcon:
 					creatorToolsEnabled && hideForCreatorTools
