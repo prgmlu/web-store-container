@@ -13,8 +13,8 @@ const DynamicActionComponent = ({
 
 	const actions = {
 		redirectUrl: ({ link }) => window.open(link, '_blank'),
-		triggerModal: ({ selector }) =>
-			dispatch(setModalProps(selector, { visible: true })),
+		triggerModal: ({ selector, modalProps }) =>
+			dispatch(setModalProps(selector, { visible: true, ...modalProps })),
 	};
 
 	return (
