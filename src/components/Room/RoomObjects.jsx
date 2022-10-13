@@ -304,6 +304,10 @@ const HotspotMarker = ({ item, ...props }) => {
 				arrow_direction: item?.props?.arrow_direction,
 			};
 			labelProps.visible = item?.props?.show_on_load || false;
+			
+			if (item?.props?.image) {
+				labelProps.imageURL = formURL(item.props.image);
+			}
 		}
 	}
 	const userData = {
