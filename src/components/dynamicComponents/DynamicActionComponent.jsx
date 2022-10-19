@@ -2,13 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import DynamicComponent from './DynamicComponent';
 import { setModalProps } from '../../redux_stores/modalsReducer/actions';
+import useLocalize from '../../hooks/useLocalize';
 
 const DynamicActionComponent = ({
 	remoteConfig,
 	actionType,
 	actionProps,
+	localizedActionProps,
 	...props
 }) => {
+	const { enabled: isLocaleEnabled, activeLocale } = useLocalize();
+
 	const dispatch = useDispatch();
 
 	const actions = {
@@ -21,7 +25,7 @@ const DynamicActionComponent = ({
 		<DynamicComponent
 			remoteConfig={remoteConfig}
 			{...props}
-			onClick={() => actions[actionType](actionProps)}
+			onClick={() => actions[actionType](isLocaleEnabled ? localizedActionProps[activeLocale] : actionProps)}
 		/>
 	);
 };
