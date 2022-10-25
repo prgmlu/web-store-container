@@ -528,7 +528,14 @@ const Room = ({ sceneData, webpSupport }) => {
 				<EntranceVideo
 					videoUrl={formURL(entranceVideoUrl)}
 					onVideoEnd={onVideoEnd}
-					onClose={() => setShowEntranceVideo(false)}
+					onClose={() => {
+						setShowEntranceVideo(false)
+						sendGaTrackingData({
+							eventCategory: 'Custom',
+							eventAction: 'Intro skipped',
+							eventLabel: 'Store intro',
+						})
+					}}
 				/>
 			)}
 		</>
