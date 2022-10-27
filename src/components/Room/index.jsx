@@ -166,7 +166,7 @@ const Room = ({ sceneData, webpSupport }) => {
 		Object.values(roomObjects)
 			.filter((item) => item.type === 'NavMarker')
 			.map((item) => scenes[item?.props?.linked_room_id.$oid])
-			.filter((item) => item && sceneType === 'cubemap_scene')
+			.filter((item) => item && getSceneType(item) === 'cubemap_scene')
 			.map((item) => ({
 				sceneId: item?.id,
 				imageIntegrity: getBustKey(item),
@@ -482,6 +482,7 @@ const Room = ({ sceneData, webpSupport }) => {
 
 	useEffect(() => {
 		if (sceneBGLoaded && linkedScenes.length > 0) {
+			console.log('=> linkedScenes', linkedScenes);
 			preLoadConnectedScenes(linkedScenes, abortControl);
 			preLoadConnectedScenesRoomObjects();
 		}
