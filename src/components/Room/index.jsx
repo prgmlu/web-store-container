@@ -49,14 +49,13 @@ const Room = ({ sceneData, webpSupport }) => {
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 	const roomObjects = useSelector((state) => state?.roomObjects || {});
-	const { activeLocale } = useLocalize();
+	const { activeLocale, enabled: localesEnabled } = useLocalize();
 	const abortControl = new AbortController();
 
 	const flatSceneUrl = isMobile
 		? sceneData?.mobile_flat_scene_url
 		: sceneData?.flat_scene_url;
 
-	const url = sceneData?.cube_map_dir || flatSceneUrl;
 	const opacityMapUrl = sceneData?.opacity_map || null;
 
 	const entranceVideoUrl = isMobile
@@ -105,6 +104,8 @@ const Room = ({ sceneData, webpSupport }) => {
 		setStoreMusicPlayState,
 	} = useSelector((state) => state?.mediaController || {});
 
+	const sceneType = getSceneType(sceneData);
+
 	const getEntranceVideo = () => {
 		const videoRecord = sessionStorage.getItem('entranceVideoRecord') || [];
 		if (
@@ -150,15 +151,26 @@ const Room = ({ sceneData, webpSupport }) => {
 		dispatch(setHotspotMarkerCount(nonNavCount));
 	};
 
+	const getSceneCubeMapDir = (scene) => {
+		if (
+			localesEnabled &&
+			'translations' in scene &&
+			activeLocale in scene.translations
+		) {
+			return formURL(scene.translations[activeLocale].cube_map_dir);
+		}
+		return formURL(scene.cube_map_dir);
+	};
+
 	const getLinkedScenes = () =>
 		Object.values(roomObjects)
 			.filter((item) => item.type === 'NavMarker')
 			.map((item) => scenes[item?.props?.linked_room_id.$oid])
-			.filter((item) => item && 'cube_map_dir' in item)
+			.filter((item) => item && sceneType === 'cubemap_scene')
 			.map((item) => ({
 				sceneId: item?.id,
 				imageIntegrity: getBustKey(item),
-				cube_map_dir: formURL(item?.cube_map_dir),
+				cube_map_dir: getSceneCubeMapDir(item),
 				useWebp: webpSupport,
 			}));
 
@@ -277,11 +289,16 @@ const Room = ({ sceneData, webpSupport }) => {
 		};
 	}, [activeNavIndex, activeHotspotIndex, accessibilitySelector]);
 
-	const sceneType = getSceneType(sceneData);
+	const getBackgroundUrl = () => {
+		if (sceneType === 'cubemap_scene') {
+			return getSceneCubeMapDir(sceneData);
+		}
+		return formURL(flatSceneUrl);
+	};
 
 	let bgConfig = {
 		isFlatScene: !!sceneData.flat_scene_url,
-		backgroundUrl: formURL(url),
+		backgroundUrl: getBackgroundUrl(),
 		opacityMapUrl: opacityMapUrl && formURL(opacityMapUrl),
 		imageIntegrity: getBustKey(sceneData),
 		useWebp: webpSupport,
@@ -529,12 +546,12 @@ const Room = ({ sceneData, webpSupport }) => {
 					videoUrl={formURL(entranceVideoUrl)}
 					onVideoEnd={onVideoEnd}
 					onClose={() => {
-						setShowEntranceVideo(false)
+						setShowEntranceVideo(false);
 						sendGaTrackingData({
 							eventCategory: 'Custom',
 							eventAction: 'Intro skipped',
 							eventLabel: 'Store intro',
-						})
+						});
 					}}
 				/>
 			)}

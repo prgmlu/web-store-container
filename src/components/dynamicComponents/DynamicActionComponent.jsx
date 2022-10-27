@@ -25,7 +25,13 @@ const DynamicActionComponent = ({
 		<DynamicComponent
 			remoteConfig={remoteConfig}
 			{...props}
-			onClick={() => actions[actionType](isLocaleEnabled ? localizedActionProps[activeLocale] : actionProps)}
+			onClick={() =>
+				actions[actionType](
+					isLocaleEnabled
+						? localizedActionProps[activeLocale]
+						: actionProps,
+				)
+			}
 		/>
 	);
 };
