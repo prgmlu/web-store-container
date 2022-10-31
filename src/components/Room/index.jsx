@@ -31,6 +31,7 @@ import {
 import { popFromMediaStack } from '../../redux_stores/mediaControllerReducer/actions';
 import { getBustKey } from '../../utils/urlHelpers';
 import { getSceneType } from '../../utils/sceneUtils';
+import ToolTipLoader from '../loaders/ToolTipLoader';
 
 let soundMarkerTracker;
 
@@ -49,9 +50,12 @@ const Room = ({ sceneData, webpSupport }) => {
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 	const roomObjects = useSelector((state) => state?.roomObjects || {});
+	const { tooltips = {} } = useSelector(
+		(state) => state?.componentConfig || {},
+	);
+
 	const { activeLocale, enabled: localesEnabled } = useLocalize();
 	const abortControl = new AbortController();
-
 	const flatSceneUrl = isMobile
 		? sceneData?.mobile_flat_scene_url
 		: sceneData?.flat_scene_url;
@@ -529,6 +533,7 @@ const Room = ({ sceneData, webpSupport }) => {
 					onBackgroundLoaded={onBgLoaded}
 					onBackgroundReady={onBGReady}
 					autoRotateConfig={autoRotateConfig}
+					tooltipComponents={ToolTipLoader(tooltips)}
 				>
 					<RoomObjects
 						onMouseUp={(e, sceneObject, marker, isDragEvent) =>

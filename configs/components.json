@@ -1,1 +1,632 @@
-{"analyticsModules":[{"additionalAnalyticsIDs":[],"betaAnalyticsID":"UA-91780857-16","prodAnalyticsID":"UA-234860576-17","remoteConfig":{"module":"./ga_module","scope":"ga_module","url":"/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"}}],"modals":[{"kind":"modal","modalConfig":{"animation":true,"centered":true,"closeIcon":"https://cdn.obsess-vr.com/modal-close-icon-normal.png","gameOverVideo":"https://cdn.obsess-vr.com/st-judes/st-judes-confetti.mp4","gamePrompts":{"couponCodes":{"disclaimer":{"en":"Valid 10/24/22 - 12/31/22. Must have $50 worth of merchandise in cart. Applies to USPS Standard Delivery or FedEx Standard Ground Delivery. Enter promo code on Step 2: Billing page during checkout process.","es":"Válido del 24/10/22 al 31/12/22. Debes tener $50 en mercancía en el carrito. Se aplica a la entrega estándar de USPS o la entrega terrestre estándar de FedEx. Ingresa el código de promoción en el Paso 2: Página de transacción durante el proceso de pago."},"loser":"FREESHIP50","winner":"FREESHIP50"},"gameOverMessages":{"loser":{"en":{"heading":"Great attempt!","subtext":"You’ve unlocked free shipping with a $50 purchase! Use this code at checkout:"},"es":{"heading":"Buen intento!","subtext":"¡Has desbloqueado un envío gratis con una compra de $50! Usa este código al finalizar la compra:"}},"winner":{"en":{"heading":"Congratulations!","subtext":"You’ve earned free shipping with a $50 purchase! Use this code at checkout:"},"es":{"heading":"Felicidades!","subtext":"¡Tu envío será gratis al hacer una compra de $50 o más! Usa este código al finalizar la compra:"}}},"productSku":"490700000","resetGame":{"en":"Reset Game","es":"Reiniciar Juego"},"startGame":{"en":"Start Game","es":"Empezar Juego"}},"musicIcons":{"off":"https://cdn.obsess-vr.com/st-judes/musicOff.png","on":"https://cdn.obsess-vr.com/st-judes/musicOn.png"},"selector":"connect-four","size":"lg","storeLogoAlt":"https://cdn.obsess-vr.com/st-judes/SJ-logo-red.svg"},"remoteConfig":{"closeIcon":"https://cdn.obsess-vr.com/modal-close-icon-normal.png","module":"./ConnectFour","scope":"connect_four","url":"/ObsessVR/v2/component-library/feature-components/connect-four/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"hotspotanimation":{"type":"none"},"selector":"zoom"},"remoteConfig":{"module":"./ZoomModal","scope":"zoom_modal","url":"/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"closeIconMobile":"https://cdn.obsess-vr.com/wide-down-carat.svg","selector":"product","size":"lg","translations":{"en":{"buttonCopy":"BUY NOW","details":"Details"},"es":{"buttonCopy":"COMPRAR AHORA","details":"Detalles"}}},"remoteConfig":{"module":"./ProductModal","scope":"product_modal","url":"/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/st-jude/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"music","style":{"opacity":"1"}},"remoteConfig":{"module":"./MusicModal","scope":"music_modal","url":"/ObsessVR/v2/component-library/webstore-modals/music-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"video","size":"sm"},"remoteConfig":{"module":"./VideoModal","scope":"video_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"linkOutIcon":"https://cdn.obsess-vr.com/st-judes/linkout.svg","selector":"video_with_button","size":"lg"},"remoteConfig":{"module":"./VideoWithButtonModal","scope":"video_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/variant/st-jude/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"text_with_button"},"remoteConfig":{"module":"./TextWithButtonModal","scope":"text_with_button_modal","url":"/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/variant/alpha/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"image","size":"md"},"remoteConfig":{"module":"./ImageModal","scope":"image_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"animationHotspot":"63488dc580cf012d94c842f4","centered":true,"inSceneDuration":3.5,"inSceneId":"6352bdff33b55bbc9f4bfbdb","selector":"image_carousel"},"remoteConfig":{"module":"./ImageCarouselModal","scope":"image_carousel_modal","url":"/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/variant/st-jude/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"iframe","size":"lg"},"remoteConfig":{"module":"./IFrameModal","scope":"iframe_modal","url":"/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"quiz","size":"sm"},"remoteConfig":{"module":"./QuizModal","scope":"quiz_modal","url":"/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"}},{"kind":"modal","modalConfig":{"animation":true,"centered":true,"selector":"youtube_embed","size":"sm"},"remoteConfig":{"module":"./YoutubeEmbedModal","scope":"youtube_embed_modal","url":"/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"}}],"modules":{"cartController":{"remoteConfig":{"module":"./cart_modules","scope":"cart_controller_module","url":"/ObsessVR/v2/modules-library/cart-controller/main/remoteEntry.js"}},"getProductData":{"remoteConfig":{"module":"./product_modules","scope":"product_data_module","url":"/ObsessVR/v2/modules-library/product-data/main/remoteEntry.js"}}},"overlayComponents":{"components":[{"components":[{"kind":"component","name":"store_logo","remoteConfig":{"module":"./StoreLogo","scope":"store_logo","url":"/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"},"styling":{"height":"auto","width":"12rem"}},{"actionProps":{"link":"https://giftshop.stjude.org/index?sc_cid=ptn89389"},"actionType":"redirectUrl","imageName":"Gift icon","imageStyling":{"cursor":"pointer","paddingTop":"1rem","width":"2.8rem"},"imageUrl":"https://cdn.obsess-vr.com/st-judes/Group+14097+(2).svg","kind":"action_component","localizedActionProps":{"en":{"link":"https://giftshop.stjude.org/index?sc_cid=ptn89389"},"es":{"link":"https://giftshop.stjude.org/index?sc_cid=ptn89389"}},"name":"clickable_image","remoteConfig":{"module":"./ClickableImage","scope":"clickable_image","url":"/ObsessVR/v2/component-library/pure-components/clickable-image/main/remoteEntry.js"},"translations":{"en":{"imageUrl":"https://cdn.obsess-vr.com/st-judes/eng+shop+more.svg"},"es":{"imageUrl":"https://cdn.obsess-vr.com/st-judes/spanish+shop+more.svg"}}}],"containerStyling":{"display":"flex","left":"0","position":"fixed","top":"0"},"kind":"container"},{"components":[{"components":[{"kind":"component","modalConfig":{"confettiImage":"https://cdn.obsess-vr.com/st-judes/confetti-animation.svg","confettiImageMobile":"https://cdn.obsess-vr.com/st-judes/confetti-animation-mobile.svg","translations":{"en":{"title":"Hooray! You've found all the St. Jude patient stories! Because of people like you, St. Jude won't stop until no child dies from cancer.","button_copy":"Go back to experience"},"es":{"title":"¡Hurra! ¡Has encontrado todas las historias de pacientes! Gracias a personas como tú, St. Jude no descansará hasta que ningún niño muera de cancer.","button_copy":"Volver"}},"titleStyling":{"fontFamily":"sjsregular","fontSize":"12px","fontWeight":"400"}},"name":"progress_bar","onCompletedIcon":"https://cdn.obsess-vr.com/st-judes/progress-bar-complete-icon.svg","progressBarHotspots":["633f485c0fd18241d222444c","63482aa26573d28feefc9779","633dbab00028cb2c09e5da9b"],"remoteConfig":{"module":"./ProgressBar","scope":"progress_bar","url":"/ObsessVR/v2/component-library/feature-components/progress-bar/variant/st-jude/remoteEntry.js"},"styling":{"width":"2rem"}},{"components":[{"iconUrl":"https://cdn.obsess-vr.com/st-judes/connectFourIcon.svg","kind":"component","name":"connect_four","remoteConfig":{"module":"./ConnectFourTrigger","scope":"connect_four","url":"/ObsessVR/v2/component-library/feature-components/connect-four/main/remoteEntry.js"},"styling":{"message":{"background":"rgba(255, 255, 255, 1)","color":"#D11947","fontFamily":"sjsregular","left":"0%","position":"absolute"}},"welcomeMessage":{"en":"Play Connect in a Row!","es":"Juega Conectar en Fila!"}}],"containerStyling":{"display":"inline"},"kind":"container"},{"desktopComponentsToHide":[".powered-by-obsess"],"iconStyling":{"height":"auto","margin":"0rem -0.5rem"},"kind":"component","mobileComponentsToHide":[".powered-by-obsess",".musicContainer"],"name":"navigation_menu","navItemClass":"nav-item-img","navItemImgStying":{"transform":"scale(1.03)"},"navItemSelectImg":"https://cdn.obsess-vr.com/st-judes/checkIcon.png","options":[{"image":"https://cdn.obsess-vr.com/st-judes/entrance.jpg","label":"Entrance","sceneId":"62ed3a6b794b2c48bd8b9fdd"},{"image":"https://cdn.obsess-vr.com/st-judes/igloo-ice-shop.jpg","label":"Ice Shop","sceneId":"62f659efde4ee6f8f9265e0f"},{"image":"https://cdn.obsess-vr.com/st-judes/connect-four.jpg","label":"Play Land","sceneId":"62f65ab8510f8a8be22bea80"},{"image":"https://cdn.obsess-vr.com/st-judes/ferris-wheel.jpg","label":"Ferris Wheel of Hope","sceneId":"630d2aa0c335a26082aa84b9"},{"image":"https://cdn.obsess-vr.com/st-judes/gift-donation.jpg","label":"Donation Station","sceneId":"62f65a23101b7502142c20b0"},{"image":"https://cdn.obsess-vr.com/st-judes/toasty-shop.jpg","label":"Toasty Shop","sceneId":"630d2a8ede8f699d483ad2a1"},{"image":"https://cdn.obsess-vr.com/st-judes/patient-inspiration-station.jpg","label":"Patient Inspiration Station","sceneId":"62f65a31bc14e172aac1313b"},{"image":"https://cdn.obsess-vr.com/st-judes/pol-art-express.jpg","label":"The Pol-Art Express","sceneId":"6328fb67e6b92d72f5ac5ab1"},{"image":"https://cdn.obsess-vr.com/st-judes/cozy-shop.jpg","label":"Cozy Shop","sceneId":"62f65a404888c4e24238b152"},{"image":"https://cdn.obsess-vr.com/st-judes/roller-coaster.jpg","label":"Maelin-Kate's Roller Coaster Adventure","sceneId":"62f65a56510f8a8be22bea7e"}],"remoteConfig":{"module":"./NavigationMenu","scope":"navigation_menu","url":"/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/st-jude/remoteEntry.js"},"styling":{"alignSelf":"center","padding":"0 0.75rem"},"translations":{"en":{"options":[{"image":"https://cdn.obsess-vr.com/st-judes/entrance.jpg","label":"Entrance"},{"image":"https://cdn.obsess-vr.com/st-judes/igloo-ice-shop.jpg","label":"Ice Shop"},{"image":"https://cdn.obsess-vr.com/st-judes/connect-four.jpg","label":"Play Land"},{"image":"https://cdn.obsess-vr.com/st-judes/ferris-wheel.jpg","label":"Ferris Wheel of Hope"},{"image":"https://cdn.obsess-vr.com/st-judes/gift-donation.jpg","label":"Donation Station"},{"image":"https://cdn.obsess-vr.com/st-judes/toasty-shop.jpg","label":"Toasty Shop"},{"image":"https://cdn.obsess-vr.com/st-judes/patient-inspiration-station.jpg","label":"Patient Inspiration Station"},{"image":"https://cdn.obsess-vr.com/st-judes/pol-art-express.jpg","label":"The Pol-Art Express"},{"image":"https://cdn.obsess-vr.com/st-judes/cozy-shop.jpg","label":"Cozy Shop"},{"image":"https://cdn.obsess-vr.com/st-judes/roller-coaster.jpg","label":"Maelin-Kate's Roller Coaster Adventure"}]},"es":{"options":[{"image":"https://cdn.obsess-vr.com/st-judes/entrance.jpg","label":"Entrada"},{"image":"https://cdn.obsess-vr.com/st-judes/igloo-ice-shop.jpg","label":"Tienda Glacial"},{"image":"https://cdn.obsess-vr.com/st-judes/connect-four.jpg","label":"Zona de Juegos"},{"image":"https://cdn.obsess-vr.com/st-judes/ferris-wheel.jpg","label":"La Rueda de la Esperanza"},{"image":"https://cdn.obsess-vr.com/st-judes/gift-donation.jpg","label":"Zona de Donación"},{"image":"https://cdn.obsess-vr.com/st-judes/toasty-shop.jpg","label":"Cálido Inveirno"},{"image":"https://cdn.obsess-vr.com/st-judes/patient-inspiration-station.jpg","label":"Estación Ispirada por Pacientes"},{"image":"https://cdn.obsess-vr.com/st-judes/pol-art-express.jpg","label":"El Expreso Pol-Art"},{"image":"https://cdn.obsess-vr.com/st-judes/cozy-shop.jpg","label":"Tienda Acogedora"},{"image":"https://cdn.obsess-vr.com/st-judes/roller-coaster.jpg","label":"La Montaña Rusa de Maelin-Kate"}]}},"visitedNavStyling":{"backgroundColor":"#19884A","borderRadius":"50%","height":"15px","padding":"3px","position":"absolute","right":"-5px","top":"-4px","width":"auto"}}],"containerStyling":{"alignItems":"center","columnGap":"0.25rem","display":"flex","zIndex":"1"},"kind":"container"},{"iconStyling":{"alignItems":"center","color":"#ffffff","display":"flex","height":"2rem","justifyContent":"space-between","padding":"0.5rem","width":"6.5rem"},"iconUrl":{"en":{"icon":"https://cdn.obsess-vr.com/st-judes/locale-icon.svg","text":"English"},"es":{"icon":"https://cdn.obsess-vr.com/st-judes/locale-icon.svg","text":"Español"}},"kind":"component","localeMapping":{"en":"English","es":"Español"},"name":"locale_selector","remoteConfig":{"module":"./LocaleSelector","scope":"locale_selector","url":"/ObsessVR/v2/component-library/feature-components/locale-selector/variant/st-jude/remoteEntry.js"},"styling":{"margin":"0"}}],"containerStyling":{"alignItems":"flex-end","display":"flex","flexDirection":"column","padding":"0.5rem 1rem","position":"fixed","right":"0rem","rowGap":"0.5rem","top":"0","zIndex":"1"},"containerStylingMobile":{"alignItems":"flex-end","display":"flex","flexDirection":"column","padding":"0.5rem","position":"fixed","right":"0rem","rowGap":"0.5rem","top":"0.6rem","zIndex":"1"},"kind":"container"},{"components":[{"components":[{"iconStyling":{"height":"2.5rem","width":"2.5rem"},"iconUrl":"https://cdn.obsess-vr.com/bakeup/Group+13860.svg","kind":"component","modalData":{"hotspotMarkers":"https://cdn.obsess-vr.com/st-judes/to_hotspots-v2.svg","navigationArrows":"https://cdn.obsess-vr.com/st-judes/to_navigation_arrows-v2.svg","sceneRotate":"https://cdn.obsess-vr.com/st-judes/to_rotate_3d_scence-v2.svg","title":"Accessible Menu"},"name":"ada_accessibility_info","remoteConfig":{"module":"./ADAAccessibilityInfo","scope":"ada_accessibility_info","url":"/ObsessVR/v2/component-library/feature-components/ada-accessibility-info/variant/st-jude/remoteEntry.js"},"translations":{"en":{"hotspotImgAlt":"Hold alt key and press arrow up or down keys to select a content hotspot then press enter to open content","hotspotMarkers":"https://cdn.obsess-vr.com/st-judes/to_hotspots-v2.svg","hotspotText":"To select hotspots","navigationArrows":"https://cdn.obsess-vr.com/st-judes/to_navigation_arrows-v2.svg","navigationImgAlt":"Hold option or alt key and press arrow left or right keys to select a navigational arrow then press enter to move around","navigationText":"To move around","sceneRotate":"https://cdn.obsess-vr.com/st-judes/to_rotate_3d_scence-v2.svg","sceneRotateImgAlt":"Hold Shift key and left right up and down arrows to look around","sceneRotateText":"To look around","title":"Accessible Menu"},"es":{"hotspotImgAlt":"Hold alt key and press arrow up or down keys to select a content hotspot then press enter to open content","hotspotMarkers":"https://cdn.obsess-vr.com/st-judes/hotspots-es.svg","hotspotText":"Para ver contenido","navigationArrows":"https://cdn.obsess-vr.com/st-judes/nav-arrow-es.svg","navigationImgAlt":"Hold option or alt key and press arrow left or right keys to select a navigational arrow then press enter to move around","navigationText":"Moverse alrededor","sceneRotate":"https://cdn.obsess-vr.com/st-judes/scene-rotate-es.svg","sceneRotateImgAlt":"Hold Shift key and left right up and down arrows to look around","sceneRotateText":"Mirar alrededor","title":"Menú Accesible"}}},{"enableSoundBar":false,"kind":"component","name":"music_controller","remoteConfig":{"module":"./MusicController","scope":"music_controller","url":"/ObsessVR/v2/component-library/feature-components/music-controller/main/remoteEntry.js"}}],"containerStyling":{"alignItems":"center","columnGap":"0.5rem","display":"flex"},"kind":"container"},{"kind":"component","name":"powered_by_obsess","remoteConfig":{"module":"./PoweredByObsess","scope":"powered_by_obsess","url":"/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"},"textStyling":{"color":"white","fontSize":"0.9rem"}}],"containerStyling":{"alignItems":"flex-end","bottom":0,"display":"flex","flexDirection":"column","padding":"0.25rem","position":"fixed","right":0,"rowGap":"0.25rem"},"kind":"container"},{"components":[{"components":[{"backBtn":"https://cdn.obsess-vr.com/st-judes/back_navigation_icon.svg","kind":"component","localeMapping":{"en":{"nextBtnText":"NEXT"},"es":{"nextBtnText":"SIGUIENTE"}},"name":"custom_navigation_component","navNextBtnStyling":{"padding-bottom":"3px","padding-left":"8px"},"nextBtn":"https://cdn.obsess-vr.com/st-judes/next_navigation_arrow_icon.svg","remoteConfig":{"module":"./CustomNavigationComponent","scope":"custom_navigation_component","url":"/ObsessVR/v2/component-library/feature-components/custom-navigation/variant/st-jude/remoteEntry.js"}},{"actionType":"triggerModal","imageStyling":{"cursor":"pointer","marginTop":"1rem","width":"4.5rem"},"imageUrl":"https://cdn.obsess-vr.com/st-judes/donate.svg","kind":"action_component","localizedActionProps":{"en":{"modalProps":{"body":"When you make a donation using this section of the catalog, your donation will be used to support breakthrough research, treatment and cures. Items listed in this section are representative of services and supplies that are part of the treatment and care of children of St. Jude. The cost of each item or service is an approximation and will vary based on actual costs incurred and individual patient needs. Your donations will be used to support the general operating expenses of St. Jude. Thanks to generous supporters, families never receive a bill from St. Jude for treatment, travel, housing or food —because all a family should worry about is helping their child live.","button_copy":"DONATE","button_url":{"origin":"external","path":"https://giftshop.stjude.org/donate.html?sc_cid=ptn90146"},"sub_title":"Legal Notice","title":"Donate to St. Jude","url":{"origin":"external","path":"https://cdn.obsess-vr.com/st-judes/donate-to-st-jude.png"}},"selector":"text_with_button"},"es":{"modalProps":{"body":"Cuando haces una donación en esta sección del catálogo, tu contribución será utilizada para apoyar los descubrimientos, investigaciones, tratamientos y curas. Los artículos y servicios enumerados aquí son representativos de los suministros que forman parte del tratamiento y cuidado de los niños de St. Jude. El costo de cada artículo es una aproximación y puede variar según los costos reales y necesidades individuales del paciente. Tu donación se utilizará para las necesidades operativas generales de St. Jude, donde ninguna familia recibe una factura por transporte, hospedaje ni alimentación – porque creemos que la única preocupación de las familias debe ser ayudar a sus hijos a vivir.","button_copy":"Done Ahora","button_url":{"origin":"external","path":"https://giftshop.stjude.org/donate.html?sc_cid=ptn90146"},"sub_title":"Exensión de Responsabilidad","title":"Done a St Jude’s","url":{"origin":"external","path":"https://cdn.obsess-vr.com/st-judes/donate-to-st-jude.png"}},"selector":"text_with_button"}},"name":"clickable_image","remoteConfig":{"module":"./ClickableImage","scope":"clickable_image","url":"/ObsessVR/v2/component-library/pure-components/clickable-image/main/remoteEntry.js"},"translations":{"en":{"imageUrl":"https://cdn.obsess-vr.com/st-judes/donate.svg"},"es":{"imageUrl":"https://cdn.obsess-vr.com/st-judes/donate-es.svg"}}},{"assets":{"floorPin":"","floorPinActive":"","navIcon":"https://cdn.obsess-vr.com/st-judes/custom-nav-icon.svg","navigationMap":{"default":{"desktop":"https://cdn.obsess-vr.com/st-judes/desktop+eng.svg","mobile":"https://cdn.obsess-vr.com/st-judes/mobile+eng.svg"},"en":{"desktop":"https://cdn.obsess-vr.com/st-judes/desktop+eng.svg","mobile":"https://cdn.obsess-vr.com/st-judes/mobile+eng.svg"},"es":{"desktop":"https://cdn.obsess-vr.com/st-judes/desktop+spanish.svg","mobile":"https://cdn.obsess-vr.com/st-judes/mobile+spanish.svg"}},"navigationMapAlert":"Click to navigate"},"closeIcon":"https://cdn.obsess-vr.com/wide-down-carat.svg","iconStyling":{"cursor":"pointer","height":"auto","width":"3rem"},"kind":"component","mapImgStyling":{"height":"18rem"},"name":"navigation_map","options":[{"name":"Cozy Shop","sceneId":"62f65a404888c4e24238b152","x":{"desktop":"15","mobile":"11"},"y":{"desktop":"31","mobile":"23"}},{"name":"The Pol-Art Express","sceneId":"6328fb67e6b92d72f5ac5ab1","x":{"desktop":"21","mobile":"23"},"y":{"desktop":"59","mobile":"55"}},{"name":"Maelin-Kate's Roller Coaster Adventure","sceneId":"62f65a56510f8a8be22bea7e","x":{"desktop":"22","mobile":"13"},"y":{"desktop":"84","mobile":"84"}},{"name":"Patient Inspiration Station","sceneId":"62f65a31bc14e172aac1313b","x":{"desktop":"33","mobile":"37"},"y":{"desktop":"15","mobile":"23"}},{"name":"Toasty Shop","sceneId":"630d2a8ede8f699d483ad2a1","x":{"desktop":"49","mobile":"53"},"y":{"desktop":"21","mobile":"12"}},{"name":"Donation Station","sceneId":"62f65a23101b7502142c20b0","x":{"desktop":"41","mobile":"42"},"y":{"desktop":"57","mobile":"69"}},{"name":"Ferris Wheel of Hope","sceneId":"630d2aa0c335a26082aa84b9","x":{"desktop":"61","mobile":"68"},"y":{"desktop":"82","mobile":"87"}},{"name":"Entrance","sceneId":"62ed3a6b794b2c48bd8b9fdd","x":{"desktop":"68","mobile":"74"},"y":{"desktop":"25","mobile":"16"}},{"name":"Ice Shop","sceneId":"62f659efde4ee6f8f9265e0f","x":{"desktop":"66","mobile":"76"},"y":{"desktop":"48","mobile":"46"}},{"name":"Play Land","sceneId":"62f65ab8510f8a8be22bea80","x":{"desktop":"75","mobile":"86"},"y":{"desktop":"60","mobile":"59"}}],"remoteConfig":{"module":"./NavigationMap","scope":"navigation_map","url":"/ObsessVR/v2/component-library/feature-components/navigation-map/variant/st-jude/remoteEntry.js"},"styling":{"height":"auto","width":"auto"}}],"containerStyling":{"alignItems":"center","display":"flex"},"kind":"container"},{"itemStyling":{"border":"none","color":"#ffffff","cursor":"pointer","fontFamily":"'sjsregular'","fontSize":"8px","fontWeight":"600","letterSpacing":"0.25px","textDecoration":"underline"},"kind":"component","name":"privacy_notice_component","remoteConfig":{"module":"./PrivacyNoticeLink","scope":"privacy_notice_component","url":"/ObsessVR/v2/component-library/feature-components/privacy-notice/main/remoteEntry.js"},"title":"Privacy Notice","titleLink":"https://www.stjude.org/legal/u-s-privacy-policy-statement.html"}],"containerStyling":{"alignItems":"flex-start","bottom":0,"display":"flex","flexDirection":"column","left":0,"padding":"0 0.5rem","position":"fixed"},"kind":"container"},{"components":[{"btnStyling":{"backgroundColor":"white","borderRadius":"4px","boxshadow":"white 0px 0px 0px 0px inset","fontSize":"16px","fontWeight":"bold","padding":"15px","pointerEvents":"all","width":"210px"},"delayInSeconds":30,"isTranslation":true,"kind":"component","logoStyling":{"width":"20em"},"name":"tooltip_overlay","overlayStyling":{"backgroundColor":"rgba(0, 0, 0, 0.8)"},"remoteConfig":{"module":"./TooltipOverlay","scope":"tooltip_overlay","url":"/ObsessVR/v2/component-library/feature-components/tooltip-overlay/variant/descriptive/remoteEntry.js"},"showButtonOnMobile":true,"showWelcomeModal":true,"tooltipBody":"","tooltipExtraClass":"container-size","tooltipItemImgPosition":"bottom","tooltipItems":[{"body":"Click and drag the screen or use the arrows on the floor to explore","imageUrl":"https://cdn.obsess-vr.com/st-judes/mouse-white.svg","title":"BROWSE"},{"body":"Click on the icon to see product details and shop online","imageUrl":"https://cdn.obsess-vr.com/st-judes/basic+content+hotspot+default.svg","title":"SHOP"},{"body":"Click to explore patient artwork and other related content","imageUrl":"https://cdn.obsess-vr.com/st-judes/art+hotspot+default.svg","title":"DISCOVER"}],"tooltipLogo":"","tooltipTitle":"Welcome to the St. Jude Winter Wonderland <br> Powered by Obsess","tooltipTitleStyling":{"maxWidth":"100%"},"translation":{"default":{"btnCopy":"Let's go","tooltipItems":[{"body":"Click and drag the screen or use the arrows on the floor to explore","imageUrl":"https://cdn.obsess-vr.com/st-judes/Group.svg","title":"BROWSE"},{"body":"Click on the icon to see product details and shop online","imageUrl":"https://cdn.obsess-vr.com/st-judes/basic+content+hotspot+default.svg","title":"SHOP"},{"body":"Click to explore patient artwork and other related content","imageUrl":"https://cdn.obsess-vr.com/st-judes/art+hotspot+default.svg","title":"DISCOVER"}],"tooltipTitle":"Welcome to the St. Jude Winter Wonderland <br> Powered by Obsess"},"en":{"btnCopy":"Let's go","tooltipItems":[{"body":"Click and drag the screen or use the arrows on the floor to explore","imageUrl":"https://cdn.obsess-vr.com/st-judes/Group.svg","title":"BROWSE"},{"body":"Click on the icon to see product details and shop online","imageUrl":"https://cdn.obsess-vr.com/st-judes/basic+content+hotspot+default.svg","title":"SHOP"},{"body":"Click to explore patient artwork and other related content","imageUrl":"https://cdn.obsess-vr.com/st-judes/art+hotspot+default.svg","title":"DISCOVER"}],"tooltipTitle":"Welcome to the St. Jude Winter Wonderland <br> Powered by Obsess"},"es":{"btnCopy":"Entrar","tooltipItems":[{"body":"Haz clic y arrastra la imagen o usa las flechas en el piso para explorar","imageUrl":"https://cdn.obsess-vr.com/st-judes/Group.svg","title":"Para navegar"},{"body":"Haz clic en el icono para ver los detalles del producto y comprar en línea","imageUrl":"https://cdn.obsess-vr.com/st-judes/basic+content+hotspot+default.svg","title":"Para comprar"},{"body":"Haz clic para explorar arte de pacientes y otro contenido relacionado","imageUrl":"https://cdn.obsess-vr.com/st-judes/art+hotspot+default.svg","title":"Para descubrir"}],"tooltipTitle":"Bienvenidos a la tienda virtual St. Jude Winter Wonderland <br> Desarrollado por Obsess"}}}],"containerStyling":{"height":"100%","pointerEvents":"none","position":"fixed","width":"100%","zIndex":10},"kind":"container"}],"kind":"container"}}
+{
+	"analyticsModules": [
+		{
+			"additionalAnalyticsIDs": [],
+			"betaAnalyticsID": "UA-234860576-3",
+			"prodAnalyticsID": "UA-234860576-3",
+			"remoteConfig": {
+				"module": "./ga_module",
+				"scope": "ga_module",
+				"url": "/ObsessVR/v2/modules-library/analytics/ga-module/main/remoteEntry.js"
+			}
+		}
+	],
+	"modals": [
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "welcome_modal",
+				"style": { "opacity": "1" },
+				"welcomeButtons": [
+					{
+						"buttonText": "Sets + Kits",
+						"sceneId": "6273e9c1df3663299b45cd3e"
+					},
+					{
+						"buttonText": "Bath + Body",
+						"sceneId": "62859b021465cb16e059bddd"
+					},
+					{
+						"buttonText": "Baby + Diapers",
+						"sceneId": "62859b11ccec5ecabdfa4e67"
+					},
+					{
+						"buttonText": "Gifts",
+						"sceneId": "627d256fc9063fc6722b8d76"
+					},
+					{
+						"buttonText": "Beauty",
+						"sceneId": "62bd2b0f711455aa8cc316cc"
+					},
+					{
+						"buttonText": "Cleaning",
+						"sceneId": "6273e89e8aba2a11340f1e48"
+					}
+				],
+				"welcomeContent": [
+					"Introducing a new way to shop Honest. Our virtual house lets you see how the Honest lifestyle can fit in your own home.",
+					"Shop room by room for the whole family + explore the clean conscious life. Bonus: Find all five hidden butterflies for an exclusive offer!"
+				],
+				"welcomeTitle": "Welcome to the Honest Home!"
+			},
+			"remoteConfig": {
+				"module": "./WelcomeModal",
+				"scope": "welcome_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/honest/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"enablePan": false,
+				"hotspotanimation": { "type": "none" },
+				"mobileStyling": {
+					"maxHeight": "50vh",
+					"maxWidth": "95vw",
+					"minHeight": "50vh",
+					"minWidth": "95vw"
+				},
+				"selector": "zoom"
+			},
+			"remoteConfig": {
+				"module": "./ZoomModal",
+				"scope": "zoom_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "product"
+			},
+			"remoteConfig": {
+				"module": "./ProductModal",
+				"scope": "product_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/miniPDP/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./VideoModal",
+				"scope": "video_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "video_with_button",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./VideoWithButtonModal",
+				"scope": "video_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/variant/honest/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "text_with_button"
+			},
+			"remoteConfig": {
+				"module": "./TextWithButtonModal",
+				"scope": "text_with_button_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/text-with-button-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image",
+				"size": "md"
+			},
+			"remoteConfig": {
+				"module": "./ImageModal",
+				"scope": "image_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_carousel",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./ImageCarouselModal",
+				"scope": "image_carousel_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/variant/honest/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "iframe",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./IFrameModal",
+				"scope": "iframe_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "quiz",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./QuizModal",
+				"scope": "quiz_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/quiz-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"closeIconStylingMobile": {
+					"backgroundColor": "transparent",
+					"borderRadius": 0,
+					"filter": "invert(1)",
+					"height": "3rem",
+					"positiom": "absolute",
+					"right": 0,
+					"top": 0,
+					"width": "3rem"
+				},
+				"modalDescripstion": [
+					"You found your first butterfly, find the remaining 4 butterflies for a special discount.",
+					"You found your second butterfly, find the remaining 3 butterflies for a special discount.",
+					"You found your third butterfly, find the remaining 2 butterflies for a special discount.",
+					"You found your fourth butterfly, find the remaining 1 butterflies for a special discount.",
+					"Use this code to receive 15% off at checkout"
+				],
+				"modalHeader": "Congrats!",
+				"selector": "butterfly_game"
+			},
+			"remoteConfig": {
+				"module": "./ButterflyGameModal",
+				"scope": "butterfly_collection_game_component",
+				"url": "/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "youtube_embed",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./YoutubeEmbedModal",
+				"scope": "youtube_embed_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/youtube-embed-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "image_zoom_modal",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./ImageZoomModal",
+				"scope": "image_zoom_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-zoom-modal/main/remoteEntry.js"
+			}
+		}
+	],
+	"modules": {
+		"cartController": {
+			"remoteConfig": {
+				"module": "./cart_modules",
+				"scope": "cart_controller_module",
+				"url": "/ObsessVR/v2/modules-library/cart-controller/variant/honest/remoteEntry.js"
+			}
+		},
+		"getProductData": {
+			"envConfigs": {
+				"beta": {
+					"CLIENT_ID": "af30b7a4-5006-42b7-82f1-f47482939c19",
+					"CLIENT_SECRET": "XB2Jz3V95ebshWk2",
+					"SFCC_BASE_URL": "https://development.honest.com/s/honest/dw/shop/v19_8"
+				},
+				"client": {
+					"CLIENT_ID": "a31b84a4-9dcd-4a81-9c3e-14910c206742",
+					"CLIENT_SECRET": "6NkGHUAIA5j1CU4",
+					"SFCC_BASE_URL": "https://www.honest.com/s/honest/dw/shop/v19_8"
+				},
+				"production": {
+					"CLIENT_ID": "a31b84a4-9dcd-4a81-9c3e-14910c206742",
+					"CLIENT_SECRET": "6NkGHUAIA5j1CU4",
+					"SFCC_BASE_URL": "https://www.honest.com/s/honest/dw/shop/v19_8"
+				}
+			},
+			"remoteConfig": {
+				"module": "./product_modules",
+				"scope": "product_data_module",
+				"url": "/ObsessVR/v2/modules-library/product-data/feature/honest-new/remoteEntry.js"
+			}
+		},
+		"wishlistController": {
+			"remoteConfig": {
+				"module": "./wishlist_modules",
+				"scope": "wishlist_controller_module",
+				"url": "/ObsessVR/v2/modules-library/wishlist-controller/variant/honest/remoteEntry.js"
+			}
+		}
+	},
+	"overlayComponents": {
+		"components": [
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "store_logo",
+						"remoteConfig": {
+							"module": "./StoreLogo",
+							"scope": "store_logo",
+							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
+						},
+						"styling": {
+							"height": "auto",
+							"left": "3%",
+							"position": "fixed",
+							"top": "0.65rem",
+							"width": "7rem"
+						}
+					},
+					{
+						"components": [
+							{
+								"iconStyling": {
+									"height": "auto",
+									"margin": "0 0.25rem",
+									"width": "1.375rem"
+								},
+								"kind": "component",
+								"name": "wishlist_component",
+								"remoteConfig": {
+									"module": "./WishlistComponent",
+									"scope": "wishlist_component",
+									"url": "/ObsessVR/v2/component-library/feature-components/wishlist-component/variant/honest/remoteEntry.js"
+								}
+							},
+							{
+								"componentsToHide": [
+									".butterfly-collection-status-container",
+									".powered-by-obsess"
+								],
+								"iconStyling": {
+									"height": "auto",
+									"margin": "0 1rem",
+									"width": "1.375rem"
+								},
+								"kind": "component",
+								"name": "cart_component",
+								"remoteConfig": {
+									"module": "./CartComponent",
+									"scope": "cart_component",
+									"url": "/ObsessVR/v2/component-library/feature-components/cart-component/variant/honest/remoteEntry.js"
+								}
+							},
+							{
+								"closeIcon": "https://cdn.obsess-vr.com/honest/navigationMenu/close.svg",
+								"componentsToHide": [
+									".butterfly-collection-status-container",
+									".powered-by-obsess"
+								],
+								"defaultOpenScene": "6273e88c986aec8f812ed072",
+								"iconStyling": {
+									"height": "1rem",
+									"margin": "0 1.5rem 0 0.5rem",
+									"width": "1.375rem"
+								},
+								"isOverlayCloseIcon": true,
+								"kind": "component",
+								"name": "navigation_menu",
+								"navItemSelectImg": "https://cdn.obsess-vr.com/honest/navigationMenu/checkImg.svg",
+								"options": [
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/LivingRoom.svg",
+										"label": "Living Room",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/LivingRoom.svg",
+										"sceneId": "6273e9c1df3663299b45cd3e",
+										"subLabel": "Sets & Kits<br>Baby & Diapers<br>Gifts"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Kitchen.svg",
+										"label": "Kitchen",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Kitchen.svg",
+										"sceneId": "6273e89e8aba2a11340f1e48",
+										"subLabel": "Cleaning<br>Wellness<br>Sets & Kits"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Bathroom.svg",
+										"label": "Bathroom",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Bathroom.svg",
+										"sceneId": "62859b021465cb16e059bddd",
+										"subLabel": "Beauty<br>Bath & Body<br>Wellness<br>Baby & Diapers<br>Sets & Kits"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Greenhouse.svg",
+										"label": "Greenhouse",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Greenhouse.svg",
+										"sceneId": "628d147d3160d61e071d667b",
+										"subLabel": "Bath & Body"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Babyroom.svg",
+										"label": "Babyroom",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Babyroom.svg",
+										"sceneId": "62859b11ccec5ecabdfa4e67",
+										"subLabel": "Baby & Diapers<br>Subscriptions"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Bedroom.svg",
+										"label": "Bedroom",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Bedroom.svg",
+										"sceneId": "62859aef9a439a8bfc80198a",
+										"subLabel": "Sets & Kits"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Vanity.svg",
+										"label": "Vanity",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Vanity.svg",
+										"sceneId": "62bd2b0f711455aa8cc316cc",
+										"subLabel": "Beauty"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/LaundryRoom.svg",
+										"label": "Laundry Room",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/LaundryRoom.svg",
+										"sceneId": "6286614dd6643f86af0b7302",
+										"subLabel": "Cleaning"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Foyer.svg",
+										"label": "Foyer",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Foyer.svg",
+										"sceneId": "6273e88c986aec8f812ed072",
+										"subLabel": "Baby & Diapers<br>Beauty<br>Gear"
+									},
+									{
+										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Entrance.svg",
+										"label": "Entrance",
+										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Entrance.svg",
+										"sceneId": "627894403806cd128c41c0d2",
+										"subLabel": "Baby & Diapers<br>Subscriptions"
+									}
+								],
+								"remoteConfig": {
+									"module": "./NavigationMenu",
+									"scope": "navigation_menu",
+									"url": "/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/honest/remoteEntry.js"
+								},
+								"showToolTipOverlay": true,
+								"styling": { "marginRight": "0.5rem" },
+								"visitedNavStyling": {
+									"height": "14px",
+									"position": "absolute",
+									"right": "-5px",
+									"top": "-4px",
+									"width": "14px"
+								}
+							}
+						],
+						"containerStyling": {
+							"alignItems": "center",
+							"display": "flex",
+							"flexDirection": "row",
+							"height": "inherit",
+							"position": "fixed",
+							"right": "0"
+						},
+						"containerStylingMobile": {
+							"alignItems": "center",
+							"display": "flex",
+							"flexDirection": "row",
+							"height": "inherit",
+							"justifyContent": "right",
+							"position": "fixed",
+							"right": "-5%"
+						},
+						"kind": "container"
+					}
+				],
+				"containerStyling": {
+					"background": "rgba(255, 255, 255, 0.6)",
+					"height": "3rem",
+					"position": "fixed",
+					"top": 0,
+					"webkitBackdropFilter": "blur(100px)",
+					"width": "100%"
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"kind": "component",
+						"name": "powered_by_obsess",
+						"remoteConfig": {
+							"module": "./PoweredByObsess",
+							"scope": "powered_by_obsess",
+							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
+						},
+						"textStyling": {
+							"color": "white",
+							"fontSize": "0.9rem"
+						}
+					}
+				],
+				"containerStyling": {
+					"bottom": 0,
+					"left": 0,
+					"padding": "4px",
+					"position": "fixed",
+					"zIndex": -1
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"components": [
+							{
+								"butterflyAssets": [
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-0.png",
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-1.png",
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-2.png",
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-3.png",
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-4.png",
+									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-5.png"
+								],
+								"defaultNotOpenScene": "6273e88c986aec8f812ed072",
+								"isOverlayCloseIcon": true,
+								"kind": "component",
+								"name": "butterfly_collection_game_component",
+								"remoteConfig": {
+									"module": "./ButterflyCollectionStatusUI",
+									"scope": "butterfly_collection_game_component",
+									"url": "/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"
+								}
+							}
+						],
+						"containerStyling": {
+							"bottom": "2rem",
+							"left": "0.5rem",
+							"position": "fixed",
+							"zIndex": "-2"
+						},
+						"containerStylingMobile": {
+							"top": "4rem",
+							"left": "0.4rem",
+							"position": "fixed",
+							"zIndex": "-2"
+						},
+						"kind": "container"
+					}
+				],
+				"containerStyling": {
+					"bottom": "2rem",
+					"left": "0.5rem",
+					"position": "fixed",
+					"zIndex": "-2"
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"closeIcon": "https://cdn.obsess-vr.com/honest/adamodal/modal-close-icon-normal.svg",
+						"closeIconStyling": { "background": "#BBCDC3" },
+						"iconStyling": { "height": "40px", "width": "40px" },
+						"iconUrl": "https://cdn.obsess-vr.com/honest/adamodal/accessibility-icon.svg",
+						"kind": "component",
+						"modalData": {
+							"hotspotMarkers": "https://cdn.obsess-vr.com/honest/adamodal/ada-hotspot.svg",
+							"navigationArrows": "https://cdn.obsess-vr.com/honest/adamodal/ada-1.svg",
+							"sceneRotate": "https://cdn.obsess-vr.com/honest/adamodal/ada-2.svg"
+						},
+						"name": "ada_accessibility_info",
+						"remoteConfig": {
+							"module": "./ADAAccessibilityInfo",
+							"scope": "ada_accessibility_info",
+							"url": "/ObsessVR/v2/component-library/feature-components/ada-accessibility-info/variant/honest/remoteEntry.js"
+						},
+						"styling": {}
+					}
+				],
+				"containerStyling": {
+					"bottom": "24px",
+					"padding": "0.25rem",
+					"position": "fixed",
+					"right": "29px"
+				},
+				"kind": "container"
+			}
+		],
+		"kind": "container"
+	},
+	"sceneTransition": [
+		{
+			"remoteConfig": {
+				"module": "./SceneTransition",
+				"scope": "scene_transition",
+				"url": "/ObsessVR/v2/component-library/feature-components/scene-transition/variant/honest/remoteEntry.js"
+			},
+			"sceneModal": "video_with_button",
+			"sceneModalData": {
+				"hotspot_type": "video_with_button",
+				"url": {
+					"origin": "cdn",
+					"path": "clients/Obsess/62696219b9aca18715d5b3b9/images/hotspots/76831Honest_brand.mp4"
+				},
+				"visible": true
+			},
+			"sceneName": "view-2",
+			"selector": "scene_transition_1"
+		}
+	],
+	"tooltips": [
+		{
+			"remoteConfig": {
+				"module": "./ProductTooltip",
+				"scope": "product_tooltip",
+				"url": "/ObsessVR/v2/component-library/feature-components/product-tooltip/main/remoteEntry.js"
+			},
+			"properties": {
+				"width": "20em",
+				"height": "7em",
+				"fontFamily": "BrandonTextRegular",
+				"titleStyle": {
+					"fontSize": "12px",
+					"fontWeight": "450",
+					"fontFamily": "BrandonTextBold"
+				},
+				"descriptionStyle": {
+					"color": "#00000060",
+					"fontSize": "12px"
+				},
+				"currencyStyle": {
+					"fontSize": "12px"
+				},
+				"descriptionField": "description"
+			},
+			"selector": "product"
+		}
+	]
+}
