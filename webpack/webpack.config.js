@@ -64,29 +64,6 @@ module.exports = (options) => {
 		},
 	};
 
-	// config.optimization = {
-	// 	runtimeChunk: 'single',
-	// 	splitChunks: {
-	// 		chunks: 'all',
-	// 		maxInitialRequests: Infinity,
-	// 		minSize: 0,
-	// 		cacheGroups: {
-	// 			reactVendor: {
-	// 				test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-	// 				name: 'vendor_react',
-	// 			},
-	// 			utilityVendor: {
-	// 				test: /[\\/]node_modules[\\/](axios|react-redux|redux)[\\/]/,
-	// 				name: 'vendor_utility',
-	// 			},
-	// 			bootstrapVendor: {
-	// 				test: /[\\/]node_modules[\\/](react-bootstrap|bootstrap)[\\/]/,
-	// 				name: 'vendor_bootstrap',
-	// 			},
-	// 		},
-	// 	},
-	// };
-
 	const threeJSRemoteURL =
 		BUILD_TYPE === 'local'
 			? 'threejs_scene@http://localhost:4000/remoteEntry.js'

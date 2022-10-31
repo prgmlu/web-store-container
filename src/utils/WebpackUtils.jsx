@@ -21,7 +21,6 @@ const loadComponent = async (scope, module) => {
 		console.error(e);
 	}
 	const factory = await window[scope].get(module);
-	// if (scope === 'shop_with_friends') {
 	return factory();
 };
 
