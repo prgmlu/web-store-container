@@ -50,7 +50,7 @@ const Room = ({ sceneData, webpSupport }) => {
 	const { navigate } = useLocalizedNavigation();
 	const { collect } = useAnalytics();
 	const roomObjects = useSelector((state) => state?.roomObjects || {});
-	const { tooltips = {} } = useSelector(
+	const { tooltips = [] } = useSelector(
 		(state) => state?.componentConfig || {},
 	);
 
