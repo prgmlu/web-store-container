@@ -632,7 +632,7 @@
 						"remoteConfig": {
 							"module": "./BottomTabMenu",
 							"scope": "bottom_tab_menu",
-							"url": "http://localhost:3042/remoteEntry.js"
+							"url": "/ObsessVR/v2/component-library/feature-components/bottom-tab-menu/feature/7984-3d-avatar/remoteEntry.js"
 						},
 						"storeLogo": "https://obsessvr-webstore-assets-public.s3.amazonaws.com/charlotte-tilbury/bottom-bar/ct-logo.png",
 						"translations": {
