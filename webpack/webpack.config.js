@@ -67,7 +67,7 @@ module.exports = (options) => {
 	const threeJSRemoteURL =
 		BUILD_TYPE === 'local'
 			? 'threejs_scene@http://localhost:4000/remoteEntry.js'
-			: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/wp-federated/remoteEntry.js`;
+			: `threejs_scene@${envConfig.MODULES_BASE_URL}/ObsessVR/npm-modules/threejs-scene/feature/nov-2/remoteEntry.js`;
 
 	config.plugins.push(
 		new ModuleFederationPlugin({

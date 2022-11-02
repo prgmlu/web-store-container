@@ -2,8 +2,8 @@
 	"analyticsModules": [
 		{
 			"additionalAnalyticsIDs": [],
-			"betaAnalyticsID": "UA-234860576-3",
-			"prodAnalyticsID": "UA-234860576-3",
+			"betaAnalyticsID": "UA-91780857-16",
+			"prodAnalyticsID": "UA-91780857-58",
 			"remoteConfig": {
 				"module": "./ga_module",
 				"scope": "ga_module",
@@ -16,79 +16,295 @@
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
+				"assets": {
+					"floorPinActive": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/VS_You_are_here-Map.svg",
+					"navigationMap": "https://cdn.obsess-vr.com/charlotte-tilbury/ct-map.svg"
+				},
 				"centered": true,
-				"selector": "welcome_modal",
-				"style": { "opacity": "1" },
-				"welcomeButtons": [
+				"closeIcon": "https://cdn.obsess-vr.com/charlotte-tilbury/ct-close-icon.png",
+				"containerStyling": {
+					"display": "flex",
+					"flexDirection": "row",
+					"height": "500px",
+					"justifyContent": "center",
+					"textAlign": "center",
+					"width": "100%"
+				},
+				"keyContainerStyling": {
+					"alignItems": "center",
+					"display": "flex",
+					"justifyContent": "center",
+					"width": "500px"
+				},
+				"keyStyling": { "margin": "0", "padding": "0 70px" },
+				"mapContainerStyling": {
+					"alignItems": "center",
+					"backgroundColor": "#eae6e6",
+					"display": "flex",
+					"justifyContent": "center",
+					"width": "500px"
+				},
+				"mapImgStyling": { "height": "auto", "width": "480px" },
+				"mapImgStylingMobile": { "height": "auto", "width": "300px" },
+				"mobileContainerStyling": {
+					"display": "flex",
+					"flexDirection": "column",
+					"height": "100%",
+					"textAlign": "center",
+					"width": "100%"
+				},
+				"mobileKeyContainerStyling": {
+					"alignItems": "center",
+					"display": "flex",
+					"justifyContent": "center",
+					"width": "100%"
+				},
+				"mobileKeyStyling": { "margin": "0", "padding": "20px" },
+				"mobileMapContainerStyling": {
+					"alignItems": "center",
+					"backgroundColor": "#eae6e6",
+					"display": "flex",
+					"height": "50vh",
+					"justifyContent": "center",
+					"width": "100%"
+				},
+				"options": [
 					{
-						"buttonText": "Sets + Kits",
-						"sceneId": "6273e9c1df3663299b45cd3e"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-icon.svg",
+						"keyLink": "Visit Now",
+						"mobileX": "-85",
+						"mobileY": "-55",
+						"name": "pillow-talk",
+						"sceneId": "6329c63bb62131c817f10e30",
+						"title": "Pillow Talk World",
+						"x": "-130",
+						"y": "-75"
 					},
 					{
-						"buttonText": "Bath + Body",
-						"sceneId": "62859b021465cb16e059bddd"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/skincare-icon.svg",
+						"keyLink": "Visit Now",
+						"mobileX": "63",
+						"mobileY": "-80",
+						"name": "skin-care",
+						"sceneId": "6329c65d22f6b1ee78596c35",
+						"title": "Skincare World",
+						"x": "100",
+						"y": "-150"
 					},
 					{
-						"buttonText": "Baby + Diapers",
-						"sceneId": "62859b11ccec5ecabdfa4e67"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/gifting-icon.svg",
+						"keyLink": "Visit Now",
+						"mobileX": "50",
+						"mobileY": "5",
+						"name": "entrance",
+						"sceneId": "63126fdf8589affbb91f09c1",
+						"title": "Gifting World",
+						"x": "-80",
+						"y": "-20"
 					},
 					{
-						"buttonText": "Gifts",
-						"sceneId": "627d256fc9063fc6722b8d76"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/poap-nft-icon.svg",
+						"keyLink": "Discover",
+						"mobileX": "0",
+						"mobileY": "5",
+						"name": "disco-ball",
+						"sceneId": "6329c57522f6b1ee78596c31",
+						"title": "FREE 2D poap nft",
+						"x": "10",
+						"y": "15"
 					},
 					{
-						"buttonText": "Beauty",
-						"sceneId": "62bd2b0f711455aa8cc316cc"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/live-events-icon.svg",
+						"keyLink": "Visit Now",
+						"mobileX": "-60",
+						"mobileY": "30",
+						"name": "live-events",
+						"sceneId": "6329c62c94869c7fdf4ad9ca",
+						"title": "Live Events",
+						"x": "-60",
+						"y": "70"
 					},
 					{
-						"buttonText": "Cleaning",
-						"sceneId": "6273e89e8aba2a11340f1e48"
+						"icon": "https://cdn.obsess-vr.com/charlotte-tilbury/metaverse-icon-1.png",
+						"keyLink": "Coming in November",
+						"mobileX": "-10",
+						"mobileY": "-80",
+						"name": "",
+						"sceneId": "",
+						"title": "Metaverse World",
+						"x": "30",
+						"y": "-65"
 					}
 				],
-				"welcomeContent": [
-					"Introducing a new way to shop Honest. Our virtual house lets you see how the Honest lifestyle can fit in your own home.",
-					"Shop room by room for the whole family + explore the clean conscious life. Bonus: Find all five hidden butterflies for an exclusive offer!"
-				],
-				"welcomeTitle": "Welcome to the Honest Home!"
+				"selector": "navigation_map"
+			},
+			"remoteConfig": {
+				"module": "./NavigationMap",
+				"scope": "navigation_map",
+				"url": "/ObsessVR/v2/component-library/feature-components/navigation-map/variant/charlotte-tilbury/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"maxLevels": 4,
+				"selector": "memory_game",
+				"translations": {
+					"de": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					},
+					"es": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					},
+					"fr": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					},
+					"it": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					},
+					"uk": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					},
+					"us": {
+						"endImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-2-v-08-en.png",
+						"playImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/play-now.png",
+						"startImage": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/game-3-v-08-en.png"
+					}
+				},
+				"useCountdown": false
+			},
+			"remoteConfig": {
+				"module": "./MemoryGameModal",
+				"scope": "memory_game_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/memory-game-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/welcome-screen.png",
+				"centered": true,
+				"selector": "welcome_modal",
+				"translations": {
+					"de": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/Welcome+-+In+Situ.png"
+					},
+					"es": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/CTWMSP.png"
+					},
+					"fr": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/CTWMFR.png"
+					},
+					"it": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/CTWMIT.png"
+					},
+					"uk": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/welcome-screen.png"
+					},
+					"us": {
+						"bgImageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/welcome-screen.png"
+					}
+				}
 			},
 			"remoteConfig": {
 				"module": "./WelcomeModal",
 				"scope": "welcome_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/honest/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/welcome-modal/variant/charlotte-tilbury/remoteEntry.js"
 			}
 		},
 		{
-			"kind": "modal",
-			"modalConfig": {
-				"animation": true,
-				"centered": true,
-				"enablePan": false,
-				"hotspotanimation": { "type": "none" },
-				"mobileStyling": {
-					"maxHeight": "50vh",
-					"maxWidth": "95vw",
-					"minHeight": "50vh",
-					"minWidth": "95vw"
+			"assets": {
+				"leftArrow": {
+					"height": "20px",
+					"url": "https://cdn.obsess-vr.com/charlotte-tilbury/arrow-left.png",
+					"width": "12px"
 				},
-				"selector": "zoom"
+				"rightArrow": {
+					"height": "20px",
+					"url": "https://cdn.obsess-vr.com/charlotte-tilbury/arrow-right.png",
+					"width": "12px"
+				}
 			},
-			"remoteConfig": {
-				"module": "./ZoomModal",
-				"scope": "zoom_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/zoom-modal/main/remoteEntry.js"
-			}
-		},
-		{
 			"kind": "modal",
 			"modalConfig": {
 				"animation": true,
 				"centered": true,
-				"selector": "product"
+				"selector": "product",
+				"translations": {
+					"de": {
+						"addToBag": "IN DEN WARENKORB",
+						"addedToBag": "Zum Warenkorb hinzugefügt",
+						"hideProductInformation": "PRODUKTINFORMATIONEN",
+						"productInformation": "PRODUKTINFORMATIONEN",
+						"readMore": "Weiterlesen",
+						"removeFromBag": "Entfernen",
+						"tryItOnMe": "An Mir Testen"
+					},
+					"es": {
+						"addToBag": "AÑADIR A LA CESTA",
+						"addedToBag": "AÑADIDO DE LA Bolsa",
+						"hideProductInformation": "INFORMACIÓN DEL PRODUCTO",
+						"productInformation": "INFORMACIÓN DEL PRODUCTO",
+						"readMore": "Más información",
+						"removeFromBag": "Eliminar",
+						"tryItOnMe": "Prueba personalizada"
+					},
+					"fr": {
+						"addToBag": "Ajouter au panier",
+						"addedToBag": "Ajouté au panier",
+						"hideProductInformation": "DÉTAILS DU PRODUIT",
+						"productInformation": "DÉTAILS DU PRODUIT",
+						"readMore": "En savoir plus",
+						"removeFromBag": "Supprimer",
+						"tryItOnMe": "Mon test personnalisé"
+					},
+					"it": {
+						"addToBag": "AGGIUNGI ALLA SHOPPING BAG",
+						"addedToBag": "Aggiunto alla shopping bag",
+						"hideProductInformation": "DETTAGLI PRODOTTO",
+						"productInformation": "DETTAGLI PRODOTTO",
+						"readMore": "Leggi di più",
+						"removeFromBag": "Elimina",
+						"tryItOnMe": "Provalo su di me"
+					},
+					"uk": {
+						"addToBag": "Add to bag",
+						"addedToBag": "Added to bag",
+						"hideProductInformation": "Hide Product Information",
+						"productInformation": "See Product Information",
+						"readMore": "Read more",
+						"removeFromBag": "Remove from bag",
+						"tryItOnMe": "Try it on me"
+					},
+					"us": {
+						"addToBag": "Add to bag",
+						"addedToBag": "Added to bag",
+						"hideProductInformation": "Hide Product Information",
+						"productInformation": "See Product Information",
+						"readMore": "Read more",
+						"removeFromBag": "Remove from bag",
+						"tryItOnMe": "Try it on me"
+					}
+				},
+				"vtoUrl": "https://holition-beauty-projects.holitionbeauty.com/build/external/branch/master/apps/product-display-app/deploy/version/1/?cms-client-id=23&features=none&carousel=true&filter=true&license=yDjAXxud0dY05kQbs-q-6_rdIsdE9OpJVF-HCEcPgK38dbBLtSaKuJB8J8H7CTCOzxBqsBmBHduDkYMZ1ukqhZUtMbAh97oW5V_a79p4md1U47PdxSZ-kbRyJ5_cnSXzSRv_Hq6ngF06_uJ9LanWx7CZyoLAqI5Fy-weuNkPUnTCeYjD6t2RCOHPSmqis7xZFuI0gqnPJuV6c3VH5sZgM3t_vemKHeWjST-QkvqIEl45gRpoRBJ9D3TTYud-x5KwFVNYbONIJviOF1u64uyUAD8X1li6KoOM7DQlImQ2z4m94DmILFlXqKZp7IjF7D_Rf95ZJt9ZQK_Zb68lgMgr2bYwVZnXkTsjY0EU-smetIbK7-e28OGRgnacaNPYZYZupRpsT9dYg5o1bNMHxGP8Q0BpPfoOyS0Qj3e2GmFzVqenJsBycal9qPk2X60IKL8KDtvxqVj_5LqVScubkumn-3moYhub32WnR601yA3USzYC3swHhHDYC-d7E2fhwc8OxKHTWeyFq6UeeacAr_6Lz-jbP1qcza9qTzXSV2_PVB2lM_sJ8YZU0mvIcjWvr5dJ6bhRQi9E1BsAktKfhQovrVi9L36GaDDObnP7rArXlAdBaBhbqtvvURo8d3O0jBje-p2kRktCgylUJPw1EJrFfPL5bVqAY-OnQVYWzg6tT1m-TO7hb4gXerNCe-gHWOw9PX0ivdaniiZU7nds"
 			},
 			"remoteConfig": {
 				"module": "./ProductModal",
 				"scope": "product_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/miniPDP/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/product-modal/variant/charlotte-tilbury/remoteEntry.js"
 			}
 		},
 		{
@@ -97,7 +313,7 @@
 				"animation": true,
 				"centered": true,
 				"selector": "video",
-				"size": "sm"
+				"size": "lg"
 			},
 			"remoteConfig": {
 				"module": "./VideoModal",
@@ -110,13 +326,61 @@
 			"modalConfig": {
 				"animation": true,
 				"centered": true,
+				"selector": "gem_game",
+				"size": "sm"
+			},
+			"remoteConfig": {
+				"module": "./GemsVideoModal",
+				"scope": "gem_collection_game_component",
+				"url": "/ObsessVR/v2/component-library/feature-components/gem-collection-game/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
+				"selector": "wall_of_fame_game",
+				"size": "sm",
+				"translations": {
+					"de": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/de/"
+					},
+					"es": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/es/"
+					},
+					"fr": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/fr/"
+					},
+					"it": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/it/"
+					},
+					"uk": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/uk/"
+					},
+					"us": {
+						"url": "https://cdn.obsess-vr.com/charlotte-tilbury/pillow-talk-party/wall-of-fame-game/us/"
+					}
+				}
+			},
+			"remoteConfig": {
+				"module": "./WallofFameGameModal",
+				"scope": "wall_of_fame_game_component",
+				"url": "/ObsessVR/v2/component-library/feature-components/wall-of-fame-game/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"centered": true,
 				"selector": "video_with_button",
-				"size": "md"
+				"size": "sm"
 			},
 			"remoteConfig": {
 				"module": "./VideoWithButtonModal",
 				"scope": "video_with_button_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/variant/honest/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/video-with-button-modal/main/remoteEntry.js"
 			}
 		},
 		{
@@ -152,12 +416,12 @@
 				"animation": true,
 				"centered": true,
 				"selector": "image_carousel",
-				"size": "lg"
+				"size": "sm"
 			},
 			"remoteConfig": {
 				"module": "./ImageCarouselModal",
 				"scope": "image_carousel_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/variant/honest/remoteEntry.js"
+				"url": "/ObsessVR/v2/component-library/webstore-modals/image-carousel-modal/main/remoteEntry.js"
 			}
 		},
 		{
@@ -172,6 +436,26 @@
 				"module": "./IFrameModal",
 				"scope": "iframe_modal",
 				"url": "/ObsessVR/v2/component-library/webstore-modals/iframe-modal/main/remoteEntry.js"
+			}
+		},
+		{
+			"kind": "modal",
+			"modalConfig": {
+				"animation": true,
+				"apiUrls": {
+					"beta": "https://api.beta.obsess-vr.com/poap/links//by-store-id/",
+					"prod": "https://api.obsess-vr.com/poap/links/by-store-id/"
+				},
+				"centered": true,
+				"linksRunOutImage": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/links-run-out-image.png",
+				"runOutImageIframeSrc": "https://www.charlottetilbury.com/uk/content/poap-nft-waitlist",
+				"selector": "poap_iframe",
+				"size": "lg"
+			},
+			"remoteConfig": {
+				"module": "./PoapIFrameModal",
+				"scope": "poap_iframe_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/poap-iframe-modal/main/remoteEntry.js"
 			}
 		},
 		{
@@ -193,37 +477,6 @@
 			"modalConfig": {
 				"animation": true,
 				"centered": true,
-				"closeIconStylingMobile": {
-					"backgroundColor": "transparent",
-					"borderRadius": 0,
-					"filter": "invert(1)",
-					"height": "3rem",
-					"positiom": "absolute",
-					"right": 0,
-					"top": 0,
-					"width": "3rem"
-				},
-				"modalDescripstion": [
-					"You found your first butterfly, find the remaining 4 butterflies for a special discount.",
-					"You found your second butterfly, find the remaining 3 butterflies for a special discount.",
-					"You found your third butterfly, find the remaining 2 butterflies for a special discount.",
-					"You found your fourth butterfly, find the remaining 1 butterflies for a special discount.",
-					"Use this code to receive 15% off at checkout"
-				],
-				"modalHeader": "Congrats!",
-				"selector": "butterfly_game"
-			},
-			"remoteConfig": {
-				"module": "./ButterflyGameModal",
-				"scope": "butterfly_collection_game_component",
-				"url": "/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"
-			}
-		},
-		{
-			"kind": "modal",
-			"modalConfig": {
-				"animation": true,
-				"centered": true,
 				"selector": "youtube_embed",
 				"size": "lg"
 			},
@@ -238,13 +491,13 @@
 			"modalConfig": {
 				"animation": true,
 				"centered": true,
-				"selector": "image_zoom_modal",
+				"selector": "masterclass_schedule_modal",
 				"size": "sm"
 			},
 			"remoteConfig": {
-				"module": "./ImageZoomModal",
-				"scope": "image_zoom_modal",
-				"url": "/ObsessVR/v2/component-library/webstore-modals/image-zoom-modal/main/remoteEntry.js"
+				"module": "./EventCountdownModal",
+				"scope": "event_countdown_modal",
+				"url": "/ObsessVR/v2/component-library/webstore-modals/event-countdown-modal/main/remoteEntry.js"
 			}
 		}
 	],
@@ -253,38 +506,14 @@
 			"remoteConfig": {
 				"module": "./cart_modules",
 				"scope": "cart_controller_module",
-				"url": "/ObsessVR/v2/modules-library/cart-controller/variant/honest/remoteEntry.js"
+				"url": "/ObsessVR/v2/modules-library/cart-controller/variant/charlotte-tilbury/remoteEntry.js"
 			}
 		},
 		"getProductData": {
-			"envConfigs": {
-				"beta": {
-					"CLIENT_ID": "af30b7a4-5006-42b7-82f1-f47482939c19",
-					"CLIENT_SECRET": "XB2Jz3V95ebshWk2",
-					"SFCC_BASE_URL": "https://development.honest.com/s/honest/dw/shop/v19_8"
-				},
-				"client": {
-					"CLIENT_ID": "a31b84a4-9dcd-4a81-9c3e-14910c206742",
-					"CLIENT_SECRET": "6NkGHUAIA5j1CU4",
-					"SFCC_BASE_URL": "https://www.honest.com/s/honest/dw/shop/v19_8"
-				},
-				"production": {
-					"CLIENT_ID": "a31b84a4-9dcd-4a81-9c3e-14910c206742",
-					"CLIENT_SECRET": "6NkGHUAIA5j1CU4",
-					"SFCC_BASE_URL": "https://www.honest.com/s/honest/dw/shop/v19_8"
-				}
-			},
 			"remoteConfig": {
 				"module": "./product_modules",
 				"scope": "product_data_module",
-				"url": "/ObsessVR/v2/modules-library/product-data/feature/honest-new/remoteEntry.js"
-			}
-		},
-		"wishlistController": {
-			"remoteConfig": {
-				"module": "./wishlist_modules",
-				"scope": "wishlist_controller_module",
-				"url": "/ObsessVR/v2/modules-library/wishlist-controller/variant/honest/remoteEntry.js"
+				"url": "/ObsessVR/v2/modules-library/product-data/variant/charlotte-tilbury/remoteEntry.js"
 			}
 		}
 	},
@@ -293,340 +522,433 @@
 			{
 				"components": [
 					{
+						"defaultTexts": {
+							"GAME": {
+								"buttonCopy": "PLAY TO UNLOCK",
+								"copyAfterUnlock": "Congratulations, darling! You have unlocked your FREE! MAGIC GIFT!",
+								"copyBeforeUnlock": "Darling, PLAY FOR A CHANCE TO WIN*Play my STUDIO TILBURY DANCEFLOOR GAME to unlock a MAGICAL GIFT on your next order*",
+								"tabName": "GAME"
+							},
+							"METAVERSE": {
+								"buttonCopy": "NOTIFY ME",
+								"copy": "Darlings, COMING SOON! Unlock my MAGIC AVATAR METAVERSE! Discover the world’s first customisable AVATAR to shop live with friends and claim your FREE! POAP NFT!",
+								"tabName": "METAVERSE"
+							},
+							"POAP_NFT": {
+								"copy": "Darlings, claim your FREE! exclusive NFT! We're gifting you a POAP (Proof of Attendance Protocol) NFT- it's like a magical virtual wristband for you to keep! Simply sign up with your email address and we'll send you a link to claim it! Signing up for your exclusive NFT will unlock future treasures, so don't forget darlings to come back in November to claim your SECOND FREE! POAP NFT!",
+								"tabName": "POAP NFT"
+							},
+							"SHOP": {
+								"copy": "Darlings, SHOP an edit of my MAKEUP AND SKINCARE MAGIC!",
+								"tabName": "SHOP"
+							},
+							"addToBag": {
+								"comingInNovember": "COMING IN NOVEMBER",
+								"continueShopping": "CONTINUE SHOPPING",
+								"copy": "Darling, you have not added anything to your basket just yet",
+								"discover": "DISCOVER",
+								"placeOrder": "PLACE ORDER",
+								"seeProductInformations": "SEE PRODUCT INFORMATION",
+								"visitNow": "VISIT NOW",
+								"youAreHere": "YOU ARE HERE"
+							}
+						},
 						"kind": "component",
-						"name": "store_logo",
+						"menuIcons": [
+							{
+								"name": "avatar",
+								"url": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/avatar-icon.svg",
+								"scenesToDisplay": ["real-time"]
+							},
+							{
+								"name": "map",
+								"url": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/VS_Map_icon.svg"
+							},
+							{
+								"name": "cart",
+								"url": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/VS_Bag-76.svg"
+							},
+							{
+								"name": "closeOrOpen",
+								"urls": {
+									"close": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/Vs_Close-77.svg",
+									"open": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/VS_Burger_Menu.svg"
+								}
+							}
+						],
+						"name": "bottom_tab_menu",
+						"navLinks": [
+							{
+								"selector": "SHOP",
+								"skuList": [
+									"charlottes-magic-cream",
+									"charlottes-magic-serum-crystal-elixir",
+									"matte-revolution-lipstick-pillowtalk-2",
+									"collagen-plumping-lipgloss-pillow-talk",
+									"pillow-talk-beautifying-lip-gift-set",
+									"dreamy-superstar-glow-gift-set",
+									"pillow-talk-face-palette-fair-med"
+								]
+							},
+							{
+								"imageUrls": {
+									"twoDTokenImg": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/2d-token-image.png"
+								},
+								"navigateScene": "disco-ball",
+								"selector": "POAP_NFT",
+								"selector_to_dispatch": "poap_iframe"
+							},
+							{
+								"footer_copy": "*Minimum Spend Required, Countries Restrictions & T&C's Apply",
+								"gameModalData": {
+									"backgroundImage": "https://cdn.obsess-vr.com/charlotte-tilbury/game/background.jpeg",
+									"button_copy": "PLAY GAME",
+									"defaultColor": "#F3A59C",
+									"height": 3,
+									"imageUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/game/puzzle-icon-1.svg",
+									"reduxSelector": "memoryGameReducer",
+									"secondaryColor": "#F391CF",
+									"selector": "memory_game",
+									"sub_title": "The cards will light up in an order that you have to repeat in order to progress.",
+									"tileIcon": "https://cdn.obsess-vr.com/charlotte-tilbury/game/logo.svg",
+									"title": "Memory Game",
+									"width": 3
+								},
+								"imageUrls": {
+									"lockedImageSrc": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/game-locked.png",
+									"unlockedImageSrc": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/game-unlocked.png"
+								},
+								"selector": "GAME"
+							},
+							{
+								"countDownDate": "11/15/2022",
+								"modalToDisplay": {
+									"selector": "iframe",
+									"src": "https://www.charlottetilbury.com/uk/content/virtual-store-3d-sign-up"
+								},
+								"selector": "METAVERSE"
+							}
+						],
 						"remoteConfig": {
-							"module": "./StoreLogo",
-							"scope": "store_logo",
-							"url": "/ObsessVR/v2/component-library/feature-components/store-logo/main/remoteEntry.js"
+							"module": "./BottomTabMenu",
+							"scope": "bottom_tab_menu",
+							"url": "/ObsessVR/v2/component-library/feature-components/bottom-tab-menu/feature/7984-3d-avatar/remoteEntry.js"
+						},
+						"storeLogo": "https://obsessvr-webstore-assets-public.s3.amazonaws.com/charlotte-tilbury/bottom-bar/ct-logo.png",
+						"translations": {
+							"de": {
+								"GAME": {
+									"buttonCopy": "SPIELEN UND GESCHENKE FREISCHALTEN",
+									"copyAfterUnlock": "Glückwunsch, Darling! Du hast dir dein MAGISCHE GESCHENK erspielt! ",
+									"copyBeforeUnlock": "SPIELEN UND GEWINNEN, Darling! Bei meinem DISCO-TANZFLÄCHEN-SPIEL gibt es zu jeder Bestellung ein MAGISCHES GESCHENK! *",
+									"tabName": "SPIEL"
+								},
+								"METAVERSE": {
+									"buttonCopy": "BENACHRICHTIGE MICH",
+									"copy": "Darling, BALD VERFÜGBAR! Entdecke mein MAGISCHES AVATAR-METAVERSUM! Entdecke den weltweit ersten personalisierbaren Avatar, um mit Freunden live zu shoppen, und fordere deinen KOSTENLOSEN! POAP NFT an! Mein MAGISCHES AVATAR-METAVERSUM öffnet in:",
+									"tabName": "METAVERSUM"
+								},
+								"POAP_NFT": {
+									"copy": "Darling, hol dir dein KOSTENLOSES! exklusives NFT! Wir schenken dir ein POAP (Proof of Attendance Protokoll) NFT − eine Art magisches virtuelles Armband! Melde dich einfach mit deiner E-Mail-Adresse an und wir senden dir einen Link, mit dem du es anfordern kannst! Mit deinem exklusiven NFT kannst du zukünftige Schätze heben, Darling, also schau unbedingt im November wieder vorbei und hol dir dein ZWEITES KOSTENLOSES! POAP NFT!",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darling, ENTDECKE meine BELIEBTESTEN MAKE-UP-PRODUKTE und MAGISCHE, WISSENSCHAFTSBASIERTE HAUTPFLEGE!",
+									"tabName": "SHOPPEN"
+								},
+								"addToBag": {
+									"comingInNovember": "NEUHEITEN IM NOVEMBER",
+									"continueShopping": "WEITER EINKAUFEN",
+									"copy": "Darling, du hast deinem Warenkorb noch nichts hinzugefügt",
+									"discover": "ENTDECKEN",
+									"placeOrder": "BESTELLUNG AUFGEBEN",
+									"seeProductInformations": "SIEHE PRODUKTINFORMATIONEN",
+									"visitNow": "JETZT EINTRETEN",
+									"youAreHere": "DU BIST DA"
+								}
+							},
+							"es": {
+								"GAME": {
+									"buttonCopy": "JUEGA PARA LOGRARLO",
+									"copyAfterUnlock": "¡Enhorabuena, darling! ¡Has conseguido tu REGALO MÁGICO! ",
+									"copyBeforeUnlock": "Darling, JUEGA PARA GANAR. Entra en mi JUEGO DE LA PISTA DE BAILE para conseguir un REGALO MÁGICO con cada pedido.*",
+									"tabName": "JUEGO"
+								},
+								"METAVERSE": {
+									"buttonCopy": "RECIBIR UNA NOTIFICACIÓN",
+									"copy": "DARLING, ¡TE TRAIGO NOVEDADES! ¡Accede a mi METAVERSO DE AVATARES MÁGICOS! Descubre el primer avatar personalizable del mundo para comprar en directo en grupo y solicita tu POAP GRATIS! Mi METAVERSO DE AVATARES MÁGICOS estará disponible en:",
+									"tabName": "METAVERSO"
+								},
+								"POAP_NFT": {
+									"copy": "Darling, pide tu NFT exclusivo GRATIS. Regalamos un POAP (certificado NFT de asistencia), ¡es como una pulsera de asistencia virtual! ¡Regístrate con tu dirección de correo electrónico y te enviaremos un enlace para que lo solicites! Tu NFT exclusivo te dará acceso a futuros tesoros, ¡no te olvides de volver en noviembre para solicitar tu SEGUNDO POAP GRATIS!",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darling, COMPRA mi MAQUILLAJE GALARDONADO y CUIDADOS con MAGIA + CIENCIA",
+									"tabName": "COMPRA"
+								},
+								"addToBag": {
+									"comingInNovember": "DISPONIBLE EN NOVIEMBRE",
+									"continueShopping": "SEGUIR COMPRANDO",
+									"copy": "Darling, todavía no has añadido productos a tu cesta",
+									"discover": "DESCUBRIR",
+									"placeOrder": "HACER PEDIDO",
+									"seeProductInformations": "VER LA INFORMACIÓN DEL PRODUCTO",
+									"visitNow": "VISITAR AHORA",
+									"youAreHere": "ESTÁS AQUÍ"
+								}
+							},
+							"fr": {
+								"GAME": {
+									"buttonCopy": "JOUER POUR DÉBLOQUER",
+									"copyAfterUnlock": "Félicitations, darling ! Vous avez débloqué votre CADEAU MAGIQUE ! ",
+									"copyBeforeUnlock": "Darlings, JOUEZ POUR GAGNER ! Jouez à mon JEU DANCEFLOOR DISCO pour débloquer un CADEAU MAGIQUE avec chaque commande !*",
+									"tabName": "JEU"
+								},
+								"METAVERSE": {
+									"buttonCopy": "M'ENVOYER UNE NOTIFICATION",
+									"copy": "Darlings, PROCHAINEMENT ! Découvrez mon MÉTAVERS D'AVATARS MAGIQUES ! Découvrez le premier Avatar personnalisable au monde pour faire vos achats en direct entre amis et obtenez votre POAP NFT GRATUIT! Mon MÉTAVERS d'AVATARS MAGIQUES sera disponible dans :",
+									"tabName": "MÉTAVERS"
+								},
+								"POAP_NFT": {
+									"copy": "Darlings, obtenez votre NFT GRATUIT et en exclusivité ! Nous vous offrons un POAP (Protocole d'attestation de présence) NFT– c'est comme un bracelet magique virtuel rien que pour vous ! Il vous suffit de vous inscrire avec votre adresse e-mail et nous vous enverrons un lien qui vous permettra de l'obtenir ! Votre NFT exclusif vous permettra de débloquer de futurs trésors, alors darlings, en novembre n'oubliez pas de réclamer votre DEUXIÈME POAP NFT, également GRATUIT !",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darlings, ACHETEZ mes PRODUITS DE MAQUILLAGE et de SOINS LES PLUS VENDUS !",
+									"tabName": "ACHETER"
+								},
+								"addToBag": {
+									"comingInNovember": "DISPONIBLE EN NOVEMBRE",
+									"continueShopping": "CONTINUEZ VOS ACHATS",
+									"copy": "Darling, vous n'avez rien ajouté à votre panier pour l'instant",
+									"discover": "DÉCOUVRIR",
+									"placeOrder": "PASSER COMMANDE",
+									"seeProductInformations": "AFFICHER LES DÉTAILS DU PRODUIT",
+									"visitNow": "VISITER",
+									"youAreHere": "VOUS ÊTES ICI"
+								}
+							},
+							"it": {
+								"GAME": {
+									"buttonCopy": "GIOCA PER SCOPRIRLO",
+									"copyAfterUnlock": "Congratulazioni, darling! Hai ottenuto il tuo MAGICO REGALO!",
+									"copyBeforeUnlock": "Darling, GIOCA PER VINCERE! Gioca al mio DISCO GAME SULLA PISTA DA BALLO per ottenere un MAGICO REGALO con qualsiasi ordine! *",
+									"tabName": "GIOCO"
+								},
+								"METAVERSE": {
+									"buttonCopy": "AVVISAMI",
+									"copy": "Darling, ARRIVERÀ PRESTO! Scopri il METAVERSO DEL MIO MAGICO AVATAR! Scopri il primo Avatar personalizzabile al mondo per acquistare in diretta con gli amici e ottenere GRATIS il tuo POAP NFT! Il METAVERSO DEL MIO MAGICO AVATAR aprirà tra:",
+									"tabName": "METAVERSO"
+								},
+								"POAP_NFT": {
+									"copy": "Darling, ottieni GRATIS il tuo esclusivo NFT! Ti regaliamo un POAP (Proof of Attendance Protocol) NFT: è come un magico braccialetto virtuale da conservare! Iscriviti con il tuo indirizzo email e ti invieremo il link per ottenerlo! Il tuo NFT esclusivo sarà la chiave per tesori futuri, quindi ricorda di tornare a novembre per ottenere GRATIS il SECONDO POAP NFT!",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darling, ACQUISTA una delle mie selezioni di MAKE-UP e SKINCARE MAGIA + SCIENZA!",
+									"tabName": "ACQUISTA"
+								},
+								"addToBag": {
+									"comingInNovember": "IN ARRIVO A NOVEMBRE",
+									"continueShopping": "CONTINUA LO SHOPPING",
+									"copy": "Darling, non hai ancora aggiunto nulla al tuo carrello",
+									"discover": "SCOPRI",
+									"placeOrder": "EFFETTUA L'ORDINE",
+									"seeProductInformations": "VISUALIZZA LE INFORMAZIONI SUL PRODOTTO",
+									"visitNow": "VISITA ORA",
+									"youAreHere": "SEI QUI"
+								}
+							},
+							"uk": {
+								"GAME": {
+									"buttonCopy": "PLAY TO UNLOCK",
+									"copyAfterUnlock": "Congratulations, darling! You have unlocked your FREE! MAGIC GIFT!",
+									"copyBeforeUnlock": "Darling, PLAY FOR A CHANCE TO WIN*Play my STUDIO TILBURY DANCEFLOOR GAME to unlock a MAGICAL GIFT on your next order*",
+									"tabName": "GAME"
+								},
+								"METAVERSE": {
+									"buttonCopy": "NOTIFY ME",
+									"copy": "Darlings, COMING SOON! Unlock my MAGIC AVATAR METAVERSE! Discover the world’s first customisable Avatar to shop live with friends and claim your FREE! POAP NFT! My MAGIC AVATAR METAVERSE will be opening in:",
+									"tabName": "METAVERSE"
+								},
+								"POAP_NFT": {
+									"copy": "Darlings, claim your FREE! exclusive NFT! We’re gifting you a POAP (Proof of Attendance Protocol) NFT – it’s like a magical virtual wristband for you to keep! Simply sign up with your email address and we’ll send you a link to claim it! Signing up for your exclusive NFT will unlock future treasures, so remember to come back in November to claim your SECOND FREE! POAP NFT!",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darlings, SHOP an edit of my BEST-SELLING MAKEUP and MAGIC + SCIENCE SKINCARE!",
+									"tabName": "SHOP"
+								},
+								"addToBag": {
+									"comingInNovember": "COMING IN NOVEMBER",
+									"continueShopping": "CONTINUE SHOPPING",
+									"copy": "Darling, you have not added anything to your basket just yet",
+									"discover": "DISCOVER",
+									"placeOrder": "PLACE ORDER",
+									"seeProductInformations": "SEE PRODUCT INFORMATION",
+									"visitNow": "VISIT NOW",
+									"youAreHere": "YOU ARE HERE"
+								}
+							},
+							"us": {
+								"GAME": {
+									"buttonCopy": "PLAY TO UNLOCK",
+									"copyAfterUnlock": "Congratulations, darling! You have unlocked your FREE! MAGIC GIFT!",
+									"copyBeforeUnlock": "Darling, PLAY FOR A CHANCE TO WIN*Play my STUDIO TILBURY DANCEFLOOR GAME to unlock a MAGICAL GIFT on your next order*",
+									"tabName": "GAME"
+								},
+								"METAVERSE": {
+									"buttonCopy": "NOTIFY ME",
+									"copy": "Darlings, COMING SOON! Unlock my MAGIC AVATAR METAVERSE! Discover the world’s first customisable Avatar to shop live with friends and claim your FREE! POAP NFT! My MAGIC AVATAR METAVERSE will be opening in:",
+									"tabName": "METAVERSE"
+								},
+								"POAP_NFT": {
+									"copy": "Darlings, claim your FREE! exclusive NFT! We’re gifting you a POAP (Proof of Attendance Protocol) NFT– it’s like a magical virtual wristband for you to keep! Simply sign up with your email address and we’ll send you a link to claim it! Your exclusive NFT will unlock future treasures, so don’t forget darlings to come back in November to claim your SECOND FREE! POAP NFT!",
+									"tabName": "POAP NFT"
+								},
+								"SHOP": {
+									"copy": "Darlings, SHOP an edit of my BEST-SELLING MAKEUP and MAGIC + SCIENCE SKINCARE!",
+									"tabName": "SHOP"
+								},
+								"addToBag": {
+									"comingInNovember": "COMING IN NOVEMBER",
+									"continueShopping": "CONTINUE SHOPPING",
+									"copy": "Darling, you have not added anything to your basket just yet",
+									"discover": "DISCOVER",
+									"placeOrder": "PLACE ORDER",
+									"seeProductInformations": "SEE PRODUCT INFORMATION",
+									"visitNow": "VISIT NOW",
+									"youAreHere": "YOU ARE HERE"
+								}
+							}
+						}
+					}
+				],
+				"containerStyling": {
+					"bottom": "0px",
+					"left": "0px",
+					"position": "fixed",
+					"right": "0px",
+					"textAlign": "center",
+					"zIndex": 1
+				},
+				"containerStylingMobile": {
+					"bottom": "0px",
+					"left": "0px",
+					"position": "fixed",
+					"right": "0px",
+					"textAlign": "center",
+					"zIndex": 1
+				},
+				"kind": "container"
+			},
+			{
+				"components": [
+					{
+						"iconStyling": { "height": "2em", "width": "auto" },
+						"kind": "component",
+						"name": "cart_component",
+						"remoteConfig": {
+							"module": "./CartComponent",
+							"scope": "cart_component",
+							"url": "/ObsessVR/v2/component-library/feature-components/cart-component/variant/charlotte-tilbury/remoteEntry.js"
 						},
 						"styling": {
-							"height": "auto",
-							"left": "3%",
-							"position": "fixed",
-							"top": "0.65rem",
-							"width": "7rem"
-						}
-					},
-					{
-						"components": [
-							{
-								"iconStyling": {
-									"height": "auto",
-									"margin": "0 0.25rem",
-									"width": "1.375rem"
-								},
-								"kind": "component",
-								"name": "wishlist_component",
-								"remoteConfig": {
-									"module": "./WishlistComponent",
-									"scope": "wishlist_component",
-									"url": "/ObsessVR/v2/component-library/feature-components/wishlist-component/variant/honest/remoteEntry.js"
-								}
+							"alignItems": "center",
+							"display": "flex",
+							"flexDirection": "column"
+						},
+						"translations": {
+							"de": {
+								"bagHeading2": "Alle Artikel in deinem Warenkorb werden hier angezeigt",
+								"noBagItem": "DEIN WARENKORB IST LEER",
+								"placeOrder": "Warenkorb ansehen",
+								"removeFromBag": "Entfernen"
 							},
-							{
-								"componentsToHide": [
-									".butterfly-collection-status-container",
-									".powered-by-obsess"
-								],
-								"iconStyling": {
-									"height": "auto",
-									"margin": "0 1rem",
-									"width": "1.375rem"
-								},
-								"kind": "component",
-								"name": "cart_component",
-								"remoteConfig": {
-									"module": "./CartComponent",
-									"scope": "cart_component",
-									"url": "/ObsessVR/v2/component-library/feature-components/cart-component/variant/honest/remoteEntry.js"
-								}
+							"es": {
+								"bagHeading2": "Cuando añadas artículos a tu bolsa, aparecerán aquí",
+								"noBagItem": "NO HAY ARTÍCULOS EN TU BOLSA",
+								"placeOrder": "Ver bolsa y pagar",
+								"removeFromBag": "Eliminar"
 							},
-							{
-								"closeIcon": "https://cdn.obsess-vr.com/honest/navigationMenu/close.svg",
-								"componentsToHide": [
-									".butterfly-collection-status-container",
-									".powered-by-obsess"
-								],
-								"defaultOpenScene": "6273e88c986aec8f812ed072",
-								"iconStyling": {
-									"height": "1rem",
-									"margin": "0 1.5rem 0 0.5rem",
-									"width": "1.375rem"
-								},
-								"isOverlayCloseIcon": true,
-								"kind": "component",
-								"name": "navigation_menu",
-								"navItemSelectImg": "https://cdn.obsess-vr.com/honest/navigationMenu/checkImg.svg",
-								"options": [
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/LivingRoom.svg",
-										"label": "Living Room",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/LivingRoom.svg",
-										"sceneId": "6273e9c1df3663299b45cd3e",
-										"subLabel": "Sets & Kits<br>Baby & Diapers<br>Gifts"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Kitchen.svg",
-										"label": "Kitchen",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Kitchen.svg",
-										"sceneId": "6273e89e8aba2a11340f1e48",
-										"subLabel": "Cleaning<br>Wellness<br>Sets & Kits"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Bathroom.svg",
-										"label": "Bathroom",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Bathroom.svg",
-										"sceneId": "62859b021465cb16e059bddd",
-										"subLabel": "Beauty<br>Bath & Body<br>Wellness<br>Baby & Diapers<br>Sets & Kits"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Greenhouse.svg",
-										"label": "Greenhouse",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Greenhouse.svg",
-										"sceneId": "628d147d3160d61e071d667b",
-										"subLabel": "Bath & Body"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Babyroom.svg",
-										"label": "Babyroom",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Babyroom.svg",
-										"sceneId": "62859b11ccec5ecabdfa4e67",
-										"subLabel": "Baby & Diapers<br>Subscriptions"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Bedroom.svg",
-										"label": "Bedroom",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Bedroom.svg",
-										"sceneId": "62859aef9a439a8bfc80198a",
-										"subLabel": "Sets & Kits"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Vanity.svg",
-										"label": "Vanity",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Vanity.svg",
-										"sceneId": "62bd2b0f711455aa8cc316cc",
-										"subLabel": "Beauty"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/LaundryRoom.svg",
-										"label": "Laundry Room",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/LaundryRoom.svg",
-										"sceneId": "6286614dd6643f86af0b7302",
-										"subLabel": "Cleaning"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Foyer.svg",
-										"label": "Foyer",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Foyer.svg",
-										"sceneId": "6273e88c986aec8f812ed072",
-										"subLabel": "Baby & Diapers<br>Beauty<br>Gear"
-									},
-									{
-										"image": "https://cdn.obsess-vr.com/honest/navigationMenu/Entrance.svg",
-										"label": "Entrance",
-										"mobileImage": "https://cdn.obsess-vr.com/honest/navigationMenu/Entrance.svg",
-										"sceneId": "627894403806cd128c41c0d2",
-										"subLabel": "Baby & Diapers<br>Subscriptions"
-									}
-								],
-								"remoteConfig": {
-									"module": "./NavigationMenu",
-									"scope": "navigation_menu",
-									"url": "/ObsessVR/v2/component-library/feature-components/navigation-menu/variant/honest/remoteEntry.js"
-								},
-								"showToolTipOverlay": true,
-								"styling": { "marginRight": "0.5rem" },
-								"visitedNavStyling": {
-									"height": "14px",
-									"position": "absolute",
-									"right": "-5px",
-									"top": "-4px",
-									"width": "14px"
-								}
+							"fr": {
+								"bagHeading2": "Une fois que vous avez ajouté des articles à votre panier, ils apparaitront ici.",
+								"noBagItem": "IL N'Y A PAS D'ARTICLES DANS VOTRE SAC",
+								"placeOrder": "Passer à la caisse",
+								"removeFromBag": "Supprimer"
+							},
+							"it": {
+								"bagHeading2": "Una volta aggiunto un articolo alla shopping bag, verrà mostrato qui",
+								"noBagItem": "LA TUA SHOPPING BAG È VUOTA",
+								"placeOrder": "Procedi al pagamento",
+								"removeFromBag": "Elimina"
+							},
+							"uk": {
+								"bagHeading2": "Once you have added items to your bag, they will appear here",
+								"noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
+								"placeOrder": "Place order",
+								"removeFromBag": "Remove from bag"
+							},
+							"us": {
+								"bagHeading2": "Once you have added items to your bag, they will appear here",
+								"noBagItem": "THERE ARE NO ITEMS IN YOUR BAG",
+								"placeOrder": "Place order",
+								"removeFromBag": "Remove from bag"
 							}
-						],
-						"containerStyling": {
-							"alignItems": "center",
-							"display": "flex",
-							"flexDirection": "row",
-							"height": "inherit",
-							"position": "fixed",
-							"right": "0"
-						},
-						"containerStylingMobile": {
-							"alignItems": "center",
-							"display": "flex",
-							"flexDirection": "row",
-							"height": "inherit",
-							"justifyContent": "right",
-							"position": "fixed",
-							"right": "-5%"
-						},
-						"kind": "container"
-					}
-				],
-				"containerStyling": {
-					"background": "rgba(255, 255, 255, 0.6)",
-					"height": "3rem",
-					"position": "fixed",
-					"top": 0,
-					"webkitBackdropFilter": "blur(100px)",
-					"width": "100%"
-				},
-				"kind": "container"
-			},
-			{
-				"components": [
-					{
-						"kind": "component",
-						"name": "powered_by_obsess",
-						"remoteConfig": {
-							"module": "./PoweredByObsess",
-							"scope": "powered_by_obsess",
-							"url": "/ObsessVR/v2/component-library/feature-components/powered-by-obsess/main/remoteEntry.js"
-						},
-						"textStyling": {
-							"color": "white",
-							"fontSize": "0.9rem"
 						}
 					}
 				],
 				"containerStyling": {
-					"bottom": 0,
-					"left": 0,
-					"padding": "4px",
+					"display": "flex",
+					"padding": "8px",
 					"position": "fixed",
-					"zIndex": -1
-				},
-				"kind": "container"
-			},
-			{
-				"components": [
-					{
-						"components": [
-							{
-								"butterflyAssets": [
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-0.png",
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-1.png",
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-2.png",
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-3.png",
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-4.png",
-									"https://cdn.obsess-vr.com/honest/butterfly-game/butterfly-5.png"
-								],
-								"defaultNotOpenScene": "6273e88c986aec8f812ed072",
-								"isOverlayCloseIcon": true,
-								"kind": "component",
-								"name": "butterfly_collection_game_component",
-								"remoteConfig": {
-									"module": "./ButterflyCollectionStatusUI",
-									"scope": "butterfly_collection_game_component",
-									"url": "/ObsessVR/v2/component-library/feature-components/collection-game/variant/butterfly/remoteEntry.js"
-								}
-							}
-						],
-						"containerStyling": {
-							"bottom": "2rem",
-							"left": "0.5rem",
-							"position": "fixed",
-							"zIndex": "-2"
-						},
-						"containerStylingMobile": {
-							"top": "4rem",
-							"left": "0.4rem",
-							"position": "fixed",
-							"zIndex": "-2"
-						},
-						"kind": "container"
-					}
-				],
-				"containerStyling": {
-					"bottom": "2rem",
-					"left": "0.5rem",
-					"position": "fixed",
-					"zIndex": "-2"
-				},
-				"kind": "container"
-			},
-			{
-				"components": [
-					{
-						"closeIcon": "https://cdn.obsess-vr.com/honest/adamodal/modal-close-icon-normal.svg",
-						"closeIconStyling": { "background": "#BBCDC3" },
-						"iconStyling": { "height": "40px", "width": "40px" },
-						"iconUrl": "https://cdn.obsess-vr.com/honest/adamodal/accessibility-icon.svg",
-						"kind": "component",
-						"modalData": {
-							"hotspotMarkers": "https://cdn.obsess-vr.com/honest/adamodal/ada-hotspot.svg",
-							"navigationArrows": "https://cdn.obsess-vr.com/honest/adamodal/ada-1.svg",
-							"sceneRotate": "https://cdn.obsess-vr.com/honest/adamodal/ada-2.svg"
-						},
-						"name": "ada_accessibility_info",
-						"remoteConfig": {
-							"module": "./ADAAccessibilityInfo",
-							"scope": "ada_accessibility_info",
-							"url": "/ObsessVR/v2/component-library/feature-components/ada-accessibility-info/variant/honest/remoteEntry.js"
-						},
-						"styling": {}
-					}
-				],
-				"containerStyling": {
-					"bottom": "24px",
-					"padding": "0.25rem",
-					"position": "fixed",
-					"right": "29px"
+					"right": 0,
+					"top": 0
 				},
 				"kind": "container"
 			}
 		],
 		"kind": "container"
 	},
-	"sceneTransition": [
-		{
-			"remoteConfig": {
-				"module": "./SceneTransition",
-				"scope": "scene_transition",
-				"url": "/ObsessVR/v2/component-library/feature-components/scene-transition/variant/honest/remoteEntry.js"
+	"preSceneComponent": {
+		"enterButtonStyle": {
+			"backgroundColor": "rgb(52, 12, 12)",
+			"border": "2px solid rgb(205, 179, 163)",
+			"cursor": "pointer",
+			"fontFamily": "HelveticaNeue-Condensed",
+			"fontSize": "17px",
+			"height": "45px",
+			"width:": "200px !important"
+		},
+		"overlayBg": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/entrance_desktop.jpg",
+		"overlayBgMobile": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/entrance_mobile.jpg",
+		"remoteConfig": {
+			"module": "./PreSceneComponent",
+			"scope": "pre_scene_component",
+			"url": "/ObsessVR/v2/component-library/feature-components/pre-scene-component/main/remoteEntry.js"
+		},
+		"translations": {
+			"de": {
+				"welcomeMessage": "DARLING! SEI BEI MEINER NEUEN! VIRTUELLEN PILLOW TALK PARTY DABEI"
 			},
-			"sceneModal": "video_with_button",
-			"sceneModalData": {
-				"hotspot_type": "video_with_button",
-				"url": {
-					"origin": "cdn",
-					"path": "clients/Obsess/62696219b9aca18715d5b3b9/images/hotspots/76831Honest_brand.mp4"
-				},
-				"visible": true
+			"es": {
+				"welcomeMessage": "¡DARLING! ÚNETE A MI NUEVA PILLOW TALK PARTY"
 			},
-			"sceneName": "view-2",
-			"selector": "scene_transition_1"
-		}
-	],
-	"tooltips": [
-		{
-			"remoteConfig": {
-				"module": "./ProductTooltip",
-				"scope": "product_tooltip",
-				"url": "/ObsessVR/v2/component-library/feature-components/product-tooltip/main/remoteEntry.js"
+			"fr": {
+				"welcomeMessage": "DARLINGS! REJOIGNEZ MA NOUVELLE PILLOW TALK PARTY VIRTUELLE"
 			},
-			"properties": {
-				"width": "20em",
-				"height": "7em",
-				"fontFamily": "BrandonTextRegular",
-				"titleStyle": {
-					"fontSize": "12px",
-					"fontWeight": "450",
-					"fontFamily": "BrandonTextBold"
-				},
-				"descriptionStyle": {
-					"color": "#00000060",
-					"fontSize": "12px"
-				},
-				"currencyStyle": {
-					"fontSize": "12px"
-				},
-				"descriptionField": "description"
+			"it": {
+				"welcomeMessage": "DARLING! PARTECIPA AL MIO NUOVO PILLOW TALK PARTY VIRTUALE"
 			},
-			"selector": "product"
-		}
-	]
+			"uk": {
+				"welcomeMessage": "Darlings! Join my New! Virtual Magical Gifting Universe"
+			},
+			"us": {
+				"welcomeMessage": "Darlings! Join my New! Virtual Magical Gifting Universe"
+			}
+		},
+		"videoUrl": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/HOLIDAY_VS_INTRO_ANIMATION.mp4",
+		"videoUrlMobile": "https://cdn.obsess-vr.com/charlotte-tilbury/holiday-2022/HOLIDAY_VS_INTRO_MOBILE.mp4"
+	}
 }
