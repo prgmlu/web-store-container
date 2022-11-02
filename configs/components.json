@@ -561,6 +561,28 @@
 								"scenesToDisplay": ["metaverse"]
 							},
 							{
+								"name":"swf",
+								"scenesToDisplay": ["metaverse"],
+								"urls":{
+									"onlineIcon": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/swf/swf-online.svg",
+									"offlineIcon": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/swf/swf-offline.svg"
+								},
+								"subIcons":[
+									{
+										"name": "mute",
+										"url":  "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/swf/mute-icon.svg"
+									},
+									{
+										"name": "copy-link",
+										"url":  "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/swf/copy-link-icon.svg"
+									},
+									{
+										"name": "copy-link",
+										"url":  "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/swf/end-call-icon.svg"
+									}
+								]
+							},
+							{
 								"name": "map",
 								"url": "https://cdn.obsess-vr.com/charlotte-tilbury/bottom-bar/VS_Map_icon.svg"
 							},
