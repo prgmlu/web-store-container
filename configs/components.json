@@ -873,7 +873,7 @@
 						"remoteConfig": {
 						  "module": "./ShopWithFriends",
 						  "scope": "shop_with_friends",
-						  "url": "http://localhost:30014/remoteEntry.js"
+						  "url": "/ObsessVR/v2/component-library/feature-components/shop-with-friends/main/remoteEntry.js"
 						},
 						"showButton": false,
 						"textStyling": {
